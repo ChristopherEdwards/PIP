@@ -271,3 +271,12 @@ COMPEXP(FILE,FIELD)
  ; TODO: don't use $P here, use something else to get the rest of the line
  X $P(^DD(FILE,FIELD,0),U,5,9999999)
  QUIT X
+ ;
+ ; Convert FileMan Date Time to $H which is compatible with DATA-QWIK Date Type
+FM2H(DATE)
+ N X
+ S X=2350407
+ D H^%DTC
+ S X=%H_","_%T
+ S X="04/07/1935 09:33 AM"
+ QUIT X
