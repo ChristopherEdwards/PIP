@@ -1,0 +1,225 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>getRecord (Cache Class)</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<style type="text/css">
+<!--
+p.whs1 { margin-left:24px; }
+table.whs2 { width:604px; margin-left:18pt; border-spacing:0px; }
+col.whs3 { width:6.788%; }
+col.whs4 { width:93.212%; }
+tr.whs5 { x-cell-content-align:top; }
+td.whs6 { width:6.788%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+img_whs7 { width:15px; height:15px; float:none; border-style:none; }
+td.whs8 { width:93.212%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+table.whs9 { width:534px; margin-left:18pt; border-spacing:0px; }
+td.whs10 { width:102px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs11 { width:432px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+col.whs12 { width:38px; }
+col.whs13 { width:488px; }
+td.whs14 { width:38px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+img_whs15 { border:none; width:15px; height:15px; float:none; border-style:none; }
+td.whs16 { width:488px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nCache Class\nMethods\ngetRecord");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>getRecord Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">Cache</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class="whs1">This method retrieves a single record from 
+ within a process’ local memory, calling the <a href="psl_db_getrecord.htm">Db.getRecord</a> 
+ method itself if a record does not exist in the cache. A Cache object 
+ is stored within its identifer. If the identifier is an array, the cache 
+ is stored at the declared subscript level.</p>
+
+<p class="whs1">This method instantiates an object; the system 
+ copies the record from the database incrementally as it references its 
+ properties. Use this method to create a new object in modify mode.</p>
+
+<table x-use-null-cells cellspacing="0" width="604" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="6.788%" class="whs6">
+<p class=Note><img src="../image/i_blue_sm.jpg" alt="image\msgs.gif" x-maintain-ratio="TRUE" width="15px" height="15px" border="0" class="img_whs7"></td>
+<td width="93.212%" class="whs8">
+<p class=Note>To implement the Cache class, replace references to Db.getRecord() 
+ with Cache.getRecord.</td></tr>
+</table>
+
+<p class="whs1">To retrieve multiple records simultaneously, 
+ use the <a href="psl_db_select.htm">Db.select</a> method. To define a 
+ new object in create mode, use the <a href="psl_class_new.htm">Class.new</a> 
+ method.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>Cache.getRecord(literal String table, literal String accessKeys)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="534" class="whs9">
+
+<tr valign="top" class="whs5">
+<td width="102px" class="whs10">
+<p>table</td>
+<td width="432px" class="whs11">
+<p>A valid database table name.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="102px" class="whs10">
+<p>accessKeys</td>
+<td width="432px" class="whs11">
+<p>A comma-separated list of access keys for the table. This parameter 
+ can also specify an assignment (e.g.,&nbsp;&quot;ACN=:CIFNUM&quot;) or 
+ a column reference (e.g.,&nbsp;DEP.ACN).</td></tr>
+</table>
+
+<p class=BodyTextBold
+	style="margin-top: 0pt; margin-bottom: 0pt;">&nbsp;</p>
+
+<table x-use-null-cells cellspacing="0" width="534" class="whs9">
+<col class="whs12">
+<col class="whs13">
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="38px" class="whs14">
+<p><img src="../image/i_blue_sm.jpg" x-maintain-ratio="TRUE" width="15px" height="15px" border="0" class="img_whs15"></td>
+<td colspan="1" rowspan="1" width="488px" class="whs16">
+<p>Note that the Cache.getRecord does not include a third parameter (classNew) 
+ as the <a href="psl_db_getrecord.htm">Db.getRecord</a> method does, because 
+ the Cache class only accepts records that currently exist in the database.</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>An object of type Record<span style="font-style: italic;"><I>TABLE</I></span> 
+ (e.g.,&nbsp;RecordDEP, RecordLN).</p>
+
+<p class=BodyTextBold>When Became Available</p>
+
+<p class="whs1">Profile v6.3</p>
+
+<p class=Example>Example</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">// Table with one key</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">type public Cache %CACHE()</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">type RecordCIF cif1 = <span style="font-weight: bold;"><B>%CACHE(&quot;CIF&quot;).getRecord(&quot;CIF&quot;,&quot;ACN=:ACN&quot;)</B></span></p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">type RecordCIF cif2 = <span style="font-weight: bold;"><B>%CACHE(&quot;CIF&quot;).getRecord(&quot;CIF&quot;,ACN=:dep.acn)</B></span></p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">// Table with multiple keys</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">type public Cache %HIST</p>
+
+<p class=Code
+	style="margin-left: 48px;">type RecordHIST hist = </p>
+
+<p class=Code
+	style="margin-left: 48px;"><span style="font-weight: bold;"><B>%HIST.getRecord(&quot;HIST&quot;,&quot;CID=:CID,TSEQ=:TSEQ&quot;)</B></span></p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">/* Other valid formats for the accessKeys 
+ parameters</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">*/</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>getColumns</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+p.whs1 { margin-left:24px; }
+table.whs2 { width:558px; margin-left:18pt; border-spacing:0px; }
+tr.whs3 { x-cell-content-align:top; }
+td.whs4 { width:120px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs5 { width:438px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs6 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nRow Class\nMethods\ngetColumns");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>getColumns Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">Row</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class="whs1">This method retrieves a list of columns in 
+ a Row object.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>Row.getColumns()</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="558" class="whs2">
+
+<tr valign="top" class="whs3">
+<td width="120px" class="whs4">
+<p>None</td>
+<td width="438px" class="whs5">
+<p>&nbsp;</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>A comma-separated list of column definitions. Each 
+ column definition takes the form of <span style="font-weight: bold;"><B>PSLtype 
+ ColumnName</B></span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs6">Profile v7.0</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>type ResultSet rs = Db.select( &quot;NAM,DOB,TYPE&quot;, 
+ &quot;CIF&quot;)</p>
+
+<p class=Code>while rs.next() do {</p>
+
+<p class=Code>&nbsp;&nbsp;type 
+ Number nCols</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>&nbsp;&nbsp;// 
+ create Row object from ResultSet, get its column list</p>
+
+<p class=Code>&nbsp;&nbsp;type 
+ Row rRow = rs.getRow()</p>
+
+<p class=Code>&nbsp;&nbsp;type 
+ String sColList = <span style="font-weight: bold;"><B>rRow.getColumns()</B></span></p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>&nbsp;&nbsp;for 
+ nCols = 1:1:sColList.length(&quot;,&quot;) do {</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>....// format: Type1 Name1,Type2 Name2</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;type 
+ String sColDef = sColList.piece(&quot;,&quot;,nCols)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;type 
+ String sColTyp = sColDef.piece(&quot; &quot;) // data type</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;type 
+ String sColNam = sColDef.piece(&quot; &quot;,2) // col. name</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;write 
+ sColNam, &quot; (&quot;, sColTyp,&quot;):&quot;,?20,rRow.@sColNam,!</p>
+
+<p class=Code>&nbsp;&nbsp;}</p>
+
+<p class=Code>&nbsp;&nbsp;write 
+ !</p>
+
+<p class=Code>}</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

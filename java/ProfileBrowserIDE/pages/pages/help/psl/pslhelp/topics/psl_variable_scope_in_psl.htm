@@ -1,0 +1,169 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Variable Scope in PSL</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<style type="text/css">
+<!--
+table.whs1 { margin-left:18pt; width:604px; border-spacing:0px; }
+col.whs2 { width:18.543%; }
+col.whs3 { width:492px; }
+tr.whs4 { x-cell-content-align:top; }
+td.whs5 { width:18.543%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs6 { width:492px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+table.whs7 { margin-left:4.50pt; width:578px; border-spacing:0px; }
+col.whs8 { width:6.574%; }
+col.whs9 { width:93.426%; }
+td.whs10 { width:6.574%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+img_whs11 { border-style:none; width:15px; height:15px; float:none; }
+td.whs12 { width:93.426%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+img_whs13 { border:none; width:15px; height:13px; float:none; border-style:none; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Programming Standards\nScope of Objects and Variables\nVariable Scope in PSL");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Variable Scope in PSL</h1>
+
+<p>The TYPE command controls variable scope. The default behavior is to 
+ set the scope (i.e., NEW for M programs) at the current stack level. When 
+ the program decrements the stack (i.e., QUIT), all variables and objects 
+ referenced by those variables are deleted (i.e., KILL). </p>
+
+<p>The following variable scopes are available in PSL:</p>
+
+<table x-use-null-cells cellspacing="0" width="604" class="whs1">
+<col class="whs2">
+<col class="whs3">
+
+<tr valign="top" class="whs4">
+<td width="18.543%" class="whs5">
+<p><span style="font-weight: bold;"><B>Scope</B></span></td>
+<td width="492px" class="whs6">
+<p><span style="font-weight: bold;"><B>Description</B></span></td></tr>
+
+<tr valign="top" class="whs4">
+<td width="18.543%" class="whs5">
+<p>Compiler</td>
+<td width="492px" class="whs6">
+<p>Identifies compiler variables.</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="18.543%" class="whs5">
+<p>Literal</td>
+<td width="492px" class="whs6">
+<p>Can be assigned and referenced within the PSL source code at compile 
+ time. The compiler inserts the values into the generated code as literal 
+ values.</p>
+<p>For more information on Literal scope, refer to the <a href="psl_literal_scope_variables.htm">Literal 
+ Scope Variables</a> section.</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="18.543%" class="whs5">
+<p>Public</td>
+<td width="492px" class="whs6">
+<p>Suppresses scope control in the TYPE command. Any variable or object 
+ initialized during the process is passed back to the prior controlling 
+ scope. PSL methods cannot modify public scope variables.</td></tr>
+</table>
+
+<p class=Note
+	style="margin-top: 0; margin-bottom: 0;">&nbsp;</p>
+
+<table x-use-null-cells cellspacing="0" width="578" class="whs7">
+<col class="whs8">
+<col class="whs9">
+
+<tr valign="top" class="whs4">
+<td width="6.574%" class="whs10">
+<p class=Note><img src="../image/i_blue_sm.jpg" alt="image\msgs.gif" x-maintain-ratio="TRUE" width="15px" height="15px" border="0" class="img_whs11"></td>
+<td width="93.426%" class="whs12">
+<p class=Note>The NEW command is supported. However, it is redundant with 
+ the TYPE command and should be avoided.</td></tr>
+</table>
+
+<p class=BodyTextBold>Arrays</p>
+
+<p>You can initialize arrays with the TYPE command with different classes 
+ assigned to each array level. However, the scope of the array is always 
+ the scope of its root variable. If the root variable is not defined, it 
+ defaults to the most restrictive scope of any of the array levels.</p>
+
+<p class=BodyTextBold>System Variables</p>
+
+<p>%SystemVariables must always be in scope and contain a value within 
+ PSL procedures. Otherwise, a run-time UNDEFINED variable occurs. %SystemVariables 
+ should only be initialized at the batch driver or service class level 
+ of the application, or within specific functions that protect the scope 
+ and return the original value. For a list of system variables, click here 
+ <a href="psl_system_keywords.htm"><img src="../image/chiclet.gif" x-maintain-ratio="TRUE" width="15px" height="13px" border="0" class="img_whs13"></a>.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

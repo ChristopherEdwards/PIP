@@ -1,0 +1,225 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>getSub</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { width:552px; margin-left:18pt; border-spacing:0px; }
+tr.whs2 { x-cell-content-align:top; }
+td.whs3 { width:120px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs4 { width:432px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs5 { background-color:Transparent; }
+p.whs6 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs5 {background-color:white; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nString Class\nMethods\ngetSub");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>getSub Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">String</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class=BodyIndent>This method locates a substring within a string and 
+ extracts specific data from the substring, where the substring may be 
+ delimited by two delimiters. The behavior largely depends on whether label 
+ is empty or non-empty.</p>
+
+<p class=BodyIndent>&nbsp;</p>
+
+<p class=BodyIndent>If <span style="font-weight: bold;"><B>label</B></span> and 
+ <span style="font-weight: bold;"><B>majorDelim</B></span> are both empty, then 
+ this method returns exactly the same value as <a href="psl_string_extract.htm">StringObject.extract(position)</a>. 
+ The value of <span style="font-weight: bold;"><B>subDelim</B></span> is ignored.</p>
+
+<p class=BodyIndent>&nbsp;</p>
+
+<p class=BodyIndent>If <span style="font-weight: bold;"><B>label</B></span> is 
+ the empty string and <span style="font-weight: bold;"><B>majorDelim</B></span> 
+ is not the empty string, then this method returns exactly the same value 
+ as <a href="psl_string_piece.htm">StringObject.piece(majorDelim, position)</a>. 
+ The value of <span style="font-weight: bold;"><B>subDelim</B></span> is ignored.</p>
+
+<p class=BodyIndent>&nbsp;</p>
+
+<p class=BodyIndent>If <span style="font-weight: bold;"><B>label</B></span> is 
+ not the empty string, then <span style="font-weight: bold;"><B>majorDelim.length()</B></span> 
+ will be 1. If <span style="font-weight: bold;"><B>subDelim</B></span> is not 
+ the empty string, then <span style="font-weight: bold;"><B>subDelim.length()</B></span> 
+ will also be 1. In this case, the method locates a <span style="font-weight: bold;"><B>majorDelim</B></span> 
+ delimited field that starts with <span style="font-weight: bold;"><B>label</B></span> 
+ (followed by <span style="font-weight: bold;"><B>subDelim</B></span>). It then 
+ returns the <span style="font-weight: bold;"><B>subDelim</B></span> delimited 
+ subfield following <span style="font-weight: bold;"><B>label</B></span> specified 
+ by <span style="font-weight: bold;"><B>position</B></span>.</p>
+
+<p class=BodyIndent>&nbsp;</p>
+
+<p class=BodyIndent>If <span style="font-weight: bold;"><B>label</B></span> occurs 
+ more than once, the leftmost occurrence is used</p>
+
+<p class=BodyIndent>&nbsp;</p>
+
+<p class=BodyIndent>This method replaces the $$GET^USUB() function.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>StringObject.getSub(String label,String majorDelim,</p>
+
+<p class=Code>String subDelim,Number position)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="552" class="whs1">
+
+<tr valign="top" class="whs2">
+<td width="120px" class="whs3">
+<p>label</td>
+<td width="432px" class="whs4">
+<p class="whs5">A group of characters that comprise 
+ the substring marker with a string. The default value is the empty string.</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="120px" class="whs3">
+<p>majorDelim</td>
+<td colspan="1" rowspan="1" width="432px" class="whs4">
+<p class="whs5">The single character delimiter 
+ that separates fields of the string. The default value is the empty string.</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="120px" class="whs3">
+<p>subDelim</td>
+<td colspan="1" rowspan="1" width="432px" class="whs4">
+<p class="whs5">The single character delimiter 
+ that separates the label and its subfields. The default value is <span 
+ style="font-weight: bold;"><B>majorDelim</B></span>.</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="120px" class="whs3">
+<p>position</td>
+<td colspan="1" rowspan="1" width="432px" class="whs4">
+<p class="whs5">The position of the subfield 
+ to return. The default value is 1.</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>A String.</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs6">v6.4</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>type String STR = &quot;L1#S11#S12;L2#S21#S22#S23;L3#S31&quot;</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>// label and majorDelim both empty, &quot;?&quot; ignored</p>
+
+<p class=Code>type String XTR = <span style="font-weight: bold;"><B>STR.getSub(,,&quot;?&quot;,3)</B></span> 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ &quot;#&quot;</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>// label empty, majorDelim not empty, &quot;?&quot; ignored 
+ again</p>
+
+<p class=Code>type String XTR = <span style="font-weight: bold;"><B>STR.getSub(,&quot;#&quot;,&quot;?&quot;,3)</B></span> 
+ &nbsp;&nbsp;&nbsp;&nbsp;// 
+ &quot;S12;L2&quot;</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>// a more typical example</p>
+
+<p class=Code>type String SUB = <span style="font-weight: bold;"><B>STR.getSub(&quot;L2&quot;,&quot;;&quot;,&quot;#&quot;,3)</B></span> 
+ // &quot;S23&quot;</p>
+
+<p>&nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Compiling PSL Code</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Using PSL\nCompiling PSL Code\nCompiling PSL Code");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Compiling PSL Code</h1>
+
+<p>The PSL compiler contains an interface that recognizes classes, methods, 
+ and properties that appear in the following tables:</p>
+
+<ul>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>Object Class Library table 
+ (OBJECT)</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>Class Methods table (OBJECTMET)</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>Object Properties table 
+ (OBJECTPROP)</p></li>
+</ul>
+
+<p>Data item documentation for these tables and their attributes appears 
+ in DATA-QWIK.</p>
+
+<p>The following steps occur when compiling a PSL procedure.</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>When the compiler encounters 
+ a PSL method, it loads the definition from the OBJECTMET table. </p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>The compiler then generates 
+ the M code associated with those methods and properties.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>The compiler queries the 
+ database dictionary to identify table columns for which to process commands, 
+ and verifies M code syntax.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>The compiler creates a 
+ run-time routine that can be called from a Profile function. The system 
+ stores the compiled M routine in your .CRTNS directory.</p></li>
+</ul>
+
+<p class=BodyTextBold>Specifying Compiler Options</p>
+
+<p>The compilation process can be tailored using a number of compiler options. 
+ The options that are in effect during the compilation of a single PSL 
+ module are determined in the following precedence order (listed from highest 
+ to lowest):</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Options specified explicitly 
+ in the module that is compiled. This applies to the <a href="psl_warn.htm">#WARN</a>, 
+ <a href="psl_optimize.htm">#OPTIMIZE</a>, and <a href="psl_option.htm">#OPTION</a> 
+ compiler commands.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Options specified for this 
+ invocation of the PSL compiler. Applicable options are specified in the 
+ commands(,) parameter of the call to the compiler.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Options specified in the 
+ UCOPTS override file as denoted by the environment variable SCAU_UCOPTS.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Options specified in UCOPTS. 
+ Each environment includes a routine UCOPTS. The PSL compiler invokes ^UCOPTS(.Options) 
+ to obtain the environment-specific options. The next section explains 
+ how to specify the environment specific defaults.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Compiler defaults. These 
+ values apply for all options that are not specified by any of the above 
+ options.</p></li>
+</ul>
+
+<p class=BodyTextBold>Defining the Environment Specific Settings for the 
+ PSL Compiler</p>
+
+<p>The PSL compiler can be tailored to the needs and requirements of the 
+ environment in which it runs. Perform the following steps to modify these 
+ settings.</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Every PSL distribution 
+ includes a file <span style="font-weight: bold;"><B>UCOPTS.ini</B></span>. This 
+ file is copied to the environment's top level directory. The UCOPTS.ini 
+ that comes with the PSL distribution lists all settings that can be used 
+ to configure the PSL compiler and the recommended settings for typical 
+ environments.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Modify the UCOPTS.ini file 
+ to adjust the settings for the environment</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>At the GT.M direct mode 
+ prompt, enter:</p></li>
+</ul>
+
+<p class=Code
+	style="margin-left: 40px;">DO bootUCOPTS^UCGMCU()</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>The call to bootUCOPTS^UCGMCU() 
+ generates a new version of routine UCOPTS, that is called for subsequent 
+ compilations.</p></li>
+</ul>
+
+<p>The following settings can be specified in UCOPTS.ini:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1><a href="psl_info.htm">#INFO</a> 
+ Compiler command default settings</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>#OPTIMIZE Compiler command 
+ default settings</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>#OPTION Compiler command 
+ default settings</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>#WARN Compiler command 
+ default settings</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>PSL property values</p></li>
+</ul>
+
+<p>The PSL compiler supports a number of properties that are environment 
+ specific. Some of these properties are immutable, for example, because 
+ they are derived from the GT.M version. Other values, however, can be 
+ modified to optimize the application's runtime behavior.</p>
+
+<p>Each individual setting is explained in the standard UCOPTS.ini file.</p>
+
+<p class=BodyTextBold>Defining Process Specific Overrides for PSL Compiler 
+ Settings</p>
+
+<p>The environment specific settings of UCOPS.ini, which have been compiled 
+ into routine UCOPTS, can be overridden for the GT.M process that calls 
+ the PSL compiler. To use this feature, perform the following steps:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Copy the standard UCOPTS.ini 
+ to a file with a different name (possibly in a different directory).</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Modify that copy of UCOPTS.ini 
+ as needed for the override, and store the modified file.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Alternatively, you can 
+ create a file from scratch, and only specify the settings that you want 
+ to override explicitly.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Before invoking GT.M, set 
+ the environment variable SCAU_UCOPTS to the full pathname of the override 
+ file.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Invoke GT.M (either the 
+ direct mode, or the LABEL^ROUTINE that invokes the compiler).</p></li>
+</ul>
+
+<p>You cannot override PSL property values through this mechanism, but 
+ you can override all #INFO, #OPTIMIZE, #OPTION, and #WARN settings.</p>
+
+<p class=BodyTextBold>Compiling a PSL Procedure</p>
+
+<p>To compile a PSL procedure into an M routine, run the Build Run Time 
+ Routine function (DBSPROCB) to convert the PSL code in your procedure 
+ into the associated M code. You can specify a number of <a href="psl_compiler_commands.htm">compiler 
+ commands</a> (i.e., parameters) when running this function. After compiling, 
+ the following line appears along with most syntax and compilation errors 
+ (if any exist):</p>
+
+<p class=Code>ZEXAMPLE &nbsp;&nbsp;&nbsp;- 
+ compile runtime routine ZEXAMPLE … 8:25 AM</p>
+
+<p>For additional guidelines concerning PSL code compilation, refer to 
+ the following sections:</p>
+
+<p class=Field><a href="psl_qualifiers_on_filers.htm">Qualifiers on Filers</a></p>
+
+<p class=Field><a href="psl_compiler_commands.htm">Compiler Commands</a></p>
+
+<p class=Field><a href="psl_handling_errors.htm">Exception Handling</a></p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>sort</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { width:546px; margin-left:18pt; border-spacing:0px; }
+tr.whs2 { x-cell-content-align:top; }
+td.whs3 { width:114px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs4 { width:432px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs5 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nList Class\nMethods\nsort");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>sort Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">List</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class=BodyIndent>This method returns a list of elements sorted in ascending 
+ order (i.e., in M subscript order).</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>ListObject.sort(String delimiter,Boolean allowDuplicate)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="546" class="whs1">
+
+<tr valign="top" class="whs2">
+<td width="114px" class="whs3">
+<p>delimiter</td>
+<td width="432px" class="whs4">
+<p>A character that is used to delimit the values in the list.</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="114px" class="whs3">
+<p>allowDuplicate</td>
+<td colspan="1" rowspan="1" width="432px" class="whs4">
+<p>An option that indicates whether duplicates are permitted in the list. 
+ Valid values are:</p>
+<p>1 - Keep duplicate occurrences (Default)</p>
+<p>0 - Do not keep duplicate occurrences</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>A List.</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs5">Profile v7.0</p>
+
+<p class=Example>Example</p>
+
+<p class=code>// define a List object with some elements</p>
+
+<p class=code>type List myList = Class.new(&quot;List&quot;, &quot;AAP:NOOT:MIES:NOOT&quot;)</p>
+
+<p class=code>&nbsp;</p>
+
+<p class=code>// sort the list: delimiter, allowDup defaults to 1</p>
+
+<p class=code>type List srt1 = <span style="font-weight: bold;"><B>myList.sort(&quot;:&quot;)</B></span> 
+ // AAP:MIES:NOOT:NOOT</p>
+
+<p class=code>&nbsp;</p>
+
+<p class=code>// sort the list: delimiter, allowDup=1, same as above</p>
+
+<p class=code>type List srt2 = <span style="font-weight: bold;"><B>myList.sort(&quot;:&quot;,1)</B></span> 
+ // AAP:MIES:NOOT:NOOT</p>
+
+<p class=code>&nbsp;</p>
+
+<p class=code>// sort the list: delimiter, remove duplicates</p>
+
+<p class=code>type List srt0 = <span style="font-weight: bold;"><B>myList.sort(&quot;:&quot;,0)</B></span> 
+ // AAP:MIES:NOOT</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Whitespace</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+ul.whs1 { list-style:square; }
+p.whs2 { margin-left:36px; }
+p.whs3 { margin-left:24px; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Programming Standards\nWhitespace");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Whitespace</h1>
+
+<p>The following guidelines apply to whitespace:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Insert blank lines between 
+ lines of executable code to make code easier to read. For example, insert 
+ blank lines between segments of code (e.g., after the initialization of 
+ variables, before and after nested blocks, etc.).</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Sections of code can be 
+ indented to enhance the format of the code (e.g., If/Else conditions).</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Whitespace can consist 
+ of either &lt;space&gt; or &lt;tab&gt; characters.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Use whitespace around the 
+ assignment operator in <span style="font-weight: bold;"><B>set</B></span> and 
+ <span style="font-weight: bold;"><B>type</B></span> statements and around binary 
+ operators in expressions.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Commands must be followed 
+ by one space and an expression, or two spaces or end-of-line (if argumentless).</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Commands followed by post-conditional 
+ arguments must be followed by a colon with no whitespace.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Argumentless commands (e.g., 
+ FOR, ELSE, IF QUIT) with one space will compile with a warning.</p></li>
+</ul>
+
+<ul type="square" class="whs1">
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>The following are whitespace 
+ independent:</p></li>
+	
+	<li class=kadov-p><p class="whs2">Array subscripts</p></li>
+	
+	<li class=kadov-p><p class="whs2">Command position on 
+ the line</p></li>
+	
+	<li class=kadov-p><p class="whs2">Command, parameter, 
+ and subscript separator (,)</p></li>
+	
+	<li class=kadov-p><p class="whs2">Formal and actual parameter 
+ expressions</p></li>
+	
+	<li class=kadov-p><p class="whs2">Parentheses</p></li>
+	
+	<li class=kadov-p><p class="whs2">Property and method 
+ references</p></li>
+	
+	<li class=kadov-p><p class="whs2">Relational and Boolean 
+ operators (&lt;&gt;[]!&amp;#*+-'=)</p></li>
+</ul>
+
+<p class=Example
+	style="margin-left: 0px;">Example</p>
+
+<p class=Code
+	style="margin-left: 24px;">type RecordDEP dep = Db.getRecord(“DEP”,”CID=:CID”)</p>
+
+<p class=Code
+	style="margin-left: 24px;">type String TYPE = dep.type</p>
+
+<p class=Code
+	style="margin-left: 24px;">type Number JOB = %ProcessID</p>
+
+<p class=Code
+	style="margin-left: 24px;">type RecordTEST tmp</p>
+
+<p class=Code
+	style="margin-left: 24px;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 24px;">if 'Db.isDefined(&quot;TEST&quot;,&quot;JOB 
+ = :JOB, TYPE = :TYPE&quot;) do {</p>
+
+<p class=Code
+	style="margin-left: 24px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ tmp = Class.new(&quot;RecordTEST&quot;)</p>
+
+<p class=Code
+	style="margin-left: 24px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ tmp.job &nbsp;= 
+ %ProcessID</p>
+
+<p class=Code
+	style="margin-left: 24px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ tmp.type = dep.type</p>
+
+<p class=Code
+	style="margin-left: 24px;">}</p>
+
+<p class=Code
+	style="margin-left: 24px;">else &nbsp;set 
+ tmp = Db.getRecord(&quot;TEST&quot;,&quot;JOB=:JOB, TYPE=:TYPE&quot;)</p>
+
+<p class=Code
+	style="margin-left: 24px;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 24px;">set tmp.totbal = tmp.totbal + dep.bal</p>
+
+<p class=Code
+	style="margin-left: 24px;">do tmp.save()</p>
+
+<p class=Code
+	style="margin-left: 24px;">&nbsp;</p>
+
+<p class="whs3">*CID must be defined prior to the getRecord 
+ statement.</p>
+
+<p>&nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

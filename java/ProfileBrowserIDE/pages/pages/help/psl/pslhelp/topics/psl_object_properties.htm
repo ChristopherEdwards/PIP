@@ -1,0 +1,194 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Object Properties</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Introduction to Object-Oriented Programming\nObjects\nObject Properties");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Object Properties</h1>
+
+<p>The properties of an object are the characteristics that describe the 
+ object. For example, the properties of a particular keyboard may be its 
+ color and the number of keys (e.g., the color property of that particular 
+ keyboard (object) is white and it has 90 keys). The properties of an object 
+ are also called the instance variables for the object.</p>
+
+<p>Database file definitions define all properties of objects in the Record 
+ class. For example, the DEP file definition defines all the properties 
+ (i.e.,&nbsp;data items) of the RecordDEP object. </p>
+
+<p class=BodyTextBold>Property References</p>
+
+<p>References to Record class properties (e.g., dep.bal) return objects 
+ of the class of the schema element (e.g., Blob, Boolean, Date, Number, 
+ String), not an object of the Column class. To maintain backward compatibility 
+ with existing PSL code, the property names (des, journal, key, len, oldVal, 
+ req, typ) refer to the Column class and not the underlying schema. This 
+ does not cause a conflict, because none of the underlying schema classes 
+ contain properties with these names.</p>
+
+<p>Other classes (e.g., Column class, Error class, OI class) may also be 
+ instantiated as objects. However, to define a property associated with 
+ them, an additional layer of property definition has been added to the 
+ OBJECT global (i.e., table OBJECTPROP). Effectively, the properties are 
+ the same. You can set or read these properties after the object is created.</p>
+
+<p>The only real difference is that the Record class properties refer to 
+ a location in the database, while the other class' properties refer to 
+ a virtual record that does not exist in the database.</p>
+
+<p class=Example>Example - Objects of Record Class Properties</p>
+
+<p>The following example illustrates the PSL script and generated M code 
+ that results when references are made to Record class properties.</p>
+
+<p>PSL Sample Script</p>
+
+<p class=Code>#optimize</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type 
+ RecordDEP dep=Db.getRecord(&quot;DEP&quot;,1)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ x=dep.bal</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ x=dep.bal.curval</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ x=dep.bal.des</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ x=dep.bal.oldval</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ x=dep.bal.piece(&quot;|&quot;,2)</p>
+
+<p class=Code>&nbsp;&nbsp;set 
+ x=dep.lnm.extract(1,20)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+ dep.lnm.beginsWith(&quot;SM&quot;)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+ dep.lnm.isNull()</p>
+
+<p>Generated M code</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;; 
+ &nbsp;#optimize</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N 
+ dep,vod1 S dep=$$vDb2(1)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S 
+ vod1=$G(^ACN(1,51))</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S 
+ x=$P(vod1,&quot;|&quot;,1)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S 
+ x=$P(vod1,&quot;|&quot;,1)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S 
+ x=&quot;Ledger Balance&quot;</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S 
+ x=$S($D(vobj(dep,-100,51,&quot;BAL&quot;)):$P($E(vobj(dep,-100,51,&quot;BAL&quot;),5,9999^</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S 
+ x=$PIECE($P(vod1,&quot;|&quot;,1),&quot;|&quot;,2)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S 
+ x=$PIECE($P(vod1,&quot;|&quot;,1),&quot;|&quot;,2)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S 
+ x=$E($P(dep,&quot;|&quot;,6),1,20)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I 
+ ($E($P(dep,&quot;|&quot;,6),1,2)=&quot;SM&quot;)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I 
+ ($L($P(dep,&quot;|&quot;,6))=0)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

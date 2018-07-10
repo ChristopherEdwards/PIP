@@ -1,0 +1,274 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Statements and Keywords</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { x-cell-content-align:top; border-spacing:0px; width:84.926%; }
+col.whs2 { width:22.764%; }
+col.whs3 { width:77.236%; }
+tr.whs4 { x-cell-content-align:top; }
+td.whs5 { width:22.764%; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-top-color:#000000; border-top-width:1px; border-top-style:Solid; border-bottom-color:#000000; border-bottom-style:Solid; border-bottom-width:1px; }
+p.whs6 { font-weight:bold; margin-left:0px; margin-top:6pt; margin-bottom:6pt; }
+td.whs7 { width:77.236%; padding-right:10px; padding-left:10px; border-right-style:none; border-top-color:#000000; border-top-width:1px; border-top-style:Solid; border-bottom-color:#000000; border-bottom-style:Solid; border-bottom-width:1px; }
+p.whs8 { font-weight:bold; margin-top:6pt; margin-bottom:6pt; }
+td.whs9 { width:22.764%; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; background-color:#dde0f7; }
+p.whs10 { margin-left:0px; margin-top:6pt; margin-bottom:6pt; }
+td.whs11 { width:77.236%; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; background-color:#dde0f7; }
+p.whs12 { margin-top:6pt; margin-bottom:6pt; }
+td.whs13 { width:22.764%; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; }
+td.whs14 { width:77.236%; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs6 {margin-left:1pt; }";
+  strNSS += "p.whs10 {margin-left:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Programming Standards\nStatements and Keywords");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Statements and Keywords</h1>
+
+<p>To produce more readable code, write PSL statements and keywords in 
+ lowercase. </p>
+
+<table x-use-null-cells cellspacing="0" width="84.926%" class="whs1">
+<col class="whs2">
+<col class="whs3">
+
+<tr valign="top" class="whs4">
+<td width="22.764%" class="whs5">
+<p class="whs6">Statement</td>
+<td width="77.236%" class="whs7">
+<p class="whs8">Description</td></tr>
+
+<tr valign="top" class="whs4">
+<td bgcolor="#DDE0F7" width="22.764%" class="whs9">
+<p class="whs10">catch</td>
+<td bgcolor="#DDE0F7" width="77.236%" class="whs11">
+<p class="whs12">Defines the code that will 
+ be executed to handle an exception thrown by the code following the statement.</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="22.764%" class="whs13">
+<p class="whs10">do</td>
+<td width="77.236%" class="whs14">
+<p class="whs12">Calls an object method 
+ or PSL subroutine or structured code block {}.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="22.764%" class="whs9">
+<p class="whs10">else</td>
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="77.236%" class="whs11">
+<p class="whs12">Executes statements when 
+ a condition is not met.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="22.764%" class="whs13">
+<p class="whs10">for</td>
+<td colspan="1" rowspan="1" width="77.236%" class="whs14">
+<p class="whs12">Repeatedly executes statements.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="22.764%" class="whs9">
+<p class="whs10">if</td>
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="77.236%" class="whs11">
+<p class="whs12">Executes statements when 
+ a condition is met.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="22.764%" class="whs13">
+<p class="whs10">set</td>
+<td colspan="1" rowspan="1" width="77.236%" class="whs14">
+<p class="whs12">Assigns a value to an object 
+ property or a variable.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="22.764%" class="whs9">
+<p class="whs10">throw</td>
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="77.236%" class="whs11">
+<p class="whs12">Throws an exception.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="22.764%" class="whs13">
+<p class="whs10">type</td>
+<td colspan="1" rowspan="1" width="77.236%" class="whs14">
+<p class="whs12">Declares (and instantiates) 
+ an object.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="22.764%" class="whs9">
+<p class="whs10">while</td>
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="77.236%" class="whs11">
+<p class="whs12">Repeatedly executes statements.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="22.764%" class="whs13">
+<p class="whs10">write</td>
+<td colspan="1" rowspan="1" width="77.236%" class="whs14">
+<p class="whs12">Writes a primitive data 
+ type to the current device.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="22.764%" class="whs9">
+<p class="whs10">quit</td>
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="77.236%" class="whs11">
+<p class="whs12">Quits from an object method, 
+ PSL subroutine, PSL function, or for loop.</td></tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table x-use-null-cells cellspacing="0" width="84.926%" class="whs1">
+<col class="whs2">
+<col class="whs3">
+
+<tr valign="top" class="whs4">
+<td width="22.764%" class="whs5">
+<p class="whs6">Keyword</td>
+<td width="77.236%" class="whs7">
+<p class="whs8">Description</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="22.764%" class="whs9">
+<p class="whs10">literal</td>
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="77.236%" class="whs11">
+<p class="whs12">Used in a <span style="font-weight: bold;"><B>type</B></span> 
+ statement to specify that the value of the primitive object is constant. 
+ When generating code, the PSL compiler substitutes references to the object 
+ by the value supplied in the <span style="font-weight: bold;"><B>type</B></span> 
+ statement.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="22.764%" class="whs13">
+<p class="whs10">local</td>
+<td colspan="1" rowspan="1" width="77.236%" class="whs14">
+<p class="whs12">Reserved for future use 
+ to declare the accessibility of a PSL subroutine or PSL function. A PSL 
+ subroutine or PSL function that is declared local can be accessed only 
+ by subroutines and functions inside the current PSL module. The code generated 
+ by the compiler will prevent access to the subroutine or function by other 
+ PSL modules.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="22.764%" class="whs9">
+<p class="whs10">private</td>
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="77.236%" class="whs11">
+<p class="whs12">Declares the accessibility 
+ of a PSL subroutine or PSL function. A PSL subroutine or PSL function 
+ that is declared private can be accessed by a limited number of subroutines 
+ outside the current PSL module. This may affect the code that will be 
+ generated by the compiler.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="22.764%" class="whs13">
+<p class="whs10">public</td>
+<td colspan="1" rowspan="1" width="77.236%" class="whs14">
+<p>Declares the accessibility of a local variable, a PSL subroutine or 
+ PSL function. </p>
+<p>When the keyword <span style="font-weight: bold;"><B>public</B></span> is added 
+ to a <span style="font-weight: bold;"><B>type</B></span> statement, PSL assumes 
+ the scope of the variables in that <span style="font-weight: bold;"><B>type</B></span> 
+ statement is managed outside the subroutine or function that accesses 
+ them.</p>
+<p>When this keyword is prepended to a subroutine definition or a function 
+ definition, this signals that the subroutine or function can be accessed 
+ by any subroutine or function from any PSL module. Declaring a subroutine 
+ or function public may affect the code that will be generated by the compiler.</td></tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p>When a variable is declared <span style="font-weight: bold;"><B>public</B></span>, 
+ it is the programmer's responsibility to ensure that the type is declared 
+ consistently across all subroutines and functions that access the variable.</p>
+
+<p>The current version of the PSL compiler treats subroutines that are 
+ declared <span style="font-weight: bold;"><B>private</B></span> exactly the same 
+ as those declared <span style="font-weight: bold;"><B>public</B></span>. This 
+ is likely to change in a future version.</p>
+
+<p>A subroutine that is declared neither <span style="font-weight: bold;"><B>private</B></span> 
+ nor <span style="font-weight: bold;"><B>public</B></span> is considered to be 
+ declared <span style="font-weight: bold;"><B>local</B></span>. Since the code 
+ generated for <span style="font-weight: bold;"><B>local</B></span> procedures 
+ may be different, calling such a subroutine or function may produce unpredictable 
+ results. A future version of the PSL compiler will prevent access by other 
+ PSL modules to code that is declared <span style="font-weight: bold;"><B>local</B></span>.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Qualifiers on Filers</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<style type="text/css">
+<!--
+table.whs1 { width:522px; margin-left:0.35pt; border-spacing:0px; }
+tr.whs2 { x-cell-content-align:top; }
+td.whs3 { width:192px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs4 { margin-left:48px; }
+td.whs5 { width:330px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "table.whs1 {margin-left:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Using PSL\nCompiling PSL Code\nQualifiers on Filers");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Qualifiers on Filers</h1>
+
+<p>A number of qualifiers can be used when compiling filer routines. These 
+ qualifiers are described in the table that follows. Several qualifiers 
+ are preset but can be manually overridden. Standard qualifier settings 
+ include:</p>
+
+<ul>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>NOFKCHK=1</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>NOVALDD</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>NOVALREQ</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>NOVALRI</p></li>
+</ul>
+
+<p>In addition, you can also specify qualifiers on the <a href="psl_db_insert.htm">Db.insert</a> 
+ and <a href="psl_db_update.htm">Db.update</a> methods.</p>
+
+<p>Qualifiers are processed left to right. They are then passed to the 
+ filer, which reviews and performs the processing based on the qualifier 
+ values.</p>
+
+<table x-use-null-cells cellspacing="0" width="522" class="whs1">
+
+<tr valign="top" class="whs2">
+<td width="192px" class="whs3">
+<p class="whs4"><span style="font-weight: bold;"><B>Qualifiers</B></span></td>
+<td width="330px" class="whs5">
+<p><span style="font-weight: bold;"><B>Indicate whether to…</B></span></td></tr>
+
+<tr valign="top" class="whs2">
+<td width="192px" class="whs3">
+<p class="whs4">INDEX<br>
+NOINDEX</td>
+<td width="330px" class="whs5">
+<p>Execute index build code</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="192px" class="whs3">
+<p class="whs4">JOURNAL<br>
+NOJOURNAL</td>
+<td width="330px" class="whs5">
+<p>Execute journal create code</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="192px" class="whs3">
+<p class="whs4">NOFKCHK=1<br>
+NOVALREQ=0</td>
+<td width="330px" class="whs5">
+<p>Execute referential integrity within the filer instead of externally</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="192px" class="whs3">
+<p class="whs4">TRIGAFT<br>
+NOTRIGAFT</td>
+<td width="330px" class="whs5">
+<p>Execute after (db update) triggers</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="192px" class="whs3">
+<p class="whs4">TRIGBRF<br>
+NOTRIGBRF</td>
+<td width="330px" class="whs5">
+<p>Execute before (db update) triggers</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="192px" class="whs3">
+<p class="whs4">UPDATE<br>
+NOUPDATE</td>
+<td width="330px" class="whs5">
+<p>Update the database</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="192px" class="whs3">
+<p class="whs4">VALDD<br>
+NOVALDD</td>
+<td width="330px" class="whs5">
+<p>Validate data against data dictionary</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="192px" class="whs3">
+<p class="whs4">VALREQ<br>
+NOVALREQ</td>
+<td width="330px" class="whs5">
+<p>Validate required fields</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="192px" class="whs3">
+<p class="whs4">VALRI<br>
+NOVALRI</td>
+<td width="330px" class="whs5">
+<p>Build validation for referencial integrity</td></tr>
+</table>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

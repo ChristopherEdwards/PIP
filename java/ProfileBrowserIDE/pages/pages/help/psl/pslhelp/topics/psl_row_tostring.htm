@@ -1,0 +1,191 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>toString (Row Class)</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { width:558px; margin-left:18pt; border-spacing:0px; }
+tr.whs2 { x-cell-content-align:top; }
+td.whs3 { width:120px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs4 { width:438px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs5 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nRow Class\nMethods\ntoString");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>toString Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">Row</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class=BodyIndent>This method casts a Row object as a String. This method 
+ sends a Row class object to a file or message interface (e.g., sending 
+ a ResultSet to a file for export to Microsoft Excel).</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>Row.toString(String delim,String quote,String fmtDate,String 
+ fmtBool,String fmtTime)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="558" class="whs1">
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="120px" class="whs3">
+<p>delim</td>
+<td colspan="1" rowspan="1" width="438px" class="whs4">
+<p>The character used to delimit columns in the output string.</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="120px" class="whs3">
+<p>quote</td>
+<td colspan="1" rowspan="1" width="438px" class="whs4">
+<p>The character that is used to quote String types. If absent or empty, 
+ String types are not quoted.</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="120px" class="whs3">
+<p>fmtDate</td>
+<td colspan="1" rowspan="1" width="438px" class="whs4">
+<p>Format supplied to <a href="psl_date_tostring.htm">Date.toString()</a>.</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="120px" class="whs3">
+<p>fmtBool</td>
+<td colspan="1" rowspan="1" width="438px" class="whs4">
+<p>Format for columns with type Boolean (currently unspecified and ignored).</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="120px" class="whs3">
+<p>fmtTime</td>
+<td colspan="1" rowspan="1" width="438px" class="whs4">
+<p>Format for columns with type Time (currently unspecified and ignored).</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>A formatted string. Columns are separated by <span 
+ style="font-weight: bold;"><B>delim</B></span>. If <span style="font-weight: bold;"><B>quote</B></span> 
+ is supplied and not empty, Strings will be enclosed in quotes by calling 
+ <a href="psl_string_addquotes.htm">String.addQuotes(quote)</a>. Date type 
+ columns are formatted by calling Date.toString(fmtDate).</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs5">Profile v7.0</p>
+
+<p class=Example>Example</p>
+
+<p class=code>type ResultSet rs = Db.select( &quot;NAM,XNAME,DOB,TYPE&quot;, 
+ &quot;CIF&quot;)</p>
+
+<p class=code>type IO iod = Class.new(&quot;IO&quot;)</p>
+
+<p class=code>set iod.directory = sDir</p>
+
+<p class=code>set iod.fileName = sTable.lowerCase()_&quot;.csv&quot;</p>
+
+<p class=code>set oid.openParams = &quot;NEWVERSION&quot;</p>
+
+<p class=code>do iod.open()</p>
+
+<p class=code>while rs.next() do {</p>
+
+<p class=code>&nbsp;&nbsp;type 
+ Row row = rs.getRow()</p>
+
+<p class=code>&nbsp;</p>
+
+<p class=code>&nbsp;&nbsp;// 
+ translate into standard CSV format:</p>
+
+<p class=code>&nbsp;&nbsp;// 
+ * p1: comma separated</p>
+
+<p class=code>..// * p2: doublequote embedded strings</p>
+
+<p class=code>..// * p3: ISO data format</p>
+
+<p class=code>&nbsp;&nbsp;do 
+ iod.write(<span style="font-weight: bold;"><B>row.toString(&quot;,&quot;,&quot;&quot;&quot;&quot;,&quot;YYYY-MM-DD&quot;)</B></span>)</p>
+
+<p class=code>&nbsp;&nbsp;}</p>
+
+<p class=code>do iod.close()</p>
+
+<p class=code>quit</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

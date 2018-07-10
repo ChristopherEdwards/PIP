@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+
+	<head>
+		<script type="text/javascript" src="copytoclipboard.js"></script> 
+	<script type = "text/javascript"> 
+		function showSqlResult(result){ 
+			var openWindow = window.open ("SQLResult","SQLResult");
+			openWindow.document.write (result);
+			openWindow.document.close();
+		}
+	</script>
+ 
+	
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!--                                           -->
+		<!-- PSL Web Developer                         -->
+		<!--                                           -->
+		<title>Profile WebTools</title>
+
+		<!--                                           -->
+		<!-- The module reference below is the link    -->
+		<!-- between html and your Web Toolkit module  -->		
+		<!--                                           -->
+		<meta name='gwt:module' content='com.fis.profile.ide.browser.ProfileBrowserIDE'/>
+
+		<!--                                           -->
+		<!-- Link CSS file                             -->
+		<!--                                           -->
+		<link rel='stylesheet' href='ProfileBrowserIDE.css'/>
+		<link rel="shortcut icon" type="image/ico" href="images/Profile_wb.ico" /> 
+
+	
+	</head>
+
+	<!--                                           -->
+	<!-- The body can have arbitrary html, or      -->
+	<!-- we leave the body empty because we want   -->
+	<!-- to create a completely dynamic ui         -->
+	<!--                                           -->
+	<body>
+
+		<!--                                            -->
+		<!-- This script is required bootstrap stuff.   -->
+		<!-- You can put it in the HEAD, but startup    -->
+		<!-- is slightly faster if you include it here. -->
+		<!--                                            -->
+		<script language="javascript" src="gwt.js"></script>
+
+		<!-- OPTIONAL: include this if you want history support -->
+		<iframe src="javascript:''" id="__gwt_historyFrame" style="width:0;height:0;border:0"></iframe>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,190 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>trim</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { width:552px; margin-left:18pt; border-spacing:0px; }
+tr.whs2 { x-cell-content-align:top; }
+td.whs3 { width:120px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs4 { width:432px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs5 { margin-left:0px; }
+p.whs6 { margin-left:0px; background-color:Transparent; }
+p.whs7 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs5 {margin-left:1pt; }";
+  strNSS += "p.whs6 {margin-left:1pt;background-color:white; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nString Class\nMethods\ntrim");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>trim Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">String</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class=BodyIndent>This method trims the characters from a string. This 
+ method replaces the $$TRIM^%ZS(), $$LTRIM^%ZS(), $$RTRIM^%ZS(), and $$RTB^%ZFUNC() 
+ functions.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>StringObject.trim(Number sides,String char)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="552" class="whs1">
+
+<tr valign="top" class="whs2">
+<td width="120px" class="whs3">
+<p>sides</td>
+<td width="432px" class="whs4">
+<p class="whs5">Denotes from which side(s) the character shall 
+ be removed:</p>
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>0 - Remove from both sides. 
+ This is the default.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>&gt;0 - Remove trailing 
+ characters.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>&lt;1 - Remove leading 
+ characters.</p></li>
+</ul></td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="120px" class="whs3">
+<p>char</td>
+<td colspan="1" rowspan="1" width="432px" class="whs4">
+<p class="whs6">The character 
+ to remove from the beginning and/or the end of the string. The default 
+ is space.</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>A String.</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs7">v7.0</p>
+
+<p class=Example>Example</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String HDR = &quot;*** Hello World! 
+ ***&quot;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// Remove leading asterisk first: &quot; 
+ Hello World! ***&quot;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String CLEANL = <span style="font-weight: bold;"><B>HDR.trim(-1,&quot;*&quot;)</B></span></p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// Remove trailing asterisk as well: 
+ &quot; Hello World! &quot;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String CLEANR = <span style="font-weight: bold;"><B>CLEANL.trim(1,&quot;*&quot;)</B></span></p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// Get rid of spaces as well (both sides)</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String ALLCLEAN = <span style="font-weight: bold;"><B>CLEAN.trim()</B></span> 
+ // &quot;Hello World!&quot;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

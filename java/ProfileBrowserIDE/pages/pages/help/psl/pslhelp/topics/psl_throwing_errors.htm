@@ -1,0 +1,267 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Throwing Exceptions</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+p.whs1 { margin-left:36px; }
+table.whs2 { x-cell-content-align:top; margin-left:36px; width:94.821%; border-spacing:0px; }
+col.whs3 { width:23.571%; }
+col.whs4 { width:72.881%; }
+tr.whs5 { x-cell-content-align:top; }
+td.whs6 { width:23.571%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; border-left-style:none; border-top-style:none; }
+p.whs7 { margin-left:12px; font-weight:normal; }
+td.whs8 { width:72.881%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-top-style:none; border-right-style:none; }
+td.whs9 { width:23.571%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; border-left-style:none; }
+td.whs10 { width:72.881%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; }
+td.whs11 { width:23.571%; padding-right:10px; padding-left:10px; border-right-style:none; border-left-style:none; border-bottom-style:none; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Using PSL\nException Handling\nThrowing Exceptions");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Throwing Exceptions</h1>
+
+<p>An exception can be thrown from any code block or subroutine using the 
+ PSL <span style="font-weight: bold;"><B>throw</B></span> statement. There are 
+ two ways to throw an error object.</p>
+
+<ul>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>To create and throw an 
+ error, use the following syntax:</p></li>
+</ul>
+
+<p class=Code
+	style="margin-left: 60px;">throw Class.new(&quot;Error&quot;,&quot;errorType,errorDescription,errorContext&quot;)</p>
+
+<p class="whs1">where:</p>
+
+<table x-use-null-cells cellspacing="0" width="94.821%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="23.571%" class="whs6">
+<p class="whs7">Error</td>
+<td width="72.881%" class="whs8">
+<p>The string &quot;Error&quot;, as that is currently the only &quot;throwable&quot; 
+ class.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="23.571%" class="whs9">
+<p class="whs7">errorType</td>
+<td width="72.881%" class="whs10">
+<p>An error type defined in the Error system table (STBLER). The default 
+ is ETUNDEF.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="23.571%" class="whs9">
+<p class="whs7">errorDescription</td>
+<td width="72.881%" class="whs10">
+<p>Optional free-form text description.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="23.571%" class="whs11">
+<p class="whs7">errorContext</td>
+<td width="72.881%" class="whs10">
+<p>Optional error-specific context that may be useful to the calling program.</td></tr>
+</table>
+
+<p class="whs1">&nbsp;</p>
+
+<ul>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>To re-throw an existing 
+ error object, use the following syntax:</p></li>
+</ul>
+
+<p class=Code
+	style="margin-left: 60px;">throw Error</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>If a catch statement has 
+ an optional exception type trap condition, the trap is limited to exceptions 
+ of that type. The scope of any previous catch statement handles all other 
+ exceptions.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>If an exception is thrown 
+ from inside a catch block, it is passed to the catch block in effect at 
+ the previous stack exception (to prevent infinite loops). The <span style="font-weight: bold;"><B>throw</B></span> 
+ command implicitly quits from the current block and passes an error object 
+ to the calling block or subroutine.</p></li>
+</ul>
+
+<p class=Example>Example #1</p>
+
+<p class=Code
+	style="margin-left: 36.00pt; text-indent: -18.00pt;">catch Error {</p>
+
+<p class=Code
+	style="margin-left: 36.00pt; text-indent: -18.00pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ ET=Error.type</p>
+
+<p class=Code
+	style="margin-left: 36.00pt; text-indent: -18.00pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ CONTEXT=Error.context</p>
+
+<p class=Code
+	style="margin-left: 36.00pt; text-indent: -18.00pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+ ET[&quot;%GTM&quot; do ZE^UTLERR quit</p>
+
+<p class=Code
+	style="margin-left: 36.00pt; text-indent: -18.00pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ RM=Error.description</p>
+
+<p class=Code
+	style="margin-left: 36.00pt; text-indent: -18.00pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ ET=ET_&quot;-&quot;_RM_&quot;-&quot;_Error.thrownAt</p>
+
+<p class=Code
+	style="margin-left: 36.00pt; text-indent: -18.00pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do 
+ ^UTLERR</p>
+
+<p class=Code
+	style="margin-left: 36.00pt; text-indent: -18.00pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+<p class=Code
+	style="margin-left: 36.00pt; text-indent: -18.00pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt; text-indent: -18.00pt;">if 'Db.isDefined(&quot;DEP&quot;,&quot;:CID&quot;) 
+ ...</p>
+
+<p class=Code
+	style="margin-left: 36.00pt; text-indent: -18.00pt;">&nbsp;&nbsp;&nbsp;throw 
+ &nbsp;Class.new(&quot;Error&quot;,&quot;INVLDADT,Invalid 
+ account&quot;)</p>
+
+<p class=Code
+	style="margin-left: 36.00pt; text-indent: -18.00pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt; text-indent: -18.00pt;">else &nbsp;type 
+ RecordDEP dep=Db.getRecord(“DEP”,”:CID”)</p>
+
+<p class=Example>Example #2</p>
+
+<p>This example illustrates how to throw and catch errors between main 
+ programs and subroutines (i.e.,&nbsp;at multiple stack levels).</p>
+
+<p class=Code>main // Main subroutine</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;catch 
+ xyz {</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ !,&quot;Tag main:&quot;,xyz.type,&quot; Thrown at:&quot;,xyz.thrownAt</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;do 
+ subr</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;type 
+ RecordDEP dep = Db.getRecord(&quot;DEP&quot;,1212)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;quit</p>
+
+<p class=Code>subr // </p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;catch 
+ error{</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ !,&quot;Tag subr:&quot;,error.type,&quot; Thrown at: &quot;,error.thrownAt</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw 
+ MyError</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;if 
+ x // will generate %GTM_E_UNDEF</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;quit</p>
+
+<p class=BodyTextBold>Results</p>
+
+<p>D ^T</p>
+
+<p>Tag subr: %GTM_E_UNDEF Thrown at: subr+4^T<br>
+Tag main: MyError Thrown at: vtrap2+6^T<br>
+%GTM-I-BREAK, Break instruction encountered</p>
+
+<p>At M source location +1^SCADMOD</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>addAttrib</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<style type="text/css">
+<!--
+p.whs1 { margin-left:24px; }
+table.whs2 { width:546px; margin-left:18pt; border-spacing:0px; }
+tr.whs3 { x-cell-content-align:top; }
+td.whs4 { width:114px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs5 { width:432px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs6 { margin-left:24px; x-condition:NotPrintedDocn; }
+p.whs7 { margin-left:48px; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nHTML Class\nMethods\naddAttrib");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>addAttrib Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">HTML</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class="whs1">This method defines schema attributes of 
+ the columns being returned. The formats currently supported are Boolean 
+ and Date. The data being sent to a client adds &lt;!&nbsp;Attributes&nbsp;elementName&nbsp;attribute&gt;.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>htmlObject.addAttrib(String label, String attributeList)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="546" class="whs2">
+
+<tr valign="top" class="whs3">
+<td width="114px" class="whs4">
+<p>label</td>
+<td width="432px" class="whs5">
+<p>The XML label for which the attribute is being defined.</td></tr>
+
+<tr valign="top" class="whs3">
+<td width="114px" class="whs4">
+<p>attribute list</td>
+<td width="432px" class="whs5">
+<p>A comma-separated list of elements. Valid attributes that can be applied 
+ to the elements are BOOLEAN and DATE. All other values will be discarded 
+ and replaced with CDATA.</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>An updated XML formatted string containing an XML ATTLIST.</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs6">v6.4</p>
+
+<p class=Example>Example</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">type HTML xx=Class.new(“HTML”)</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">set return=xx.addTitle(“MRPC98”)</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">set return=xx.addElement(“RECORD”,“DEP”)</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">set return=xx.addElement(“DEP”,“CID,IRN,BAL,MDT,SMET”)</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">set return=<span style="font-weight: bold;"><B>xx.addAttrib(“DEP”,“CID=,IRN=,BAL=,MDT=DATE,...</B></span></p>
+
+<p class=Code
+	style="margin-left: 36.00pt; font-weight: bold;">SMET=BOOLEAN”)</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">___________________________________________________________</p>
+
+<p class="whs7">The following is added by the methods listed 
+ above. The addAttrib is responsible for the lines starting with the line 
+ containing ATTLIST and ending with the line containing SMET. </p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">&lt;XML&gt;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">&lt;! DOCTYPE MRPC98 [</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">&lt;! ELEMENT RECORD (DEP)* &gt;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">&lt;! ELEMENT DEP (CID,IRN,BAL,MDT)* 
+ &gt;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">&lt;! ATTLIST DEP</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">CID CDATA&gt;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">IRN CDATA&gt;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">BAL CDATA&gt;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">MDT Format=Julian Start=1/1/1841&gt;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">SMET Format Boolean&gt;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">]&gt;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Variables Used within Method Subroutines</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<style type="text/css">
+<!--
+table.whs1 { x-cell-content-align:top; width:100%; border-spacing:0px; }
+col.whs2 { width:7.021%; }
+col.whs3 { width:92.979%; }
+tr.whs4 { x-cell-content-align:top; }
+td.whs5 { width:7.021%; padding-right:10px; padding-left:10px; border-right-style:none; border-left-style:none; border-top-style:none; border-bottom-style:none; }
+img_whs6 { border:none; width:15px; height:15px; float:none; border-style:none; }
+td.whs7 { width:92.979%; padding-right:10px; padding-left:10px; border-top-style:none; border-bottom-style:none; border-right-style:none; }
+table.whs8 { width:588px; margin-left:0.35pt; border-spacing:0px; }
+td.whs9 { width:156px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; border-right-style:none; border-top-width:1px; border-top-style:Solid; border-bottom-style:Solid; border-bottom-width:1px; }
+p.whs10 { margin-top:6pt; margin-bottom:6pt; }
+td.whs11 { width:264px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; border-right-style:none; border-top-width:1px; border-top-style:Solid; border-bottom-style:Solid; border-bottom-width:1px; }
+td.whs12 { width:168px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; border-top-width:1px; border-top-style:Solid; border-bottom-style:Solid; border-bottom-width:1px; }
+td.whs13 { width:156px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; background-color:#dfe1f9; }
+td.whs14 { width:264px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; background-color:#dfe1f9; }
+td.whs15 { width:168px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; background-color:#dfe1f9; }
+td.whs16 { width:156px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs17 { width:264px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs18 { width:168px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs19 { margin-top:5pt; margin-bottom:5pt; }
+td.whs20 { width:156px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; background-color:#dde0f7; }
+td.whs21 { width:264px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; background-color:#dde0f7; }
+td.whs22 { width:168px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; background-color:#dde0f7; }
+table.whs23 { margin-left:4.50pt; width:580px; border-spacing:0px; }
+col.whs24 { width:7.758%; }
+col.whs25 { width:92.242%; }
+td.whs26 { width:7.758%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+img_whs27 { width:15px; height:15px; float:none; border-style:none; }
+td.whs28 { width:92.242%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "table.whs8 {margin-left:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Using PSL\nImplementing Methods\nVariables Used within Method Subroutines");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Variables Used within Method Subroutines</h1>
+
+<p>The variables that the PSL compiler uses are visible within the method 
+ subroutines. The requirements of the method logic determine which of these 
+ variables will be referenced. The list below contains variables typically 
+ useful for method programming.</p>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs1">
+<col class="whs2">
+<col class="whs3">
+
+<tr valign="top" class="whs4">
+<td width="7.021%" class="whs5">
+<p><img src="../image/i_blue_sm.jpg" x-maintain-ratio="TRUE" width="15px" height="15px" border="0" class="img_whs6"></td>
+<td width="92.979%" class="whs7">
+<p>PSL uses other variables and data structures as well. However, they 
+ should not be used because they may change as the compiler is enhanced 
+ and will not be protected for backward compatibility.</td></tr>
+</table>
+
+<p class=Example>Example</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">set abc=rs.getCol(bal&quot;)</p>
+
+<table x-use-null-cells cellspacing="0" width="588" class="whs8">
+
+<tr valign="top" class="whs4">
+<td width="156px" class="whs9">
+<p class="whs10"><span style="font-weight: bold;"><B>Variable 
+ Name</B></span></td>
+<td width="264px" class="whs11">
+<p class="whs10"><span style="font-weight: bold;"><B>Description</B></span></td>
+<td width="168px" class="whs12">
+<p class="whs10"><span style="font-weight: bold;"><B>Value 
+ in this Example</B></span></td></tr>
+
+<tr valign="top" class="whs4">
+<td bgcolor="#DFE1F9" width="156px" class="whs13">
+<p class=TableFieldShaded
+	style="margin-top: 5pt; margin-bottom: 5pt;">actual(1-n)</td>
+<td bgcolor="#DFE1F9" width="264px" class="whs14">
+<p class=TableFieldShaded
+	style="margin-top: 5pt; margin-bottom: 5pt;">Actual parameter passed</td>
+<td bgcolor="#DFE1F9" width="168px" class="whs15">
+<p class=TableFieldShaded
+	style="margin-top: 5pt; margin-bottom: 5pt;">&quot;bal&quot;</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="156px" class="whs16">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">attrib(1-n)</td>
+<td width="264px" class="whs17">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">Vptr&lt;tab&gt;class&lt;tab&gt;byref</td>
+<td width="168px" class="whs18">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">&lt;undef&gt;, &quot;bal&quot; 
+ is literal</td></tr>
+
+<tr valign="top" class="whs4">
+<td bgcolor="#DFE1F9" width="156px" class="whs13">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">class</td>
+<td bgcolor="#DFE1F9" width="264px" class="whs14">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">Return class of method</td>
+<td bgcolor="#DFE1F9" width="168px" class="whs15">
+<p class="whs19">String</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="156px" class="whs16">
+<p class="whs19">cmd</td>
+<td width="264px" class="whs17">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">PSL command in scope</td>
+<td width="168px" class="whs18">
+<p class="whs19">S</td></tr>
+
+<tr valign="top" class="whs4">
+<td bgcolor="#DDE0F7" width="156px" class="whs20">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">fset</td>
+<td bgcolor="#DDE0F7" width="264px" class="whs21">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">&quot;var&quot; is under 
+ assignment scope</td>
+<td bgcolor="#DDE0F7" width="168px" class="whs22">
+<p class="whs19">1</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="156px" class="whs16">
+<p class="whs19">line</td>
+<td width="264px" class="whs17">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">Source line number (1-n)</td>
+<td width="168px" class="whs18">
+<p class="whs19">1</td></tr>
+
+<tr valign="top" class="whs4">
+<td bgcolor="#DDE0F7" width="156px" class="whs20">
+<p class="whs19">lptr</td>
+<td bgcolor="#DDE0F7" width="264px" class="whs21">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">Current pointer in m2src()</td>
+<td bgcolor="#DDE0F7" width="168px" class="whs22">
+<p class="whs19">1</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="156px" class="whs16">
+<p class="whs19">mcode</td>
+<td width="264px" class="whs17">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">Current generated code 
+ for this line</td>
+<td width="168px" class="whs18">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">&lt;tab&gt;S&lt;space&gt;</td></tr>
+
+<tr valign="top" class="whs4">
+<td bgcolor="#DDE0F7" width="156px" class="whs20">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">methods(reference)</td>
+<td bgcolor="#DDE0F7" width="264px" class="whs21">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">Local history of methods 
+ used</td>
+<td bgcolor="#DDE0F7" width="168px" class="whs22">
+<p class="whs19">&nbsp;</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="156px" class="whs16">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">msrc</td>
+<td width="264px" class="whs17">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">Line number of last output 
+ line</td>
+<td width="168px" class="whs18">
+<p class="whs19">0</td></tr>
+
+<tr valign="top" class="whs4">
+<td bgcolor="#DDE0F7" width="156px" class="whs20">
+<p class="whs19">objectLevel</td>
+<td bgcolor="#DDE0F7" width="264px" class="whs21">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">Scope level of &quot;objectName&quot;</td>
+<td bgcolor="#DDE0F7" width="168px" class="whs22">
+<p class="whs19">1</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="156px" class="whs16">
+<p class="whs19">objectName</td>
+<td width="264px" class="whs17">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">Name of object identifier</td>
+<td width="168px" class="whs18">
+<p class="whs19">Rs</td></tr>
+
+<tr valign="top" class="whs4">
+<td bgcolor="#DDE0F7" width="156px" class="whs20">
+<p class="whs19">objectScope</td>
+<td bgcolor="#DDE0F7" width="264px" class="whs21">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">Formal, Literal, New, 
+ Public</td>
+<td bgcolor="#DDE0F7" width="168px" class="whs22">
+<p class="whs19">New</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="156px" class="whs16">
+<p class="whs19">oLvn</td>
+<td width="264px" class="whs17">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">Object storage array name</td>
+<td width="168px" class="whs18">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">Vobj</td></tr>
+
+<tr valign="top" class="whs4">
+<td bgcolor="#DDE0F7" width="156px" class="whs20">
+<p class="whs19">postCond</td>
+<td bgcolor="#DDE0F7" width="264px" class="whs21">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">Post conditional expression</td>
+<td bgcolor="#DDE0F7" width="168px" class="whs22">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">&lt;Null&gt;</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="156px" class="whs16">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">postProc(n)</td>
+<td width="264px" class="whs17">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">Post-processor command 
+ to execute after first pass of compiler</td>
+<td width="168px" class="whs18">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">Generated within method 
+ code, if required</td></tr>
+
+<tr valign="top" class="whs4">
+<td bgcolor="#DDE0F7" width="156px" class="whs20">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">reClass</td>
+<td bgcolor="#DDE0F7" width="264px" class="whs21">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">Record&lt;class&gt; prefix</td>
+<td bgcolor="#DDE0F7" width="168px" class="whs22">
+<p class="whs19">Record</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="156px" class="whs16">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">reference</td>
+<td width="264px" class="whs17">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">Method reference</td>
+<td width="168px" class="whs18">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">Rs.getCol()</td></tr>
+
+<tr valign="top" class="whs4">
+<td bgcolor="#DDE0F7" width="156px" class="whs20">
+<p class="whs19">return</td>
+<td bgcolor="#DDE0F7" width="264px" class="whs21">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">M expression to append 
+ to mcode</td>
+<td bgcolor="#DDE0F7" width="168px" class="whs22">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">$P(vobj(rs),$C(9),1)</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="156px" class="whs16">
+<p class="whs19">subRout</td>
+<td width="264px" class="whs17">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">The current subroutine 
+ name</td>
+<td width="168px" class="whs18">
+<p class="whs19">&nbsp;</td></tr>
+
+<tr valign="top" class="whs4">
+<td bgcolor="#DDE0F7" width="156px" class="whs20">
+<p class="whs19">tab</td>
+<td bgcolor="#DDE0F7" width="264px" class="whs21">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">The &lt;tab&gt; character</td>
+<td bgcolor="#DDE0F7" width="168px" class="whs22">
+<p class="whs19">&nbsp;</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="156px" class="whs16">
+<p class="whs19">var</td>
+<td width="264px" class="whs17">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">Variable name to assign 
+ unless void</td>
+<td width="168px" class="whs18">
+<p class="whs19">Abc</td></tr>
+
+<tr valign="top" class="whs4">
+<td bgcolor="#DDE0F7" width="156px" class="whs20">
+<p class="whs19">varLevel</td>
+<td bgcolor="#DDE0F7" width="264px" class="whs21">
+<p class=Field
+	style="margin-top: 5pt; margin-bottom: 5pt;">Scope level of &quot;var&quot;</td>
+<td bgcolor="#DDE0F7" width="168px" class="whs22">
+<p class="whs19">1</td></tr>
+</table>
+
+<p class=Code
+	style="margin-left: 36.00pt;">&nbsp;</p>
+
+<p class=Note
+	style="margin-top: 0; margin-bottom: 0;">&nbsp;</p>
+
+<table x-use-null-cells cellspacing="0" width="580" class="whs23">
+<col class="whs24">
+<col class="whs25">
+
+<tr valign="top" class="whs4">
+<td width="7.758%" class="whs26">
+<p class=Note><img src="../image/i_blue_sm.jpg" alt="image\msgs.gif" x-maintain-ratio="TRUE" width="15px" height="15px" border="0" class="img_whs27"></td>
+<td width="92.242%" class="whs28">
+<p class=Note>The actual() array will contain a value for every formal 
+ parameter defined in the method interface. The value will be &lt;null&gt; 
+ if a parameter was not provided. The attrib() array contains entries for 
+ parameters passed as variables but not for literal strings.</td></tr>
+</table>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

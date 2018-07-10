@@ -1,0 +1,6 @@
+{"environment": 
+[
+{"name":"v73tools", "user":"1", "password":"xxx", "server":"atllpf01", "port":"19111", "ibs":"SCA$IBS"}, 
+{"name":"p04devlx","user":"1", "password":"xxx", "server":"10.132.132.181", "port":"18449", "ibs":"SCA$IBS"}
+] 
+}

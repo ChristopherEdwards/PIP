@@ -1,0 +1,280 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" 
+ xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<title>Casting Objects in PSL</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="File-List" href="Casting_Objects_in_PSL_files/filelist.xml">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style>
+<!--
+; @font-face { font-family:Verdana; panose-1:2 11 6 4 3 5 4 4 2 4; mso-font-charset:0; mso-generic-font-family:swiss; mso-font-pitch:variable; mso-font-signature:536871559 0 0 0 415 0; }
+; @page Section1 { x-size:8.5in 11.0in; margin:1.0in 1.25in 1.0in 1.25in; mso-header-margin:.5in; mso-footer-margin:.5in; mso-paper-source:0; }
+; @list l0 { mso-list-id:115176631; mso-list-template-ids:-634769312; }
+; @list l0\003alevel1 { mso-level-number-format:bullet; mso-level-text:\f0a7; mso-level-tab-stop:.5in; mso-level-number-position:left; text-indent:-.25in; mso-ansi-font-size:10.0pt; font-family:Wingdings; }
+; @list l1 { mso-list-id:162284357; mso-list-template-ids:-376296776; }
+; @list l1\003alevel1 { mso-level-number-format:bullet; mso-level-text:\f0a7; mso-level-tab-stop:.5in; mso-level-number-position:left; text-indent:-.25in; mso-ansi-font-size:10.0pt; font-family:Wingdings; }
+; @list l2 { mso-list-id:387151239; mso-list-template-ids:250495478; }
+; @list l2\003alevel1 { mso-level-number-format:bullet; mso-level-text:\f0b7; mso-level-tab-stop:.5in; mso-level-number-position:left; text-indent:-.25in; mso-ansi-font-size:10.0pt; font-family:Symbol; }
+; @list l2\003alevel2 { mso-level-number-format:bullet; mso-level-text:\f0a7; mso-level-tab-stop:1.0in; mso-level-number-position:left; text-indent:-.25in; mso-ansi-font-size:10.0pt; font-family:Wingdings; }
+; @list l2\003alevel3 { mso-level-tab-stop:1.5in; mso-level-number-position:left; text-indent:-.25in; }
+; @list l2\003alevel4 { mso-level-tab-stop:2.0in; mso-level-number-position:left; text-indent:-.25in; }
+; @list l2\003alevel5 { mso-level-tab-stop:2.5in; mso-level-number-position:left; text-indent:-.25in; }
+; @list l2\003alevel6 { mso-level-tab-stop:3.0in; mso-level-number-position:left; text-indent:-.25in; }
+; @list l2\003alevel7 { mso-level-tab-stop:3.5in; mso-level-number-position:left; text-indent:-.25in; }
+; @list l2\003alevel8 { mso-level-tab-stop:4.0in; mso-level-number-position:left; text-indent:-.25in; }
+; @list l2\003alevel9 { mso-level-tab-stop:4.5in; mso-level-number-position:left; text-indent:-.25in; }
+; @list l3 { mso-list-id:552694649; mso-list-template-ids:-2103924448; }
+; @list l3\003alevel1 { mso-level-number-format:bullet; mso-level-text:\f0a7; mso-level-tab-stop:.5in; mso-level-number-position:left; text-indent:-.25in; mso-ansi-font-size:10.0pt; font-family:Wingdings; }
+; @list l4 { mso-list-id:567501027; mso-list-template-ids:1838344184; }
+; @list l4\003alevel1 { mso-level-number-format:bullet; mso-level-text:\f0a7; mso-level-tab-stop:.5in; mso-level-number-position:left; text-indent:-.25in; mso-ansi-font-size:10.0pt; font-family:Wingdings; }
+; @list l5 { mso-list-id:718013138; mso-list-template-ids:-1195064390; }
+; @list l5\003alevel1 { mso-level-number-format:bullet; mso-level-text:\f0a7; mso-level-tab-stop:.5in; mso-level-number-position:left; text-indent:-.25in; mso-ansi-font-size:10.0pt; font-family:Wingdings; }
+; @list l6 { mso-list-id:932472713; mso-list-template-ids:-1548826784; }
+; @list l6\003alevel1 { mso-level-number-format:bullet; mso-level-text:\f0a7; mso-level-tab-stop:.5in; mso-level-number-position:left; text-indent:-.25in; mso-ansi-font-size:10.0pt; font-family:Wingdings; }
+; @list l7 { mso-list-id:1273784752; mso-list-template-ids:-1769982678; }
+; @list l7\003alevel1 { mso-level-number-format:bullet; mso-level-text:\f0a7; mso-level-tab-stop:.5in; mso-level-number-position:left; text-indent:-.25in; mso-ansi-font-size:10.0pt; font-family:Wingdings; }
+; p.MsoNormal { margin:0in; margin-bottom:.0001pt; line-height:normal; mso-pagination:widow-orphan; font-size:12.0pt; font-family:Times New Roman; mso-fareast-font-family:Times New Roman; color:windowtext; }
+li.MsoNormal { margin:0in; margin-bottom:.0001pt; line-height:normal; mso-pagination:widow-orphan; font-size:12.0pt; font-family:Times New Roman; mso-fareast-font-family:Times New Roman; color:windowtext; }
+div.MsoNormal { margin:0in; margin-bottom:.0001pt; line-height:normal; mso-pagination:widow-orphan; font-size:12.0pt; font-family:Times New Roman; mso-fareast-font-family:Times New Roman; color:windowtext; }
+LI.kadov-p-CMsoNormal { line-height:normal; mso-pagination:widow-orphan; font-size:12.0pt; font-family:Times New Roman; mso-fareast-font-family:Times New Roman; color:windowtext; }
+h1 { margin-top:4.0pt; margin-right:0in; margin-bottom:12.0pt; margin-left:0in; line-height:150%; mso-pagination:widow-orphan; mso-outline-level:1; background:#0000ff; font-size:12.0pt; font-weight:bold; }
+LI.kadov-h1 { line-height:150%; mso-pagination:widow-orphan; mso-outline-level:1; font-size:12.0pt; font-weight:bold; }
+h2 { margin-top:.25in; margin-right:0in; margin-bottom:12.0pt; margin-left:0in; line-height:normal; mso-pagination:widow-orphan; mso-outline-level:2; font-size:11.0pt; color:windowtext; font-weight:bold; }
+LI.kadov-h2 { line-height:normal; mso-pagination:widow-orphan; mso-outline-level:2; font-size:11.0pt; color:windowtext; font-weight:bold; }
+h6 { margin-top:.25in; margin-right:0in; margin-bottom:12.0pt; margin-left:0in; line-height:normal; mso-pagination:widow-orphan; mso-outline-level:6; font-size:11.0pt; color:windowtext; font-weight:bold; }
+LI.kadov-h6 { line-height:normal; mso-pagination:widow-orphan; mso-outline-level:6; font-size:11.0pt; color:windowtext; font-weight:bold; }
+a:link { color:#0000ff; x-text-underline:normal; text-underline:single; text-decoration:underline; color:#0000ff; }
+span.MsoHyperlink { color:#0000ff; x-text-underline:normal; text-underline:single; text-decoration:underline; }
+a:visited { color:#800080; x-text-underline:normal; text-underline:single; text-decoration:underline; color:#800080; }
+span.MsoHyperlinkFollowed { color:#800080; x-text-underline:normal; text-underline:single; text-decoration:underline; }
+p { margin-top:0in; margin-right:0in; margin-bottom:12.0pt; margin-left:0in; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; }
+LI.kadov-p { mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; }
+p.bullet1 { mso-style-name:bullet1; margin-right:0in; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; }
+li.bullet1 { mso-style-name:bullet1; margin-right:0in; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; }
+div.bullet1 { mso-style-name:bullet1; margin-right:0in; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; }
+LI.kadov-p-Cbullet1 { mso-style-name:bullet1; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; }
+p.bodyindent { mso-style-name:bodyindent; margin-top:0in; margin-right:0in; margin-bottom:.0001pt; margin-left:16.0pt; line-height:normal; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; }
+li.bodyindent { mso-style-name:bodyindent; margin-top:0in; margin-right:0in; margin-bottom:.0001pt; margin-left:16.0pt; line-height:normal; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; }
+div.bodyindent { mso-style-name:bodyindent; margin-top:0in; margin-right:0in; margin-bottom:.0001pt; margin-left:16.0pt; line-height:normal; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; }
+LI.kadov-p-Cbodyindent { mso-style-name:bodyindent; line-height:normal; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; }
+p.bodytextbold { mso-style-name:bodytextbold; margin-top:.25in; margin-right:0in; margin-bottom:12.0pt; margin-left:0in; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; font-weight:bold; }
+li.bodytextbold { mso-style-name:bodytextbold; margin-top:.25in; margin-right:0in; margin-bottom:12.0pt; margin-left:0in; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; font-weight:bold; }
+div.bodytextbold { mso-style-name:bodytextbold; margin-top:.25in; margin-right:0in; margin-bottom:12.0pt; margin-left:0in; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; font-weight:bold; }
+LI.kadov-p-Cbodytextbold { mso-style-name:bodytextbold; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; font-weight:bold; }
+p.field { mso-style-name:field; margin-top:0in; margin-right:0in; margin-bottom:6.0pt; margin-left:0in; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; }
+li.field { mso-style-name:field; margin-top:0in; margin-right:0in; margin-bottom:6.0pt; margin-left:0in; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; }
+div.field { mso-style-name:field; margin-top:0in; margin-right:0in; margin-bottom:6.0pt; margin-left:0in; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; }
+LI.kadov-p-Cfield { mso-style-name:field; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; }
+p.code { mso-style-name:code; margin-top:0in; margin-right:0in; margin-bottom:12.0pt; margin-left:.25in; line-height:0%; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; }
+li.code { mso-style-name:code; margin-top:0in; margin-right:0in; margin-bottom:12.0pt; margin-left:.25in; line-height:0%; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; }
+div.code { mso-style-name:code; margin-top:0in; margin-right:0in; margin-bottom:12.0pt; margin-left:.25in; line-height:0%; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; }
+LI.kadov-p-Ccode { mso-style-name:code; line-height:0%; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; }
+p.example { mso-style-name:example; margin-right:0in; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; font-weight:bold; }
+li.example { mso-style-name:example; margin-right:0in; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; font-weight:bold; }
+div.example { mso-style-name:example; margin-right:0in; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; font-weight:bold; }
+LI.kadov-p-Cexample { mso-style-name:example; mso-pagination:widow-orphan; font-size:9.0pt; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; font-weight:bold; }
+ins { mso-style-type:export-only; x-text-underline:off; x-text-overline:off; x-text-line-through:off; text-decoration:none none none; }
+span.msoIns { mso-style-type:export-only; x-text-underline:normal; text-underline:single; text-decoration:underline; }
+span.msoDel { mso-style-type:export-only; x-text-line-through:normal; color:#ff0000; text-decoration:line-through; }
+span.SpellE { mso-spl-e:yes; }
+span.GramE { mso-gram-e:yes; }
+div.Section1 { page:Section1; }
+lfo3 { mso-level-numbering:continue; mso-level-text:\f0a7; mso-level-tab-stop:.5in; mso-level-number-position:left; text-indent:-.25in; mso-ansi-font-size:10.0pt; font-family:Wingdings; }
+ol { margin-bottom:0in; }
+ul { margin-bottom:0in; }
+body { background-color:#ffffff; }
+-->
+</style><style type="text/css">
+<!--
+p.whs1 { margin-left:45.0pt; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body lang="EN-US" style="tab-interval: .5in;"><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Programming Standards\nCasting Objects in PSL");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<div class=Section1>
+<h1>Casting Objects in PSL</h1>
+
+<p>PSL supports the ability to change the class of an instantiated object 
+ to its parent class, descendant class, or a compatible class. Compatible 
+ classes include String, Number, Date, Boolean, and Time. To reference 
+ the properties of a descendant class that are not in the parent class 
+ (e.g., DEP.BALAVL is not in the ACN table), the parent class must first 
+ be cast into the descendant. When an object is cast into another class, 
+ the original class is overwritten within the scope level of the cast.</p>
+
+<p>The following rules govern casting objects in PSL:</p>
+
+<ul>
+	
+	<li class=kadov-p-Cbullet1><p class=bullet1>A 
+ value of any data type can be cast to its own type.</p></li>
+	
+	<li class=kadov-p-Cbullet1><p class=bullet1><span style="font-size: 10.0pt;
+	mso-bidi-font-size: 9.0pt;
+	font-family: Wingdings;
+	mso-fareast-font-family: Wingdings;
+	mso-bidi-font-family: Wingdings;"><font size=2 style="font-size:10pt;"><span style="mso-list: Ignore;"><span 
+ style="font: 7.0pt 'Times New Roman';"><font size=1 style="font-size:7pt;">&nbsp;</font></span></span></font></span>Values 
+ of primitive data types are converted according to the to&lt;type&gt; 
+ method contained in the OBJECTMET table for the type being cast from. 
+ If this method does not exist, the value is not changed; however, the 
+ type is changed. </p></li>
+	
+	<li class=kadov-p-Cbullet1><p class=bullet1>A value of any 
+ primitive data type cannot be cast to a reference data type. </p></li>
+	
+	<li class=kadov-p-Cbullet1><p class=bullet1>A value of any 
+ reference data type cannot be cast to a primitive data type.</p></li>
+	
+	<li class=kadov-p-Cbullet1><p class=bullet1>A reference to a class 
+ type can be cast to the ancestor (<span class=SpellE>superclass</span>) 
+ of that class.</p></li>
+	
+	<li class=kadov-p-Cbullet1><p class=bullet1>The cast expression 
+ cannot be placed into a conditional expression, since logical conditions 
+ cannot be tested at compile time.</p></li>
+	
+	<li class=kadov-p-Cbullet1><p class=bullet1>A reference to 
+ a class type can be cast to the type of a descendant (subclass) of that 
+ class if the reference actually refers to an object of the specified class 
+ or any of its subclasses. Generally, the compiler must generate a run-time 
+ test to verify that the object is of the appropriate type. </p></li>
+</ul>
+
+<p class=example
+	style="margin-left: 45.0pt;">Example</p>
+
+<p class="whs1">A <span class=SpellE>RecordACN</span> object 
+ may be cast into either of its descendants, <span class=SpellE>RecordDEP</span> 
+ or <span class=SpellE>RecordLN</span>. However, a <span class=SpellE>RecordDEP</span> 
+ object cannot be cast as a <span class=SpellE>RecordLN</span> object or 
+ vice versa, because <span class=SpellE>RecordLN</span> is not a descendant 
+ or ancestor of <span class=SpellE>RecordDEP</span>.</p>
+
+<p class="whs1">If an ancestor class may conditionally 
+ be one or another of its descendants, the PSL source code should be structured 
+ as in the following code. In <span class=GramE>this</span> example, because 
+ <span class=SpellE>RecordACN</span> is cast in a nested block, the scope 
+ of the cast is within the block and returns to the original scope when 
+ the block ends. The code blocks can also be optimized when the #OPTIMIZE 
+ qualifier is on, while passing objects into a subroutine disables code 
+ optimization.</p>
+
+<p class=code
+	style="margin-left: .75in;">#optimize</p>
+
+<p class=code
+	style="margin-left: .75in;"><span class=GramE>type</span> Number BALANCE</p>
+
+<p class=code
+	style="margin-left: .75in;"><span class=GramE>type</span> <span class=SpellE>RecordACN</span> 
+ <span class=SpellE>acn</span> = <span class=SpellE>Db.getRecord</span>(&quot;ACN&quot;,&quot;CID=:AREF&quot;)</p>
+
+<p class=code
+	style="margin-left: .75in;"><span class=GramE>if</span> COMP = &quot;%PCOL&quot; 
+ set BALANCE = <span class=SpellE>acn.balcol</span></p>
+
+<p class=code
+	style="margin-left: .75in;"><span class=GramE>else &nbsp;if</span> 
+ <span class=SpellE>acn.cls</span> = &quot;L&quot; do {</p>
+
+<p class=code
+	style="margin-left: .75in;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span 
+ class=GramE>set</span> <span class=SpellE>acn</span> 
+ = {<span class=SpellE>RecordLN</span>}<span class=SpellE>acn</span></p>
+
+<p class=code
+	style="margin-left: .75in;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span 
+ class=GramE>set</span> BALANCE = <span class=SpellE>acn.avlbal</span></p>
+
+<p class=code
+	style="margin-left: 81.0pt;">&nbsp;}</p>
+
+<p class=code
+	style="margin-left: .75in;"><span class=GramE>else &nbsp;do</span> 
+ {</p>
+
+<p class=code
+	style="margin-left: .75in;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span 
+ class=GramE>set</span> <span class=SpellE>acn</span> 
+ = {<span class=SpellE>RecordDEP</span>}<span class=SpellE>acn</span></p>
+
+<p class=code
+	style="margin-left: .75in;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span 
+ class=GramE>set</span> BALANCE = <span class=SpellE>acn.balavl</span></p>
+
+<p class=code
+	style="margin-left: .75in;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+<p class=code
+	style="margin-left: .75in;"><span class=GramE>quit</span> BALANCE</p>
+</div>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

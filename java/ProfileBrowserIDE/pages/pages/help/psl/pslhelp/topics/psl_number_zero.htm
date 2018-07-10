@@ -1,0 +1,231 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>zero</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { width:534px; margin-left:18pt; border-spacing:0px; }
+tr.whs2 { x-cell-content-align:top; }
+td.whs3 { width:96px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs4 { width:438px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs5 { margin-left:0px; }
+p.whs6 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs5 {margin-left:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nNumber Class\nMethods\nzero");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>zero Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;"><span><span style="x-condition: NotPrintedDocn;"><span>Class: 
+ </span><span style="font-weight: normal; x-condition: NotPrintedDocn;">Number</span></span></span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class=BodyIndent>This method formats the number by filling in zeros 
+ to obtain the specified field width.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>NumberObject.zero(Number length,Number decimal,</p>
+
+<p class=Code>Boolean implied,Number sign)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="534" class="whs1">
+
+<tr valign="top" class="whs2">
+<td width="96px" class="whs3">
+<p>length</td>
+<td width="438px" class="whs4">
+<p class="whs5">The length of the result.</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="96px" class="whs3">
+<p>decimal</td>
+<td colspan="1" rowspan="1" width="438px" class="whs4">
+<p class="whs5">The number of decimal places in the result. 
+ Rounding to the nearest value is applied, if needed.</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="96px" class="whs3">
+<p>implied</td>
+<td colspan="1" rowspan="1" width="438px" class="whs4">
+<p class="whs5">An option that indicates how decimal values 
+ appear in the result:</p>
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1><span style="font-weight: bold;"><B>0</B></span> 
+ - The decimal dot appears in the result</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1><span style="font-weight: bold;"><B>1</B></span> 
+ - The decimal dot appears does not appear in the result because its position 
+ is implied.</p></li>
+</ul></td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="96px" class="whs3">
+<p>sign</td>
+<td colspan="1" rowspan="1" width="438px" class="whs4">
+<p class="whs5">A number that indicates the position of the 
+ sign.</p>
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1><span style="font-weight: bold;"><B>0</B></span> 
+ - No special treatment of the sign. Leading zeros are inserted before 
+ the sign.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1><span style="font-weight: bold;"><B>1</B></span> 
+ - Leading sign. All results are signed, and the sign occurs in the first 
+ position.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1><span style="font-weight: bold;"><B>2</B></span> 
+ - Trailing sign. All results are signed, and the sign occurs in the last 
+ position.</p></li>
+</ul></td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>An string consisting of digits, sign, and decimal dot 
+ only.</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs6">Profile v7.0</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>// Examples with positive and negative values</p>
+
+<p class=Code>type Number POS = 16.384</p>
+
+<p class=Code>type Number NEG = -51.2</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>// Examples with implied=1</p>
+
+<p class=Code>Type String POS10 = <span style="font-weight: bold;"><B>POS.zero(7,2,1,0</B></span>) 
+ ==&gt; &quot;0001638&quot;</p>
+
+<p class=Code>Type String NEG10 = <span style="font-weight: bold;"><B>NEG.zero(7,2,1,0)</B></span> 
+ ==&gt; &quot;00-5120&quot;</p>
+
+<p class=Code>Type String POS11 = <span style="font-weight: bold;"><B>POS.zero(7,2,1,1)</B></span> 
+ ==&gt; &quot;+001638&quot;</p>
+
+<p class=Code>Type String NEG11 = <span style="font-weight: bold;"><B>NEG.zero(7,2,1,1)</B></span> 
+ ==&gt; &quot;-005120&quot;</p>
+
+<p class=Code>Type String POS12 = <span style="font-weight: bold;"><B>POS.zero(7,2,1,2)</B></span> 
+ ==&gt; &quot;001638+&quot;</p>
+
+<p class=Code>Type String NEG12 = <span style="font-weight: bold;"><B>NEG.zero(7,2,1,2)</B></span> 
+ ==&gt; &quot;005120-&quot;</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>// Examples with implied=0</p>
+
+<p class=Code>Type String POS00 = <span style="font-weight: bold;"><B>POS.zero(7,2,0,0)</B></span> 
+ ==&gt; 0016.38</p>
+
+<p class=Code>Type String NEG00 = <span style="font-weight: bold;"><B>NEG.zero(7,2,0,0)</B></span> 
+ ==&gt; 0-51.20</p>
+
+<p class=Code>Type String POS01 = <span style="font-weight: bold;"><B>POS.zero(7,2,0,1)</B></span> 
+ ==&gt; +016.38</p>
+
+<p class=Code>Type String NEG01 = <span style="font-weight: bold;"><B>NEG.zero(7,2,0,1)</B></span> 
+ ==&gt; -051.20</p>
+
+<p class=Code>Type String POS02 = <span style="font-weight: bold;"><B>POS.zero(7,2,0,2)</B></span> 
+ ==&gt; 016.38+</p>
+
+<p class=Code>Type String NEG02 = <span style="font-weight: bold;"><B>NEG.zero(7,2,0,2)</B></span> 
+ ==&gt; 051.20-</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

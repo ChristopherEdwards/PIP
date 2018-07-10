@@ -1,0 +1,144 @@
+P { 
+   font-family:Verdana; 
+   font-size:9.0pt; 
+   color:#000000; 
+   line-height:12.0pt; 
+   margin-top:0.0pt; 
+   margin-bottom:12pt; 
+   font-weight:normal;  }
+LI.kadov-P { 
+            font-family:Verdana; 
+            font-size:9.0pt; 
+            color:#000000; 
+            line-height:12.0pt; 
+            font-weight:normal;  }
+H1 { 
+    font-family:Verdana; 
+    font-weight:bold; 
+    font-size:12.0pt; 
+    background-color:#0000ff; 
+    text-align:left; 
+    color:#ffffff; 
+    margin-top:4.0pt; 
+    margin-bottom:12.0pt; 
+    line-height:150%;  }
+LI.kadov-H1 { 
+             font-family:Verdana; 
+             font-weight:bold; 
+             font-size:12.0pt; 
+             text-align:left; 
+             color:#ffffff; 
+             line-height:150%;  }
+H2 { 
+    margin-bottom:12pt; 
+    margin-top:18pt; 
+    font-size:11pt; 
+    font-weight:bold; 
+    font-style:normal; 
+    font-family:Arial, sans-serif;  }
+LI.kadov-H2 { 
+             font-size:11pt; 
+             font-weight:bold; 
+             font-style:normal; 
+             font-family:Arial, sans-serif;  }
+BODY { 
+      background-color:#ffffff;  }
+P.Bullet1 { 
+           font-family:Verdana; 
+           font-size:9.0pt; 
+           color:#000000; 
+           list-style:square; 
+           margin-left:0in;  }
+LI.kadov-P-CBullet1 { 
+                     font-family:Verdana; 
+                     font-size:9.0pt; 
+                     color:#000000; 
+                     list-style:square;  }
+P.BodyIndent { 
+              font-family:Verdana; 
+              font-size:9.0pt; 
+              color:#000000; 
+              margin-left:16.0pt; 
+              line-height:Normal; 
+              margin-bottom:0pt;  }
+LI.kadov-P-CBodyIndent { 
+                        font-family:Verdana; 
+                        font-size:9.0pt; 
+                        color:#000000; 
+                        line-height:Normal;  }
+A.expandspot { 
+              cursor:hand; 
+              font-style:normal; 
+              color:#800080;  }
+SPAN.expandtext { 
+                 font-weight:normal; 
+                 font-style:italic; 
+                 color:#0000ff;  }
+A.dropspot { 
+            font-style:italic; 
+            cursor:hand; 
+            color:#008000;  }
+A.glossterm { 
+             cursor:hand; 
+             font-style:normal; 
+             color:#800080;  }
+SPAN.glosstext { 
+                color:#0000ff; 
+                font-weight:normal; 
+                font-style:italic;  }
+P.BodyTextBold { 
+                font-weight:bold; 
+                font-style:normal; 
+                margin-top:18pt;  }
+LI.kadov-P-CBodyTextBold { 
+                          font-weight:bold; 
+                          font-style:normal;  }
+P.Field { 
+         margin-bottom:6pt;  }
+LI.kadov-P-CField {  }
+A:visited { 
+           color:#800080;  }
+A:active { 
+          color:#0000ff;  }
+A:link {  }
+H6 { 
+    font-family:Arial, sans-serif; 
+    font-weight:bold; 
+    font-style:normal; 
+    margin-top:18pt; 
+    margin-bottom:12pt; 
+    font-size:11pt;  }
+LI.kadov-H6 { 
+             font-family:Arial, sans-serif; 
+             font-weight:bold; 
+             font-style:normal; 
+             font-size:11pt;  }
+P.Code { 
+        margin-left:18pt; 
+        line-height:0; 
+        font-family:"Courier New" , monospace; 
+        font-size:9pt;  }
+LI.kadov-P-CCode { 
+                  line-height:0; 
+                  font-family:"Courier New" , monospace; 
+                  font-size:9pt;  }
+P.Example { 
+           font-weight:bold; 
+           font-style:normal; 
+           color:#0000ff; 
+           margin-left:0pt;  }
+LI.kadov-P-CExample { 
+                     font-weight:bold; 
+                     font-style:normal; 
+                     color:#0000ff;  }
+P.NormalIndent { 
+                margin-left:54pt;  }
+LI.kadov-P-CNormalIndent {  }
+P.Bullet1Bold { 
+               list-style:square; 
+               font-weight:bold; 
+               font-style:normal;  }
+LI.kadov-P-CBullet1Bold { 
+                         list-style:square; 
+                         font-weight:bold; 
+                         font-style:normal;  }

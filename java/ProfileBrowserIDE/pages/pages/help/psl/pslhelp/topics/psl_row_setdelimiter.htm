@@ -1,0 +1,156 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>setDelimiter</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+p.whs1 { margin-left:24px; }
+table.whs2 { width:558px; margin-left:18pt; border-spacing:0px; }
+tr.whs3 { x-cell-content-align:top; }
+td.whs4 { width:120px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs5 { width:438px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs6 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nRow Class\nMethods\nsetDelimiter");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>setDelimiter Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">Row</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class="whs1">This method sets the delimiter of a character 
+ of a Row object. This method does not convert any existing embedded delimiters. 
+ It can only be used once within the scope of a subroutine.</p>
+
+<p class="whs1">Although the implementation of the Row class 
+ supports non-literal delimiters, using literal values generates more efficient 
+ code.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>Row.setDelimiter(String delimiter)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="558" class="whs2">
+
+<tr valign="top" class="whs3">
+<td width="120px" class="whs4">
+<p>delimiter</td>
+<td width="438px" class="whs5">
+<p>A character that is used to delimit the values in a row. When absent, 
+ the TAB character will be used.</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>Void</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs6">Profile v7.0</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>// declare a Row object without instantiating it</p>
+
+<p class=Code>type Row ROW</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>// Assign Column defs and delimiter. This code references</p>
+
+<p class=Code>// an uninstantiated object, so a warning will be issued</p>
+
+<p class=Code>do ROW.setColumns(&quot;String RTN,Date MODDAT,String DES&quot;)</p>
+
+<p class=Code>do <span style="font-weight: bold;"><B>ROW.setDelimiter(&quot;;&quot;)</B></span></p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>set ROW.rtn &nbsp;&nbsp;&nbsp;= 
+ &quot;UCGM&quot; // assign values by col. name</p>
+
+<p class=Code>set ROW.moddat = &quot;2004-08-16&quot;.toDate(&quot;YEAR-MM-DD&quot;)</p>
+
+<p class=Code>set ROW.des &nbsp;&nbsp;&nbsp;= 
+ &quot;PSL compiler main routine&quot;</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>write ROW.toString() // &quot;UCGM;59763;PSL compiler ...&quot;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

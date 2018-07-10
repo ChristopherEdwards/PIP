@@ -1,0 +1,47 @@
+
+
+table.PSL-RS {border-width:1px;
+	padding:2px;
+	border-spacing:;
+	border-style:double;
+	border-color:#dcdcdc;
+	border-collapse:collapse;
+	background-color:#FCFDFE;
+	font-family:arial;
+	font-size:80%;
+	color: #00244d;
+
+	
+}
+
+table.PSL-RS th {border-width:1px;
+	padding:8px;
+	border-spacing:;
+	border: 0px;
+	border-top: solid 4px #788cb3;
+	border-bottom: double 4px #788cb3;
+	border-collapse:collapse;
+	background-color:#BBC5D9;
+	font-family:arial;
+	font-size:80%;
+	color: #00244d;
+	text-align: center;
+
+}
+
+table.PSL-RS td {border-width:1px;
+	padding:6px;
+	border-spacing:;
+	border-style:inset;
+	border-color:white;
+	border-collapse:collapse;
+	background-color:#FCFDFE;
+	font-family:arial;
+	font-size:80%;
+	color: black;
+
+}
+
+table.PSL-RS tr.d1 td {background-color:#E2E2E2}
+
+

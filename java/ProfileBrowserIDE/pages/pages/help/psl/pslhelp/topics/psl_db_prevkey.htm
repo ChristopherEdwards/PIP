@@ -1,0 +1,167 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>prevKey</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<style type="text/css">
+<!--
+table.whs1 { x-cell-content-align:top; width:100%; border-spacing:0px; }
+col.whs2 { width:7.087%; }
+col.whs3 { width:92.913%; }
+tr.whs4 { x-cell-content-align:top; }
+td.whs5 { width:7.087%; padding-right:10px; padding-left:10px; border-right-style:none; border-left-style:none; border-top-style:none; border-bottom-style:none; }
+img_whs6 { border:none; width:32px; height:32px; float:none; border-style:none; }
+td.whs7 { width:92.913%; padding-right:10px; padding-left:10px; border-top-style:none; border-bottom-style:none; border-right-style:none; }
+p.whs8 { background-color:Transparent; }
+table.whs9 { width:534px; margin-left:18pt; border-spacing:0px; }
+td.whs10 { width:102px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs11 { width:432px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs12 { margin-left:24px; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs8 {background-color:white; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nDb Class\nMethods\nprevKey");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>prevKey Method</h1>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs1">
+<col class="whs2">
+<col class="whs3">
+
+<tr valign="top" class="whs4">
+<td width="7.087%" class="whs5">
+<p><img src="../image/warning.gif" x-maintain-ratio="TRUE" width="32px" height="32px" border="0" class="img_whs6"></td>
+<td width="92.913%" class="whs7">
+<p class="whs8"><span>T</span>his method has 
+ been deprecated and should not be used in Profile versions v6.4 and above. 
+ Use the <a href="psl_resultset_next.htm"
+			style="background-color: Transparent;">ResultSet.next</a> or 
+ <a href="psl_dbset_next.htm"
+	style="background-color: Transparent;">DbSet.next</a> method on an 
+ appropriate, ordered selection.</td></tr>
+</table>
+
+<p class=BodyTextBold>Class: <span style="font-weight: normal;">Db</span></p>
+
+<p class=BodyTextBold>Description</p>
+
+<p class=BodyIndent>This method traverses a table in reverse collating 
+ order.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>Db.prevKey(literal table,KeyExpr)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="534" class="whs9">
+
+<tr valign="top" class="whs4">
+<td width="102px" class="whs10">
+<p>literal table</td>
+<td width="432px" class="whs11">
+<p>The table name on which to perform the operation.</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="102px" class="whs10">
+<p>KeyExpr</td>
+<td width="432px" class="whs11">
+<p>The variables that represent all the keys into the table.</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>The value of the key that occurs prior to the last 
+ key provided in KeyExpr.</p>
+
+<p class=BodyTextBold>When Became Available</p>
+
+<p class="whs12">v6.4</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>while num &gt; cnt set cid = <span style="font-weight: bold;"><B>Db.prevKey(&quot;ACN&quot;,&quot;cid&quot;)</B></span>quit:cid=&quot;&quot; 
+ </p>
+
+<p class=Code>set num = num - 1 </p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

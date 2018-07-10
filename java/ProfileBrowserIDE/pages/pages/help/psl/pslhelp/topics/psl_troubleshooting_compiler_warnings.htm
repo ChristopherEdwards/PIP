@@ -1,0 +1,1187 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Troubleshooting Compiler Warnings</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+p.whs1 { x-condition:NotPrintedDocn; }
+table.whs2 { x-cell-content-align:top; width:100%; border-spacing:0px; }
+col.whs3 { width:15%; }
+col.whs4 { width:85%; }
+tr.whs5 { x-cell-content-align:top; }
+td.whs6 { width:15%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; border-left-style:none; border-top-style:none; }
+p.whs7 { font-weight:bold; color:#0000ff; }
+td.whs8 { width:85%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-top-style:none; border-right-style:none; }
+td.whs9 { width:15%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; border-left-style:none; }
+td.whs10 { width:85%; padding-right:10px; padding-left:10px; x-cell-content-align:bottom; }
+td.whs11 { width:85%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; }
+td.whs12 { width:15%; padding-right:10px; padding-left:10px; border-right-style:none; border-left-style:none; border-bottom-style:none; }
+h6.whs13 { background-color:Transparent; }
+td.whs14 { width:15%; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; }
+td.whs15 { width:85%; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; }
+td.whs16 { width:15%; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; border-top-style:none; }
+td.whs17 { width:85%; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; border-top-style:none; }
+td.whs18 { width:85%; padding-right:10px; padding-left:10px; }
+p.whs19 { background-color:Transparent; }
+tr.whs20 { x-cell-content-align:top; height:34px; }
+tr.whs21 { x-cell-content-align:top; height:38px; }
+tr.whs22 { x-cell-content-align:top; height:18px; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "h6.whs13 {background-color:white; }";
+  strNSS += "p.whs19 {background-color:white; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Troubleshooting Compiler Errors and Warnings\nTroubleshooting Compiler Warnings");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Troubleshooting Compiler Warnings</h1>
+
+<p>To view the causes and solutions of PSL compilation warnings, click 
+ the first letter of the error message text:</p>
+
+<p class="whs1"><a href="#A_Warnings"
+											style="x-condition: NotPrintedDocn;">A</a> 
+ &nbsp;B &nbsp;<a 
+ href="#C_Warnings"
+	style="x-condition: NotPrintedDocn;">C</a> 
+ &nbsp;<a href="#D_Warnings"
+										style="x-condition: NotPrintedDocn;">D</a> 
+ &nbsp;<a href="#E_Warnings"
+										style="x-condition: NotPrintedDocn;">E</a> 
+ &nbsp;F &nbsp;G 
+ &nbsp;H &nbsp;<a 
+ href="#I_Warnings"
+	style="x-condition: NotPrintedDocn;">I</a> 
+ &nbsp;J &nbsp;K 
+ &nbsp;<a href="#L_Warnings"
+										style="x-condition: NotPrintedDocn;">L</a> 
+ &nbsp;<a href="#M_Warnings"
+										style="x-condition: NotPrintedDocn;">M</a> 
+ &nbsp;N &nbsp;O 
+ &nbsp;<a href="#P_Warnings"
+										style="x-condition: NotPrintedDocn;">P</a> 
+ &nbsp;Q &nbsp;<a 
+ href="#R_Warnings"
+	style="x-condition: NotPrintedDocn;">R</a> 
+ &nbsp;<a href="#S_Warnings"
+										style="x-condition: NotPrintedDocn;">S</a> 
+ &nbsp;<a href="#T_Warnings"
+										style="x-condition: NotPrintedDocn;">T</a> 
+ &nbsp;<a href="#U_Warnings"
+										style="x-condition: NotPrintedDocn;">U</a> 
+ &nbsp;V &nbsp;W 
+ &nbsp;X &nbsp;Y 
+ &nbsp;Z</p>
+
+<h6><a name=A_Warnings></a>Accept requires = sign: &lt;parameter&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>A parameter in the #ACCEPT compiler command did not include an equal 
+ sign.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td valign="bottom" width="85%" class="whs10">
+<p class=BodyIndent>#ACCEPT ;;DSGN = Joe Smith;CRJane Doe</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Insert the equal sign where required in the parameter.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs12">
+<p>&nbsp;</td>
+<td width="85%" class="whs11">
+<p class=BodyIndent>#ACCEPT ;;DSGN = Joe Smith;CR = Jane Doe</td></tr>
+</table>
+
+<h6>Accept requires: Date Field</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>An #ACCEPT compiler command does not include the Date parameter.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td valign="bottom" width="85%" class="whs10">
+<p class=BodyIndent>#ACCEPT ;PGM = John Miller;DSGN = Joe Smith;CR = Jane 
+ Doe</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Include the Date parameter in the command.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs12">
+<p>&nbsp;</td>
+<td width="85%" class="whs11">
+<p class=BodyIndent>#ACCEPT Date = 10/25/2002;PGM = John Miller;DSGN = 
+ Joe Smith;CR = Jane Doe</td></tr>
+</table>
+
+<h6>Accept requires: PGM Field</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>An #ACCEPT compiler command does not include the PGM parameter.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td valign="bottom" width="85%" class="whs10">
+<p class=BodyIndent>#ACCEPT Date = 10/25/2002;;DSGN = Joe Smith;CR = Jane 
+ Doe</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Include the PGM parameter in the command.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs12">
+<p>&nbsp;</td>
+<td width="85%" class="whs11">
+<p class=BodyIndent>#ACCEPT Date = 20/25/2002;PGM = John Miller;DSGN = 
+ Joe Smith;CR = Jane Doe</td></tr>
+</table>
+
+<h6>Ambiguous operator precedence</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>Two operators appear in an ambiguous order in an expression. Two possible 
+ interpretations exist.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td valign="bottom" width="85%" class="whs10">
+<p class=BodyIndent>if rs.next() set PTRC = rs.getCol(1)\1000-1*1000</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Use parentheses to clarify the order in which the compiler should interpret 
+ the expression.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs12">
+<p>&nbsp;</td>
+<td width="85%" class="whs11">
+<p class=BodyIndent>if rs.next() set PTRC = ((rs.getCol(1)\1000)-1)*1000</td></tr>
+</table>
+
+<h6>Assigning system variable: &lt;name&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>PSL code is attempting to assign a value to a system variable.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td valign="bottom" width="85%" class="whs10">
+<p class=BodyIndent>type Public Number CID</p>
+<p class=BodyIndent>set %SystemDate = 2</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>This should be reserved for selected batches and service class drivers.</td></tr>
+</table>
+
+<h6><a name=C_Warnings></a>Cast expression to class: &lt;class&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>An object of a primitive class (e.g., Number, String, Date, Boolean) 
+ refers to a method of a different primitive class. PSL implicitly casts 
+ the object to the other class.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>(1) Instantiate the object in the class of the method.</p>
+<p>(2) Explicitly cast the object in the expression</p>
+<p class=BodyIndent>set x = x.piece(&quot;.&quot;,2) &nbsp;// 
+ piece is a method of the String class</td></tr>
+</table>
+
+<h6 class="whs13">Class is case sensitive: &lt;Class&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>The record class definition is case sensitive but the compiler can recognize 
+ and warn when the class entered could match a defined class.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td valign="bottom" width="85%" class="whs10">
+<p class=BodyIndent>type string xyz<br>
+&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>PSL fixes the case if it can find the class. Avoid the warning by correcting 
+ the case.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>type String xyz<br>
+&nbsp;</td></tr>
+</table>
+
+<h6>Compiler Error at aCaller^URECORD, Cache not described for &lt;caller&gt;(&lt;variable&gt;) 
+ at: &lt;tag&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>This warning is a debug error within the compiler logic itself.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>This warning should not occur. However, if it does, contact the FIS 
+ PSL support/development.</td></tr>
+</table>
+
+<h6><a name=D_Warnings></a>Dead code</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>The compiler identified dead code (i.e., code that has no reference).</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td valign="bottom" width="85%" class="whs10">
+<p class=BodyIndent>type RecordDEP dep = Db.getRecord(&quot;DEP&quot;,&quot;CID=:CID&quot;)</p>
+<p class=BodyIndent>do XXX(.dep)</p>
+<p class=BodyIndent>quit</p>
+<p class=BodyIndent>set X = 4</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Remove dead code from the program, as it adds to program complexity 
+ and size for no reason. You can temporarily warehouse code in a program 
+ by enclosing it within a comment fence /* and */.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>type Public Number CID</p>
+<p class=BodyIndent>set %CurrentDate = 2</p>
+<p class=BodyIndent>type RecordDEP dep=Db.getRecord(&quot;DEP&quot;,&quot;CID=:CID&quot;)</p>
+<p class=BodyIndent>do XXX(.dep)</p>
+<p class=BodyIndent>quit</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+</table>
+
+<h6>Dynamic SQL statement</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>The compiler generated dynamic SQL code.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Because the use of dynamic SQL may negatively impact run-time performance, 
+ the compiler generates this warning to remind you to formally review and 
+ accept the code.</td></tr>
+</table>
+
+<h6><a name=E_Warnings></a>Extrinsic function replaced: &lt;expression&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>Code that was written to use a utility function that has been registered 
+ in table STBLPSLFUNSUBS was converted to use a method instead of the utility.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Consider changing the code to use the method instead of the utility 
+ function.</td></tr>
+</table>
+
+<h6 class="whs13"><a name=I_Warnings></a>Invalid 
+ label reference inside block</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>A label appears within a nested DO block. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs11">
+<p class=BodyIndent>do {</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;<span 
+ style="font-weight: bold;"><B>label</B></span> set 
+ x=y</p>
+<p class=BodyIndent>}</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Remove the label reference contained within the block at the specified 
+ line. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>do {</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;set 
+ x=y</p>
+<p class=BodyIndent>}</td></tr>
+</table>
+
+<h6>Invalid tag with parameters inside subroutine: &lt;subroutine&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs16">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs17">
+<p>A subroutine contains a line label with parameters.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs11">
+<p class=BodyIndent>a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ Subroutine a</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;do 
+ something</p>
+<p class=BodyIndent>b(parameter) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ Illegal tag inside a</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;quit</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Do not place tags inside subroutines (even though M allows this).</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ Subroutine a</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;do 
+ something</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;quit</td></tr>
+</table>
+
+<h6><a name=L_Warnings></a>Literal delimiter (&quot;) expected</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs16">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs17">
+<p>A string literal was started with double quotes. However, the matching 
+ closing quotes are missing.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs11">
+<p class=BodyIndent>write &quot;Hello</p>
+<p class=BodyIndent>quit</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Add the missing closing double quotes, or remove the misplaced starting 
+ quotes.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>write &quot;Hello&quot;</p>
+<p class=BodyIndent>quite</td></tr>
+</table>
+
+<h6><a name=M_Warnings></a>M global reference: &lt;atom&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs16">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs17">
+<p>This message identifies a place where a global reference was included. 
+ This message appears as a warning in versions prior to Profile version 
+ 7.0, and as an error in v7.0 and later.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Modify the code to avoid the use of globals.</td></tr>
+</table>
+
+<h6>MatchCount exceeds possible matches: &lt;count&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs16">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs17">
+<p>The third parameter of Db.isDefined (i.e., match) was used, and the 
+ compiler cannot determine that the third parameter value would always 
+ be exceeded.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Review the count and its use. It may be used incorrectly.</td></tr>
+</table>
+
+<h6 class="whs13">Method is case sensitive: &lt;method&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>An inappropriate case was used in the name of the method.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs11">
+<p class=BodyIndent>type RecordDEP dep=Db.<span style="font-weight: bold;"><B>GetRecord</B></span>(&quot;DEP&quot;,&quot;cid&quot;)<br>
+&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>If the PSL compiler can find the method in the method table based on 
+ the specified class, PSL fixes the case. To silence the warning message, 
+ change the case.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>type RecordDEP dep=Db.<span style="font-weight: bold;"><B>g</B></span><span 
+ style="font-weight: bold;"><B>etRecord</B></span>(&quot;DEP&quot;,&quot;cid&quot;)<br>
+&nbsp;</td></tr>
+</table>
+
+<h6>Method is not database independent: toString</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs16">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs17">
+<p>The method used is not database independent. For example, any method 
+ that moves an entire row of data from an object into a string is not compliant, 
+ because the nodes and positions change depending on the database environment.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs18">
+<p class="whs19">There is no solution other than 
+ using another method to use the data or manipulate it. If a customer is 
+ not working on a database independent version and will never work on one, 
+ then they can ignore this warning.</td></tr>
+</table>
+
+<h6>Method is not implemented</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs16">
+<p class="whs7">Cause:<span style="font-weight: bold; color: #0000ff;"><font color=blue ><B><br>
+&nbsp;</B></font></span></td>
+<td width="85%" class="whs17">
+<p>A method is registered in the OBJECTMET table that has not yet been 
+ coded.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>None, you cannot use the method.</td></tr>
+</table>
+
+<h6>Missing block terminator and quit from: &lt;subroutine&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs16">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs17">
+<p>The compiler sensed a block start but encountered a subroutine label 
+ prior to the block terminator. That is, a subroutine label appears within 
+ a nested DO block. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs11">
+<p class=BodyIndent>do {</p>
+<p class=BodyIndent
+	style="margin-left: 0px;">label&nbsp;set x = y</p>
+<p class=BodyIndent>}</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>PSL adds the appropriate number of block terminators and inserts a Quit 
+ prior to the label reference. However, since PSL produces this warning, 
+ it is a strong indication that something is wrong. This warning should 
+ never be accepted. <span style="font-weight: bold;"><B><br>
+OR</B></span><br>
+You can remove the label reference contained within the block at the specified 
+ line. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>do {</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ x = y</p>
+<p class=BodyIndent>}</td></tr>
+</table>
+
+<h6>Missing QUIT from previous subroutine: &lt;subroutine&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs16">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs17">
+<p>A subroutine that instantiated an object did not include a <span style="font-weight: bold;"><B>quit</B></span> 
+ command prior to the start of another label that receives parameters.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs11">
+<p class=BodyIndent>XYZ</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;type 
+ RecordDEP dep=Db.getRecord(&quot;DEP&quot;,&quot;cid&quot;)</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>tyu(&quot;xyt&quot;)</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;quit</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>PSL inserts a line with a Quite prior to the label.<span style="font-weight: bold;"><B><br>
+OR</B></span><br>
+You can insert a <span style="font-weight: bold;"><B>quit </B></span>command prior 
+ to the start of the second label.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>XYZ</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;type 
+ RecordDEP dep=Db.getRecord(&quot;DEP&quot;,&quot;cid&quot;)</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;<span 
+ style="font-weight: bold;"><B>quit</B></span></p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>tyu(&quot;xyt&quot;)</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;quit</td></tr>
+</table>
+
+<h6>Modifying a PSL instrinsic variable: &lt;variable&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs16">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs17">
+<p>The name &quot;Db&quot;, &quot;Class&quot;, &quot;Object&quot;, &quot;Runtime&quot;, 
+ or &quot;Schema&quot; was used in application code as an object name.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Although these names can be used in PSL compiler code to build methods, 
+ they cannot be used in application code. Choose another object name.</td></tr>
+</table>
+
+<h6>More actual parameters: &lt;actual&gt; than formal: &lt;formal&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs16">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs17">
+<p>A routine is attempting to pass more parameters to a subroutine label 
+ than the label has defined.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Review parameters of the label being called and the routine calling 
+ that label. Determine which has the correct number of parameters. If you 
+ need to modify the label being called, review all routines calling that 
+ label to ensure that they pass the correct number of parameters.</td></tr>
+</table>
+
+<h6>Multi-line comment terminator expected: */&quot;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>A multi-line comment is not terminated before the end of the source 
+ file.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Add the multi-line comment terminator (i.e., */&quot;) at the end of 
+ the appropriate comment line.</td></tr>
+</table>
+
+<h6><a name=P_Warnings></a>Parameter type mismatch: &lt;subroutine&gt;(&lt;formal&gt;) 
+ called by &lt;subroutine&gt;(&lt;actual&gt;)</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs16">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs17">
+<p>The type of parameter being passed to a subroutine does not match the 
+ type of parameter being received. This warning appears when the parameters 
+ are not formally declared.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Review the formal typing of parameters, and correct the mismatch.</td></tr>
+</table>
+
+<h6>Possible run-time error RECEXISTS</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs16">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs17">
+<p>This warning occurs for two reasons:</p>
+<p>(1) An object was passed from one label to another. It is possible that 
+ the object may return from the subroutine call with a record that is totally 
+ different from the one passed to it.</p>
+<p>(2) PSL instantiated a Record&lt;class&gt; object that contains multiple 
+ nodes and that may already be in scope. This could cause a fatal run-time 
+ condition for tables (e.g., DEP, LN) if an existing object is partially 
+ replaced. In addition to this warning, PSL inserts code to perform a run-time 
+ check, and will throw an error if an object is in scope.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs11">
+<p class=BodyIndent
+	style="margin-left: 36px;">type RecordDEP dep = Db.getRecord(&quot;DEP&quot;,&quot;CID=:CID&quot;)</p>
+<p class=BodyIndent
+	style="margin-left: 36px;">do XXX(.dep)</p>
+<p class=BodyIndent
+	style="margin-left: 36px;">quit</p>
+<p class=BodyIndent
+	style="margin-left: 36px;">&nbsp;</p>
+<p class=BodyIndent
+	style="margin-left: 36px;">XXX(RecordDEP dep)</p>
+<p class=BodyIndent
+	style="margin-left: 36px;">type Public Number ICID</p>
+<p class=BodyIndent
+	style="margin-left: 36px;">&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>The solution depends on the cause of the warning:</p>
+<p>(1) Do not pass objects from one label to another.</p>
+<p>(2) Type a new definition instead of reusing the same object without 
+ typing it.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent
+	style="margin-left: 36px;">type RecordDEP dep = Db.getRecord(&quot;DEP&quot;,&quot;CID=:CID&quot;)</p>
+<p class=BodyIndent
+	style="margin-left: 36px;">do XXX(.dep)</p>
+<p class=BodyIndent
+	style="margin-left: 36px;">quit</p>
+<p class=BodyIndent
+	style="margin-left: 36px;">&nbsp;</p>
+<p class=BodyIndent
+	style="margin-left: 36px;">set dep = Db.getRecord(&quot;DEP&quot;,&quot;CID=:ICID&quot;)</p>
+<p class=BodyIndent
+	style="margin-left: 36px;">quit</td></tr>
+</table>
+
+<h6 class="whs13">Property is case sensitive</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs16">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs17">
+<p>Properties such as those associated with the column class (DES,JOURNAL,KEY,LEN,OLDVAL,TYP) 
+ are case sensitive (i.e., lowercase is expected). PSL can determine when 
+ a case sensitivity issue exists and correct it but warns about it as well</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs11">
+<p class=BodyIndent>XXX(RecordDEP dep) s dep.bal.JOURNAL=0<br>
+&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Change the case of the property to be lowercase.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>XXX(RecordDEP dep) s dep.bal.journal=0<br>
+&nbsp;</td></tr>
+</table>
+
+<h6><a name=R_Warnings></a>Restricted command</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs16">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs17">
+<p>The <span style="font-weight: bold;"><B>read</B></span> command is included 
+ in a routine.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Modify the code to use the IO class methods instead.</td></tr>
+</table>
+
+<h6>Restricted command - runtime Xecute</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs16">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs17">
+<p>The <span style="font-weight: bold;"><B>xecute</B></span> command was used, 
+ causing run-time evaluation of the M code which results in slower performance 
+ than compiled code.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Limit the use of the <span style="font-weight: bold;"><B>xecute</B></span> 
+ command.</td></tr>
+</table>
+
+<h6><a name=S_Warnings></a>Space or operator expected after: &lt;character&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs16">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs17">
+<p>An expression or empty argument was required but did not terminate normally.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs11">
+<p class=BodyIndent>for I=1:1:3:4 do</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Correct the expression and properly terminate it.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>for I=1:1:34 do</td></tr>
+</table>
+
+<h6><a name=T_Warnings></a>Two spaces expected after command: &lt;command&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs16">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs17">
+<p>A command (e.g., else, for, quit) requires two spaces after it but they 
+ were not found.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs11">
+<p class=BodyIndent>if x=y s f=p<br>
+else s f=y<br>
+&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>PSL inserts two whitespaces after an argumentless command. For ELSE, 
+ FOR, and QUIT commands, PSL verifies that the next expression is a PSL 
+ command before adding a space. For QUIT, if a variable is scoped with 
+ the same name as a command, PSL does not repair the whitespace because 
+ the intent is ambiguous.</td></tr>
+</table>
+
+<h6><a name=U_Warnings></a>Undefined variable: &lt;name&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs20">
+<td width="15%" class="whs16">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs17">
+<p>A variable is referenced within a subroutine but cannot be defined at 
+ compilation based on the scope and flow of the program. This occurs when 
+ a variable is locally scoped with a Type or New command and subsequently 
+ referenced before it is assigned or instantiated. </p>
+<p>However, after a subroutine, function, or method is called, this test 
+ is suspended because the variable may be assigned in the called code. 
+ This test is also suspended if a variable is passed in as a formal parameter 
+ or scoped as a Public variable.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs21">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Rewrite the code to assign or instantiate the variable before referencing 
+ the variable. Quit with the value after the loop finishes processing.</td></tr>
+</table>
+
+<h6>Unreferenced variable: &lt;name&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs16">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs17">
+<p>A variable is passed into a subroutine or scoped within a subroutine 
+ and never referenced.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Rewrite the code to reference the variable, or do not pass or scope 
+ the variable in the subroutine.</td></tr>
+</table>
+
+<h6>Unscoped variable: &lt;name&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs16">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs17">
+<p>A variable referenced in a subroutine has not been scoped, either as 
+ a formal input parameter, with the M New command, or with the PSL Type 
+ command.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs11">
+<p>Variables that are passed into a subroutine (if they are not parameters) 
+ should be scoped in the subroutine as Public variables. For example,</td></tr>
+
+<tr valign="top" class="whs22">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>Type Public [String|Number|Date|AnyClass] variable</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+</table>
+
+<p>&nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

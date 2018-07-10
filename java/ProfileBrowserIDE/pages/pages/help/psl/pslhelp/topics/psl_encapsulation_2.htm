@@ -1,0 +1,139 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Encapsulation</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { width:276px; border-spacing:0px; }
+tr.whs2 { x-cell-content-align:top; }
+td.whs3 { width:54px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+img_whs4 { width:32px; height:32px; border-style:none; }
+td.whs5 { width:222px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs6 { margin-top:12.00pt; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Introduction to Object-Oriented Programming\nEncapsulation");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script><script type="text/javascript" language="JavaScript1.2" src="../ehlpdhtm.js" x-save-method="compute-relative" name="EHELP_DHTM"></script>
+<script type="text/javascript"
+		language=JavaScript1.2>
+<!-- 
+if( typeof( kadovInitEffects ) != 'function' ) kadovInitEffects = new Function();if( typeof( kadovInitTrigger ) != 'function' ) kadovInitTrigger = new Function();if( typeof( kadovFilePopupInit ) != 'function' ) kadovFilePopupInit = new Function();if( typeof( kadovTextPopupInit ) != 'function' ) kadovTextPopupInit = new Function();
+ //-->
+</script>
+
+
+<h1>Encapsulation</h1>
+
+<p>Data encapsulation is a technique that packages related data (properties) 
+ and procedures (methods) together in an object. It provides the ability 
+ to hide the details of the implementation of an object, while making the 
+ object’s functionality available to other objects. In other words, PSL 
+ enables you to wrap an object, its properties, and its methods into a 
+ self-contained unit without enabling outside source code to access the 
+ code or data within the unit. You know how to access the encapsulated 
+ code and can therefore use it regardless of the implementation details.</p>
+
+<p>The concept of a class is the basis of encapsulation. A class defines 
+ the structure and behavior (i.e.,&nbsp;data and code) shared by a set 
+ of objects. Each object, therefore, has the structure and behavior defined 
+ by its class. The portion of an object that is accessible to other types 
+ of objects is called the object’s interface. The interface for the class 
+ Telephone might consist of methods to make the telephone Ring or Call 
+ Forward. The implementation of that class includes code that implements 
+ the methods. The distinction between the interface and the implementation 
+ of a class is that a class may change, but as long as the interface remains 
+ the same, the changes do not precipitate changes to other objects that 
+ may use the class.</p>
+
+<p>You can further encapsulate methods and variables in a class by identifying 
+ them as public or private. You can access public methods and variables 
+ outside the class in which you define them; however, you can only access 
+ private methods and variables from other methods within the same class.</p>
+
+<table x-use-null-cells cellspacing="0" width="276" class="whs1">
+
+<tr valign="top" class="whs2">
+<td width="54px" class="whs3">
+<p><a href="javascript:void(0);" onMouseOver="if ((parseInt(navigator.appVersion) >= 4) &amp;&amp; (typeof(BSPSPopupOnMouseOver) == 'function') ) BSPSPopupOnMouseOver(event)" id="A4" onclick="BSSCPopup('psl_data_encapsulation_graphic.htm');return false;"><img src="../image/cam.gif" alt="image\cam.gif" width="32px" height="32px" border="0" class="img_whs4"></a><script type="text/javascript"
+															language=JavaScript1.2><!--
+kadovFilePopupInit('A4');
+//--></script> 
+ </td>
+<td width="222px" class="whs5">
+<p class="whs6"><a href="javascript:void(0);" onMouseOver="if ((parseInt(navigator.appVersion) >= 4) &amp;&amp; (typeof(BSPSPopupOnMouseOver) == 'function') ) BSPSPopupOnMouseOver(event)" id="A5" onclick="BSSCPopup('psl_data_encapsulation_graphic.htm');return false;">Data Encapsulation</a><script 
+ type="text/javascript"
+	language=JavaScript1.2><!--
+kadovFilePopupInit('A5');
+//--></script> 
+ </td></tr>
+</table>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

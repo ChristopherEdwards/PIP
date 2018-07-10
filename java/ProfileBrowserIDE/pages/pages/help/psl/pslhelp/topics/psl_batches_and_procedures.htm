@@ -1,0 +1,159 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Batches and Procedures</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Programming Standards\nBatches and Procedures");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Batches and Procedures</h1>
+
+<p>The following standards govern the use of batches and procedures:</p>
+
+<p class=BodyTextBold>General</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Manage runtime error handling 
+ using <a href="psl_catching_errors.htm">CATCH</a>/<a href="psl_throwing_errors.htm">THROW</a> 
+ logic, not ER.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>To update the database, 
+ use the <a href="psl_record_bypasssave.htm">RecordClass.bypassSave</a> 
+ method followed by <a href="psl_record_save.htm">RecordClass.save</a> 
+ and the <a href="psl_db_insert.htm">Db.insert</a> or <a href="psl_db_update.htm">Db.update</a> 
+ method.</p></li>
+</ul>
+
+<p class=BodyTextBold>Cache</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Use Cache objects for any 
+ &quot;static&quot; database references that may generate multiple &quot;hits&quot; 
+ on the cached records.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>For batches only, control 
+ cache management within the thread executive (THREXEC) section. Use the 
+ following statement to delete the cache object for each block of records:</p></li>
+</ul>
+
+<p class=Code
+	style="margin-left: 60px;">kill %CACHE</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Store database records 
+ under %CACHE(TableName). Processes can store additional data within the 
+ cache but cannot conflict with database nodes or other processes.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>If an end-of-day batch 
+ cannot be multi-threaded, set the Number of Threads to 1 (one).</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>List in the Thread Context 
+ those variables or arrays that need to be passed to the threads.</p></li>
+</ul>
+
+<p class=BodyTextBold>Subroutines/Functions</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>All subroutines within 
+ a batch should be either private or local, unless identified per an authorized 
+ specification. </p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Public functions used by 
+ a batch should generally be placed in a procedure or procedure library.</p></li>
+</ul>
+
+<p class=BodyTextBold>Variables</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Minimize the use of Public 
+ scope variables. Document their use in the source code. Exit batches without 
+ any &quot;garbage&quot; variables left behind.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Explicitly type all variables.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>When passing parameters, 
+ pass values instead of objects, if possible.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>The <a href="psl_optimize.htm">#OPTIMIZE</a> 
+ command instructs the compiler to identify objects that are very local 
+ in scope (i.e., not passed as parameters) and to optimize the run-time 
+ code. In general, the object can be managed within private local variables 
+ instead of an object array, which has a significant impact. Every newly 
+ modified procedure and batch should include the #OPTIMIZE command. Compare 
+ the generated code to the non-optimized version to validate the optimization 
+ effect.</p></li>
+</ul>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

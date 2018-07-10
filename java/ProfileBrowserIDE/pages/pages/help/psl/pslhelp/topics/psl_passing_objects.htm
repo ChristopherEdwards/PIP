@@ -1,0 +1,230 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Passing Objects</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Using PSL\nPassing Parameters\nPassing Objects");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Passing Objects</h1>
+
+<p>To pass an object, use the following syntax in the calling procedure 
+ (actual parameter):</p>
+
+<p class=Code>do PROC(.objectName)</p>
+
+<p>This DO statement passes the object identified by the parameter .objectName 
+ to the PROC procedure. The PROC procedure declaration must specify a type 
+ and identifier of the same type as the parameter being passed.</p>
+
+<p>In the receiving procedure (formal parameter), the object must be correctly 
+ declared by identifying the type of object that the procedure is expected 
+ to receive along with an ObjectName:</p>
+
+<p class=Code>PROC(objectType objectName)</p>
+
+<p class=Example>Example</p>
+
+<p>The following example demonstrates the passing of a cif and dep object 
+ to the CHECK procedure. Both objects are declared and populated in the 
+ calling procedure. The receiving procedure declares both objects as RecordCIF 
+ and RecordDEP in the formal parameter list. </p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type 
+ RecordDEP dep=Db.getRecord(“DEP”,”:CID”)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type 
+ RecordCIF cif=Db.getRecord(“CIF”,”:ACN”)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do 
+ CHECK(.dep,.cif)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quit</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+<p class=Code>CHECK(RecordDEP dep, RecordCIF cif)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ NAM=cif.nam,TAXID=cif.taxid,DOB=cif.dob</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ ODT=dep.odt,BAL=dep.bal,IRN=dep.irn</p>
+
+<p>*CID and ACN must be defined prior to the getRecord statements.</p>
+
+<h2>Passing Objects Instantiated from Cache</h2>
+
+<p>Do not pass cached objects as parameters. Instead scope and instantiate 
+ them inside the procedures that use them. The code is, therefore, more 
+ encapsulated and modular and gives the optimizer a chance to reduce arrays 
+ into variables.</p>
+
+<p class=Example>Example</p>
+
+<p>Assume that a line tag instantiates a RecordTRN object from a Cache 
+ object, references the trn.des property, and calls another line tag. The 
+ optimal solution is to, within the second line tag, reinstantiate the 
+ RecordTRN object from the Cache object. This approach reduces the RecordTRN 
+ object into local variables. However, if instead the RecordTRN object 
+ is passed as a parameter to the second line tag, the generated code uses 
+ the vobj array because reference objects are not reduced when they are 
+ actual or formal parameters.</p>
+
+<p class=BodyTextBold>Option 1 -- Reinstating from Cache</p>
+
+<p class=Code
+	style="margin-left: 48px;">#optimize</p>
+
+<p class=Code>TAGA(String etc)</p>
+
+<p class=Code
+	style="margin-left: 48px;">type Public Cache %CACHE()</p>
+
+<p class=Code
+	style="margin-left: 48px;">type RecordTRN trn = %CACHE(&quot;TRN&quot;).getRecord(&quot;TRN&quot;,&quot;ETC 
+ = :etc&quot;)</p>
+
+<p class=Code
+	style="margin-left: 48px;">type String des = trn.des</p>
+
+<p class=Code
+	style="margin-left: 48px;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 48px;">do TAGB(etc) &nbsp;&nbsp;&nbsp;// 
+ RecordTRN not passed</p>
+
+<p class=Code
+	style="margin-left: 48px;">quit</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>TAGB(String etc)</p>
+
+<p class=Code
+	style="margin-left: 48px;">type Public Cache %CACHE()</p>
+
+<p class=Code
+	style="margin-left: 48px;">type RecordTRN trn = %CACHE(&quot;TRN&quot;).getRecord(&quot;TRN&quot;,&quot;ETC 
+ = :etc&quot;)</p>
+
+<p class=Code
+	style="margin-left: 48px;">type String pgm = trn.pgm</p>
+
+<p class=Code
+	style="margin-left: 48px;">quit</p>
+
+<p class=BodyTextBold>Option 2 -- Passing an Object Instantiated from Cache</p>
+
+<p class=Code
+	style="margin-left: 48px;">#optimize</p>
+
+<p class=Code>TAGA(String etc)</p>
+
+<p class=Code
+	style="margin-left: 48px;">type Public Cache %CACHE()</p>
+
+<p class=Code
+	style="margin-left: 48px;">type RecordTRN trn = %CACHE(&quot;TRN&quot;).getRecord(&quot;TRN&quot;,&quot;ETC 
+ = :etc&quot;)</p>
+
+<p class=Code
+	style="margin-left: 48px;">type String des = trn.des</p>
+
+<p class=Code
+	style="margin-left: 48px;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 48px;">do TAGB(etc,trn) &nbsp;&nbsp;&nbsp;// 
+ RecordTRN is passed</p>
+
+<p class=Code
+	style="margin-left: 48px;">quit</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>TAGB(String etc,RecordTRN trn)</p>
+
+<p class=Code
+	style="margin-left: 48px;">type String pgm = trn.pgm</p>
+
+<p class=Code
+	style="margin-left: 48px;">quit</p>
+
+<h2>Object Scope</h2>
+
+<p>Refer to the <a href="psl_object_scope_in_psl.htm">Object Scope in PSL</a> 
+ section for details concerning the way PSL manages the scope of objects 
+ passed as parameters.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

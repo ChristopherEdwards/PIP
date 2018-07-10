@@ -1,0 +1,180 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>isInteger</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+p.whs1 { margin-left:24px; }
+p.whs2 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nString Class\nMethods\nisInteger");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>isInteger Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">String</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class="whs1">This method indicates whether the value of 
+ the data stored in a String object is an integer. An integer is a sequence 
+ of one or more digits, possibly preceded by a minus sign. A leading plus 
+ sign is not allowed for integers. Leading zeros are not acceptable.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>StringObject.isInteger()</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<p class=BodyIndent>None.</p>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class="whs1">A Boolean:</p>
+
+<p class="whs1">1 if the string is an integer.<br>
+0 if the string is not an integer.</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs2">v6.4</p>
+
+<p class=Example>Example</p>
+
+<p class=Code
+	style="margin-left: 24px;">// non integer, even though it has a non 
+ zero interpretation</p>
+
+<p class=Code
+	style="margin-left: 24px;">type String NON = &quot;123ABC&quot;</p>
+
+<p class=Code
+	style="margin-left: 24px;">type Boolean B = <span style="font-weight: bold;"><B>NON.isInteger()</B></span> 
+ &nbsp;// 0</p>
+
+<p class=Code
+	style="margin-left: 24px;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 24px;">// non integers:</p>
+
+<p class=Code
+	style="margin-left: 24px;">set NON = &quot; 123 &quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ leading, trailing spaces</p>
+
+<p class=Code
+	style="margin-left: 24px;">set B = <span style="font-weight: bold;"><B>NON.isInteger()</B></span> 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ 0</p>
+
+<p class=Code
+	style="margin-left: 24px;">set NON = &quot;12E3&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ exponent not allowed</p>
+
+<p class=Code
+	style="margin-left: 24px;">set B = <span style="font-weight: bold;"><B>NON.isInteger()</B></span> 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ 0</p>
+
+<p class=Code
+	style="margin-left: 24px;">set NON = &quot;+123&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ plus sign not allowed</p>
+
+<p class=Code
+	style="margin-left: 24px;">set B = <span style="font-weight: bold;"><B>NON.isInteger()</B></span> 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ 0</p>
+
+<p class=Code
+	style="margin-left: 24px;">set NON = &quot;0123&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ leading zero not allowed</p>
+
+<p class=Code
+	style="margin-left: 24px;">set B = <span style="font-weight: bold;"><B>NON.isInteger()</B></span> 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ 0</p>
+
+<p class=Code
+	style="margin-left: 24px;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 24px;">type String INT = &quot;-123&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ finally!</p>
+
+<p class=Code
+	style="margin-left: 24px;">type Boolean BI = <span style="font-weight: bold;"><B>INT.isInteger()</B></span> 
+ // 1</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

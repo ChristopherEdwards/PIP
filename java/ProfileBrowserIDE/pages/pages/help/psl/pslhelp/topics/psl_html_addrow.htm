@@ -1,0 +1,161 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>addRow</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<style type="text/css">
+<!--
+table.whs1 { margin-left:18pt; width:613px; border-spacing:0px; }
+col.whs2 { width:18.597%; }
+col.whs3 { width:499px; }
+tr.whs4 { x-cell-content-align:top; }
+td.whs5 { width:18.597%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs6 { width:499px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs7 { margin-left:24px; x-condition:NotPrintedDocn; }
+p.whs8 { margin-left:24px; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nHTML Class\nMethods\naddRow");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>addRow Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">HTML</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class=BodyIndent>This method adds the data and columns of a resultSet 
+ into an XML document in the same format as the <a href="psl_html_addprop.htm">HTML.addProp</a> 
+ method.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>htmlObject.addRow(String label, ResultSet resultSet)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="613" class="whs1">
+<col class="whs2">
+<col class="whs3">
+
+<tr valign="top" class="whs4">
+<td width="18.597%" class="whs5">
+<p>label</td>
+<td width="499px" class="whs6">
+<p>The label named in <a href="psl_html_addelement.htm">addElement</a> 
+ that corresponds to the data being added.</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="18.597%" class="whs5">
+<p>resultSet</td>
+<td width="499px" class="whs6">
+<p>A Result Set object name for which the retrieved data should be added 
+ to the XML document.</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>An updated XML formatted string containing the data 
+ retrieved in a resultSet.</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs7">v6.4</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>type HTML xx = Class.new(&quot;HTML&quot;)</p>
+
+<p class=Code>type ResultSet rs = Db.select(&quot;CID,IRN,BAL,MDT&quot;,&quot;DEP&quot;,&quot;CID=:CID&quot;)</p>
+
+<p class=Code>if 'rs.isEmpty() while rs.next() set return = <span style="font-weight: bold;"><B>xx.addRow(&quot;DEP&quot;,.rs)</B></span></p>
+
+<p class=Code>____________________________________________________________</p>
+
+<p class="whs8">This method will add the following information 
+ to the return variable:</p>
+
+<p class=Code>&lt;DEP&gt;</p>
+
+<p class=Code>&lt;CID&gt;7&lt;/CID&gt;</p>
+
+<p class=Code>&lt;IRN&gt;17.00000&lt;/IRN&gt;</p>
+
+<p class=Code>&lt;BAL&gt;25.23&lt;/BAL&gt;</p>
+
+<p class=Code>&lt;MDT&gt;56789&lt;/MDT&gt;</p>
+
+<p class=Code>&lt;/DEP&gt;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

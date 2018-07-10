@@ -1,0 +1,224 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Primitive Classes</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+ul.whs1 { list-style:square; }
+table.whs2 { x-cell-content-align:top; width:77.112%; border-spacing:0px; }
+col.whs3 { width:12.262%; }
+col.whs4 { width:82.155%; }
+tr.whs5 { x-cell-content-align:top; }
+td.whs6 { width:12.262%; padding-right:10px; padding-left:10px; border-left-style:none; border-top-style:none; border-right-style:none; border-bottom-style:none; background-color:#c0c0c0; }
+p.whs7 { font-weight:bold; margin-left:0px; }
+td.whs8 { width:82.155%; padding-right:10px; padding-left:10px; background-color:#c0c0c0; }
+p.whs9 { font-weight:bold; }
+td.whs10 { width:12.262%; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; }
+td.whs11 { width:82.155%; padding-right:10px; padding-left:10px; }
+td.whs12 { width:12.262%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; border-left-style:none; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs7 {margin-left:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nTypes of Classes\nPrimitive Classes");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Primitive Classes</h1>
+
+<p>A <span style="font-weight: bold;"><B>Primitive</B></span> class is a class 
+ that contains a single property (its value). A reference to the identifier 
+ is a reference to the value of the object. The value of a primitive class 
+ object is stored in the variable used as its identifier. The Primitive 
+ class is both an individual class containing methods, as well as a grouping 
+ of classes. The Primitive class contains methods that are inherited (and 
+ therefore available) to all the other classes within the Primitive class 
+ grouping.</p>
+
+<p>The following guidelines apply to primitive classes:</p>
+
+<ul type="square" class="whs1">
+	
+	<li class=kadov-p-CBullet><p class=Bullet>A primitive class object 
+ can be intrinsically cast to any other primitive class. However, the cast 
+ may generate a result that is not equivalent to the original value and 
+ is non-reversible (e.g., String &quot;123Hello&quot; becomes Number 123).</p></li>
+	
+	<li class=kadov-p-CBullet><p class=Bullet>A primitive object can be 
+ explicitly cast to a <a href="psl_reference_classes.htm">reference class</a> 
+ if a method(s) exists to cast it (e.g., String.toRow).</p></li>
+	
+	<li class=kadov-p-CBullet><p class=Bullet>A primitive class can have 
+ subclasses.</p></li>
+	
+	<li class=kadov-p-CBullet><p class=Bullet>A primitive class can be 
+ declared as Public scope. Public scope objects continue to exist when 
+ the process exits and are deleted either at a stack level where they have 
+ been previously scoped, or when the process exits.</p></li>
+	
+	<li class=kadov-p-CBullet><p class=Bullet>Boolean and arithmetic operators 
+ compare the values of primitive class operands.</p></li>
+	
+	<li class=kadov-p-CBullet><p class=Bullet>Numeric Literals are in the 
+ Number class.</p></li>
+	
+	<li class=kadov-p-CBullet><p class=Bullet>String Literals are in the 
+ String class.</p></li>
+	
+	<li class=kadov-p-CBullet><p class=Bullet>Intrinsic functions will 
+ map to a method in one of the primitive classes. The return type of that 
+ method determines the return type of the intrinsic function. The return 
+ type of an extrinsic function is String.</p></li>
+</ul>
+
+<p>The following primitive classes exist in PSL:</p>
+
+<table x-use-null-cells cellspacing="0" width="77.112%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td bgcolor="#C0C0C0" width="12.262%" class="whs6">
+<p class="whs7">Class</td>
+<td bgcolor="#C0C0C0" width="82.155%" class="whs8">
+<p class="whs9">Description</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="12.262%" class="whs10">
+<p><a href="psl_blob_class.htm">Blob</a></td>
+<td width="82.155%" class="whs11">
+<p>Primitive class for the Blob column. This class does not provide additional 
+ methods.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="12.262%" class="whs12">
+<p><a href="psl_boolean_class.htm">Boolean</a></td>
+<td width="82.155%" class="whs11">
+<p>Primitive class for Booleans. This class does not provide additional 
+ methods.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="12.262%" class="whs10">
+<p><a href="psl_bytestring_class.htm">ByteString</a> </td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs11">
+<p>Primitive class that treats its value as a sequence of bytes instead 
+ of as a sequence of characters.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="12.262%" class="whs10">
+<p><a href="psl_date_class.htm">Date</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs11">
+<p>Contains methods used to format date fields for output, or otherwise 
+ manipulate dates (e.g., getting months, handle frequencies, etc.).</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="12.262%" class="whs10">
+<p><a href="psl_memo_class.htm">Memo</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs11">
+<p>Primitive class for the Memo column. This class does not provide additional 
+ methods.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="12.262%" class="whs10">
+<p><a href="psl_number_class.htm">Number</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs11">
+<p>Contains methods that format numbers and access individual digits within 
+ a number.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="12.262%" class="whs10">
+<p><a href="psl_primitive_class.htm">Primitive</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs11">
+<p>The superclass of all classes that have a primitive data type.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="12.262%" class="whs10">
+<p><a href="psl_string_class.htm">String</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs11">
+<p>Contains methods used to manipulate data defined as String data type.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="12.262%" class="whs10">
+<p><a href="psl_time_class.htm">Time</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs11">
+<p>Primitive class for the Time column.</td></tr>
+</table>
+
+<p>&nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

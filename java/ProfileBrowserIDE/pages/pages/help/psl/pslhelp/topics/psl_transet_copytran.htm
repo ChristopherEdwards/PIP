@@ -1,0 +1,256 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>copyTran</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<style type="text/css">
+<!--
+p.whs1 { margin-left:24px; }
+table.whs2 { width:552px; margin-left:18pt; border-spacing:0px; }
+tr.whs3 { x-cell-content-align:top; }
+td.whs4 { width:120px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs5 { width:432px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs6 { background-color:Transparent; }
+p.whs7 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs6 {background-color:white; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nTranSet Class\nMethods\ncopyTran");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>copyTran Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">TranSet</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class="whs1">This method builds a financial transaction 
+ in a transaction record object. Creating this object requires that:</p>
+
+<ul>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>The transaction record 
+ and transaction set is instantiated.</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>The columns for the transaction 
+ record object are defined and set.</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>The transaction object 
+ is copied to a transaction container called a transaction set object.</p></li>
+</ul>
+
+<p class="whs1">Multiple transaction records can be created 
+ within a single process (e.g.,&nbsp;preauthorized transfers with debit 
+ and offsetting credit transactions based on one entry in the DAYEND process). 
+ The system creates each transaction individually and copies them to a 
+ transaction set to post all transactions associated with a single day-end 
+ entry at one time. This method constructs an entry in the transaction 
+ object that looks similar to a TR array. The TTXBLD procedure defines 
+ the column references.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>transactionObject.copyTran(dbObjectName,colRefs,tranSeq,secTran)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="552" class="whs2">
+
+<tr valign="top" class="whs3">
+<td width="120px" class="whs4">
+<p>dbObjectName</td>
+<td width="432px" class="whs5">
+<p>The name of a database object (e.g., RecordTTX).</td></tr>
+
+<tr valign="top" class="whs3">
+<td colspan="1" rowspan="1" width="120px" class="whs4">
+<p>colRefs</td>
+<td colspan="1" rowspan="1" width="432px" class="whs5">
+<p class="whs6">An array keyed by TTX columns. 
+ The data of each entry contains the value to insert into the object for 
+ that column.</td></tr>
+
+<tr valign="top" class="whs3">
+<td colspan="1" rowspan="1" width="120px" class="whs4">
+<p>tranSeq</td>
+<td colspan="1" rowspan="1" width="432px" class="whs5">
+<p class="whs6">Optional transaction sequence 
+ number for the TTX record (i.e., that equates to TTX.TSEQ).</td></tr>
+
+<tr valign="top" class="whs3">
+<td colspan="1" rowspan="1" width="120px" class="whs4">
+<p>secTran</td>
+<td colspan="1" rowspan="1" width="432px" class="whs5">
+<p class="whs6">A string that identifies the 
+ transaction type for tranSeq if other than a primary transaction. Valid 
+ values are SYSTEM or SECONDARY.</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>Void</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs7">Profile v6.0</p>
+
+<p class=Example>Example</p>
+
+<p class=Code
+	style="font-weight: normal;"><span style="font-weight: normal;">type 
+ RecordTTX ttx ttx=Class.new(“RecordTTX”) </span></p>
+
+<p class=Code
+	style="font-weight: normal;">// ttx can be a variable or an array</p>
+
+<p class=Code
+	style="font-weight: normal;">type TranSet ts=Class.new(“TranSet”)</p>
+
+<p class=Code
+	style="font-weight: normal;">&nbsp;</p>
+
+<p class=Code
+	style="font-weight: normal;">set ttx.cid = CID</p>
+
+<p class=Code
+	style="font-weight: normal;">set ttx.itc = ITC</p>
+
+<p class=Code
+	style="font-weight: normal;">set ttx.etc = ETC</p>
+
+<p class=Code
+	style="font-weight: normal;">set ttx.tamt = TAMT</p>
+
+<p class=Code
+	style="font-weight: normal;">set ttx.efd = %SystemDate</p>
+
+<p class=Code
+	style="font-weight: normal;">set ttx.tlo = %UserStation</p>
+
+<p class=Code
+	style="font-weight: normal;">set ttx.tcmt = TCMT</p>
+
+<p class=Code
+	style="font-weight: normal;">set ttx.cc = CC</p>
+
+<p class=Code
+	style="font-weight: normal;">if %MCP set ttx.crcd = CRCD</p>
+
+<p class=Code
+	style="font-weight: normal;">&nbsp;</p>
+
+<p class=Code
+	style="font-weight: normal;">set ttx1 = <span style="font-weight: bold;"><B>ts.copyTran(ttx)</B></span></p>
+
+<p class=Code
+	style="font-weight: normal;">&nbsp;</p>
+
+<p class=Code
+	style="font-weight: normal;">set par(“OPTION”) = 1 &nbsp;&nbsp;&nbsp;// 
+ System-generated</p>
+
+<p class=Code
+	style="font-weight: normal;">set par(“IPMODE”) = 3 &nbsp;&nbsp;&nbsp;// 
+ Process transactions, update database</p>
+
+<p class=Code
+	style="font-weight: normal;">&nbsp;</p>
+
+<p class=Code
+	style="font-weight: normal;">do ts.postTSet(TJD,BRCD,.par)</p>
+
+<p class=Code
+	style="font-weight: normal;">&nbsp;</p>
+
+<p class=Code
+	style="font-weight: normal;">&nbsp;</p>
+
+<p class=Code
+	style="font-weight: normal;">*The variables in this example would need 
+ to be defined prior to their use.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

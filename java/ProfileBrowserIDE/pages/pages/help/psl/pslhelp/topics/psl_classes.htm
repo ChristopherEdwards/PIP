@@ -1,0 +1,191 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Classes</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { x-cell-content-align:top; width:100%; border-spacing:0px; }
+col.whs2 { width:14.236%; }
+col.whs3 { width:85.764%; }
+tr.whs4 { x-cell-content-align:top; }
+td.whs5 { width:14.236%; padding-right:10px; padding-left:10px; }
+p.whs6 { margin-left:60px; }
+img_whs7 { width:15px; height:15px; float:none; border-style:none; }
+td.whs8 { width:85.764%; padding-right:10px; padding-left:10px; }
+col.whs9 { width:6.879%; }
+col.whs10 { width:93.121%; }
+td.whs11 { width:6.879%; padding-right:10px; padding-left:10px; border-right-style:none; border-left-style:none; border-top-style:none; border-bottom-style:none; }
+td.whs12 { width:93.121%; padding-right:10px; padding-left:10px; border-top-style:none; border-bottom-style:none; border-right-style:none; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Introduction to Object-Oriented Programming\nClasses");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Classes</h1>
+
+<p>Within object-oriented design, a class is an entity that defines the 
+ structure and behavior (i.e., data and code) shared by a set of objects. 
+ Each object, therefore, has the structure and behavior defined by its 
+ class. The class defines the allowable properties of the objects in that 
+ class, as well as the methods that operate on the objects in the class. 
+ A class is therefore a template for an object, and an object is an instance 
+ of a class. </p>
+
+<p>Categories of classes supported in PSL include the following:</p>
+
+<ul>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1
+									style="font-weight: bold;">Superclass</p></li>
+</ul>
+
+<p class=NormalIndent>A class definition that serves as a basis for other 
+ class definitions. That is, you can create a class (i.e.,&nbsp;the subclass) 
+ by having it inherit all the methods and properties of any existing class 
+ definition (i.e.,&nbsp;the superclass). For example, the deposit record 
+ class (RecordDEP) and loan record class (RecordLN) inherit their attributes 
+ from the account superclass (RecordACN). </p>
+
+<p class=NormalIndent>A class can only have one immediate superclass.</p>
+
+<ul>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1
+									style="font-weight: bold;">Subclass</p></li>
+</ul>
+
+<p class=NormalIndent>A class that inherits all the properties of any existing 
+ class definition (i.e.,&nbsp;the superclass). For example, the deposit 
+ record class (RecordDEP) and loan record class (RecordLN) inherit their 
+ attributes from the account superclass (RecordACN). You can then add properties 
+ and methods as needed to the new class, as well as modify attributes and 
+ methods inherited from the superclass. The subclass, therefore, contains 
+ all the attributes of the superclass plus any that you add to it.</p>
+
+<p class=NormalIndent>A class can have any number of subclasses. A subclass 
+ can, in turn, be a superclass of another subclass.</p>
+
+<ul>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1><span style="font-weight: bold;"><B>Final 
+ class</B></span> </p></li>
+</ul>
+
+<p class=NormalIndent>A class that you cannot designate as a superclass. 
+ The properties and methods of a final class cannot be inherited by other 
+ classes. For example, if you define the XYZ class as final, you cannot 
+ create subclasses based on (i.e.,&nbsp;inherited from) the XYZ class.</p>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs1">
+<col class="whs2">
+<col class="whs3">
+
+<tr valign="top" class="whs4">
+<td width="14.236%" class="whs5">
+<p class="whs6"><img src="../image/i_blue_sm.jpg" alt="image\msgs.gif" x-maintain-ratio="TRUE" width="15px" height="15px" border="0" class="img_whs7"></td>
+<td width="85.764%" class="whs8">
+<p>The concept of Final Classes is not available in this PSL release.</td></tr>
+</table>
+
+<ul>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1><span style="font-weight: bold;"><B>Abstract 
+ class</B></span> </p></li>
+</ul>
+
+<p class=NormalIndent>A superclass that declares the structure of a class 
+ without providing a complete implementation of every method. You may want 
+ to define a superclass that only defines a generic form that is shared 
+ by all its subclasses, yet enabling each subclass to specify the details. 
+ For example, the PSL Record class contains all the methods used by its 
+ subclasses RecordACN, RecordDEP, RecordLN, RecordCRCD, etc. You cannot 
+ create an instance of the Record class because it has no meaning. However 
+ the Record class does contain the methods of all its subclasses. </p>
+
+<p>For a list of PSL classes, refer to the <a href="psl_psl_classes.htm">PSL 
+ Classes</a> section.</p>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs1">
+<col class="whs9">
+<col class="whs10">
+
+<tr valign="top" class="whs4">
+<td width="6.879%" class="whs11">
+<p class=Note><img src="../image/i_blue_sm.jpg" alt="image\msgs.gif" x-maintain-ratio="TRUE" width="15px" height="15px" border="0" class="img_whs7"></td>
+<td width="93.121%" class="whs12">
+<p>PSL does not currently support the concept of Packages (i.e.,&nbsp;a 
+ feature used to group similar classes).</td></tr>
+</table>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

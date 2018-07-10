@@ -1,0 +1,182 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>#OPTIMIZE</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<style type="text/css">
+<!--
+table.whs1 { width:552px; margin-left:18pt; border-spacing:0px; }
+tr.whs2 { x-cell-content-align:top; }
+td.whs3 { width:102px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs4 { width:450px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs5 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Using PSL\nCompiling PSL Code\nCompiler Commands\n#OPTIMIZE");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>#OPTIMIZE</h1>
+
+<p>The #OPTIMIZE compiler command causes the compiler to perform certain 
+ optimizations with respect to generated code. Do not use this compiler 
+ command unless there is an explicit need to override the environment default.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>#OPTIMIZE condition ON|OFF </p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="552" class="whs1">
+
+<tr valign="top" class="whs2">
+<td width="102px" class="whs3">
+<p>condition</td>
+<td width="450px" class="whs4">
+<p>One or more conditions, separated by commas, that identify the type 
+ of optimization that should occur. The default is all conditions. Valid 
+ conditions include:</p>
+<ul>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet><p class=Bullet><span style="font-weight: bold;"><B>OBJECTS</B></span> 
+ - Causes the compiler to recognize short-lived type Record objects and, 
+ if possible, does not physically allocate or manage object storage. This 
+ &quot;lightweight&quot; instantiation is transparent to application logic 
+ but significantly reduces run-time overhead associated with array handling, 
+ string copying, and symbol table management.<br>
+	<br>
+	If a block of code is only used within a single subroutine, it should 
+ reside within that subroutine, using nested logic, if appropriate. The 
+ #OPTIMIZE command works well in this situation, and the actual code execution 
+ (net of PSL) is significantly faster if the code is adjacent, rather than 
+ in a separate label or program.</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet><p class=Bullet><span style="font-weight: bold;"><B>FUNCTIONS</B></span> 
+ - Causes the compiler to translate function calls into object method calls 
+ for a selected number of M intrinsic functions and pre-PSL utility functions 
+ as defined in the STBLPSLFUNSUB table.</p></li>
+</ul></td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="102px" class="whs3">
+<p>ON|OFF</td>
+<td colspan="1" rowspan="1" width="450px" class="whs4">
+<p>An indication of whether the compiler should optimize. The default #OPTIMIZE 
+ action is ON. However, if #OPTIMIZE is not included in the PSL code (implicity 
+ through UCOPTS or explicitely), the optimizer will not be invoked.</td></tr>
+</table>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs5">Profile v6.3</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>TRNDRV // Profile Transaction driver</p>
+
+<p class=Code>//</p>
+
+<p class=Code>#WARN</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>// turn all optimization on (FUNCTIONS,OBJECTS)</p>
+
+<p class=Code
+	style="font-weight: bold;">#OPTIMIZE</p>
+
+<p class=Code
+	style="font-weight: bold;">#OPTIMIZE FUNCTIONS,OBJECTS</p>
+
+<p class=Code
+	style="font-weight: bold;">#OPTIMIZE FUNCTIONS,OBJECTS ON</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>// turn optimization of FUNCTIONS off</p>
+
+<p class=Code
+	style="font-weight: bold;">#OPTIMIZE FUNCTIONS OFF</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>// turn optimization of OBJECTS on</p>
+
+<p class=Code
+	style="font-weight: bold;">#OPTIMIZE OBJECTS</p>
+
+<p class=Code
+	style="font-weight: bold;">#OPTIMIZE OBJECTS ON</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

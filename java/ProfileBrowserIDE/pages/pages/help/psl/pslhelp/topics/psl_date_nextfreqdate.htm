@@ -1,0 +1,261 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>nextFreqDate</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { width:534px; margin-left:18pt; border-spacing:0px; }
+tr.whs2 { x-cell-content-align:top; }
+td.whs3 { width:102px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs4 { width:432px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+table.whs5 { x-cell-content-align:top; margin-left:18pt; width:76.286%; border-spacing:0px; }
+col.whs6 { width:19.163%; }
+col.whs7 { width:17.853%; }
+col.whs8 { width:62.984%; }
+td.whs9 { width:19.163%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; border-left-style:none; border-top-style:none; }
+p.whs10 { margin-left:0px; }
+td.whs11 { width:17.853%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; border-top-style:none; }
+p.whs12 { margin-left:0px; font-weight:bold; }
+td.whs13 { width:62.984%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-top-style:none; border-right-style:none; }
+p.whs14 { font-weight:bold; }
+td.whs15 { width:19.163%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; border-left-style:none; }
+td.whs16 { width:17.853%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; }
+p.whs17 { margin-left:24px; }
+td.whs18 { width:62.984%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; }
+td.whs19 { width:19.163%; padding-right:10px; padding-left:10px; border-right-style:none; border-left-style:none; border-bottom-style:none; }
+td.whs20 { width:17.853%; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; }
+td.whs21 { width:19.163%; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; }
+td.whs22 { width:62.984%; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; }
+p.whs23 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs10 {margin-left:1pt; }";
+  strNSS += "p.whs12 {margin-left:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nDate Class\nMethods\nnextFreqDate");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>nextFreqDate Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">Date</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class=BodyIndent>This method returns the next date based on applying 
+ the specified frequency to the specified Date object. For example, if 
+ the specified date is January 4, 2005 and the frequency is 1MA1, the resulting 
+ date is February 1, 2005.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>dateObject.nextFreqDate(String frequency,Number AF,String 
+ control)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="534" class="whs1">
+
+<tr valign="top" class="whs2">
+<td width="102px" class="whs3">
+<p>frequency</td>
+<td width="432px" class="whs4">
+<p>A valid Profile frequency applied to determine the next date (e.g., 
+ 1MA1 for once a month on the first of the month).</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="102px" class="whs3">
+<p>AF</td>
+<td colspan="1" rowspan="1" width="432px" class="whs4">
+<p>The annual factor (i.e., the number of frequencies in a year). For example, 
+ a frequency of 1MA1 will return 12. (Optional)</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="102px" class="whs3">
+<p>control</td>
+<td colspan="1" rowspan="1" width="432px" class="whs4">
+<p>A 5-character (optional) code indicating the type of frequency calculation 
+ to perform. Each position in the code will have a value indicating whether 
+ to perform the operation (i.e., 0=No, 1=Yes):</td></tr>
+</table>
+
+<table x-use-null-cells cellspacing="0" width="76.286%" class="whs5">
+<col class="whs6">
+<col class="whs7">
+<col class="whs8">
+
+<tr valign="top" class="whs2">
+<td width="19.163%" class="whs9">
+<p class="whs10">&nbsp;</td>
+<td width="17.853%" class="whs11">
+<p class="whs12">Position</td>
+<td width="62.984%" class="whs13">
+<p class="whs14">Operation</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="19.163%" class="whs15">
+<p>&nbsp;</td>
+<td width="17.853%" class="whs16">
+<p class="whs17">1</td>
+<td width="62.984%" class="whs18">
+<p>Use reverse (backwards) calculation.</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="19.163%" class="whs19">
+<p>&nbsp;</td>
+<td width="17.853%" class="whs20">
+<p class="whs17">2</td>
+<td width="62.984%" class="whs18">
+<p>Edit check for correct syntax only. Returns &quot;1&quot; if errors 
+ occur, &quot;0&quot; if no errors.</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="19.163%" class="whs21">
+<p>&nbsp;</td>
+<td colspan="1" rowspan="1" width="17.853%" class="whs20">
+<p class="whs17">3</td>
+<td colspan="1" rowspan="1" width="62.984%" class="whs22">
+<p>Use &quot;A&quot; business date option regardless of what is found in 
+ the frequency.</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="19.163%" class="whs21">
+<p>&nbsp;</td>
+<td colspan="1" rowspan="1" width="17.853%" class="whs20">
+<p class="whs17">4</td>
+<td colspan="1" rowspan="1" width="62.984%" class="whs22">
+<p>Interactive -- print next date on bottom of screen.</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="19.163%" class="whs21">
+<p>&nbsp;</td>
+<td colspan="1" rowspan="1" width="17.853%" class="whs20">
+<p class="whs17">5</td>
+<td colspan="1" rowspan="1" width="62.984%" class="whs22">
+<p>Automatically advance the date by at least one full cycle.</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>A Date object representing the next date based on the 
+ specified frequency and other parameters.</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs23">Profile v7.0</p>
+
+<p class=Example>Example</p>
+
+<p class=Code
+	style="background-color: Transparent; font-weight: normal;">type RecordDEP 
+ dep = Db.getRecord(&quot;DEP&quot;, &quot;CID=:CID&quot;)</p>
+
+<p class=Code
+	style="background-color: Transparent; font-weight: normal;">if dep.ipd 
+ = %SystemDate do { </p>
+
+<p class=Code
+	style="margin-left: 48px;">do POST(.dep) // Post interest</p>
+
+<p class=Code
+	style="margin-left: 48px;">set dep.ipld = %SystemDate // Save date 
+ last posted</p>
+
+<p class=Code
+	style="margin-left: 48px;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 48px;">// Get next posting date, and save</p>
+
+<p class=Code
+	style="margin-left: 48px;">set dep.inp = <span style="font-weight: bold;"><B>dep.inp.nextFreqDate(dep.ipf)</B></span></p>
+
+<p class=Code
+	style="margin-left: 48px;">do dep.save()</p>
+
+<p class=Code
+	style="margin-left: 24px;">}</p>
+
+<p class=Code
+	style="background-color: Transparent; font-weight: normal;">* Variable 
+ CID must be defined prior to the getRecord statement.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

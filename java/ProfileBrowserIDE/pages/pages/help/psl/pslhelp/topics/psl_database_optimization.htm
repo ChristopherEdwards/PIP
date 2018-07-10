@@ -1,0 +1,153 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Database Optimization</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Programming Standards\nDatabase Optimization\nDatabase Optimization");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script><script type="text/javascript" language="JavaScript1.2" src="../ehlpdhtm.js" x-save-method="compute-relative" name="EHELP_DHTM"></script>
+<script type="text/javascript"
+		language=JavaScript1.2>
+<!-- 
+if( typeof( kadovInitEffects ) != 'function' ) kadovInitEffects = new Function();if( typeof( kadovInitTrigger ) != 'function' ) kadovInitTrigger = new Function();if( typeof( kadovFilePopupInit ) != 'function' ) kadovFilePopupInit = new Function();if( typeof( kadovTextPopupInit ) != 'function' ) kadovTextPopupInit = new Function();
+ //-->
+</script>
+
+
+<h1>Database Optimization</h1>
+
+<p>A number of techniques, unique to PSL, have a significant impact on 
+ the run-time performance of a program. The following performance techniques 
+ will improve run-time under every operating system and database scenario 
+ without tradeoffs (with the possible exception of caching under an M database).</p>
+
+<p class=Field
+	style="x-condition: NotPrintedDocn;">For additional details concerning 
+ database optimization, refer to the following sections:</p>
+
+<p class=Field
+	style="x-condition: NotPrintedDocn;"><a href="javascript:void(0);" onMouseOver="if ((parseInt(navigator.appVersion) >= 4) &amp;&amp; (typeof(BSPSPopupOnMouseOver) == 'function') ) BSPSPopupOnMouseOver(event)" id="A4" style="x-condition: NotPrintedDocn;" onclick="BSSCPopup('psl_classnew_parameter_in_db_getrecord.htm');return false;">ClassNew 
+ Parameter</a><script type="text/javascript"
+											language=JavaScript1.2><!--
+kadovFilePopupInit('A4');
+//--></script> 
+ </p>
+
+<p class=Field
+	style="x-condition: NotPrintedDocn;"><a href="javascript:void(0);" id="a5" style="x-condition: NotPrintedDocn;" onMouseOver="if (parseInt(navigator.appVersion) >= 4 && typeof(BSPSPopupOnMouseOver) == 'function') BSPSPopupOnMouseOver(event);" class="BSSCPopup" onclick="BSSCPopup('psl_preference_of_record_class_bypasssave_over_other_update_methods.htm');return false;">Preference 
+ of Record&lt;class&gt;.bypassSave</a><script type="text/javascript"
+	language=JavaScript1.2><!--
+kadovFilePopupInit('a5');
+//--></script> 
+ </p>
+
+<p class=Field
+	style="x-condition: NotPrintedDocn;"><a href="psl_selecting_data.htm"
+											style="x-condition: NotPrintedDocn;">Selecting 
+ Data</a></p>
+
+<p class=Field
+	style="x-condition: NotPrintedDocn;"><a href="javascript:void(0);" onMouseOver="if ((parseInt(navigator.appVersion) >= 4) &amp;&amp; (typeof(BSPSPopupOnMouseOver) == 'function') ) BSPSPopupOnMouseOver(event)" id="A1" style="x-condition: NotPrintedDocn;" onclick="BSSCPopup('psl_use_of_if_else_and_literal_scope_variables.htm');return false;">Use 
+ of the #IF/#ELSE and Literal Scope Variables</a><script 
+ type="text/javascript"
+	language=JavaScript1.2><!--
+kadovFilePopupInit('A1');
+//--></script> 
+ </p>
+
+<p class=Field
+	style="x-condition: NotPrintedDocn;"><a href="javascript:void(0);" onMouseOver="if ((parseInt(navigator.appVersion) >= 4) &amp;&amp; (typeof(BSPSPopupOnMouseOver) == 'function') ) BSPSPopupOnMouseOver(event)" id="A2" style="x-condition: NotPrintedDocn;" onclick="BSSCPopup('psl_use_of_while_compiler_command.htm');return false;">Use 
+ of the #WHILE Compiler Command</a><script type="text/javascript"
+	language=JavaScript1.2><!--
+kadovFilePopupInit('A2');
+//--></script> 
+ </p>
+
+<p class=Field
+	style="x-condition: NotPrintedDocn;"><a href="javascript:void(0);" onMouseOver="if ((parseInt(navigator.appVersion) >= 4) &amp;&amp; (typeof(BSPSPopupOnMouseOver) == 'function') ) BSPSPopupOnMouseOver(event)" id="A3" style="x-condition: NotPrintedDocn;" onclick="BSSCPopup('psl_use_of_the_cache_class.htm');return false;">Use 
+ of the Cache Class</a><script type="text/javascript"
+													language=JavaScript1.2><!--
+kadovFilePopupInit('A3');
+//--></script> 
+ </p>
+
+<p class=Field
+	style="x-condition: NotPrintedDocn;"><a href="javascript:void(0);" onMouseOver="if ((parseInt(navigator.appVersion) >= 4) &amp;&amp; (typeof(BSPSPopupOnMouseOver) == 'function') ) BSPSPopupOnMouseOver(event)" id="A8" style="x-condition: NotPrintedDocn;" onclick="BSSCPopup('psl_use_of_qualifiers_with_db_insert_and_db_update.htm');return false;">Use 
+ of the Qualifiers with Db.insert and Db.update</a><script 
+ type="text/javascript"
+	language=JavaScript1.2><!--
+kadovFilePopupInit('A8');
+//--></script> 
+ </p>
+
+<p class=Field>Refer to the <a href="psl_selecting_data.htm">Selecting 
+ Data</a> section for guidelines when selecting data from the database.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

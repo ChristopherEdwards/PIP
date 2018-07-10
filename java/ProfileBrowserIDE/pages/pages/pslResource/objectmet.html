@@ -1,0 +1,1636 @@
+
+<html>
+<head>
+<title>objectmet</title>
+
+<link rel="stylesheet" type="text/css" href="../../ProfileBrowserIDE.css"/>
+
+</head>
+
+<body>
+
+<table class="object">
+	<tbody>
+
+
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">ByteString</td>
+			<td></td>
+		</tr>
+
+
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+
+		<tr>
+			<td>ascii</td>
+			<td>ASCII code of byte at specified pos</td>
+			<td>local Number position</td>
+		</tr>
+		<tr>
+			<td>extract</td>
+			<td>Extract a bytestring</td>
+			<td>local Number start,local Number end</td>
+		</tr>
+		<tr>
+			<td>find</td>
+			<td>Find the next position of a bytestring</td>
+			<td>local ByteString string,local Number start</td>
+		</tr>
+		<tr>
+			<td>justify</td>
+			<td>Justify a bytestring</td>
+			<td>local Number fieldLength</td>
+		</tr>
+		<tr>
+			<td>length</td>
+			<td>String length</td>
+			<td>local ByteString delimiter</td>
+		</tr>
+		<tr>
+			<td>piece</td>
+			<td>Return bytestring at delimited position</td>
+			<td>local ByteString delimiter, local Number start, local Number
+			end</td>
+		</tr>
+		<tr>
+			<td>toPSLExpression</td>
+			<td>translate literal value to PSL expression</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>translate</td>
+			<td>Byte by byte replace</td>
+			<td>local ByteString lookFor, local ByteString replaceBy</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">Cache</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>getrecord</td>
+			<td>Get RecordTABLE object from Cache</td>
+			<td>literal String table, String KeyExpr, literal Boolean
+			classNew</td>
+		</tr>
+		<tr>
+			<td>isDefined</td>
+			<td>Check if RecordTABLE row exists using Cache</td>
+			<td>literal String table, String KeyExpr</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">Class</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>isAncestor</td>
+			<td>Is Name1 an ancestor of Name2</td>
+			<td>String ancestorName, String descendantName</td>
+		</tr>
+		<tr>
+			<td>isClass</td>
+			<td>Does className exist in OBJECT table</td>
+			<td>String className</td>
+		</tr>
+		<tr>
+			<td>isDescendant</td>
+			<td>Is Name1 a descendant of Name2</td>
+			<td>String descendantName, String ancestorName</td>
+		</tr>
+		<tr>
+			<td>isValid</td>
+			<td>Does className exist in OBJECT table</td>
+			<td>Reference instance</td>
+		</tr>
+		<tr>
+			<td>new</td>
+			<td>Create a new instance of class</td>
+			<td>literal String Class, Object initObj</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">Date</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>day</td>
+			<td>2 digit day of month</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>dayOfMonth</td>
+			<td>Numeric day of the month</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>dayOfYear</td>
+			<td>Day of the year</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>daysInMonth</td>
+			<td>Number of days in Month</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>daysToEOY</td>
+			<td>Days to the end of the year</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>isBusDate</td>
+			<td>Date is a business date in calendar</td>
+			<td>local String Calendar</td>
+		</tr>
+		<tr>
+			<td>isLeapYear</td>
+			<td>Leap Year</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>month</td>
+			<td>2 digit month of year</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>monthOfYear</td>
+			<td>Numeric month of year</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>nextBusDate</td>
+			<td>Next business date for calendar</td>
+			<td>local Number numberDays, local String Calendar</td>
+		</tr>
+		<tr>
+			<td>nextFreqDate</td>
+			<td>Next frequency date</td>
+			<td>local String frequency, public Number AF, local String
+			control</td>
+		</tr>
+		<tr>
+			<td>prevBusDate</td>
+			<td>Previous business date for calendar</td>
+			<td>local Number numberDays, local String Calendar</td>
+		</tr>
+		<tr>
+			<td>toString</td>
+			<td>Convert Date to String</td>
+			<td>local String DateMask</td>
+		</tr>
+		<tr>
+			<td>year</td>
+			<td>Year (4 digit)</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">Db</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>currVal</td>
+			<td>Return highest key value</td>
+			<td>literal String table, String KeyExpr</td>
+		</tr>
+		<tr>
+			<td>delete</td>
+			<td>Delete records (SQL format)</td>
+			<td>literal String table, local String where, local String
+			PSQLqualifiers</td>
+		</tr>
+		<tr>
+			<td>fastdelete</td>
+			<td>Delete multiple records</td>
+			<td>literal String table, String KeyExpr</td>
+		</tr>
+		<tr>
+			<td>getOneRow</td>
+			<td>Select one row of data from a table</td>
+			<td>String select, String table, String keys, String delim</td>
+		</tr>
+		<tr>
+			<td>getrecord</td>
+			<td>Retrieve a recordTABLE from the database</td>
+			<td>literal String table, String KeyExpr, literal Boolean
+			ClassNew</td>
+		</tr>
+		<tr>
+			<td>getSchemaColumn</td>
+			<td>Return a PSL column descriptor</td>
+			<td>local String table, local String column</td>
+		</tr>
+		<tr>
+			<td>getSchemaTable</td>
+			<td>Return a PSL table descriptor</td>
+			<td>local String table</td>
+		</tr>
+		<tr>
+			<td>insert</td>
+			<td>Insert a new record (SQL format)</td>
+			<td>String table, String columns, String values, String
+			PSQLqualifiers</td>
+		</tr>
+		<tr>
+			<td>isDefined</td>
+			<td>Returns whether reference is defined</td>
+			<td>literal String from, literal String where, local Number
+			match</td>
+		</tr>
+		<tr>
+			<td>isSchemaColumn</td>
+			<td>Is table.column a valid column name?</td>
+			<td>local String table, local String column</td>
+		</tr>
+		<tr>
+			<td>isSchemaTable</td>
+			<td>Is table a valid table name?</td>
+			<td>local String table</td>
+		</tr>
+		<tr>
+			<td>nextKey</td>
+			<td>Return next key value</td>
+			<td>literal String table, String KeyExpr</td>
+		</tr>
+		<tr>
+			<td>nextVal</td>
+			<td>Return highest key value + 1</td>
+			<td>literal String table, String KeyExpr</td>
+		</tr>
+		<tr>
+			<td>prevKey</td>
+			<td>Return previous key value</td>
+			<td>literal String table, String KeyExpr</td>
+		</tr>
+		<tr>
+			<td>prevVal</td>
+			<td>Return prior key value</td>
+			<td>literal String table, String KeyExpr</td>
+		</tr>
+		<tr>
+			<td>select</td>
+			<td>Create a Result set</td>
+			<td>local String select, local String from, local String where,
+			local String orderby, local String groupby, local String PSQLparams</td>
+		</tr>
+		<tr>
+			<td>selectdbSet</td>
+			<td>Create a set of Records</td>
+			<td>literal String table, local String where, local String
+			orderby</td>
+		</tr>
+		<tr>
+			<td>update</td>
+			<td>Update records (SQL format)</td>
+			<td>String table, String columns, String where, String
+			PSQLqualifiers</td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">DbSet</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>getrecord</td>
+			<td>Return current record</td>
+			<td>literal String table</td>
+		</tr>
+		<tr>
+			<td>isEmpty</td>
+			<td>Return boolean state of results set</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>next</td>
+			<td>Position cursor to the next row</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">HTML</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>addAttrib</td>
+			<td>Add column attributes</td>
+			<td>String element, String attributes</td>
+		</tr>
+		<tr>
+			<td>addCol</td>
+			<td>Add Column form resultset to XML documen</td>
+			<td>ResultSet rs, String col</td>
+		</tr>
+		<tr>
+			<td>addElement</td>
+			<td>Add Element line to XML Dtd</td>
+			<td>String element, String attributes</td>
+		</tr>
+		<tr>
+			<td>addList</td>
+			<td>Add a matching list (columns+values) XML</td>
+			<td>literal String element, literal String columnlist, String
+			valuelist, String delim</td>
+		</tr>
+		<tr>
+			<td>addProp</td>
+			<td>Add individual column and value to XML</td>
+			<td>String column, String value</td>
+		</tr>
+		<tr>
+			<td>addRow</td>
+			<td>Add results row with tags</td>
+			<td>String element, ResultSet rs</td>
+		</tr>
+		<tr>
+			<td>addString</td>
+			<td>Add string to XML format (clsoe or open)</td>
+			<td>String string, literal Boolean close</td>
+		</tr>
+		<tr>
+			<td>addTitle</td>
+			<td>Add XML title to header</td>
+			<td>String title</td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">IO</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>close</td>
+			<td>Close Device</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>open</td>
+			<td>Open IO</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>read</td>
+			<td>Reads a record from device</td>
+			<td>public String ErrorType</td>
+		</tr>
+		<tr>
+			<td>write</td>
+			<td>Write record</td>
+			<td>local String Record, local String EOL</td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">List</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>add</td>
+			<td>Add a value to a list</td>
+			<td>local String expr, local String delimiter, local Boolean
+			allowDuplicate, local Boolean inOrder</td>
+		</tr>
+		<tr>
+			<td>contains</td>
+			<td>List contains expression</td>
+			<td>String expr, String delimiter, Boolean ignoreCase</td>
+		</tr>
+		<tr>
+			<td>count</td>
+			<td>Number of elements in list</td>
+			<td>local String delimiter, local Boolean noDuplicates</td>
+		</tr>
+		<tr>
+			<td>elementAt</td>
+			<td>Return individual element of List</td>
+			<td>local Number position, local String delimiter</td>
+		</tr>
+		<tr>
+			<td>position</td>
+			<td>Ordinal position in the list</td>
+			<td>local String expr, local String delimiter, local Boolean
+			ignoreCase</td>
+		</tr>
+		<tr>
+			<td>sort</td>
+			<td>Sort the elements in a list</td>
+			<td>local String delimiter, local Boolean allowDuplicate</td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">Number</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>byte</td>
+			<td>return single byte represented by number</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>char</td>
+			<td>return character represented by number</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>fnumber</td>
+			<td>Format (and round) a number</td>
+			<td>local String format, local Number decimals</td>
+		</tr>
+		<tr>
+			<td>random</td>
+			<td>Return pseudo-random number in [0,val-1]</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>roundCur</td>
+			<td>Round an amount to currency</td>
+			<td>local String crcd, local String roundOption, local Number
+			justify</td>
+		</tr>
+		<tr>
+			<td>roundDec</td>
+			<td>Round an amount to decimal</td>
+			<td>local Number decimal, local String roundOption, local Number
+			justify</td>
+		</tr>
+		<tr>
+			<td>toString</td>
+			<td>Format a number</td>
+			<td>local Number decimal, local String formatMask</td>
+		</tr>
+		<tr>
+			<td>zero</td>
+			<td>Zero fill a number</td>
+			<td>local Number length, local Number decimal, local Boolean
+			implied, local Number sign</td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">Object</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>data</td>
+			<td>Return object exists / is array</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>exists</td>
+			<td>Return object exists</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>getClass</td>
+			<td>Return object class</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>isPrimitive</td>
+			<td>Class is a primitive class</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>order</td>
+			<td>Next or previous subscript in array</td>
+			<td>local Number direction</td>
+		</tr>
+		<tr>
+			<td>query</td>
+			<td>Name of next node in array</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">PSL</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>actual</td>
+			<td>actual() array as 'property'</td>
+			<td>Number sub</td>
+		</tr>
+		<tr>
+			<td>addSetting</td>
+			<td>Add or modify a PSL compiler setting</td>
+			<td>local String section, local String ident, local Primitive
+			value</td>
+		</tr>
+		<tr>
+			<td>addSubrou</td>
+			<td>Add a subroutine to the module</td>
+			<td>local String Name, local List parameters, local String
+			comment, local Boolean new</td>
+		</tr>
+		<tr>
+			<td>cachePSLColumn</td>
+			<td>Cache and return a PSL column descriptor</td>
+			<td>PSLColumn cache(), local String qcn, PSLTable tCache()</td>
+		</tr>
+		<tr>
+			<td>cachePSLTable</td>
+			<td>Cache and return a PSL table descriptor</td>
+			<td>PSLTable cache(), local String table, local Number level</td>
+		</tr>
+		<tr>
+			<td>error</td>
+			<td>Output a PSL compile-time error</td>
+			<td>String errorText</td>
+		</tr>
+		<tr>
+			<td>getdbLoad</td>
+			<td>Return Record map header</td>
+			<td>local String subRou, local String var, local Number instPtr
+			</td>
+		</tr>
+		<tr>
+			<td>getLabelRecord</td>
+			<td>Return a PSL subroutine label record</td>
+			<td>String subrou</td>
+		</tr>
+		<tr>
+			<td>getPSLColumn</td>
+			<td>Return a PSL column descriptor</td>
+			<td>local String table, local String column, SchemaTable
+			stCache()</td>
+		</tr>
+		<tr>
+			<td>getPSLTable</td>
+			<td>Return a PSL table descriptor</td>
+			<td>local String table, local Number level</td>
+		</tr>
+		<tr>
+			<td>getSetting</td>
+			<td>Return a PSL compiler setting (defaults to ")</td>
+			<td>local String section, local String ident</td>
+		</tr>
+		<tr>
+			<td>hasSetting</td>
+			<td>Does PSL compiler setting exist?</td>
+			<td>local String section, local String ident</td>
+		</tr>
+		<tr>
+			<td>insertLine</td>
+			<td>Insert a line of code</td>
+			<td>local String PSLCode, local Number line, local Number level
+			</td>
+		</tr>
+		<tr>
+			<td>isRecord</td>
+			<td>Record class is ancestor of class</td>
+			<td>local String class</td>
+		</tr>
+		<tr>
+			<td>mExpr</td>
+			<td>Convert a PSL string to an M string</td>
+			<td>local String psl</td>
+		</tr>
+		<tr>
+			<td>newVariable</td>
+			<td>Generate a new variable name</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>openBuffer</td>
+			<td>Open a new PSL buffer</td>
+			<td>local List parameters, local String comment</td>
+		</tr>
+		<tr>
+			<td>patch</td>
+			<td>Replace expression with backpatch token</td>
+			<td>local String expression</td>
+		</tr>
+		<tr>
+			<td>subrouExists</td>
+			<td>Subroutine exists in current module</td>
+			<td>local String name</td>
+		</tr>
+		<tr>
+			<td>warn</td>
+			<td>Output a PSL compile-time warning</td>
+			<td>local String warning</td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">PSLBuffer</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>add</td>
+			<td>Add a line of PSL code to the buffer</td>
+			<td>local String code</td>
+		</tr>
+		<tr>
+			<td>insert</td>
+			<td>insert PSL subroutine into current code stream</td>
+			<td>local String name, local String resultClass</td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">PSLColumn</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>getClass</td>
+			<td>column's dataType as PSL class</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>getCurrentExpr</td>
+			<td>expression to retrieve(0)/set(1) column</td>
+			<td>local PSLIdentifier rec, local Boolean bLeft</td>
+		</tr>
+		<tr>
+			<td>getCurrentLvn</td>
+			<td>local variable containing column's value</td>
+			<td>local PSLIdentifier rec</td>
+		</tr>
+		<tr>
+			<td>getCurrentNode</td>
+			<td>Node containing column's value</td>
+			<td>local Boolean bQuoted</td>
+		</tr>
+		<tr>
+			<td>getOldExpr</td>
+			<td>expr to retrieve(0)/set(1) column.oldVal</td>
+			<td>local PSLIdentifier rec, local Boolean bLeft</td>
+		</tr>
+		<tr>
+			<td>getOldLvn</td>
+			<td>local variable containing column.oldVal</td>
+			<td>local PSLIdentifier rec</td>
+		</tr>
+		<tr>
+			<td>getOldNode</td>
+			<td>Node containing column.oldVal</td>
+			<td>local Boolean bQuoted</td>
+		</tr>
+		<tr>
+			<td>getPurposeNode</td>
+			<td>purpose Id of node containing the column</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>getUpdateCode</td>
+			<td>code to update column value</td>
+			<td>local PSLIdentifier rec, local PSLExpression value, local
+			Number mode</td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">PSLExpression</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>fitsLineLength</td>
+			<td>does expression + extra space fit M line length</td>
+			<td>local Number extra</td>
+		</tr>
+		<tr>
+			<td>isArray</td>
+			<td>Expression is an array</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>isLiteral</td>
+			<td>Expression is literal</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>isVariable</td>
+			<td>Expression is a variable</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>toValue</td>
+			<td>Reduce expression to constant</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">PSLIdentifier</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>optimize</td>
+			<td>Reference object can be post optimized</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">PSLSubrou</td>
+
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>addCode</td>
+			<td>Add a line of M code the buffer</td>
+			<td>local String code</td>
+		</tr>
+		<tr>
+			<td>addExe</td>
+			<td>Add a line of code from exe() the buffer</td>
+			<td>local String code</td>
+		</tr>
+		<tr>
+			<td>addLvn</td>
+			<td>Add a vsql() replacement for addExe() to the subroutine</td>
+			<td>local Number nr, local String expr</td>
+		</tr>
+		<tr>
+			<td>addTag</td>
+			<td>Add a tag(number) for addExe() to the subroutine</td>
+			<td>local Number nr, local String code</td>
+		</tr>
+		<tr>
+			<td>getCode</td>
+			<td>Get M code at specified line</td>
+			<td>local Number line</td>
+		</tr>
+		<tr>
+			<td>getLine</td>
+			<td>Get highest linenumber of the subroutine</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>getLvn</td>
+			<td>Get vsql() replacement value</td>
+			<td>local Number lvn</td>
+		</tr>
+		<tr>
+			<td>getLvnMax</td>
+			<td>Get highest vsql() replacement number of the subroutine</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>getTag</td>
+			<td>Get the tag for a subscript in exe()</td>
+			<td>local Number tag</td>
+		</tr>
+		<tr>
+			<td>getTagMax</td>
+			<td>Get highest tag number of the subroutine</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>getTagPrefix</td>
+			<td>Get the tag prefix for addExe()</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>insCode</td>
+			<td>Insert M code at specified line</td>
+			<td>local Number line, local String Code</td>
+		</tr>
+		<tr>
+			<td>setTagPrefix</td>
+			<td>Set the tag prefix for addExe()</td>
+			<td>local String prefix</td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">PSLTable</td>
+
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>assertLevel</td>
+			<td>Assert a PSLTable instance with minimum info level</td>
+			<td>local Number level, PSLColumn cache()</td>
+		</tr>
+		<tr>
+			<td>getArchivable</td>
+			<td>Is table valid to be archived</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>getArchiveIncluded</td>
+			<td>Get tables included with this when archived</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>getArchiveKey</td>
+			<td>Get archive key number</td>
+			<td>local Boolean forArch</td>
+		</tr>
+		<tr>
+			<td>getArchiveSubs</td>
+			<td>Get archive sub-tables</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>getArchiveTable</td>
+			<td>Get primary archive table</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>getFilerLogic</td>
+			<td>Filer logic that needs to be processed</td>
+			<td>local String operation, local PSLExpression qualExp, local
+			Boolean isPslExp</td>
+		</tr>
+		<tr>
+			<td>getLoadCode</td>
+			<td>M code to load data node</td>
+			<td>local PSLIdentifier rec,local String node, local Number
+			mode, local Boolean exists, public String lvpm()</td>
+		</tr>
+		<tr>
+			<td>getNewCode</td>
+			<td>M code instantiate new Record</td>
+			<td>local PSLIdentifier rec, local PSLExpression mode</td>
+		</tr>
+		<tr>
+			<td>getQuery</td>
+			<td>Get table query</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>getSaveCode</td>
+			<td>M code to save data node</td>
+			<td>local PSLIdentifier rec, local String node, local Number
+			mode, local String lvpm(), local PSLColumn rdbCol()</td>
+		</tr>
+		<tr>
+			<td>getUpdateKey</td>
+			<td>M code to safe current key for UPDATE</td>
+			<td>local PSLIdentifier rec, local String lvpm()</td>
+		</tr>
+		<tr>
+			<td>isOneNode</td>
+			<td>table uses single node in internal storage</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>isParent</td>
+			<td>Table is parent table</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">Primitive</td>
+
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>get</td>
+			<td>the primitive's value or a default value</td>
+			<td>Primitive default</td>
+		</tr>
+		<tr>
+			<td>isNull</td>
+			<td>Expression is NULL</td>
+			<td>literal Boolean isIncludeEmptyQuotes</td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">Record</td>
+
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>bypassSave</td>
+			<td>Database save, bypass triggers</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>compare</td>
+			<td>Compare and report differences</td>
+			<td>local Record object2</td>
+		</tr>
+		<tr>
+			<td>copy</td>
+			<td>Copy object</td>
+			<td>local String colmap</td>
+		</tr>
+		<tr>
+			<td>fromArchive</td>
+			<td>Check if record loaded from archive</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>fromArray</td>
+			<td>Copy M array into object properties</td>
+			<td>literal String Array, literal String Keys</td>
+		</tr>
+		<tr>
+			<td>getMode</td>
+			<td>Return Record Mode</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>getTable</td>
+			<td>Return table represented by this record</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>isChanged</td>
+			<td>Check if the Column has Changed</td>
+			<td>local String column, local String useagetype</td>
+		</tr>
+		<tr>
+			<td>overlay</td>
+			<td>New record overlay fields</td>
+			<td>String array()</td>
+		</tr>
+		<tr>
+			<td>save</td>
+			<td>Save a record to the database</td>
+			<td>local String Filerqualifiers</td>
+		</tr>
+		<tr>
+			<td>setAuditFlag</td>
+			<td>Set update history flag</td>
+			<td>literal Boolean state</td>
+		</tr>
+		<tr>
+			<td>setCreateOnly</td>
+			<td>Allow create mode only</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>setMode</td>
+			<td>Set Record Mode</td>
+			<td>local Number Mode</td>
+		</tr>
+		<tr>
+			<td>setUpdateOnly</td>
+			<td>Allow update mode only</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>toArray</td>
+			<td>Copy object properties into M array</td>
+			<td>literal String Array, literal String Keys</td>
+		</tr>
+		<tr>
+			<td>toString</td>
+			<td>Copy object</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">RecordACN</td>
+
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>renew</td>
+			<td>Loan/Deposit renewal</td>
+			<td>String keys</td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">RecordCIF</td>
+
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>default</td>
+			<td>New Cif account defaults form product</td>
+			<td>String key</td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">RecordDEP</td>
+
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>default</td>
+			<td>Deposit new account default method</td>
+			<td>String keys</td>
+		</tr>
+		<tr>
+			<td>renew</td>
+			<td>Loan/Deposit renewal</td>
+			<td>String keys</td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">RecordLN</td>
+
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>default</td>
+			<td>Loan new account product defaults</td>
+			<td>String keys</td>
+		</tr>
+		<tr>
+			<td>renew</td>
+			<td>Loan/Deposit renewal</td>
+			<td>String keys</td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">Reference</td>
+
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>copy</td>
+			<td>Copy Reference class instance</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>equals</td>
+			<td>Compare two reference objects</td>
+			<td>Reference cmp</td>
+		</tr>
+		<tr>
+			<td>getPointer</td>
+			<td>Return pointer to reference object</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>getStoredValue</td>
+			<td>Return a process scope value from object</td>
+			<td>local String tag</td>
+		</tr>
+		<tr>
+			<td>setStoredValue</td>
+			<td>Store a process scope value in an object</td>
+			<td>local String tag, local String value</td>
+		</tr>
+		<tr>
+			<td>toString</td>
+			<td>Return string representation of object</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">ResultSet</td>
+
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>getCol</td>
+			<td>Return column value from results row</td>
+			<td>local Primitive colRef</td>
+		</tr>
+		<tr>
+			<td>getColProt</td>
+			<td>Return column protection</td>
+			<td>local Primitive colRef</td>
+		</tr>
+		<tr>
+			<td>getrow</td>
+			<td>Return current results row</td>
+			<td>local String delimiter, local List columnList</td>
+		</tr>
+		<tr>
+			<td>getrowProt</td>
+			<td>Return row protection</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>isEmpty</td>
+			<td>Return boolean state of results set</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>next</td>
+			<td>Position cursor to the next row</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">Row</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>getColumns</td>
+			<td>Get the properties of a Row object</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>getdelimiter</td>
+			<td>Get the row delimiter</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>setColumns</td>
+			<td>Set the properties of a Row object</td>
+			<td>local List Properties</td>
+		</tr>
+		<tr>
+			<td>setdelimiter</td>
+			<td>Set the row delimiter</td>
+			<td>local String delimiter</td>
+		</tr>
+		<tr>
+			<td>toRecord</td>
+			<td>Copy a Row object to a Record object</td>
+			<td>local Record identifier, local String columnMap</td>
+		</tr>
+		<tr>
+			<td>toString</td>
+			<td>Convert a Row object to a String</td>
+			<td>local String colDel, local String quoChar, local String
+			fmtdate, local String fmtTime, local String fmtBool</td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">RowSet</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>beforeFirst</td>
+			<td>Position RowSet before first Row</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>getrow</td>
+			<td>Return current row</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>isEmpty</td>
+			<td>Return if RowSet is empty</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>loadFromFile</td>
+			<td>Load RowSet from file</td>
+			<td>local String directory, local String filename, local String
+			filetype</td>
+		</tr>
+		<tr>
+			<td>next</td>
+			<td>Position rowset at the next row</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">Runtime</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>charset</td>
+			<td>Character set</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>commit</td>
+			<td>Commit TP fence</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>delErrXBAD</td>
+			<td>XBAD error</td>
+			<td>object,errcode</td>
+		</tr>
+		<tr>
+			<td>delayCommit</td>
+			<td>Call subroutine with delayed commits</td>
+			<td>literal String entryref</td>
+		</tr>
+		<tr>
+			<td>rollback</td>
+			<td>Tp Rollback to the start of a fence</td>
+			<td>Startptr</td>
+		</tr>
+		<tr>
+			<td>setErrMSG</td>
+			<td>Message Table Error</td>
+			<td>object, msgnum, variable</td>
+		</tr>
+		<tr>
+			<td>setErrSTBLER</td>
+			<td>Application Error</td>
+			<td>object,errcode</td>
+		</tr>
+		<tr>
+			<td>setErrXBAD</td>
+			<td>XBAD error</td>
+			<td>object, errcode, column, curval, altval</td>
+		</tr>
+		<tr>
+			<td>start</td>
+			<td>Start TP fence</td>
+			<td>tranid, varlist, stat</td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">Schema</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>createTable</td>
+			<td>Create temporary table schema</td>
+			<td>String table, String keyexpr, String columnList, String
+			globalName</td>
+		</tr>
+		<tr>
+			<td>deleteTable</td>
+			<td>Delete table schema</td>
+			<td>String table</td>
+		</tr>
+		<tr>
+			<td>getTableName</td>
+			<td>Return a table name for a RecordClass</td>
+			<td>String class</td>
+		</tr>
+		<tr>
+			<td>getTableRecord</td>
+			<td>Return a Data-Qwik table record</td>
+			<td>String table</td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">String</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>addQuotes</td>
+			<td>Add one layer of quotes</td>
+			<td>local String character</td>
+		</tr>
+		<tr>
+			<td>ascii</td>
+			<td>ASCII code of character at specified pos</td>
+			<td>local Number position</td>
+		</tr>
+		<tr>
+			<td>beginsWith</td>
+			<td>Begins with string</td>
+			<td>local String string,local Boolean ignoreCase</td>
+		</tr>
+		<tr>
+			<td>blank</td>
+			<td>Pad a string with blanks</td>
+			<td>local Number fieldLength, local Boolean rightJustify</td>
+		</tr>
+		<tr>
+			<td>byteLimitSubstring</td>
+			<td>substring of at most maxBytes bytes</td>
+			<td>local Number start, local Number maxBytes</td>
+		</tr>
+		<tr>
+			<td>complexUnpack</td>
+			<td>Complex unpack of data string</td>
+			<td>local Number length, local Boolean signed, local Boolean
+			leftnib</td>
+		</tr>
+		<tr>
+			<td>contains</td>
+			<td>Contains a string</td>
+			<td>local String string</td>
+		</tr>
+		<tr>
+			<td>endsWith</td>
+			<td>Ends with string</td>
+			<td>local String string, local Boolean ignoreCase</td>
+		</tr>
+		<tr>
+			<td>extract</td>
+			<td>Extract a string</td>
+			<td>local Number start, local Number end</td>
+		</tr>
+		<tr>
+			<td>find</td>
+			<td>Find the next position of a string</td>
+			<td>local String string, local Number start, local Boolean
+			ignoreCase, local String quoteChar</td>
+		</tr>
+		<tr>
+			<td>follows</td>
+			<td>Follows a string</td>
+			<td>local String string</td>
+		</tr>
+		<tr>
+			<td>getSub</td>
+			<td>Return a sub-delimited or labeled string</td>
+			<td>local String label, local String delimiter1, local String
+			delimiter2, local Number position</td>
+		</tr>
+		<tr>
+			<td>insert</td>
+			<td>Insert a string into a string</td>
+			<td>local String string, local Number offSet, local String
+			padCharacter, local Boolean displace</td>
+		</tr>
+		<tr>
+			<td>isInteger</td>
+			<td>Is an integer</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>isLike</td>
+			<td>Is like (SQL like)</td>
+			<td>local String likeExpr, local Boolean ignoreCase</td>
+		</tr>
+		<tr>
+			<td>isLiteral</td>
+			<td>Is a literal value - quoted or number</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>isNumber</td>
+			<td>Is a number</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>justify</td>
+			<td>Justify and pad a string</td>
+			<td>local Number fieldLength, local Number direction, local
+			String padCharacter, local Boolean truncate</td>
+		</tr>
+		<tr>
+			<td>length</td>
+			<td>String length</td>
+			<td>local String delimiter</td>
+		</tr>
+		<tr>
+			<td>lowerCase</td>
+			<td>Convert to lower case</td>
+			<td>local Boolean capitalizeFirstChar</td>
+		</tr>
+		<tr>
+			<td>piece</td>
+			<td>Return string at delimited position</td>
+			<td>local String delimiter, local Number start, local Number
+			end, local String quoteChar</td>
+		</tr>
+		<tr>
+			<td>putSub</td>
+			<td>Insert a sub-delimited or tagged string</td>
+			<td>local String insert, local String label, local String
+			delimiter1, local String delimiter2, local Number position</td>
+		</tr>
+		<tr>
+			<td>replace</td>
+			<td>Replace occurrances of expr1 with expr2</td>
+			<td>local String expr1, local String expr2, local Number count,
+			local Boolean ignoreCase, local String quoteChar</td>
+		</tr>
+		<tr>
+			<td>reverse</td>
+			<td>Reverse the character order</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>stripQuotes</td>
+			<td>Strip one layer of quotes</td>
+			<td>local String quoteCharacter</td>
+		</tr>
+		<tr>
+			<td>toByteString</td>
+			<td>Convert String to ByteString</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>toDate</td>
+			<td>Convert formatted date to julien date</td>
+			<td>local String mask</td>
+		</tr>
+		<tr>
+			<td>toNumber</td>
+			<td>Convert String to Number</td>
+			<td>local String mask, local Boolean stripSpace</td>
+		</tr>
+		<tr>
+			<td>toRow</td>
+			<td>Convert a String type to a Row type</td>
+			<td>local List elements, local String delimiter</td>
+		</tr>
+		<tr>
+			<td>toTime</td>
+			<td>Convert formatted to internal time</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>translate</td>
+			<td>Character by character replace</td>
+			<td>local String lookFor, local String replaceBy</td>
+		</tr>
+		<tr>
+			<td>trim</td>
+			<td>trim characters from a String</td>
+			<td>local Number Option, local String character</td>
+		</tr>
+		<tr>
+			<td>unpack</td>
+			<td>Unpacks data string</td>
+			<td>local Number length</td>
+		</tr>
+		<tr>
+			<td>upperCase</td>
+			<td>Convert to upper case</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">Time</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>toString</td>
+			<td>Convert Time to String</td>
+			<td>local String TimeMask</td>
+		</tr>
+		<tr>
+			<td class="objclass">Class</td>
+			<td class="classname">tranSet</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+			<th>Formal Parameters</th>
+		</tr>
+		<tr>
+			<td>copytran</td>
+			<td>Copy transaction to tranSet</td>
+			<td>local RecordTTX ttx, String colRefs(), local Number tranSeq,
+			local String sectran</td>
+		</tr>
+		<tr>
+			<td>gettran</td>
+			<td>Get transaction from tranSet</td>
+			<td>local Number Sequence</td>
+		</tr>
+		<tr>
+			<td>postTSet</td>
+			<td>Post tranSet</td>
+			<td>Postdate, Branch, PostParam, tranArr</td>
+		</tr>
+
+	</tbody>
+</table>
+
+</body>
+</html>

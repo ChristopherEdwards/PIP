@@ -1,0 +1,276 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Cache Class</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { margin-left:4.50pt; width:631px; border-spacing:0px; }
+col.whs2 { width:8.558%; }
+col.whs3 { width:577px; }
+tr.whs4 { x-cell-content-align:top; }
+td.whs5 { width:8.558%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+img_whs6 { width:15px; height:15px; float:none; border-style:none; }
+td.whs7 { width:577px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+img_whs8 { border:none; float:none; width:32px; height:32px; border-style:none; }
+table.whs9 { x-cell-content-align:top; width:77.112%; border-spacing:0px; }
+col.whs10 { width:1in; }
+col.whs11 { width:3.25in; }
+td.whs12 { width:95px; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; border-top-style:none; }
+p.whs13 { font-weight:bold; }
+td.whs14 { width:311px; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; border-top-style:none; }
+td.whs15 { width:95px; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; }
+td.whs16 { width:311px; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; }
+tr.whs17 { x-cell-content-align:top; height:18px; }
+td.whs18 { width:95px; padding-right:10px; padding-left:10px; border-left-style:none; border-top-style:none; border-right-style:none; border-bottom-style:none; background-color:#c0c0c0; }
+p.whs19 { font-weight:bold; margin-left:0px; }
+td.whs20 { width:311px; padding-right:10px; padding-left:10px; background-color:#c0c0c0; }
+td.whs21 { width:311px; padding-right:10px; padding-left:10px; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs19 {margin-left:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nCache Class\nCache Class");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Cache Class</h1>
+
+<p>The <span style="font-weight: bold; color: #0000ff;"><font color=blue ><B>Cache class</B></font></span> 
+ contains methods used to retrieve Record&lt;class&gt; objects from within 
+ a process’ local memory, calling the <a href="psl_db_getrecord.htm">Db.getRecord</a> 
+ method itself if a record does not exist in the cache. The intent of cache 
+ is to provide database optimization for references to records that either 
+ are not expected to change during the life of the cache and/or process, 
+ or where database updates can randomly be visible or not within the cache 
+ without affecting the operation of the program. Only use the Cache class 
+ in processes that contain read-only references to frequently accessed 
+ tables that exhibit repeated references to the same records (e.g., CUVAR, 
+ TRN, PRODCTL, PRODFT*).</p>
+
+<p>The Cache class does not use the vobj() array for data storage. This 
+ limits the implementation to force a consistent identifier structure for 
+ all procedures that reference the cache. That is, the cache identifier 
+ (referencing the same cache) cannot be a simple variable in one process 
+ and an array in another process. This implementation enhances performance.</p>
+
+<p>Using a Cache object and the <a href="psl_cache_getrecord.htm">Cache.getRecord</a> 
+ method does not have a significant performance impact in an M database 
+ implementation. Benchmarks produce either negligible improvements or degradation 
+ (+/- 10%), depending on the size of the cache and the structure of the 
+ identifier (i.e., array identifiers are slower than named variables, large 
+ caches are slower than small ones). However, significant performance improvements 
+ are expected on an ORACLE database. Separate caches per table seem to 
+ be more efficient (and easier to manage) than one large array of caches 
+ with the table or process name as the subscript key.</p>
+
+<p>Implement the Cache class in transaction processing and long-running 
+ batches, such as accruals. Cache the Institution Variables table (CUVAR) 
+ at the driver level (call the cache object %CACHE), making it available 
+ for all processes. Use the NEW command and KILL command on the identifier 
+ to manage the scope of a cache object.</p>
+
+<p class=Example>Example</p>
+
+<p>The following code provides an example of how you can cache the CUVAR 
+ and TRN tables at the driver level in a cache object called %CACHE.</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code
+	style="font-family: 'Courier New';">TAG(String ETC) //</p>
+
+<p class=Code><font style="color: #000000;"
+					color=#000000><font style="font-family: 'Courier New';"
+										face="Courier New">type public 
+ </font></font><span style="font-weight: bold;"><B><font style="color: #000000;"
+														color=#000000><font 
+ style="font-family: 'Courier New';"
+	face="Courier New">Cache %CUVAR</font></font></B></span></p>
+
+<p class=Code><font style="color: #000000;"
+					color=#000000><font style="font-family: 'Courier New';"
+										face="Courier New">type Public 
+ </font></font><span style="font-weight: bold;"><B><font style="color: #000000;"
+														color=#000000><font 
+ style="font-family: 'Courier New';"
+	face="Courier New">Cache %CACHE()</font></font></B></span></p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code><font style="color: #000000; font-family: 'Courier New';"
+					color=#000000
+					face="Courier New">type RecordCUVAR cuvar = %CUVAR.getRecord(&quot;CUVAR&quot;)</font></p>
+
+<p class=Code><font style="color: #000000; font-family: 'Courier New';"
+					color=#000000
+					face="Courier New">type RecordTRN trn = %CACHE(&quot;TRN&quot;).getRecord(&quot;TRN&quot;,&quot;:ETC&quot;)</font></p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code><font style="color: #000000; font-family: 'Courier New';"
+					color=#000000
+					face="Courier New">set tjd = cuvar.tjd</font></p>
+
+<p class=Code><font style="color: #000000; font-family: 'Courier New';"
+					color=#000000
+					face="Courier New">set conam = cuvar.conam</font></p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code><font style="color: #000000; font-family: 'Courier New';"
+					color=#000000
+					face="Courier New">set x = trn.etc</font></p>
+
+<p class=Code><font style="color: #000000; font-family: 'Courier New';"
+					color=#000000
+					face="Courier New">set x = trn.pgm</font></p>
+
+<p class=Code><font style="color: #000000;"
+					color=#000000><font style="font-family: 'Courier New';"
+										face="Courier New">quit</font></font></p>
+
+<table x-use-null-cells cellspacing="0" width="631" class="whs1">
+<col class="whs2">
+<col class="whs3">
+
+<tr valign="top" class="whs4">
+<td width="8.558%" class="whs5">
+<p class=Note
+	style="text-align: center;"
+	align=center><img src="../image/i_blue_sm.jpg" alt="image\msgs.gif" x-maintain-ratio="TRUE" width="15px" height="15px" border="0" class="img_whs6"></td>
+<td width="577px" class="whs7">
+<p class=Note>Although the CUVAR table should be cached, evaluate source 
+ code for optimization through the <a href="psl_if.htm">#IF</a> and <a 
+ href="psl_else.htm">#ELSE</a> compiler commands in combination with compile 
+ time CUVAR lookups. This optimization can substantially reduce the amount 
+ of database IO and code that executes at run-time.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="8.558%" class="whs5">
+<p class=Note
+	style="text-align: center;"
+	align=center><img src="../image/warning.gif" x-maintain-ratio="TRUE" width="32px" height="32px" border="0" class="img_whs8"></td>
+<td colspan="1" rowspan="1" width="577px" class="whs7">
+<p class=Note>Cache is not under transaction control and may, in fact, 
+ not represent the current state of the database or any known prior state. 
+ The state of any RecordClass object within the cache is as of the instant 
+ it was loaded into the cache.</td></tr>
+</table>
+
+<p><br>
+This class is available in <span style="font-weight: bold;"><B>Profile v7.0 
+ and greater</B></span>. There are future plans to make this class available 
+ in Profile v6.4 as well.</p>
+
+<table x-use-null-cells cellspacing="0" width="77.112%" class="whs9">
+<col class="whs10">
+<col class="whs11">
+
+<tr valign="top" class="whs4">
+<td width="95px" class="whs12">
+<p class="whs13">Ancestor</td>
+<td width="311px" class="whs14">
+<p><a href="psl_reference_class.htm">Reference</a></td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="95px" class="whs15">
+<p class="whs13">Descendants</td>
+<td colspan="1" rowspan="1" width="311px" class="whs16">
+<p>None</td></tr>
+</table>
+
+<table x-use-null-cells cellspacing="0" width="77.112%" class="whs9">
+<col class="whs10">
+<col class="whs11">
+
+<tr valign="top" class="whs17">
+<td bgcolor="#C0C0C0" width="95px" class="whs18">
+<p class="whs19">Methods</td>
+<td bgcolor="#C0C0C0" width="311px" class="whs20">
+<p class="whs13">Description</td></tr>
+
+<tr valign="top" class="whs17">
+<td width="95px" class="whs15">
+<p><a href="psl_cache_getrecord.htm">getRecord</a></td>
+<td width="311px" class="whs21">
+<p>Retrieves a single record from within a process’ local memory.</td></tr>
+</table>
+
+<p class=Field>&nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

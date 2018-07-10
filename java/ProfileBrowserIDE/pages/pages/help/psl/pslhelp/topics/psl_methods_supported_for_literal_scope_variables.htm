@@ -1,0 +1,159 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Methods Supported for Literal Scope Variables</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Programming Standards\nScope of Objects and Variables\nMethods Supported for Literal Scope Variables");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Methods Supported for Literal Scope Variables</h1>
+
+<p>Literal scope variables can be typed as Record&lt;Class&gt; or ResultSet 
+ objects. This provides a mechanism for including database records or column 
+ values in the generated code. The following methods are supported for 
+ literal scope variables:</p>
+
+<ul>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1><a href="psl_db_getrecord.htm">Db.getRecord</a> 
+ </p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1><a href="psl_db_isdefined.htm">Db.isDefined</a> 
+ </p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1><a href="psl_db_select.htm">Db.select</a> 
+ </p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1><a href="psl_resultset_next.htm">ResultSet.next</a> 
+ </p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1><a href="psl_resultset_getcol.htm">ResultSet.getCol</a> 
+ </p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1><a href="psl_resultset_getrow.htm">ResultSet.getRow</a> 
+ </p></li>
+</ul>
+
+<p class=Example>Example</p>
+
+<p>The following PSL code:</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">tag(array)</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">type literal ResultSet RS = Db.select(&quot;BRCD,CCDEF,DESC&quot;,&quot;UTBLBRCD&quot;)</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">#while RS.next()</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">set array(RS.getCol(1)) = $P(RS.getRow(&quot;|&quot;),&quot;|&quot;,2,3)</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">#end</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">quit</p>
+
+<p>will generate the following M code:</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">tag(array) ;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">S array(&quot;0&quot;) = &quot;0|Back 
+ Office&quot;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">S array(&quot;1&quot;) = &quot;1|Br 1&quot;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">S array(&quot;2&quot;) = &quot;2|Front-End 
+ Branch 2&quot;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">S array(&quot;3&quot;) = &quot;2|Front-End 
+ Branch 3&quot;</p>
+
+<p class=BodyTextBold>When Standard is Enforced: Profile v7.0</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

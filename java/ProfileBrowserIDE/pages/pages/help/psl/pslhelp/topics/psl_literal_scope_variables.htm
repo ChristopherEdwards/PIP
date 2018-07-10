@@ -1,0 +1,175 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Literal Scope Variables</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Programming Standards\nScope of Objects and Variables\nLiteral Scope Variables");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Literal Scope Variables</h1>
+
+<p>Literal scope variables can be assigned and referenced directly within 
+ the PSL source code at compile time. The compiler inserts the values into 
+ the generated code as literal values.</p>
+
+<p>Literal variables can be set to any expression that is resolvable at 
+ compile time, including a subset of PSL methods. This scope provides the 
+ ability to optimize generated code by incorporating database values directly 
+ in the code at compile time, and improving readability and maintenance 
+ by assigning often-used strings into literal scope variables. The CUVAR 
+ variable is a global scope literal variable that is automatically instantiated 
+ by PSL at compile time, and can be referenced anywhere in the source code.</p>
+
+<p>Literal variables are scoped within the subroutine and cannot be Public.</p>
+
+<p>For additional information, refer to the <a href="psl_methods_supported_for_literal_scope_variables.htm">Methods 
+ Supported for Literal Scope Variables</a> section.</p>
+
+<p class=Example>Example 1</p>
+
+<p>The following PSL code:</p>
+
+<p class=Code>type literal String X = &quot;All this&quot;</p>
+
+<p class=Code>type String y = X_&quot; is that&quot;</p>
+
+<p class=Code>quit</p>
+
+<p class=Code>&nbsp;</p>
+
+<p>will generate the following M code:</p>
+
+<p class=Code>N y S y = &quot;All this&quot;_&quot; is that&quot;</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Example>Example 2</p>
+
+<p>A programmer could enter the following line of code:</p>
+
+<p class=Code>set x=CUVAR.%MCP</p>
+
+<p>The code generator will extract the value of %MCP from the CUVAR table 
+ and generate the following code, assuming that CUVAR.%MCP is 1:</p>
+
+<p class=Code>set x = 1</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Example>Example 3</p>
+
+<p>The combination of literal scope variables, the <a href="psl_xecute.htm">#XECUTE</a> 
+ command, and the <a href="psl_while.htm">#WHILE</a> compiler command can 
+ be combined to provide powerful code generation. Use them to build program 
+ logic with parameter tables that include code expressions, functions, 
+ or methods as a column value. This links a table into a program, enabling 
+ you to generate program conditions based on table values.</p>
+
+<p>This PSL source code</p>
+
+<p class=Code>acrCalc(iacm,balint,irn,cmp,posacr,dip) // Return one day 
+ accrual interest</p>
+
+<p class=Code>type literal ResultSet RS = Db.select(&quot;CODE,EXPR&quot;,&quot;UTBLIACM&quot;)</p>
+
+<p class=Code>#while RS.next()</p>
+
+<p class=Code>xecute &quot;if iacm=&quot;&quot;&quot;_RS.getCol(1)_&quot;&quot;&quot; 
+ quit &quot;_RS.getCol(2)</p>
+
+<p class=Code>#end</p>
+
+<p class=Code>quit 0</p>
+
+<p class=Code>&nbsp;</p>
+
+<p>will generate the following M code:</p>
+
+<p class=Code>I iacm=&quot;10&quot; Q (balint+cmp)*irn/36000</p>
+
+<p class=Code>I iacm=&quot;11&quot; Q (balint+cmp)*irn/36500</p>
+
+<p class=Code>I iacm=&quot;13&quot; Q (balint+cmp)*irn/36500</p>
+
+<p class=Code>I iacm=&quot;20&quot; Q (balint+posacr)*($$EXP^%ZFUNC(irn/36000)-1)</p>
+
+<p class=Code>I iacm=&quot;21&quot; Q (balint+posacr)*($$EXP^%ZFUNC(irn/36500)-1)</p>
+
+<p class=Code>.</p>
+
+<p class=Code>.</p>
+
+<p class=Code>.</p>
+
+<p class=BodyTextBold>When Standard is Enforced: Profile v7.0</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Separators</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Programming Standards\nSeparators");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Separators</h1>
+
+<ul>
+	
+	<li class=kadov-P-CBullet1><p class=Bullet1>To adhere to industry standards 
+ and enhance the readability of nested blocks, use curly brackets to mark 
+ the beginning and end of a block.</p></li>
+</ul>
+
+<p class=Example
+	style="margin-left: 48px;">Example</p>
+
+<p class=Code
+	style="margin-left: 72px;">type ResultSet rs=Db.select(&quot;CID,BAL,IRN&quot;,&quot;DEP&quot;)</p>
+
+<p class=Code
+	style="margin-left: 72px;">while rs.next() <span style="font-weight: bold;"><B>do 
+ {</B></span></p>
+
+<p class=Code
+	style="margin-left: 72px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;..set 
+ CID = rs.getCol(1)</p>
+
+<p class=Code
+	style="margin-left: 72px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ BAL = rs.getCol(2)</p>
+
+<p class=Code
+	style="margin-left: 72px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ IRN = rs.getCol(3)</p>
+
+<p class=Code
+	style="margin-left: 72px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ INTRATE = rs.getCol(2) * rs.getCol(3)</p>
+
+<p class=Code
+	style="margin-left: 72px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ CID,&quot; - &quot;,INTRATE,!</p>
+
+<p class=Code
+	style="margin-left: 72px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span 
+ style="font-weight: bold;"><B>}</B></span></p>
+
+<ul>
+	
+	<li class=kadov-P-CBullet1><p class=Bullet1>Indent the closing curly 
+ bracket in alignment with the PSL statements contained in the block. The 
+ closing curly bracket should be on its own line.</p></li>
+</ul>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Comments</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Programming Standards\nComments");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Comments</h1>
+
+<p>Use the following guidelines concerning the inclusion of comments in 
+ the program code:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Use comments to explain 
+ or summarize the intent of the code. Explain complex logic, rather than 
+ just repeating it in the comments.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Provide a revision history 
+ of changes made. Include the appropriate FIS tracking number.</p></li>
+</ul>
+
+<p class=BodyTextBold>Single Line Comments</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Only include <span style="font-weight: bold;"><B>single 
+ line comments</B></span> at the end of a line of code if the line will not 
+ extend into the right margin (i.e., off the right side of the screen space). 
+ For longer single-line comments, insert the comment prior to the line 
+ of code being described.</p></li>
+</ul>
+
+<p class=Code
+	style="margin-left: 48px;">// Write single line comments using this 
+ notation</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Avoid multiple single line 
+ comments. Generally, a multi-line comment improves readability.</p></li>
+</ul>
+
+<p class=BodyTextBold>Multi-Line Comments</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Enclose multi-line comments 
+ in /* */ comment indicators.</p></li>
+</ul>
+
+<p class=Code
+	style="margin-left: 48px;">/* Multi-line comments should be</p>
+
+<p class=Code
+	style="margin-left: 48px;">&nbsp;&nbsp;&nbsp;written 
+ using this notation.</p>
+
+<p class=Code
+	style="margin-left: 48px;">*/</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>By placing the /* and */ 
+ characters on individual lines, the comment block will be distinquished 
+ from the rest of the program code. This formatting technique uses the 
+ additional whitespace to increase readability.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>The PSL compiler accepts 
+ comment blocks delimited by /* and */ whenever a PSL statement is valid, 
+ except immediately following the opening curly bracket of a statement 
+ block.</p></li>
+</ul>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

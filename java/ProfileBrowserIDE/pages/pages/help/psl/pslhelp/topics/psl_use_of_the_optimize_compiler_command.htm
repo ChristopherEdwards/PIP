@@ -1,0 +1,103 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Use of the #OPTIMIZE Compiler Command</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Programming Standards\nCode Optimization\nUse of the #OPTIMIZE Compiler Command");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Use of the #OPTIMIZE Compiler Command</h1>
+
+<p>The <a href="psl_optimize.htm">#OPTIMIZE</a> command instructs the compiler 
+ to identify objects that are very local in scope (i.e., not passed as 
+ parameters) and to optimize the run-time code. In general, the object 
+ can be managed within private local variables instead of the object array, 
+ which appears to have a significant positive impact. The result is optimized 
+ result sets.</p>
+
+<p>To enable this optimization, PSL code can use result sets in nested 
+ blocks. Passing a result set as a parameter would defeat the optimization. 
+ The generated result set code is restructured to place all the code related 
+ to a single Db.select cursor together in the generated program. In addition, 
+ the select statement is included in the open label to improve readability 
+ and debugging.</p>
+
+<p>The default #OPTIMIZE action is ON. However, if #OPTIMIZE is not included 
+ in the PSL code, the optimizer will not be invoked.</p>
+
+<p>This compiler command is optional in the current implementation. However, 
+ this command should be inserted in new PSL procedure and batch, as well 
+ as any existing procedures and batches that are modified. The generated 
+ code should be compared to a non-optimized version to validate the optimization. 
+ This process should be used for development in all versions.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

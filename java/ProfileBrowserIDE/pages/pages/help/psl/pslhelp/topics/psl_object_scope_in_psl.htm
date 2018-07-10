@@ -1,0 +1,159 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Object Scope in PSL</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Programming Standards\nScope of Objects and Variables\nObject Scope in PSL");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Object Scope in PSL</h1>
+
+<p>PSL rules assume that any object in scope will not be changed within 
+ a called procedure unless it is explicitly passed to that procedure. The 
+ compiler cannot enforce this; therefore, you should carefully review all 
+ Public scope objects. </p>
+
+<p>Objects passed as parameters can be modified and destroyed within the 
+ called procedure. As a rule, procedures should not destroy or instantiate 
+ objects passed in as formal parameters unless specifically designed as 
+ a generalized instantiation utility. PSL tests certain Record type objects 
+ that are received as formal parameters and inserts run-time error processing 
+ if the passed object is destroyed.</p>
+
+<p>Individual array references to an object can be passed as parameters, 
+ as can individual property references.</p>
+
+<p>PSL generates code to perform a run-time check on Record type objects 
+ which contain multiple nodes that are passed as parameters to ensure that 
+ existing objects are not re-instantiated. If an existing object is re-instantiated, 
+ the following warning will be thrown:</p>
+
+<p class=Code>Possible run-time error RECEXISTS</p>
+
+<p class=Example>Example</p>
+
+<p>The following example demonstrates a compile error received when attempting 
+ to reference an object that is out of scope.</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type 
+ ResultSet rs=Db.select(“CID,BAL,IRN”,”DEP”)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while 
+ rs.next() do DATA</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quit</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>DATA //set variables</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ CID=rs.getCol(1)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ BAL=rs.getCol(2)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ IRN=rs.getCol(3)</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>------------------------------------------------------------</p>
+
+<p class=Code>Compile Errors:</p>
+
+<p class=Code>set CID=rs.getCol(1)</p>
+
+<p class=Code>-E-Undefined method: getCol</p>
+
+<p class=Code>At source code line: 11 in subroutine: SUB</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>set BAL=rs.getCol(2)</p>
+
+<p class=Code>-E-Undefined method: getCol</p>
+
+<p class=Code>At source code line: 12 in subroutine: SUB</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>set IRN=rs.getCol(3)</p>
+
+<p class=Code>-E-Undefined method: getCol</p>
+
+<p class=Code>At source code line: 13 in subroutine: SUB</p>
+
+<p>To correct these errors, the column values or the object itself must 
+ be passed to the DATA sub-procedure.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

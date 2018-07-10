@@ -1,0 +1,117 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Method Naming Conventions</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Method Naming Conventions</h1>
+
+<p>Use the following syntax when naming methods:</p>
+
+<p class=Code>Class.method()</p>
+
+<p>where</p>
+
+<ul>
+	
+	<li class=kadov-P-CBullet1><p class=Bullet1><span style="font-weight: bold;"><B>Class</B></span> 
+ - The name of the class to which the method belongs. Capitalize the first 
+ letter of each word in the class name.</p></li>
+</ul>
+
+<p class=Example
+	style="margin-left: 36px;">Example</p>
+
+<p class=Code
+	style="margin-left: 60px;">if ‘<span style="font-weight: bold;"><B>Class</B></span>.isClass(&quot;RecordDEP&quot;) 
+ quit</p>
+
+<p class=Code
+	style="margin-left: 60px;">else &nbsp;type 
+ <span style="font-weight: bold;"><B>ResultSet</B></span> rs = <span style="font-weight: bold;"><B>Db</B></span>.select(“CID,BAL,LNM”,”DEP”)</p>
+
+<ul>
+	
+	<li class=kadov-P-CBullet1><p class=Bullet1><span style="font-weight: bold;"><B>method</B></span> 
+ - A lowercase letter for the first word in the method, followed by initial 
+ caps for each of the following words in the method name.</p></li>
+</ul>
+
+<p class=Example
+	style="margin-left: 36px;">Example</p>
+
+<p class=Code
+	style="margin-left: 60px;">type RecordDEP dep=Db.<span style="font-weight: bold;"><B>getRecord</B></span>(“DEP”,”CID=:CID”)</p>
+
+<p class=Code
+	style="margin-left: 60px;">do dep.<span style="font-weight: bold;"><B>save</B></span>()</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

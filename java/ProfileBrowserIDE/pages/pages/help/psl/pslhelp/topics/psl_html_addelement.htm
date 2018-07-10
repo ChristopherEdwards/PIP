@@ -1,0 +1,154 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>addElement</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<style type="text/css">
+<!--
+table.whs1 { width:546px; margin-left:18pt; border-spacing:0px; }
+tr.whs2 { x-cell-content-align:top; }
+td.whs3 { width:114px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs4 { width:432px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs5 { margin-left:24px; x-condition:NotPrintedDocn; }
+p.whs6 { margin-left:24px; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nHTML Class\nMethods\naddElement");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>addElement Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">HTML</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class=BodyIndent>This method is used to add information to the Document 
+ Type Definition (DTD) of an XML script. The particular level of information 
+ is a line that describes the label (element) and attributes of the data 
+ within that label. </p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>htmlObject.addElement(String label, String attributes)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="546" class="whs1">
+
+<tr valign="top" class="whs2">
+<td width="114px" class="whs3">
+<p>label</td>
+<td width="432px" class="whs4">
+<p>The label that will contain sub-levels of information in the data section.</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="114px" class="whs3">
+<p>attributes</td>
+<td width="432px" class="whs4">
+<p>Columns or additional levels of information within the label</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>An updated XML formatted string. The information updated 
+ is the element part of the DTD of the XML message.</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs5">v6.4</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>type HTML xx = Class.new(“HTML”)</p>
+
+<p class=Code>set return = xx.addTitle(“MRPC98”)</p>
+
+<p class=Code>set return = <span style="font-weight: bold;"><B>xx.addElement(“RECORD”,“ERROR,MORE,DEP”)</B></span></p>
+
+<p class=Code>____________________________________________________________</p>
+
+<p class="whs6">The following will be added by the two methods 
+ above. The addElement method will only add the line containing the word 
+ ELEMENT. It inserts this record before the ]&gt; that was added by the 
+ addTitle method.</p>
+
+<p class=Code>&lt;XML&gt;</p>
+
+<p class=Code>&lt;!DOCTYPE MRPC98[</p>
+
+<p class=Code>&lt;!ELEMENT RECORD (ERROR,MORE,DEP)*&gt;</p>
+
+<p class=Code>]&gt;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

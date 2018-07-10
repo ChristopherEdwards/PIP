@@ -1,0 +1,161 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Inheritance</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { width:270px; border-spacing:0px; }
+tr.whs2 { x-cell-content-align:top; }
+td.whs3 { width:54px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs4 { margin-left:4.50pt; }
+img_whs5 { width:32px; height:32px; border-style:none; }
+td.whs6 { width:216px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs7 { margin-top:12.00pt; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Introduction to Object-Oriented Programming\nInheritance");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script><script type="text/javascript" language="JavaScript1.2" src="../ehlpdhtm.js" x-save-method="compute-relative" name="EHELP_DHTM"></script>
+<script type="text/javascript"
+		language=JavaScript1.2>
+<!-- 
+if( typeof( kadovInitEffects ) != 'function' ) kadovInitEffects = new Function();if( typeof( kadovInitTrigger ) != 'function' ) kadovInitTrigger = new Function();if( typeof( kadovFilePopupInit ) != 'function' ) kadovFilePopupInit = new Function();if( typeof( kadovTextPopupInit ) != 'function' ) kadovTextPopupInit = new Function();
+ //-->
+</script>
+
+
+<h1>Inheritance</h1>
+
+<p>Inheritance is a way of organizing related classes so that they can 
+ share common code. Inheritance facilitates the creation of hierarchical 
+ classifications. That is, you can create a class (i.e.,&nbsp;the subclass) 
+ by having it inherit all the properties of any existing class definition 
+ (i.e.,&nbsp;the superclass). For example, the deposit record class (RecordDEP) 
+ and loan record class (RecordLN) inherit their attributes from the account 
+ superclass (RecordACN). You can then add properties and methods as needed 
+ to the new class, as well as modify attributes of the superclass plus 
+ any that you add to it.</p>
+
+<p>When you create a subclass of another class, the subclass inherits all 
+ the public fields of its superclass. A class can have any number of subclasses. 
+ However, a class can only have one immediate superclass. A subclass can, 
+ in turn, be a superclass of another subclass.</p>
+
+<table x-use-null-cells cellspacing="0" width="270" class="whs1">
+
+<tr valign="top" class="whs2">
+<td width="54px" class="whs3">
+<p class="whs4"><a href="javascript:void(0);" onMouseOver="if ((parseInt(navigator.appVersion) >= 4) &amp;&amp; (typeof(BSPSPopupOnMouseOver) == 'function') ) BSPSPopupOnMouseOver(event)" id="A6" onclick="BSSCPopup('psl_inheritance__graphic.htm');return false;"><img src="../image/cam.gif" alt="image\cam.gif" width="32px" height="32px" border="0" class="img_whs5"></a><script 
+ type="text/javascript"
+	language=JavaScript1.2><!--
+kadovFilePopupInit('A6');
+//--></script> 
+ </td>
+<td width="216px" class="whs6">
+<p class="whs7"><a href="javascript:void(0);" onMouseOver="if ((parseInt(navigator.appVersion) >= 4) &amp;&amp; (typeof(BSPSPopupOnMouseOver) == 'function') ) BSPSPopupOnMouseOver(event)" id="A7" onclick="BSSCPopup('psl_inheritance__graphic.htm');return false;">Inheritance</a><script 
+ type="text/javascript"
+	language=JavaScript1.2><!--
+kadovFilePopupInit('A7');
+//--></script> 
+ </td></tr>
+</table>
+
+<p>In addition to subclasses and superclasses, PSL provides three other 
+ types of classes that are cornerstones of an object-oriented design:</p>
+
+<ul>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1><span style="font-weight: bold;"><B>Final 
+ classes</B></span> - The properties and methods of a final class cannot be 
+ inherited by other classes. For example, if you define the XYZ class as 
+ final, you cannot create subclasses based on (i.e.,&nbsp;inherited from) 
+ the XYZ class. The concept of Final Classes is not available in this PSL 
+ release.</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1><span style="font-weight: bold;"><B>Abstract 
+ classes</B></span> - A superclass that declares the structure of a class without 
+ providing a complete implementation of every method. You may want to define 
+ a superclass that only defines a generic form that is shared by all its 
+ subclasses, yet enabling each subclass to specify the details. For example, 
+ the PSL Record class contains all the methods used by its subclasses RecordACN, 
+ RecordDEP, RecordLN, RecordCRCD, etc. You cannot create an instance of 
+ the Record class because it has no meaning. However, the Record class 
+ does contain the methods of all its subclasses.</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1><span style="font-weight: bold;"><B>Object 
+ classes</B></span> - The superclass of all other PSL classes. Because every 
+ other class is a subset of the Object class, every other class inherits 
+ all the methods and properties accessible from the Object class.</p></li>
+</ul>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

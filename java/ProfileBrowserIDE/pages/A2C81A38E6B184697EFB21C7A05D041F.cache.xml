@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cache-entry>
+	<generated-type-hash class="com.fis.profile.ide.browser.client.ResourceTableWidget_Images_generatedBundle" hash="29394939B97165954CA4EC4379A03387"/>
+	<generated-type-hash class="com.google.gwt.user.client.ui.DisclosurePanelImages_generatedBundle" hash="C3200EFB6E7300D017A8CC0EF2DAE656"/>
+	<generated-type-hash class="com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException_FieldSerializer" hash="FF198044879E67E1ACF2E0C29CC58CB5"/>
+	<generated-type-hash class="com.fis.profile.ide.browser.client.Batch_FieldSerializer" hash="EAC0A55B75494AC59F6FBA045EC9F60E"/>
+	<generated-type-hash class="com.fis.profile.ide.browser.client.EnvironmentConnectionString_FieldSerializer" hash="492801F59F4586F0A68676F765361C35"/>
+	<generated-type-hash class="com.fis.profile.ide.browser.client.Trigger_FieldSerializer" hash="BAE35E4A9A70CA2482735185434935E1"/>
+	<generated-type-hash class="com.fis.profile.ide.browser.client.Procedure_FieldSerializer" hash="5F8D726103ABB293DB5F92C0D3F2CA32"/>
+	<generated-type-hash class="com.fis.profile.ide.browser.client.PSLService_TypeSerializer" hash="A23D5CBA64FD5ADE771C69E93D0E8470"/>
+	<generated-type-hash class="com.fis.profile.ide.browser.client.PSLService_Proxy" hash="28D02926717D528C4CEBC622D95E0624"/>
+	<rebind-decision in="com.google.gwt.user.client.ui.impl.TextBoxImpl" out="com.google.gwt.user.client.ui.impl.TextBoxImpl"/>
+	<rebind-decision in="com.google.gwt.user.client.ui.ListBox.Impl" out="com.google.gwt.user.client.ui.ListBox.Impl"/>
+	<rebind-decision in="com.google.gwt.user.client.ui.impl.FocusImpl" out="com.google.gwt.user.client.ui.impl.FocusImplOld"/>
+	<rebind-decision in="com.google.gwt.user.client.ui.impl.ClippedImageImpl" out="com.google.gwt.user.client.ui.impl.ClippedImageImpl"/>
+	<rebind-decision in="com.fis.profile.ide.browser.client.ResourceTableWidget.Images" out="com.fis.profile.ide.browser.client.ResourceTableWidget_Images_generatedBundle"/>
+	<rebind-decision in="com.google.gwt.user.client.impl.HistoryImpl" out="com.google.gwt.user.client.impl.HistoryImplMozilla"/>
+	<rebind-decision in="com.google.gwt.user.client.impl.DOMImpl" out="com.google.gwt.user.client.impl.DOMImplMozillaOld"/>
+	<rebind-decision in="com.google.gwt.user.client.ui.impl.PopupImpl" out="com.google.gwt.user.client.ui.impl.PopupImplMozilla"/>
+	<rebind-decision in="com.fis.profile.ide.browser.client.PSLService" out="com.fis.profile.ide.browser.client.PSLService_Proxy"/>
+	<rebind-decision in="com.fis.profile.ide.browser.client.ProfileBrowserIDE" out="com.fis.profile.ide.browser.client.ProfileBrowserIDE"/>
+	<rebind-decision in="com.google.gwt.user.client.ui.impl.FormPanelImpl" out="com.google.gwt.user.client.ui.impl.FormPanelImpl"/>
+	<rebind-decision in="com.google.gwt.user.client.impl.HTTPRequestImpl" out="com.google.gwt.user.client.impl.HTTPRequestImpl"/>
+	<rebind-decision in="com.google.gwt.user.client.ui.DisclosurePanelImages" out="com.google.gwt.user.client.ui.DisclosurePanelImages_generatedBundle"/>
+</cache-entry>

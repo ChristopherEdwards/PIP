@@ -1,0 +1,261 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>PSL Data Types</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<style type="text/css">
+<!--
+table.whs1 { width:576px; margin-left:18pt; border-spacing:0px; }
+tr.whs2 { x-cell-content-align:top; }
+td.whs3 { width:108px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs4 { font-weight:bold; }
+td.whs5 { width:468px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs6 { font-family:'Courier New' , monospace; margin-bottom:0pt; }
+p.whs7 { margin-left:24px; }
+p.whs8 { font-weight:normal; }
+table.whs9 { x-cell-content-align:top; width:100%; border-spacing:0; }
+col.whs10 { width:8.23%; }
+col.whs11 { width:91.77%; }
+td.whs12 { padding-right:10px; padding-left:10px; border-right-style:none; border-left-style:none; border-top-style:none; border-bottom-style:none; }
+td.whs13 { padding-right:10px; padding-left:10px; border-top-style:none; border-bottom-style:none; border-right-style:none; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs6 {margin-bottom:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Programming Standards\nPSL Data Types");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>PSL Data Types</h1>
+
+<p>Because many logical operations (particularly comparisons) will fail 
+ if data types are inconsistent, PSL expects data to be stored in its natural 
+ type (e.g., strings are strings, numbers are real numbers, logicals are 
+ 0 or 1, dates are Julian dates, etc.). This also eliminates the need to 
+ perform edit checks on the data or translate external formats into internal 
+ formats in application code.</p>
+
+<p>The PSL compiler needs to interpret references passed into a procedure 
+ as well as created within a procedure. Therefore, you must declare <span 
+ style="font-weight: bold;"><B>all</B></span> identifiers.</p>
+
+<p>Exceptions to this rule are interfaces where data is likely to be in 
+ an external format. In these cases, the interfaces are expected to convert 
+ the data into a standard internal format before it is referenced by application 
+ code.</p>
+
+<table x-use-null-cells cellspacing="0" width="576" class="whs1">
+
+<tr valign="top" class="whs2">
+<td width="108px" class="whs3">
+<p class="whs4">Unacceptable:</td>
+<td width="468px" class="whs5">
+<p class="whs6">type 
+ RecordACN acn=Db.getRecord(“ACN”,”:CID”)</p>
+<p class="whs6">set 
+ <span style="font-weight: bold;"><B>acn.comm=”Y”</B></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ ACN.COMM data type is Logical !</p>
+<p class="whs6">do 
+ acn.save()</p>
+<p class="whs6">quit</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="108px" class="whs3">
+<p class="whs4">Acceptable:</td>
+<td width="468px" class="whs5">
+<p class="whs6">type 
+ RecordACN acn=Db.getRecord(“ACN”,”:CID”)</p>
+<p class="whs6">set 
+ <span style="font-weight: bold;"><B>acn.comm=1</B></span> </p>
+<p class="whs6">do 
+ acn.save()</p>
+<p class="whs6">quit</td></tr>
+</table>
+
+<p class=BodyTextBold>Declaring Objects</p>
+
+<p>The M language supports a single data type (i.e.,&nbsp;string) and does 
+ not require or contain a variable declaration mechanism. PSL, however, 
+ provides two types of data: <span style="font-weight: bold;"><B>primitive 
+ types</B></span> and <span style="font-weight: bold;"><B>reference types</B></span>. 
+ A primitive data type represents a single value. Reference data types 
+ contain values that point to or identify objects such as a RecordDEP object 
+ or a ResultSet object. The name of the class is used as the type. When 
+ you declare a variable using the name of a class for its type, the variable 
+ will contain a reference to an object of that class.</p>
+
+<p>The following syntax is used when declaring objects:</p>
+
+<p class="whs7"><span style="font-weight: bold;"><B>type</B></span> 
+ <span style="font-style: italic;"><I>ObjectClass identifier[=expression[,]]</I></span></p>
+
+<p class="whs7">type Number ACN,BALAGE,AGEMS,UAVB</p>
+
+<p>where:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1><span style="font-weight: bold;"><B>type</B></span> 
+ - a required declarative keyword.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1><span style="font-weight: bold;"><B>ObjectClass</B></span> 
+ - the class to which the object belongs (e.g., Record, ResultSet).</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1><span style="font-weight: bold;"><B>identifier</B></span> 
+ - the name of the object.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1><span style="font-weight: bold;"><B>expression</B></span> 
+ - an optional initializer for each non-array variable declared. This can 
+ be any valid PSL expression (e.g., a method call) that returns an instance 
+ of ObjectClass.</p></li>
+</ul>
+
+<p class=Example>Example</p>
+
+<p>The following declaration statement creates a RecordCIF object named 
+ <span style="font-weight: bold;"><B>cif</B></span> of the type defined by the 
+ <span style="font-weight: bold;"><B>RecordCIF</B></span> class.</p>
+
+<p class=Code>type RecordCIF cif = Class.new(“RecordCIF”)</p>
+
+<p>The following statement declares a ResultSet object named <span style="font-weight: bold;"><B>rs</B></span> 
+ and stores all of the customer numbers from the database in this object.</p>
+
+<p class=Code>type ResultSet rs = Db.select(“ACN”,”CIF”)</p>
+
+<p class="whs8">The following statement declares a Number 
+ object named <span style="font-weight: bold;"><B>tax</B></span> and assigns it 
+ the result of a computation made up of other primitive values.</p>
+
+<p class=Code>type Number tax = amount * 0.04</p>
+
+<p>All identifiers must be declared in order for the PSL compiler to correctly 
+ interpret object references and data types. The PSL compiler will issue 
+ a warning if the code contains an identifier that is not declared, and 
+ assume that such an identifier represents a String object.</p>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs9">
+<col class="whs10">
+<col class="whs11">
+
+<tr valign=top>
+<td width="8.23%" class="whs12">
+<p></td>
+<td width="91.77%" class="whs13">
+<p>Even though the PSL compiler is currently relatively tolerant with respect 
+ to type declarations and type casting, you are strongly encouraged to 
+ use strict typing. Future versions of PSL are likely to enforce much stricter 
+ typing rules.</td></tr>
+</table>
+
+<p class=BodyTextBold>Implicitly Initialized Identifiers</p>
+
+<p>The PSL compiler implicitly initializes the following identifiers as 
+ PUBLIC scope. You should, therefore, <span style="font-weight: bold;"><B>not</B></span> 
+ define these in the source code:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Class</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>CUVAR</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Db</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Object</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>PSL</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Runtime</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Schema</p></li>
+</ul>
+
+<p class=Example>Example</p>
+
+<p>The following code will produce an error because Db is already defined 
+ as a string.</p>
+
+<p class=Code>type String Db</p>
+
+<p class=Code>type RecordCUVAR cuvar = Db.getRecord(&quot;CUVAR&quot;)</p>
+
+<p class=BodyTextBold>When Standard is Enforced: v6.4</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

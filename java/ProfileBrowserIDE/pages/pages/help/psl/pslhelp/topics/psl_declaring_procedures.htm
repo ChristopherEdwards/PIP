@@ -1,0 +1,241 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Declaring Procedures</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { x-cell-content-align:top; width:100%; border-spacing:0px; }
+col.whs2 { width:13.189%; }
+col.whs3 { width:86.811%; }
+tr.whs4 { x-cell-content-align:top; }
+td.whs5 { width:13.189%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; border-left-style:none; border-top-style:none; }
+p.whs6 { margin-left:12px; font-weight:bold; color:#000000; }
+td.whs7 { width:86.811%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-top-style:none; border-right-style:none; }
+td.whs8 { width:13.189%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; border-left-style:none; }
+td.whs9 { width:86.811%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; }
+td.whs10 { width:13.189%; padding-right:10px; padding-left:10px; border-right-style:none; border-left-style:none; border-bottom-style:none; }
+col.whs11 { width:7.015%; }
+col.whs12 { width:92.985%; }
+td.whs13 { width:7.015%; padding-right:10px; padding-left:10px; border-right-style:none; border-left-style:none; border-top-style:none; border-bottom-style:none; }
+td.whs14 { width:92.985%; padding-right:10px; padding-left:10px; border-top-style:none; border-bottom-style:none; border-right-style:none; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Using PSL\nPassing Parameters\nDeclaring Procedures");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Declaring Procedures</h1>
+
+<p>PSL requires that you define each procedure as public, private, or include 
+ no line tag. </p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>A <span style="font-weight: bold;"><B>Public</B></span> 
+ label can be called by any other procedure regardless of the functionality 
+ calling into the line tag. These labels can be published. The PSL compiler 
+ incrementally loads data accessed in the subroutine or function.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>A <span style="font-weight: bold;"><B>Private</B></span> 
+ label indicates that the label can be accessed by a limited number of 
+ subroutines and functions outside the source file. The calling routines 
+ and the called label usually belong to a group of modules that provide 
+ related functionality. Private labels are not published or available for 
+ general use. Because private labels are accessed from outside the module, 
+ the PSL compiler treats them similar to public labels.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>A <span style="font-weight: bold;"><B>Local</B></span> 
+ label is a label that is declared neither public nor private. It is the 
+ default access mode. Local labels can only be accessed by subroutines 
+ and functions inside the current PSL module. The PSL compiler may suppress 
+ incremental data loading if it can infer that the data accessed in the 
+ subroutine or function has already been loaded elsewhere in the source 
+ module.</p></li>
+</ul>
+
+<p class=BodyTextBold>Declaring Procedures</p>
+
+<p>In PSL, you must identify a procedure as a public procedure or a private 
+ procedure in order for the compiler to generate code that can be called 
+ from other source files. The syntax of these declarations appears below. 
+ Although the keywords <span style="font-weight: bold;"><B>public,</B></span> 
+ <span style="font-weight: bold;"><B>private</B></span>, and <span style="font-weight: bold;"><B>local</B></span> 
+ are not case-sensitive, it is recommended that you use all lowercase for 
+ keyords.</p>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs1">
+<col class="whs2">
+<col class="whs3">
+
+<tr valign="top" class="whs4">
+<td width="13.189%" class="whs5">
+<p class="whs6">Public:</td>
+<td width="86.811%" class="whs7">
+<p>public PROC (type identifier)</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="13.189%" class="whs8">
+<p class="whs6">Private:</td>
+<td width="86.811%" class="whs9">
+<p>private PROC (type identifier)</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="13.189%" class="whs10">
+<p class="whs6">Local:</td>
+<td colspan="1" rowspan="1" width="86.811%" class="whs9">
+<p>PROC (type identifier)</td></tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs1">
+<col class="whs11">
+<col class="whs12">
+
+<tr valign="top" class="whs4">
+<td width="7.015%" class="whs13">
+<p></td>
+<td width="92.985%" class="whs14">
+<p>The keyword <span style="font-weight: bold;"><B>local</B></span> is reserved 
+ to explicitly identify local labels. Recognition of this keyword will 
+ be implemented in the near future.</p>
+<p>The code generated by the PSL compiler does not yet prevent calls to 
+ local labels from outside the routine. This too will be implemented in 
+ the near future.</td></tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p class=Example>Example</p>
+
+<p>The following example illustrates how the cif object is passed to the 
+ CHECK and CHECK1 procedures. The calling procedure defines the cif object 
+ as type RecordCIF. The CHECK and CHECK1 procedures also define parameters 
+ of type RecordCIF to receive the object.</p>
+
+<p class=Code>set ACN = Db.currVal(&quot;CIF&quot;)</p>
+
+<p class=Code>type RecordCIF cif = Db.getRecord(“CIF”,”ACN=:ACN”)</p>
+
+<p class=Code>set city = cif.mcity</p>
+
+<p class=Code>do CHECK(.cif)</p>
+
+<p class=Code>do CHECK1(.cif)</p>
+
+<p class=Code>quit</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>CHECK(RecordCIF cif) // Loads only missing nodes</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ state = cif.mstate</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ taxid = cif.taxid</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ city,!,state,taxid</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quit</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>public CHECK1(RecordCIF cif) // Loads all nodes after</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ performing a check </p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ zip=cif.mzip</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ taxid=cif.taxid</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ taxid,!,zip</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quit</p>
+
+<p>In addition, this code illustrates how private and public procedures 
+ load data. When the private procedure (CHECK) processes, it only loads 
+ data from nodes that have not been previously loaded by the calling procedure 
+ (taxid). That is, because the <span style="font-weight: bold;"><B>mcity</B></span> 
+ column appears on the same node as the <span style="font-weight: bold;"><B>mstate</B></span> 
+ column in the CIF table, the compiler does not reload that node.</p>
+
+<p>However, because CHECK1 is a public procedure and can therefore be processed 
+ at any time (i.e., not necessarily immediately following this calling 
+ procedure), the compiler loads data from all nodes of the CIF table that 
+ are referenced inside the subroutine. It does, however, perform a check, 
+ to see if the node has been previously loaded in the calling procedure. 
+ If so, then it does not reload the node.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Computed Columns and Database Object Instantiation</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { margin-left:4.50pt; left:0px; top:342px; border-spacing:0px; width:556px; }
+col.whs2 { width:7.14%; }
+col.whs3 { width:92.86%; }
+tr.whs4 { x-cell-content-align:top; }
+td.whs5 { padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+img_whs6 { width:15px; height:15px; float:none; border-style:none; }
+p.whs7 { margin-left:90.00pt; text-indent:-72.00pt; font-weight:bold; }
+table.whs8 { width:498px; margin-left:27.00pt; border-spacing:0px; }
+td.whs9 { width:126px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs10 { width:372px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs11 { margin-left:36.00pt; text-indent:-18.00pt; font-weight:bold; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs7 {text-indent:1pt; }";
+  strNSS += "p.whs11 {text-indent:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Programming Standards\nComputed Columns\nDatabase Object Instantiation");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Computed Columns and Database Object Instantiation</h1>
+
+<p>Computed columns should not instantiate the database object for which 
+ the computed column is a property. Instead, any property required by a 
+ computed column that is a property of the record, should either be passed 
+ as a parameter or the object itself should be passed. While the first 
+ case is preferred, the second scenario may be used if the parameter list 
+ is very long or the computed function calls a subsequent function that 
+ expects an object as a parameter. Computed columns can instantiate related 
+ RecordClass objects only. Any exception to this standard must be approved 
+ by the PSL Skill Owner and the Profile DBA.</p>
+
+<p>Computed column functions should not check whether a parameter is defined. 
+ Both PSL and SQL provide all parameters to a function label, although 
+ they may have a null value if the underlying record property is null. 
+ Computed columns must handle any potential errors resulting from function 
+ or method calls and always return a value (normally a null value if an 
+ internal error occurred). Designate computed column labels as Public functions.</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>Public BALAVL(RecordDEP dep) // Computed to return DEP.BALAVL</p>
+
+<p class=Code>&nbsp;</p>
+
+<table x-use-null-cells width="556" cellspacing="0" class="whs1">
+<col class="whs2">
+<col class="whs3">
+
+<tr valign="top" class="whs4">
+<td width="7.14%" class="whs5">
+<p class=Note><img src="../image/i_blue_sm.jpg" alt="image\msgs.gif" x-maintain-ratio="TRUE" width="15px" height="15px" border="0" class="img_whs6"></td>
+<td width="92.86%" class="whs5">
+<p class=Note>Within DATA-QWIK, the computed function should refer to column 
+ parameters without the file prefix. If the object is passed into the computed 
+ column, the * character should be used in the appropriate parameter position.</td></tr>
+</table>
+
+<p class=BodyTextBold>Reasons for the Standard</p>
+
+<p>The reasons for this standard are as follows:</p>
+
+<ul>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>For both SQL and PSL, instantiating 
+ the database object in the computed column code causes extra database 
+ IO since the calling routine/procedure has typically already instantiated 
+ the record.</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>There can be a real integrity 
+ issue with PSL, since the value of certain properties may have been legitimately 
+ changed in the object after it was instantiated and before the call to 
+ the computed column. By re-instantiating the object within the function, 
+ the original property value will be used, not the current value. This 
+ could easily result in an integrity error.</p></li>
+</ul>
+
+<p class=Example>Example</p>
+
+<p class="whs7">Unacceptable:</p>
+
+<table x-use-null-cells cellspacing="0" width="498" class="whs8">
+
+<tr valign="top" class="whs4">
+<td width="126px" class="whs9">
+<p>Computed:</td>
+<td width="372px" class="whs10">
+<p><font style="font-family: 'Courier New';"
+		face="Courier New">$$ABC^XYZ(DEP.CID,DEP.BAL)</font></td></tr>
+</table>
+
+<p class="whs11">Acceptable:</p>
+
+<table x-use-null-cells cellspacing="0" width="498" class="whs8">
+
+<tr valign="top" class="whs4">
+<td width="126px" class="whs9">
+<p>Computed:</td>
+<td width="372px" class="whs10">
+<p><font style="font-family: 'Courier New';"
+		face="Courier New">$$ABC^XYZ(CID,BAL) // To pass individual column 
+ values</font></td></tr>
+
+<tr valign="top" class="whs4">
+<td width="126px" class="whs9">
+<p>Computed:</td>
+<td width="372px" class="whs10">
+<p><font style="font-family: 'Courier New';"
+		face="Courier New">$$ABC^XYZ(*)</font></td></tr>
+</table>
+
+<p class=BodyTextBold>When Standard is Enforced: Profile v7.0</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Use of Result Sets Versus Db Sets</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Using PSL\nUse of Result Sets Versus Db Sets");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Use of Result Sets Versus Db Sets</h1>
+
+<p class=BodyTextBold>Result Sets</p>
+
+<p>If you plan to simply retrieve data, use resultsets followed by <a href="psl_db_getrecord.htm">Db.getRecord</a>. 
+ As seen below, this produces less code than a DbSet and does not instantiate 
+ an object.</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>type ResultSet phldrs = Db.select(&quot;COMP&quot;,&quot;PHLD&quot;,&quot;CID=:CID&quot;)</p>
+
+<p class=Code>while phldrs.next() &nbsp;do 
+ {</p>
+
+<p class=Code
+	style="margin-left: 48px;">set COMP = phldrs.getCol(&quot;COMP&quot;)</p>
+
+<p class=Code
+	style="margin-left: 48px;">}</p>
+
+<p class=BodyTextBold>Db Sets</p>
+
+<p>If you plan to instantiate records, use db sets.</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>type DbSet phldrs = Db.selectDbSet(&quot;PHLD&quot;,&quot;CID=:CID&quot;)</p>
+
+<p class=Code>while phldrs.next() &nbsp;do 
+ {</p>
+
+<p class=Code
+	style="margin-left: 48px;">type String COMP</p>
+
+<p class=Code
+	style="margin-left: 48px;">type RecordPHLD phld = phldrs.getRecord(&quot;PHLD&quot;)</p>
+
+<p class=Code
+	style="margin-left: 48px;">set COMP = phld.comp</p>
+
+<p class=Code
+	style="margin-left: 48px;">}</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

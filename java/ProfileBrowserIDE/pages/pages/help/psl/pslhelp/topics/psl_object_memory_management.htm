@@ -1,0 +1,106 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Object Memory Management</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Introduction to Object-Oriented Programming\nObjects\nObject Memory Management");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Object Memory Management</h1>
+
+<p>PSL dynamically allocates objects memory for objects when they are instantiated 
+ by either by calling methods that return objects or by calling the Class.new() 
+ method. The length of time that the object is stored is based on the program’s 
+ logic, not on the duration of a procedure call or boundaries of a block. 
+ </p>
+
+<p>The life of an object begins when it is created and ends when the object 
+ is no longer needed. When no references to an object exist, the memory 
+ associated with the storage of that object is deallocated. In this manner, 
+ PSL automatically deallocates memory.</p>
+
+<p>For example, if you use the PSL <span style="font-weight: bold;"><B>type 
+ </B></span>command to create an object within a procedure or nested block, 
+ PSL allocates memory as needed for the object when the system processes 
+ the type command. PSL de-allocates the memory for the object when processing 
+ exits the procedure.</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>type RecordDEP dep=Class.new(&quot;RecordDEP&quot;)</p>
+
+<p class=Code>do something....</p>
+
+<p class=Code><span style="margin-left: 36px;">quit //Deallocates the identifier 
+ dep and the allocation for its properties</span></p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

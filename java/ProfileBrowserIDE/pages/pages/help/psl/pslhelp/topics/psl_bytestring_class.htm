@@ -1,0 +1,299 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>ByteString Class</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+ol.whs1 { list-style:decimal; }
+table.whs2 { margin-left:4.50pt; width:631px; border-spacing:0px; }
+col.whs3 { width:8.558%; }
+col.whs4 { width:577px; }
+tr.whs5 { x-cell-content-align:top; }
+td.whs6 { width:8.558%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+img_whs7 { width:15px; height:15px; float:none; border-style:none; }
+td.whs8 { width:577px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+img_whs9 { border:none; float:none; width:32px; height:32px; border-style:none; }
+table.whs10 { x-cell-content-align:top; width:77.112%; border-spacing:0px; }
+col.whs11 { width:1in; }
+col.whs12 { width:3.25in; }
+td.whs13 { width:95px; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; border-top-style:none; }
+p.whs14 { font-weight:bold; }
+td.whs15 { width:311px; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; border-top-style:none; }
+td.whs16 { width:95px; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; }
+td.whs17 { width:311px; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; }
+tr.whs18 { x-cell-content-align:top; height:18px; }
+td.whs19 { width:95px; padding-right:10px; padding-left:10px; border-left-style:none; border-top-style:none; border-right-style:none; border-bottom-style:none; background-color:#c0c0c0; }
+p.whs20 { font-weight:bold; margin-left:0px; }
+td.whs21 { width:311px; padding-right:10px; padding-left:10px; background-color:#c0c0c0; }
+td.whs22 { width:311px; padding-right:10px; padding-left:10px; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs20 {margin-left:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nByteString Class\nByteString Class");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>ByteString Class</h1>
+
+<p>The <span style="color: #0000ff; font-weight: bold;"><font color=blue ><B>ByteString </B></font></span>class 
+ is a Primitive descendant that treats its value as a sequence of bytes 
+ instead of characters.</p>
+
+<p>PSL is primarily character-oriented and does not consider the number 
+ of bytes used to represent a character. However, when (character) data 
+ is stored, exported, or imported, the code may have to deal with bytes 
+ rather than characters. The methods of the ByteString class provide the 
+ capabilities to deal with this.</p>
+
+<p>There are two methods to instantiate a ByteString object.</p>
+
+<ol type="1" class="whs1">
+	
+	<li class=kadov-p><p>Use the Number.byte() method to instantiate a 
+ single-byte byte string.</p></li>
+</ol>
+
+<p class=Code
+	style="margin-left: 64px;">type ByteString SINGLBYT = 123.byte()</p>
+
+<ol start="2" type="1" class="whs1">
+	
+	<li class=kadov-p><p>Use the String.toByteString() method to instantiate 
+ a multi-byte byte string.</p></li>
+</ol>
+
+<p class=Code
+	style="margin-left: 64px;">type ByteString MULTIBYT = &quot; Knäckebröd 
+ &quot;.toByteString()</p>
+
+<p>Because the ByteString class is a Primitive descendant, you can cast 
+ any other Primitive descendant as ByteString.</p>
+
+<p class=Code>type ByteString objectName = {ByteString}value</p>
+
+<p>On the other hand, casting a ByteString into any of the other Primitive 
+ descendants may result in a %GTM runtime exception. Therefore, you should 
+ never cast a ByteString into another Primitive descendant unless you are 
+ sure that the sequence of bytes constitutes a valid character string in 
+ the underlying implementation. </p>
+
+<table x-use-null-cells cellspacing="0" width="631" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="8.558%" class="whs6">
+<p class=Note
+	style="text-align: center;"
+	align=center><img src="../image/i_blue_sm.jpg" alt="image\msgs.gif" x-maintain-ratio="TRUE" width="15px" height="15px" border="0" class="img_whs7"></td>
+<td width="577px" class="whs8">
+<p class=Note>The PSL compiler considers all Primitive descendants mutually 
+ cast-able, so you will not receive a compiler warning when you cast a 
+ ByeString into one of the other Primitive descendants.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="8.558%" class="whs6">
+<p class=Note
+	style="text-align: center;"
+	align=center><img src="../image/warning.gif" x-maintain-ratio="TRUE" width="32px" height="32px" border="0" class="img_whs9"></td>
+<td colspan="1" rowspan="1" width="577px" class="whs8">
+<p class=Note>The ByteString class shares most of its method names with 
+ the String class. To be safe, do not combine String methods and ByteString 
+ methods in a single expression.</td></tr>
+</table>
+
+<p>Even though the ByteString class encapsulates the character-to-bytes 
+ conversions, the class itself does rely on or presume a specific character 
+ representation. For example, methods of the ByteString class can deal 
+ with the GT.M character sets &quot;M&quot; and &quot;UTF-8&quot;. Future 
+ versions may compile into code for a platform that uses a different character 
+ representation. For example, the Microsoft platforms and the java programming 
+ language use UTF-16 to represent characters. For this reason, application 
+ programs that need to be portable across multiple platforms shall not 
+ assume a specific character set encoding.</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>//</p>
+
+<p class=Code>// Despite the above warning to stay away from character 
+ set encodings,</p>
+
+<p class=Code>// all examples of ByteString methods assume Runtime.charsetName 
+ = &quot;UTF-8&quot;.</p>
+
+<p class=Code>// This is exclusively for the sake of demonstrating the 
+ differences between</p>
+
+<p class=Code>// character strings and byte strings, in particular with 
+ respect to</p>
+
+<p class=Code>// &quot;partial&quot; characters.</p>
+
+<p class=Code>//</p>
+
+<p class=Code>// The following characters are used in the examples:</p>
+
+<p class=Code>// character ä with byte sequence 195, 164 (decimal)</p>
+
+<p class=Code>// character ö with byte sequence 195, 182 (decimal)</p>
+
+<p class=Code>// character &#306; with byte sequence 196, 178 (decimal)</p>
+
+<p class=Code>// character &#307; with byte sequence 196, 179 (decimal)</p>
+
+<table x-use-null-cells cellspacing="0" width="77.112%" class="whs10">
+<col class="whs11">
+<col class="whs12">
+
+<tr valign="top" class="whs5">
+<td width="95px" class="whs13">
+<p class="whs14">Ancestor</td>
+<td width="311px" class="whs15">
+<p><a href="psl_primitive_class.htm">Primitive</a></td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="95px" class="whs16">
+<p class="whs14">Descendants</td>
+<td colspan="1" rowspan="1" width="311px" class="whs17">
+<p>None</td></tr>
+</table>
+
+<p></p>
+
+<table x-use-null-cells cellspacing="0" width="77.112%" class="whs10">
+<col class="whs11">
+<col class="whs12">
+
+<tr valign="top" class="whs18">
+<td bgcolor="#C0C0C0" width="95px" class="whs19">
+<p class="whs20">Methods</td>
+<td bgcolor="#C0C0C0" width="311px" class="whs21">
+<p class="whs14">Description</td></tr>
+
+<tr valign="top" class="whs18">
+<td colspan="1" rowspan="1" width="95px" class="whs16">
+<p><a href="psl_bytestring_ascii.htm">ascii</a></td>
+<td colspan="1" rowspan="1" width="311px" class="whs22">
+<p>ASCII code of byte at specified position.</td></tr>
+
+<tr valign="top" class="whs18">
+<td colspan="1" rowspan="1" width="95px" class="whs16">
+<p><a href="psl_bytestring_extract.htm">extract</a></td>
+<td colspan="1" rowspan="1" width="311px" class="whs22">
+<p>Extract a byte string.</td></tr>
+
+<tr valign="top" class="whs18">
+<td colspan="1" rowspan="1" width="95px" class="whs16">
+<p><a href="psl_bytestring_find.htm">find</a></td>
+<td colspan="1" rowspan="1" width="311px" class="whs22">
+<p>Find the next position of a byte string.</td></tr>
+
+<tr valign="top" class="whs18">
+<td colspan="1" rowspan="1" width="95px" class="whs16">
+<p><a href="psl_bytestring_justify.htm">justify</a></td>
+<td colspan="1" rowspan="1" width="311px" class="whs22">
+<p>Justify a byte string.</td></tr>
+
+<tr valign="top" class="whs18">
+<td colspan="1" rowspan="1" width="95px" class="whs16">
+<p><a href="psl_bytestring_length.htm">length</a></td>
+<td colspan="1" rowspan="1" width="311px" class="whs22">
+<p>The length of (number of bytes in) the byte string.</td></tr>
+
+<tr valign="top" class="whs18">
+<td colspan="1" rowspan="1" width="95px" class="whs16">
+<p><a href="psl_bytestring_piece.htm">piece</a></td>
+<td colspan="1" rowspan="1" width="311px" class="whs22">
+<p>Return byte string at delimited position.</td></tr>
+
+<tr valign="top" class="whs18">
+<td colspan="1" rowspan="1" width="95px" class="whs16">
+<p><a href="psl_bytestring_topslexpression.htm">toPSLExpression</a></td>
+<td colspan="1" rowspan="1" width="311px" class="whs22">
+<p>Transform into literal that can be inserted in code.</td></tr>
+
+<tr valign="top" class="whs18">
+<td width="95px" class="whs16">
+<p><a href="psl_bytestring_translate.htm">translate</a></td>
+<td width="311px" class="whs22">
+<p>Byte-by-byte replacement.</td></tr>
+</table>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

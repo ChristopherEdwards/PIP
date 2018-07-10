@@ -1,0 +1,256 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>IO Class</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<style type="text/css">
+<!--
+p.whs1 { text-align:justify; }
+table.whs2 { x-cell-content-align:top; width:77.112%; border-spacing:0px; }
+col.whs3 { width:1in; }
+col.whs4 { width:3.25in; }
+tr.whs5 { x-cell-content-align:top; }
+td.whs6 { width:95px; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; border-top-style:none; }
+p.whs7 { font-weight:bold; }
+td.whs8 { width:311px; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; border-top-style:none; }
+td.whs9 { width:95px; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; }
+td.whs10 { width:311px; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; }
+td.whs11 { width:95px; padding-right:10px; padding-left:10px; border-left-style:none; border-top-style:none; border-right-style:none; border-bottom-style:none; background-color:#c0c0c0; }
+p.whs12 { font-weight:bold; margin-left:0px; }
+td.whs13 { width:311px; padding-right:10px; padding-left:10px; background-color:#c0c0c0; }
+td.whs14 { width:95px; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; background-color:Transparent; }
+p.whs15 { margin-left:0px; font-weight:normal; }
+td.whs16 { width:311px; padding-right:10px; padding-left:10px; background-color:Transparent; }
+p.whs17 { font-weight:normal; }
+td.whs18 { width:95px; padding-right:10px; padding-left:10px; background-color:#c0c0c0; border-left-style:none; border-right-style:none; border-bottom-style:none; border-top-style:none; }
+td.whs19 { width:311px; padding-right:10px; padding-left:10px; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs12 {margin-left:1pt; }";
+  strNSS += "td.whs14 {background-color:white; }";
+  strNSS += "p.whs15 {margin-left:1pt; }";
+  strNSS += "td.whs16 {background-color:white; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nIO Class\nIO Class");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>IO Class</h1>
+
+<p class="whs1">The <span style="color: #0000ff; font-weight: bold;"><font color=blue ><B>IO 
+ class</B></font></span> provides methods and properties for data input and output. 
+ The methods and properties in the class are used in association with an 
+ IO type object; therefore, an IO object must first be instantiated:</p>
+
+<p class=Code>type IO objectName = Class.new(&quot;IO&quot;)</p>
+
+<p class=Code>&nbsp;</p>
+
+<table x-use-null-cells cellspacing="0" width="77.112%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="95px" class="whs6">
+<p class="whs7">Ancestor</td>
+<td width="311px" class="whs8">
+<p><a href="psl_reference_class.htm">Reference</a></td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="95px" class="whs9">
+<p class="whs7">Descendants</td>
+<td colspan="1" rowspan="1" width="311px" class="whs10">
+<p>None</td></tr>
+</table>
+
+<table x-use-null-cells cellspacing="0" width="77.112%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" bgcolor="#C0C0C0" width="95px" class="whs11">
+<p class="whs12">Properties</td>
+<td colspan="1" rowspan="1" bgcolor="#C0C0C0" width="311px" class="whs13">
+<p class="whs7">Description</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="95px" class="whs14">
+<p class="whs15"><a href="psl_io_charsetelemname.htm">charsetElemName</a> 
+ </td>
+<td colspan="1" rowspan="1" width="311px" class="whs16">
+<p class="whs17">Element name to be passed to $$^UCIOENCD()</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="95px" class="whs14">
+<p class="whs15"><a href="psl_io_charsetelemtype.htm">charsetElemType</a></td>
+<td colspan="1" rowspan="1" width="311px" class="whs16">
+<p class="whs17">Element type to be passed to $$^UCIOENCD()</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="95px" class="whs14">
+<p class="whs15"><a href="psl_io_charsetname.htm">charsetName</a> 
+ </td>
+<td colspan="1" rowspan="1" width="311px" class="whs16">
+<p class="whs17">Contains the name of the character set 
+ used to convert characters on .read() or .write()</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="95px" class="whs14">
+<p class="whs15"><a href="psl_io_device.htm">device</a></td>
+<td colspan="1" rowspan="1" width="311px" class="whs16">
+<p class="whs17">Contains the complete device specification 
+ (directory and fileName). This is a read-only property.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="95px" class="whs14">
+<p class="whs15"><a href="psl_io_directory.htm">directory</a></td>
+<td colspan="1" rowspan="1" width="311px" class="whs16">
+<p class="whs17">Defines the full path of the directory 
+ where the file is to be stored or accessed.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="95px" class="whs14">
+<p><a href="psl_io_filename.htm">fileName</a></td>
+<td colspan="1" rowspan="1" width="311px" class="whs16">
+<p>Defines the file name used to access the file.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="95px" class="whs14">
+<p><a href="psl_io_openparams.htm">openParams</a></td>
+<td colspan="1" rowspan="1" width="311px" class="whs16">
+<p>Indicates the type of access granted to the device.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="95px" class="whs14">
+<p><a href="psl_io_recordsize.htm">recordSize</a></td>
+<td colspan="1" rowspan="1" width="311px" class="whs16">
+<p>Defines the length of the record within the device to be accessed.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="95px" class="whs14">
+<p><a href="psl_io_timeout.htm">timeout</a></td>
+<td colspan="1" rowspan="1" width="311px" class="whs16">
+<p>Defines the number of seconds to wait for access to the device before 
+ returning an error.</td></tr>
+</table>
+
+<p class=Field>&nbsp;</p>
+
+<table x-use-null-cells cellspacing="0" width="77.112%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td bgcolor="#C0C0C0" width="95px" class="whs18">
+<p class="whs12">Methods</td>
+<td bgcolor="#C0C0C0" width="311px" class="whs13">
+<p class="whs7">Description</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="95px" class="whs9">
+<p><a href="psl_io_close.htm">close</a></td>
+<td width="311px" class="whs19">
+<p>Closes a device based on the <span style="font-weight: bold;"><B>fileName</B></span> 
+ and <span style="font-weight: bold;"><B>directory</B></span> properties.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="95px" class="whs9">
+<p><a href="psl_io_open.htm">open</a></td>
+<td colspan="1" rowspan="1" width="311px" class="whs19">
+<p>Opens a device based on the <span style="font-weight: bold;"><B>fileName</B></span> 
+ and <span style="font-weight: bold;"><B>directory</B></span> properties.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="95px" class="whs9">
+<p><a href="psl_io_read.htm">read</a></td>
+<td colspan="1" rowspan="1" width="311px" class="whs19">
+<p>Reads a record from the device defined by the <span style="font-weight: bold;"><B>fileName</B></span> 
+ and <span style="font-weight: bold;"><B>directory</B></span> properties.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="95px" class="whs9">
+<p><a href="psl_io_write.htm">write</a></td>
+<td colspan="1" rowspan="1" width="311px" class="whs19">
+<p>Writes a record to the device defined by the <span style="font-weight: bold;"><B>fileName</B></span> 
+ and <span style="font-weight: bold;"><B>directory</B></span> properties.</td></tr>
+</table>
+
+<p class=Field>&nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

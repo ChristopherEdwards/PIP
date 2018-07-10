@@ -1,0 +1,139 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Lexical Scope of Objects</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+ <script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Introduction to Object-Oriented Programming\nObjects\nLexical Scope of Objects");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Lexical Scope of Objects</h1>
+
+<p>The Lexical Scope of an object defines the places or points in time 
+ at which an object is accessible or available. When you call a procedure, 
+ the calling routine passes objects to the procedure through its formal 
+ parameters, or as variables. </p>
+
+<p class=Example>Example 1</p>
+
+<p class=Code>function (par1,par2,RecordCIF par3)</p>
+
+<p class=Code>// par1 <span style="font-style: italic;"><I>-</I></span> string 
+ parameter 1</p>
+
+<p class=Code>// par2 <span style="font-style: italic;"><I>-</I></span> string 
+ parameter 2</p>
+
+<p class=Code>// par3 <span style="font-style: italic;"><I>-</I></span> object 
+ parameter</p>
+
+<p class=Code>set par3.taxid = &quot;123-45-6789&quot; // par3 is an object 
+ of type RecordCIF</p>
+
+<p class=Code>quit par3 // returns object of type RecordCIF to caller</p>
+
+<p class=Code>&nbsp;</p>
+
+<p>If you pass an object as a variable, you must re-declare the object 
+ within each procedure that references it with the <span style="font-weight: bold;"><B>type</B></span> 
+ command. The <span style="font-weight: bold;"><B>new</B></span> and <span style="font-weight: bold;"><B>kill</B></span> 
+ commands terminate the scope of declarations previously defined within 
+ the same or higher stack level.</p>
+
+<p class=Example>Example 2</p>
+
+<p class=Code>new a</p>
+
+<p class=Code>type RecordCIF a = Db.getRecord(&quot;CIF&quot;,&quot;ACN&quot;)</p>
+
+<p class=Code>if a.lnm = &quot;Smith&quot; { // a points to CIF object</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">new a</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">type a = Db.getRecord(&quot;DEP&quot;,&quot;:CID&quot;) 
+ // a points to DEP object</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">// CIF object on stack</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">}</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">set a.lnm = &quot;Jones&quot; // DEP 
+ object gone</p>
+
+<p class=Code><span style="margin-left: 36.00pt;">// a points back to CIF 
+ object</span></p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

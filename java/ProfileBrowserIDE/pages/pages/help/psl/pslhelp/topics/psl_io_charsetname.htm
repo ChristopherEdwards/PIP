@@ -1,0 +1,144 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>charsetName Property (IO Class)</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+p.whs1 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nIO Class\nProperties\ncharsetName");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>charsetName Property</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;"><span><span style="x-condition: NotPrintedDocn;">Class:<span 
+ style="font-weight: normal; x-condition: NotPrintedDocn;"> IO</span></span></span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class=BodyIndent>This property contains the name of the characterset 
+ that is used to translate characters when <a href="psl_io_read.htm">IO.read()</a> 
+ or <a href="psl_io_write.htm">IO.write()</a> is called.</p>
+
+<p class=BodyIndent>&nbsp;</p>
+
+<p class=BodyIndent>On input operations, characters read from the device 
+ is translated from IO.charsetName into <a href="psl_runtime_charsetname.htm">Runtime.charsetName</a>.</p>
+
+<p class=BodyIndent>&nbsp;</p>
+
+<p class=BodyIndent>On output operations, characters written to the device 
+ is translated from Runtime,charsetName to IO.charsetName.</p>
+
+<p class=BodyIndent>&nbsp;</p>
+
+<p class=BodyIndent>The value of this property is interpreted only by <a 
+ href="psl_io_open.htm">IO.open()</a>. The supplied or implied value must 
+ be supported by the device; otherwise IO.open() throws an exception.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>type String IOObject.charsetName=&quot;UTF-8&quot;</p>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>A String</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs1">Profile V7.0</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>type IO IOD = Class.new(&quot;IO&quot;)</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>type String EMPTY = <span style="font-weight: bold;"><B>IOD.charsetName</B></span> 
+ // empty string</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>set IOD.directory = &quot;/home/&quot;</p>
+
+<p class=Code>set IOD.file = &quot;output.txt&quot;</p>
+
+<p class=Code>do IOD.open()</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>type String CHARSET = <span style="font-weight: bold;"><B>IOD.charsetName</B></span> 
+ // may have been set by open()</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

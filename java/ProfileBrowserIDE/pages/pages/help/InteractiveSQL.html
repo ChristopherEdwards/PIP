@@ -1,0 +1,944 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="KEYWORDS" content="Interactive SQL" />
+
+
+    <title>Interactive SQL - Help</title>
+	<link rel="stylesheet" type="text/css" href="../../ProfileBrowserIDE.css"/>
+    
+                </head>
+  <body>
+    <div id="webtoolsHelp">
+      <div id="column-content">
+	<div id="content">
+	  <a name="top" id="top"></a>
+	  	  <h2>Interactive SQL Help</h2>
+	  <div id="bodyContent">
+
+<!-- start content -->
+<P>The Interactive SQL capability in the IDE currently supports SELECT 
+statements with a extended syntax for richly formatted results. </P>
+<TABLE class="helpContents">
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV id=toctitle>
+      <H2>Contents</H2></DIV>
+      <UL>
+        <LI class=toclevel-1><A 
+        href="#Interactive_SQL_Extended_Syntax"><SPAN 
+        class=tocnumber>1</SPAN> <SPAN class=toctext>Interactive SQL Extended 
+        Syntax</SPAN></A> 
+        <UL>
+          <LI class=toclevel-2><A 
+          href="#SQL_Syntax_Extension"><SPAN 
+          class=tocnumber>1.1</SPAN> <SPAN class=toctext>SQL Syntax 
+          Extension</SPAN></A> 
+          <LI class=toclevel-2><A 
+          href="#Example"><SPAN 
+          class=tocnumber>1.2</SPAN> <SPAN class=toctext>Example</SPAN></A> 
+          <LI class=toclevel-2><A 
+          href="#Implementation_notes"><SPAN 
+          class=tocnumber>1.3</SPAN> <SPAN class=toctext>Implementation 
+          notes</SPAN></A> 
+          <LI class=toclevel-2><A 
+          href="#Column_qualifier_detail"><SPAN 
+          class=tocnumber>1.4</SPAN> <SPAN class=toctext>Column qualifier 
+          detail</SPAN></A> </LI></UL>
+        <LI class=toclevel-1><A 
+        href="#Table_Titles"><SPAN 
+        class=tocnumber>2</SPAN> <SPAN class=toctext>Table Titles</SPAN></A> 
+        <UL>
+          <LI class=toclevel-2><A 
+          href="#Variable_Insertion_in_Titles"><SPAN 
+          class=tocnumber>2.1</SPAN> <SPAN class=toctext>Variable Insertion in 
+          Titles</SPAN></A> </LI></UL>
+        <LI class=toclevel-1><A 
+        href="#Enhanced_Wildcard_Selection"><SPAN 
+        class=tocnumber>3</SPAN> <SPAN class=toctext>Enhanced Wildcard 
+        Selection</SPAN></A> 
+        <LI class=toclevel-1><A 
+        href="#Sample_HTML_Results"><SPAN 
+        class=tocnumber>4</SPAN> <SPAN class=toctext>Sample HTML 
+        Results</SPAN></A> 
+        <UL>
+          <LI class=toclevel-2><A 
+          href="#Example_.231"><SPAN 
+          class=tocnumber>4.1</SPAN> <SPAN class=toctext>Example #1</SPAN></A> 
+          </LI></UL>
+        <LI class=toclevel-1><A 
+        href="#Sample_Text_Results"><SPAN 
+        class=tocnumber>5</SPAN> <SPAN class=toctext>Sample Text 
+        Results</SPAN></A> 
+        <UL>
+          <LI class=toclevel-2><A 
+          href="#Example_.231_2"><SPAN 
+          class=tocnumber>5.1</SPAN> <SPAN class=toctext>Example #1</SPAN></A> 
+          <LI class=toclevel-2><A 
+          href="#Example_.232"><SPAN 
+          class=tocnumber>5.2</SPAN> <SPAN class=toctext>Example #2</SPAN></A> 
+          <LI class=toclevel-2><A 
+          href="#Example_.233"><SPAN 
+          class=tocnumber>5.3</SPAN> <SPAN class=toctext>Example #3</SPAN></A> 
+          </LI></UL></LI></UL></TD></TR></TBODY></TABLE>
+
+<A 
+name=Interactive_SQL_Extended_Syntax></A>
+<H2>Interactive SQL Extended Syntax </H2><PRE>&lt;Select_Statement // Statement_Qualifiers&gt;
+</PRE>
+<P><B>STATEMENT qualifiers</B> </P>
+<P>Statement qualifiers follow a double slash '//' comment and are individually 
+seperated by a single slash. </P>
+<UL>
+  <LI>BREAK - Set Row break options for table 
+  <LI>{NO}CACHE - Enable or disable SQL cache 
+  <LI>CAPTION - Define a table caption 
+  <LI>{NO}CODE - Display executable M code that implements SQL 
+  <LI>COLS - Set global and class attributes for column qualifiers 
+  <LI>{NO}DQMODE - Enable Data-Qwik natural join and Null value translation 
+  logic 
+  <LI>{NO}DEBUG - Analyze or Debug a SELECT statement 
+  <LI>MARKUP - Set the markup language to either HTML or TEXT (Default = HTML) 
+  <LI>OUTPUT - Set output device to print results set 
+  <LI>PAGE - Set number of lines per page before issuing form feed and heading 
+  reprints 
+  <LI>{NO}PLAN - Display IO access plan score 
+  <LI>ROWS - Set maximum number of rows to output (default = 1,000) 
+  <LI>STYLE - Set table HTML styles (e.g., background-color:#FCFDFE) HTML mode 
+  only 
+  <LI>TEMPLATE - Set format and style properties according to a pre-defined 
+  template (e.g., REPORT) 
+  <LI>TITLE - Set heading title on top of column headings and enable standard 
+  heading format </LI></UL>
+<P><BR><B>COLUMN qualifiers</B> ( SQLcolumnExpression {Column_Qualifiers} ) </P>
+<P>Column qualifiers are enclosed in brackets '{}' adter the column expression. 
+Individual column qualifiers are seperated by commas. </P>
+<UL>
+  <LI>ALIGN - Set alignment of value in cell to Left, Center, or Right 
+  <LI>{NO}BREAK - Insert line breaks or page break if a column value changes 
+  from the last row 
+  <LI>{NO}LENGTH - Set column field length for wrap option or suppress column if 
+  '0' 
+  <LI>{NO}FORMAT - Set column format or mask (e.g., 
+  decimal-size:2;group-separator:',') 
+  <LI>HEADING - Set column Heading 
+  <LI>MATH - Column mat? ( AVG | COUNT | COUNT-LEAST | COUNT-MOST | LEAST | MAX 
+  | MED | MIN | MOST | SUM | UNIQUE ) 
+  <LI>MERGE - Merge column with prior column(s) 
+  <LI>NULL - Replace Null value with supplied value 
+  <LI>{NO}REPEAT - Suppress column if value is the same as previous row 
+  <LI>{NO}SPACE - Set whitespace before next column (Text mode only) 
+  <LI>{NO}STYLE - Set HTML style for column (e.g., color:red) 
+  <LI>TITLE - Set column title for hover help (HTML mode only) 
+  <LI>TYPE - Set column data type (TUFN$L) 
+  <LI>{NO}WRAP - Set column overflow wrap option to {NO}WRAP (text mode only) or 
+  TRUNCATE </LI></UL>
+<P>The values of the column qualifiers: ALIGN, FORMAT, LENGTH, HEADING, TITLE 
+and TYPE default from the data dictionary (i.e., Data-Qwik). </P>
+<P>Data formats default to masks associated with a column's initial data type 
+(e.g., 'D' = MM/DD/YEAR). The mask is initialized to the runtime variables 
+%MSKE, %MSKD, etc. These can be overridden at either the table level or the 
+individual column level by changing the format property. Formatting can also be 
+defeated completely (Raw data) at the table, class and individual column level. 
+</P>
+<A 
+name=SQL_Syntax_Extension></A>
+<H3>SQL Syntax Extension </H3><PRE> 
+ SELECT ColumnList FROM tableList WHERE whereExpression // StatementQualifiers
+    ColumnList&nbsp;:== SQLColumnExpression {ColumnQualifier{,...}} {,...}
+
+               ColumnQualifier&nbsp;:== QualifierName=Properties{;...}
+
+                                QualifierName&nbsp;:==  String format, String style, Number length, String wrap, 
+                                                   String merge, String align, String heading, String math, String type,
+                                                   Number space, Boolean repeat, String null, Boolean break
+
+                                Properties&nbsp;:== PropertyName:Value
+
+                                            PropertyName&nbsp;:== String PropertyName
+                                            Value&nbsp;:== Primitive Value
+</PRE>
+<P>Optional column qualifiers are imbedded directly within SQL SELECT 
+statements. They are declared by enclosing column qualifier expressions in 
+brackets ({}) between SQL column expressions. Qualifier expressions are parsed 
+out of the SQL expression before the SQL expression is processed by the SQL 
+engine or SQL API (e.g., JDBC). </P>
+<P>The qualifiers BREAK, FORMAT, LENGTH, REPEAT, SPACE, STYLE, and WRAP can 
+either be prefixed by the string 'no' or assigned a value of 'none'; which will 
+disable the qualifier. (e.g., NOFORMAT and FORMAT = 'none' will disable all 
+formatting for a column and display the raw value from within the results row.) 
+</P>
+<A 
+name=Example></A>
+<H3>Example </H3><PRE>select class, method, parameters{heading=Format Parameters, style=color:red},des from objectmet 
+</PRE>
+<P>Would override the dictionary default column heading for the column 
+'parameters' and display the text in Red. </P>
+<A 
+name=Implementation_notes></A>
+<H3>Implementation notes</H3>
+<P>Default values for STATEMENT expression qualifiers ( preceded by // after 
+SELECT expression) </P>
+<UL>
+  <LI>BREAK = no 
+  <LI>CACHE = yes (Note: CACHE = no if PLAN = yes) 
+  <LI>CAPTION = Null 
+  <LI>CODE = no 
+  <LI>COLS = no 
+  <LI>DEBUG = no 
+  <LI>OUTPUT = Current browser window 
+  <LI>MARKUP = 'HTML' 
+  <LI>PAGE = no 
+  <LI>PLAN = no 
+  <LI>ROWS = 1000 (Can be extended but may fail if output exceeds 1MB) 
+  <LI>TEMPLATE = Null 
+  <LI>TITLE = Null 
+  <LI>STYLE = Table style properties default to the following values </LI></UL><PRE> border-width:1px
+ padding:2px
+ border-spacing:
+ border-style:inset
+ border-color:#788cb3
+ border-collapse:collapse
+ background-color:#FCFDFE
+ font-family:Verdana
+ font-size:80%
+ alt-row-color:#E0FFD9
+ currency-minus-color:red  
+</PRE>
+<P><BR>Default values for COLUMN qualifiers ( enclosed in brackets {} after a 
+column expression ) </P>
+<UL>
+  <LI>LENGTH = Dictionary default for column 
+  <LI>WRAP = yes (Text mode only, ignored for HTML mode unless 'truncate') 
+  <LI>FORMAT = Table and class FORMAT defaults (includes display masks and 
+  decimal size) 
+  <LI>ALIGN = <B>Right</B> if column is Currency or Number, <B>Center</B> if 
+  Boolean, otherwise <B>Left</B> 
+  <LI>HEADING = Dictionary default from DBTBL1D.RHD 
+  <LI>MATH = Null 
+  <LI>MERGE = No 
+  <LI>TITLE = Dictionary default (composite: DBTBL1D.DI _ DBTBL1D.TYP _ 
+  DBTBL1D.DES _ DBTBL1D.TBL) 
+  <LI>TYPE = Dictionary default (List: '$,B,C,D,F,L,M,T,U') 
+  <LI>SPACE = 2 (Text mode only) 
+  <LI>STYLE = Table defaults 
+  <LI>REPEAT = Yes 
+  <LI>NULL = Null 
+  <LI>BREAK = No </LI></UL>
+<A 
+name=Column_qualifier_detail></A>
+<H3>Column qualifier detail </H3>
+<UL>
+  <LI>BREAK - Break can be set to an integer between 0 and 10 or the literal 
+  'page'. If multiple columns are set to BREAK, will insert the number of line 
+  feeds indicated by the highest column value. Setting the value to 'page' will 
+  generate a page feed (form feed, title and heading) when the column value 
+  changes. Generally, columns that include the BREAK qualifier should be placed 
+  at the beginning of the column list. This qualifier is typically used for key 
+  column breaks, or when column values are placed into the page titles. </LI></UL>
+<UL>
+  <LI>FORMAT - This qualifier describes the output mask or formatting rules that 
+  are applied to the underlying raw data. For Currency, Date, Number, Logical 
+  and Time column classes, the format will default to configuration parameters. 
+  Formats can be set for an entire class with the /COLS table qualifier ( e.g., 
+  /Currency.format=decimal-size:2 ) or within an individual column ( e.g., 
+  DEP.TLD{format="year/mm/dd"} ). </LI></UL>
+<P>The Number and Currency classes include the following format options: </P><PRE>decimal-size: &lt;default to schema&gt;
+decimal-seperator: &lt;default to configuration or ".")
+group-size: &lt;default to 3&gt;
+group-seperator: &lt;default to configuration or ",")
+</PRE>
+<P>- The Date class defaults to configuration or "MM/DD/YEAR" </P>
+<P>- The Time class defaults to configuration or "12:60 AM" </P>
+<P>- The Logical Class dafaults to configuration or "NY" </P>
+<P>- The String, Upper and Memo class supports format masks that implement HTML 
+elements. the "URL" mask output the column value as a hyperlink (value=URL), the 
+"IMAGE" mask outputs an image (value=URL) and "HTML " outputs raw HTML 
+(value=HTML markup). </P>
+<P>Formatting can be disabled by setting the format qualifier to either noformat 
+or format = none </P>
+<P><B>Notes</B> </P>
+<P>a. When entering formats for the Number and Currency class, the syntax must 
+follow the format=property:value; pattern. When entering masks for the other 
+classes, the correct syntax is: format=mask. </P>
+<P>b. To disable formatting for the entire table, enter /COLS=.noformat in the 
+table qualifiers. To disable formatting for a specific class enter 
+/COLS=className.noformat in the table qualifiers. </P>
+<UL>
+  <LI>HEADING - The column heading can be entered in plain text (default) or in 
+  HTML markup. To specify HTML, the heading qualifier must be followed by a 
+  space and the text html (i.e., {heading html=&lt;img src=http_Reference&gt;}). 
+  If the heading is enterd as html markup, all html characters must be propery 
+  'escaped' (e.g., &lt; = &amp;lt;) or the browser may not render the heading 
+  correctly. </LI></UL>
+<P>Individual column headings can be disabled by setting the heading qualifier 
+to noheading or heading = 'none' </P>
+<UL>
+  <LI>LENGTH - NOLENGTH or LENGTH='0' can be specified to suppress the output of 
+  the column. This option can be used in combination with table titles and 
+  column breaks to display key columns in headings. 
+  <LI>NULL - Replaced a Null value for the column with a specified value. Since 
+  the replacement occurs prior to the execution of the MATH functions, the 
+  replacement value will be included in the results. 
+  <LI>MATH - Ignores all null values within all functions (unless changed with 
+  NULL qualifier). However, math functions will include values for rows that 
+  have output suppressed by the REPEAT qualifier. 
+  <LI>REPEAT - To avoid ambiguity between Null values that result from the 
+  REPEAT qualifir and underlying actual Null values, set the Null qualifier if 
+  database may contain actual Null values for the column 
+  <LI>STYLE - HTML mode only, can contain any valid HTML Style property 
+  <LI>WRAP - Text mode only. If WRAP is enabled a single character overflow will 
+  intrude one character into the space between columns if necessary to avoid a 
+  single character overflow. If a SELECT statement contains a column that 
+  typically overflows the default display length (e.g., OBJECTMET.PROPERTIES) it 
+  may make sense to place that column last in the select expression and set the 
+  qualifier to NOWRAP. </LI></UL>
+<A 
+name=Table_Titles></A>
+<H2>Table Titles </H2>
+<P>In addition to column headings and table captions, a title can be specified 
+for the a table with the /TITLE='Expression' qualifier. A title is typically 
+used to display a report name, directory name, date and time, other optional 
+runtime or table values, and page numbers. Titles are enclosed within the table 
+headings and are displayed at every page break along with column headings. In 
+contrast, captions which outside of the table boundaries and are displayed once 
+at the beginning of the table. </P>
+<P>If specified, a title appears within the table boundaries and is contained 
+within a heading group with the individual column headings. The title spans 
+across all of the columns in the table. The title displays the contents of the 
+/TITLE table qualifier, and the directory {company} name (CUVAR.CONAM) along 
+with the system date (%SystemDate) and Current Date (%CurrentDate) and time 
+Current Time (%CurrentTime). If a page break value is specified (/PAGE= 
+'NumberLines'), the title will also include the current page number. </P>
+<A 
+name=Variable_Insertion_in_Titles></A>
+<H3>Variable Insertion in Titles </H3>
+<P>Through variable insertion, it is also possible to include and format current 
+row (column) data and other runtime values into the title. Including column data 
+into the title when combined with the column properties <B>/break = page</B> and 
+<B>/nolength</B> provides an elegant presentation option for key columns that 
+change infrequently. </P>
+<P>The syntax for inserting a column or runtime variable into a title is to 
+prefix the column name or position or variable name with a colon, and enclose it 
+with the greater than and less than symbol, e.g., 
+&lt;:columnReference|variable&gt;. A column reference can be either the column 
+position (e.g., &lt;:1&gt;) or a table.column reference (e.g.,?
+&lt;:objectmet.class&gt;) </P>
+<P>Variable references can include any PSL variable / keyword from within the 
+following list: </P><PRE>Number %ClientVersionID, String %CompanyName, Date %CurrentDate, Time %CurrentTime, Date %EffectiveDate, 
+String %Identifier, Number %ProcessID, String %RoutineName, String %ServerChannelID, String %SessionID, 
+String %SystemCurrency, Date %SystemDate, String %UserClass, String %UserID, String %UserName, 
+String %UserStation, String %VersionID</PRE>
+<P>Data type declarations, formatting and HTML Styles can also be applied to 
+variables by including the Format and Style properties in the variable 
+expression as follows: &lt;:columnReference|variable {Format=ColumnFormat} 
+{Style=ColumnStyle}&gt; For example, the following expression would display a 
+heading with the values for columns dep.cls and dep.grp imbedded and rendered in 
+a red font. </P>
+<P>/heading='Account Listing for Class: &lt;:dep.cls style=color:red&gt; and 
+Group &lt;:dep.grp style=color:red&gt;' </P>
+<A 
+name=Enhanced_Wildcard_Selection></A>
+<H2>Enhanced Wildcard Selection </H2>
+<P>SQL provides a wildcard character ('*') that can be used to select all of the 
+columns within a table. This capability has been extended to provide filters on 
+the columns that are selected from a table. </P>
+<UL>
+  <LI>LIST - Selects the columns specified in DBTBL1.DFTHDR or the column that 
+  is contained in the DESCRIPTION string (e.g., DES, DESC). The Primary keys of 
+  the table are also always included in the selection. This wildcard option is 
+  useful for simple list of table table rows that contain a description column. 
+  </LI></UL>
+<UL>
+  <LI>"&lt;selectionQuery&gt;" - Selects all the columns specified by the 
+  selection query which is applied to the table DBTBL1D. For example: <B>select 
+  *"nod in (50,51) and typ = 'D'" from DEP</B> selects all the Date data type 
+  columns mapped to nodes 50 and 51 from the DEP table. The selection query is 
+  entered in SQL syntax itself, and can include any columns from the DBTBL1D 
+  table and any valid SQL where clause syntax. </LI></UL>
+<A 
+name=Sample_HTML_Results></A>
+<H2>Sample HTML Results </H2>
+<P>By default the Interactive SQL interpreter uses HTML to markup the results. 
+</P>
+<A 
+name=Example_.231></A>
+<H3>Example #1</H3>
+<P><B>Statement</B> </P><PRE>select cls{break=page,nolength},
+          grp{break=page,nolength},
+          type{break},
+          cid,
+          lnm,
+          bal{math=sum;avg, format=decimal-size:2},
+          balavl,
+          tld 
+          from dep
+          order by cls,grp,type,lnm,cid
+          // rows=30/template=report
+          /title=Account Listing for Class: &lt;:dep.cls style=color:red&gt; and Group &lt;:dep.grp style=color:red&gt;</PRE>
+<P><B>Results</B> </P>
+<P>HTML Formatted Interactive SQL results </P>
+<A 
+name=Sample_Text_Results></A>
+<H2>Sample Text Results </H2>
+<P>Sample results (there are three examples below, each demonstrating different 
+features of the SELECT browser. </P>
+<A 
+name=Example_.231_2></A>
+<H3>Example #1</H3>
+<P>Demonstrates the use of MATH functions, headings, format and null value 
+replacement. </P>
+<P><B>Note:</B> The different unique count in columns #5 and #6, due to the 
+replacement of Nulls in column #6. Column #4 is a good example of Unique. </P>
+<P><B>Note:</B> The headings in quotes preserved original upper/lower case, 
+while unquoted values were converted to uppercase. Also, the last heading was 
+split into two lines since it contained the '@' character. </P>
+<P><B>Note:</B> The second column (SUM) was formatted with the Data-Qwik E 
+option, inserting commas into the numbers. </P>
+<P><B>Note:</B> DEP.BAL is defined as three decimal precision in this directory. 
+</P>
+<P><BR><B>Input</B> </P><PRE>SELECT CID{math=unique}, LNM{length=10,wrap=2,math=unique}, bal{math=sum,heading=sum}, bal{math=avg,heading=average}, 
+bal{math=count,heading=count}, bal{math=unique,null=0,heading='Unique Balances'} from dep //rows=10/template=report
+</PRE>
+<P><BR><B>Results</B> </P>
+<P><BR></P><PRE>Console&gt; %PSL-Runtime: .005691 Seconds
+    Account  Report                                                                  Unique
+     Number  Short Name              SUM          AVERAGE            COUNT         Balances
+------------  ----------  ---------------  ---------------  ---------------  ---------------
+          6  HOERR,BRUC       10,236.990        10236.990        10236.990        10236.990
+          7  HOERR,BRUC       17,901.510        17901.510        17901.510        17901.510
+          8  HOERR,BRUC          210.000          210.000          210.000          210.000
+          9  HOERR,BRUC                                                               0.000
+         45  HOERR,BRUC        7,200.000         7200.000         7200.000         7200.000
+         55  SRIVASTAVA      100,000.000       100000.000       100000.000       100000.000
+         56  SRIVASTAVA        2,574.000         2574.000         2574.000         2574.000
+         68  HOERR,BRUC                                                               0.000
+         71  SANCHEZ,FR          180.000          180.000          180.000          180.000
+         76  SCHWARTZ,C       12,420.000        12420.000        12420.000        12420.000
+============  ==========  ===============  ===============  ===============  ===============
+         10           4      150,722.500        18840.313                8                9
+Complete&nbsp;:&gt; 10 rows processed.
+</PRE>
+<A 
+name=Example_.232></A>
+<H3>Example #2</H3>
+<P>Demonstrates the use of the 'break', 'repeat' and /PAGE options. </P>
+<P><B>Note:</B> Even if norepeat is enabled, all columns will print on the first 
+line after a page break. </P>
+<P><B>Input</B> </P><PRE>SELECT class{break},method from objectmet//cache/rows=99/PAGE=10
+</PRE>
+<P><B>Output</B> </P><PRE>Console&gt; %PSL-Runtime: .01222 Seconds
+ Class         Method
+ ------------  --------------
+ ByteString   ascii
+              extract
+              find
+              justify
+              length
+              piece
+              toPSLExpression
+              translate
+
+ Class        Method
+ ------------  --------------
+ Cache        getRecord
+              isDefined
+ Class        isAncestor
+              isClass
+              isDescendant
+              isValid
+              new
+
+ Class        Method
+ ------------  --------------
+ Date         day
+              dayOfMonth
+              dayOfYear
+              daysInMonth
+              daysToEOY
+              isBusDate
+              isLeapYear
+              month
+
+ Class        Method
+ ------------  --------------
+ Date         monthOfYear
+              nextBusDate
+              nextFreqDate
+              prevBusDate
+              toString
+              year
+ Db           currVal
+
+ Class        Method
+ ------------  --------------
+ Db           delete
+              fastDelete
+              getOneRow
+              getRecord
+              getSchemaColumn
+              getSchemaTable
+              insert
+              isDefined
+
+ Class        Method 
+ -----------  --------------
+ Db           isSchemaColumn
+              isSchemaTable
+              nextKey
+              nextVal
+              prevKey
+              prevVal
+              select
+              selectDbSet
+
+ Class        Method
+ ------------  --------------
+ Db           update
+ DbSet        getRecord
+              isEmpty
+              next
+ HTML         addAttrib
+              addCol
+
+ Class         Method
+ ------------  --------------
+ HTML         addElement
+              addList
+              addProp
+              addRow
+              addString
+              addTitle
+ IO           close
+
+ Class        Method
+ ------------  --------------
+ IO           open
+              read
+              write
+ List         add
+              contains
+              count
+              elementAt
+
+ Class        Method
+ ------------  --------------
+ List         position
+              sort
+ Number       byte
+              char
+              fnumber
+              random
+              roundCur
+
+ Class        Method
+ ------------  --------------
+ Number       roundDec
+              toString
+              zero 
+ Object       data
+              exists
+              getClass
+              isPrimitive
+
+ Class        Method
+ ------------  --------------
+ Object       order
+              query 
+ PSL          actual
+              addSetting
+              addSubrou
+              cachePSLColumn
+              cachePSLTable
+
+ Class        Method
+ ------------  --------------
+ PSL          error
+              getDbLoad
+              getLabelRecord
+              getPSLColumn
+              getPSLTable
+              getSetting
+              hasSetting
+              insertLine
+ 
+ Class        Method
+ ------------  --------------
+ PSL          isRecord
+              mExpr
+              newVariable
+              openBuffer
+
+ Complete :&gt; 99 rows processed.
+</PRE>
+<A 
+name=Example_.233></A>
+<H3>Example #3</H3>
+<P>Demonstrates the use of the break and wrap options. Also demonstrates the use 
+of the /CODE option to display the M database code. </P>
+<P><BR></P>
+<P><B>Note:</B> Column #2 is truncated, while #1 and #3 wrap </P>
+<P><B>Input</B> </P><PRE>SELECT class{break,math=unique}, method,des{length=40,wrap=truncate}, parameters{length=50} from objectmet  //code
+</PRE>
+<P><B>Output</B> </P>
+<P>Console&gt; %PSL-Runtime: .011288 Seconds </P><PRE>Line  Executable code
+----  --------------------------------------------------------------------------
+  1   S vsql(1)=""
+  2   S vsql(1)=$O(^OBJECT(vsql(1)),1) I vsql(1)="" S vsql=-1
+  3   S vsql(2)=""
+  4   S vsql(2)=$O(^OBJECT(vsql(1),1,vsql(2)),1) I vsql(2)="" S vsql=1
+  5   S vsql(3)=$G(^OBJECT(vsql(1),1,vsql(2)))
+  6   S vd=$S(vsql(1)=$C(254):"",1:vsql(1))_$C(9)_$S(vsql(2)=$C(254):"",1:vsql(2))_$C(9)_$P(vsql(3),"|",4)_$C(9)_$P(vsql(3),"|",2)&lt;/nowiki&gt;
+
+
+Data Key    Value
+ --------    ---------------------------------
+ 0           "4"
+ 1           ""
+ 2           ""
+ 3           ""
+ A           ""
+ D           "T0T0T0T0"
+ F           "||MM/DD/YEAR||||"
+ I           "OBJECTMET"
+ K           "2"
+ P           "4"
+
+
+Class         Method          Description                               Formal Parameters
+------------  --------------  ----------------------------------------  --------------------------------------------------
+ByteString    ascii           ASCII code of byte at specified pos       lo?al Number position
+              extract         Extract a bytestring                      local Number start,local Number end
+              find            Find the next position of a bytestring    local ByteString string,local Number start
+              justify         Justify a bytestring                      local Number fieldLength
+              length          String length                             local ByteString delimiter
+              piece           Return bytestring at delimited position   local ByteString delimiter,local Number start,
+                                                                        local Number end
+              toPSLExpression translate literal value to PSL expressio
+              translate       Byte by byte replace                      local ByteString lookFor,local ByteString replaceBy
+
+Cache         getRecord       Get RecordTABLE object from Cache         literal String table,String KeyExpr,literal 
+                                                                        Boolean classNew
+              isDefined       Check if RecordTABLE row exists using Ca  literal String table,String KeyExpr
+
+Class         isAncestor      Is Name1 an ancestor of Name2             String ancestorName,String descendantName
+              isClass         Does className exist in OBJECT table      String className
+              isDescendant    Is Name1 a descendant of Name2            String descendantName,String ancestorName
+              isValid         Does className exist in OBJECT table      Reference instance
+              new             Create a new instance of class            literal String Class,Object initObj
+
+Date          day             2 digit day of month
+              dayOfMonth      Numeric day of the month
+              dayOfYear       Day of the year
+              daysInMonth     Number of days in Month
+              daysToEOY       Days to the end of the year
+              isBusDate       Date is a business date in calendar       local String Calendar
+              isLeapYear      Leap Year
+              month           2 digit month of year
+              monthOfYear     Numeric month of year
+              nextBusDate     Next business date for calendar           local Number numberDays,local String Calendar
+              nextFreqDate    Next frequency date                       local String frequency,public Number AF,local 
+                                                                        String control
+              prevBusDate     Previous business date for calendar       local Number numberDays,local String Calendar
+              toString        Convert Date to String                    local String DateMask
+              year            Year (4 digit)
+
+Db            currVal         Return highest key value                  literal String table,String KeyExpr
+              delete          Delete records (SQL format)               literal String table,local String where,local 
+                                                                        String PSQLqualifiers
+              fastDelete      Delete multiple records                   literal String table,String KeyExpr
+              getOneRow       Select one row of data from a table       String select,String table,String keys,String delim
+              getRecord       Retrieve a recordTABLE from the database  literal String table,String KeyExpr,literal 
+                                                                        Boolean ClassNew
+              getSchemaColumn Return a PSL column descriptor            local String table, local String column
+              getSchemaTable  Return a PSL table descriptor             local String table
+              insert          Insert a new record (SQL format)          String table,String columns,String values,String 
+                                                                        PSQLqualifiers
+              isDefined       Returns whether reference is defined      literal String from,literal String where,loca? 
+                                                                        Number match
+              isSchemaColumn  Is table.column a valid column name?      local String table, local String column
+              isSchemaTable   Is table a valid table name?              local String table
+              nextKey         Return next key value                     literal String table,String KeyExpr
+              nextVal         Return highest key value + 1              literal String table,String KeyExpr
+              prevKey         Return previous key value                 literal String table,String KeyExpr
+              prevVal         Return prior key value                    literal String table,String KeyExpr
+              select          Create a Result set                       local String select,local String from,local 
+                                                                        String where,local String orderby,local String 
+                                                                        groupby,local String PSQLparams
+              selectDbSet     Create a set of Records                   literal String table,local String where,local 
+                                                                        String orderby
+              update          Update records (SQL format)               String table,String columns,String where,String 
+                                                                        PSQLqualifiers
+
+DbSet         getRecord       Return current record                     literal String table
+              isEmpty         Return boolean state of results set
+              next            Position cursor to the next row
+
+HTML          addAttrib       Add column attributes                     String element,String attributes
+              addCol          Add Column form resultset to XML documen  ResultSet rs,String col
+              addElement      Add Element line to XML DTD               String element,String attributes
+              addList         Add a matching list (columns+values) XML  literal String element,literal String columnlist,
+                                                                        String valuelist,String delim
+              addProp         Add individual column and value to XML    String column,String value
+              addRow          Add results row with tags                 String element,ResultSet rs
+              addString       Add string to XML format (clsoe or open)  String string,literal Boolean close
+              addTitle        Add XML title to header                   String title
+
+IO            close           Close Device
+              open            Open IO
+              read            Reads a record from device                public String ErrorType
+              write           Write record                              local String Record,local String EOL
+
+List          add             Add a value to a list                     local String expr,local String delimiter,local 
+                                                                        Boolean allowDuplicate,local Boolean inOrder
+              contains        List contains expression                  String expr,String delimiter,Boolean ignoreCase
+              count           Number of elements in list                local String delimiter,local Boolean noDuplicates
+              elementAt       Return individual element of List         local Number position,local String delimiter
+              position        Ordinal position in the list              local String expr,local String delimiter,local 
+                                                                        Boolean ignoreCase
+              sort            Sort the elements in a list               local String delimiter,local Boolean allowDuplicate
+
+Number        byte            return single byte represented by number
+              char            return character represented by number
+              fnumber         Format (and round) a number        ?      local String format,local Number decimals
+              random          Return pseudo-random number in {0,val-1}
+              roundCur        Round an amount to currency               local String crcd,local String roundOption,local 
+                                                                        Number justify
+              roundDec        Round an amount to decimal                local Number decimal,local String roundOption,
+                                                                        local Number justify
+              toString        Format a number                           local Number decimal,local String formatMask
+              zero            Zero fill a number                        local Number length,local Number decimal,local 
+                                                                        Boolean implied,local Number sign
+
+Object        data            Return object exists / is array
+              exists          Return object exists
+              getClass        Return object class
+              isPrimitive     Class is a primitive class
+              order           Next or previous subscript in array       local Number direction
+              query           Name of next node in array
+
+PSL           actual          actual() array as 'property'              Number sub
+              addSetting      Add or modify a PSL compiler setting      local String section,local String ident,local 
+                                                                        Primitive value
+              addSubrou       Add a subroutine to the module            local String Name,local List parameters,local 
+                                                                        String comment,local Boolean new
+              cachePSLColumn  Cache and return a PSL column descriptor  PSLColumn cache(), local String qcn, PSLTable 
+                                                                        tCache()
+              cachePSLTable   Cache and return a PSL table descriptor   PSLTable cache(), local String table, local 
+                                                                        Number level
+              error           Output a PSL compile-time error           String errorText
+              getDbLoad       Return Record map header                  local String subRou,local String var,local Number 
+                                                                        instPtr
+              getLabelRecord  Return a PSL subroutine label record      String subrou
+              getPSLColumn    Return a PSL column descriptor            local String table, local String column, 
+                                                                        SchemaTable stCache()
+              getPSLTable     Return a PSL table descriptor             local String table,local Number level
+              getSetting      Return a PSL compiler setting (defaults   local String section,local String ident
+              hasSetting      Does PSL compiler setting exist?          local String section,local String ident
+              insertLine      Insert a line of code                     local String PSLCode,local Number line,local 
+                                                                        Number level
+              isRecord        Record class is ancestor of class         local String class
+              mExpr           Convert a PSL string to an M string       local String psl
+              newVariable     Generate a new variable name
+              openBuffer      Open a new PSL buffer                     local List parameters,local String comment
+              patch           Replace expression with backpatch token   local String expression
+              subrouExists    Subroutine exists in current module       local String name
+              warn            Output a PSL compile-time warning         local String warning
+
+PSLBuffer     add             Add a line of PSL code to the buffer      local String code
+              insert       ?  insert PSL subroutine into current code   local String name, local String resultClass
+
+PSLColumn     getClass        column's dataType as PSL class
+              getCurrentExpr  expression to retrieve(0)/set(1) column   local PSLIdentifier rec,local Boolean bLeft
+              getCurrentLvn   local variable containing column's value  local PSLIdentifier rec
+              getCurrentNode  Node containing column's value            local Boolean bQuoted
+              getOldExpr      expr to retrieve(0)/set(1) column.oldVal  local PSLIdentifier rec,local Boolean bLeft
+              getOldLvn       local variable containing column.oldVal   local PSLIdentifier rec
+              getOldNode      Node containing column.oldVal             local Boolean bQuoted
+              getPurposeNode  purpose Id of node containing the column
+              getUpdateCode   code to update column value               local PSLIdentifier rec,local PSLExpression value,
+                                                                        local Number mode
+
+PSLExpression fitsLineLength  does expression + extra space fit M line  local Number extra
+              isArray         Expression is an array
+              isLiteral       Expression is literal
+              isVariable      Expression is a variable
+              toValue         Reduce expression to constant
+
+PSLIdentifier optimize        Reference object can be post optimized
+
+PSLSubrou     addCode         Add a line of M code the buffer           local String code
+              addExe          Add a line of code from exe() the buffer  local String code
+              addLvn          Add a vsql() replacement for addExe() to  local Number nr,local String expr
+              addTag          Add a tag(number) for addExe() to the su  local Number nr,local String code
+              getCode         Get M code at specified line              local Number line
+              getLine         Get highest linenumber of the subroutine
+              getLvn          Get vsql() replacement value              local Number lvn
+              getLvnMax       Get highest vsql() replacement number of
+              getTag          Get the tag for a subscript in exe()      local Number tag
+              getTagMax       Get highest tag number of the subroutine
+              getTagPrefix    Get the tag prefix for addExe()
+              insCode         Insert M code at specified line           local Number line,local String Code
+              setTagPrefix    Set the tag prefix for addExe()           local String prefix
+
+PSLTable      assertLevel     Assert a PSLTable instance with minimum   local Number level, PSLColumn cache()
+              getArchivable   Is table valid to be archived
+              getArchiveIncl  Get tables included with this when archi
+              uded
+              getArchiveKey   Get archive key number                    local Boolean forArch
+              getArchiveSubs  Get archive sub-tables
+              getArchiveTable Get primary archive table
+              getFilerLogic   Filer logic that needs to be processed    local String operation,local PSLExpression 
+                                                                        qualExp,local Boolean isPslExp
+              getLoadCode     M code to load data node                  local PSLIdentifier rec,local String node,local 
+                                                                        Number mode,local Boolean exists,public String 
+                                                                        lvpm()
+              getNewCode      M code instantiate new Record             local PSLIdentifier rec,local PSLExpression mode
+              getQuery        Get table query
+              getSaveCode     M code to save data node                  local PSLIdentifier rec,local String node,local 
+                                                                        Number mode,local String lvpm(),local PSLColumn 
+                                                                  ?     rdbCol()
+              getUpdateKey    M code to safe current key for UPDATE     local PSLIdentifier rec,local String lvpm()
+              isOneNode       table uses single node in internal stora
+              isParent        Table is parent table
+
+Primitive     get             The primitive's value or a default value  Primitive default
+              isNull          Expression is NULL                        literal Boolean isIncludeEmptyQuotes
+
+Record        bypassSave      Database save, bypass triggers
+              compare         Compare and report differences            local Record object2
+              copy            Copy object                               local String colmap
+              fromArchive     Check if record loaded from archive
+              fromArray       Copy M array into object properties       literal String Array,literal String Keys
+              getMode         Return Record Mode
+              getTable        Return table represented by this record
+              isChanged       Check if the Column has Changed           local String column,local String useagetype
+              overlay         New record overlay fields                 String array()
+              save            Save a record to the database             local String Filerqualifiers
+              setAuditFlag    Set update history flag                   literal Boolean state
+              setCreateOnly   Allow create mode only
+              setMode         Set Record Mode                           local Number Mode
+              setUpdateOnly   Allow update mode only
+              toArray         Copy object properties into M array       literal String Array,literal String Keys
+              toString        Copy object
+
+RecordACN     renew           Loan/Deposit renewal                      String keys
+
+RecordCIF     default         New Cif account defaults form product     String key
+
+RecordDEP     default         Deposit new account default method        String keys
+              renew           Loan/Deposit renewal                      String keys
+
+RecordLN      default         Loan new account product defaults         String keys
+              renew           Loan/Deposit renewal                      String keys
+
+Reference     copy            Copy Reference class instance
+              equals          Compare two reference objects             Reference cmp
+              getPointer      Return pointer to reference object
+              getStoredValue  Return a process scope value from object  local String tag
+              setStoredValue  Store a process scope value in an object  local String tag,local String value
+              toString        Return string representation of object
+
+ResultSet     getCol          Return column value from results row      local Primitive colRef
+              getColProt      Return column protection                  local Primitive colRef
+              getRow          Return current results row                local String delimiter,local List columnList
+              getRowProt      Return row protection
+              isEmpty         Return boolean state of results set
+              next            Position cursor to the next row
+
+Row           getColumns      Get the properties of a Row object
+              getDelimiter    Get the row delimiter
+              setColumns      Set the properties of a Row object        local List Properties
+              setDelimiter    Set the row delimiter                     local String delimiter
+              toRecord        Copy a Row object to a Record object      local Record identifier,local String columnMap
+              toString        Convert a Row object to a String          local String colDel,local String quoChar,local 
+                                                                        String fmtDate,local String fmtTime,local String 
+                                                                        fmtBool
+
+RowSet        beforeFirst     Position RowSet before first Row
+  ?           getRow          Return current row
+              isEmpty         Return if RowSet is empty
+              loadFromFile    Load RowSet from file                     local String directory,local String filename,
+                                                                        local String filetype
+              next            Position rowset at the next row
+
+Runtime       charset         Character set
+              commit          Commit TP fence
+              delErrXBAD      XBAD error                                object,errcode
+              delayCommit     Call subroutine with delayed commits      literal String entryref
+              rollback        Tp Rollback to the start of a fence       Startptr
+              setErrMSG       Message Table Error                       object,msgnum,variable
+              setErrSTBLER    Application Error                         object,errcode
+              setErrXBAD      XBAD error                                object,errcode,column,curval,altval
+              start           Start TP fence                            Tranid,varlist,stat
+
+Schema        createTable     Create temporary table schema             String table,String keyexpr,String columnList,
+                                                                        String globalName
+              deleteTable     Delete table schema                       String table
+              getTableName    Return a table name for a RecordClass     String class
+              getTableRecord  Return a Data-Qwik table record           String table
+
+String        addQuotes       Add one layer of quotes                   local String character
+              ascii           ASCII code of character at specified pos  local Number position
+              beginsWith      Begins with string                        local String string,local Boolean ignoreCase
+              blank           Pad a string with blanks                  local Number fieldLength, local Boolean 
+                                                                        rightJustify
+              byteLimitSubst  substring of at most maxBytes bytes       local Number start, local Number maxBytes
+              ring
+              complexUnpack   Complex unpack of data string             local Number length,local Boolean signed,local 
+                                                                        Boolean leftnib
+              contains        Contains a string                         local String string
+              endsWith        Ends with string                          local String string,local Boolean ignoreCase
+              extract         Extract a string                          local Number start,local Number end
+              find            Find the next position of a string        local String string,local Number start,local 
+                                                                        Boolean ignoreCase,local String quoteChar
+              follows         Follows a string                          local String string
+              getSub          Return a sub-delimited or labeled string  local String label,local String delimiter1,local 
+                                                                        String delimiter2,local Number position
+              insert          Insert a string into a string             local String string,local Number offSet,local 
+                                                                        String padCharacter,local Boolean displace
+              isInteger       Is an integer
+              isLike          Is like (SQL like)                        local String likeExpr,local Boolean ignoreCase
+              isLiteral       Is a literal value - quoted or number
+              isNumber        Is a number
+              justify         Justify and pad a string                  local Number fieldLength,local Number direction,
+                                                                        local String padCharacter,local Boolean truncate?
+              length          String length                             local String delimiter
+              lowerCase       Convert to lower case                     local Boolean capitalizeFirstChar
+              piece           Return string at delimited position       local String delimiter,local Number start,local 
+                                                                        Number end,local String quoteChar
+              putSub          Insert a sub-delimited or tagged string   local String insert,local String label,local 
+                                                                        String delimiter1,local String delimiter2,local 
+                                                                        Number position
+              replace         Replace occurrances of expr1 with expr2   local String expr1,local String expr2,local 
+                                                                        Number count,local Boolean ignoreCase,local 
+                                                                        String quoteChar
+              reverse         Reverse the character order
+              stripQuotes     Strip one layer of quotes                 local String quoteCharacter
+              toByteString    Convert String to ByteString
+              toDate          Convert formatted date to julien date     local String mask
+              toNumber        Convert String to Number                  local String mask,local Boolean stripSpace
+              toRow           Convert a String type to a Row type       local List elements,local String delimiter
+              toTime          Convert formatted to internal time
+              translate       Character by character replace            local String lookFor,local String replaceBy
+              trim            Trim characters from a String             local Number Option,local String character
+              unpack          Unpacks data string                       local Number length
+              upperCase       Convert to upper case
+
+Time          toString        Convert Time to String                    local String TimeMask
+
+TranSet       copyTran        Copy transaction to TranSet               local RecordTTX ttx,String colRefs(),local Number 
+                                                                        tranSeq,local String secTran
+              getTran         Get transaction from TranSet              local Number Sequence
+              postTSet        Post TranSet                              PostDate,Branch,PostParam,TranArr
+============
+          33
+
+Complete&nbsp;:&gt; 244 rows processed.
+</PRE>
+<DIV class=printfooter></DIV></DIV></DIV></DIV>
+<DIV id=column-one><DIV class=portlet id=p-navigation><DIV class=pBody></DIV></DIV>
+</DIV><DIV id=footer></DIV>
+    </DIV></BODY></HTML>

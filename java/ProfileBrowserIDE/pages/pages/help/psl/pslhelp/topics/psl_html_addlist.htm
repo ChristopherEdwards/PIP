@@ -1,0 +1,218 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>addList</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<style type="text/css">
+<!--
+table.whs1 { margin-left:18pt; width:597px; border-spacing:0px; }
+col.whs2 { width:19.095%; }
+col.whs3 { width:483px; }
+tr.whs4 { x-cell-content-align:top; }
+td.whs5 { width:19.095%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs6 { width:483px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs7 { font-weight:bold; }
+p.whs8 { margin-left:24px; x-condition:NotPrintedDocn; }
+p.whs9 { margin-left:24px; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nHTML Class\nMethods\naddList");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>addList Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">HTML</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class=BodyIndent>This method is used to append multiple column and data 
+ lines to an XML document. </p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>htmlObject.addList(String label, String columnList, </p>
+
+<p class=Code>String dataList, String delimiter)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="597" class="whs1">
+<col class="whs2">
+<col class="whs3">
+
+<tr valign="top" class="whs4">
+<td width="19.095%" class="whs5">
+<p>label</td>
+<td width="483px" class="whs6">
+<p>The label to append to the record to indicate that the data following 
+ is consistent with a particular element type.</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="19.095%" class="whs5">
+<p>columnList</td>
+<td width="483px" class="whs6">
+<p>A comma-separated list of columns (attributes) for which data is being 
+ sent.</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="19.095%" class="whs5">
+<p>dataList</td>
+<td width="483px" class="whs6">
+<p>A variable representing the data that corresponds with the column list. 
+ This data is separated by the delimiter field in parameter 4, if that 
+ is not provided, the default is the <span style="font-weight: bold;"><B>tab</B></span> 
+ character.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="19.095%" class="whs5">
+<p>delimiter</td>
+<td colspan="1" rowspan="1" width="483px" class="whs6">
+<p>The ASCII code for the delimiter separating individual columns in the 
+ data string. Only specify this parameter value to use a delimiter other 
+ than the default <span style="font-weight: bold;"><B>tab</B></span> character.</p>
+<p class="whs7">As of Profile v7.0, this parameter is no 
+ longer supported.</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent><span style="font-variant: small-caps;">A</span>n updated 
+ XML formatted string. The updated record contains information retrieved 
+ from the database for a particular record.</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs8">v6.4</p>
+
+<p class=Example>Example</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;
+			margin-top: 0.00pt;
+			text-indent: -18.00pt;">type HTML xx = Class.new(“HTML”)</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;
+			margin-top: 0.00pt;
+			text-indent: -18.00pt;">set list = ”CID,IRN,BAL,BNDT”</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;
+			margin-top: 0.00pt;
+			text-indent: -18.00pt;">set DATA = Db.getOne(list,“LN”,“CID”)</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;
+			margin-top: 0.00pt;
+			text-indent: -18.00pt;">set return = <span style="font-weight: bold;"><B>xx.addList(“LN”,list,DATA)</B></span></p>
+
+<p class=Code
+	style="margin-left: 36.00pt;
+			margin-top: 0.00pt;
+			text-indent: -18.00pt;">____________________________________________________________</p>
+
+<p class="whs9">This will append the following information 
+ to the XML document:</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;
+			margin-top: 0.00pt;
+			text-indent: -18.00pt;">&lt;LN&gt;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;
+			margin-top: 0.00pt;
+			text-indent: -18.00pt;">&lt;CID&gt;3&lt;/CID&gt;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;
+			margin-top: 0.00pt;
+			text-indent: -18.00pt;">&lt;IRN&gt;15&lt;/IRN&gt;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;
+			margin-top: 0.00pt;
+			text-indent: -18.00pt;">&lt;BAL&gt;0&lt;/BAL&gt;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;
+			margin-top: 0.00pt;
+			text-indent: -18.00pt;">&lt;BNDT&gt;&lt;/BNDT&gt;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;
+			margin-top: 0.00pt;
+			text-indent: -18.00pt;">&lt;/LN&gt;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

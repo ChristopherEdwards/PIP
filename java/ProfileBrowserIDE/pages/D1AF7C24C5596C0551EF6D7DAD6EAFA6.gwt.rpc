@@ -1,0 +1,10 @@
+com.fis.profile.ide.browser.client.Batch, true
+[Lcom.fis.profile.ide.browser.client.Batch;, true
+com.fis.profile.ide.browser.client.EnvironmentConnectionString, true
+[Lcom.fis.profile.ide.browser.client.EnvironmentConnectionString;, true
+com.fis.profile.ide.browser.client.Procedure, true
+[Lcom.fis.profile.ide.browser.client.Procedure;, true
+com.fis.profile.ide.browser.client.Trigger, true
+[Lcom.fis.profile.ide.browser.client.Trigger;, true
+com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException, true
+java.lang.String, true

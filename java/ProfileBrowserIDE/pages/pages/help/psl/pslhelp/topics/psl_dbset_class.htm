@@ -1,0 +1,171 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>DbSet Class</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { x-cell-content-align:top; width:77.112%; border-spacing:0px; }
+col.whs2 { width:1in; }
+col.whs3 { width:3.25in; }
+tr.whs4 { x-cell-content-align:top; }
+td.whs5 { width:95px; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; border-top-style:none; }
+p.whs6 { font-weight:bold; }
+td.whs7 { width:311px; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; border-top-style:none; }
+td.whs8 { width:95px; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; }
+td.whs9 { width:311px; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; }
+col.whs10 { width:12.262%; }
+col.whs11 { width:82.155%; }
+td.whs12 { width:12.262%; padding-right:10px; padding-left:10px; border-left-style:none; border-top-style:none; border-right-style:none; border-bottom-style:none; background-color:#c0c0c0; }
+p.whs13 { font-weight:bold; margin-left:0px; }
+td.whs14 { width:82.155%; padding-right:10px; padding-left:10px; background-color:#c0c0c0; }
+td.whs15 { width:12.262%; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; }
+td.whs16 { width:82.155%; padding-right:10px; padding-left:10px; }
+td.whs17 { width:12.262%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; border-left-style:none; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs13 {margin-left:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nDbSet Class\nDbSet Class");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>DbSet Class</h1>
+
+<p>The <span style="font-weight: bold; color: #0000ff;"><font color=blue ><B>DbSet class</B></font></span> 
+ provides access to the subset of Record objects resulting from a database 
+ selection operation using the method <a href="psl_db_selectdbset.htm">Db.selectDbSet</a>. 
+ The DbSet class provides methods similar to the ResultSet class to access 
+ the matching Records.</p>
+
+<p>The following syntax declares type DbSet object:</p>
+
+<p class=Code>type DbSet ds = Db.selectDbSet(...)</p>
+
+<p class=Code>&nbsp;</p>
+
+<table x-use-null-cells cellspacing="0" width="77.112%" class="whs1">
+<col class="whs2">
+<col class="whs3">
+
+<tr valign="top" class="whs4">
+<td width="95px" class="whs5">
+<p class="whs6">Ancestor</td>
+<td width="311px" class="whs7">
+<p><a href="psl_reference_class.htm">Reference</a></td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="95px" class="whs8">
+<p class="whs6">Descendants</td>
+<td colspan="1" rowspan="1" width="311px" class="whs9">
+<p>None</td></tr>
+</table>
+
+&nbsp;
+
+<table x-use-null-cells cellspacing="0" width="77.112%" class="whs1">
+<col class="whs10">
+<col class="whs11">
+
+<tr valign="top" class="whs4">
+<td bgcolor="#C0C0C0" width="12.262%" class="whs12">
+<p class="whs13">Methods</td>
+<td bgcolor="#C0C0C0" width="82.155%" class="whs14">
+<p class="whs6">Description</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="12.262%" class="whs15">
+<p><a href="psl_dbset_getrecord.htm">getRecord</a></td>
+<td width="82.155%" class="whs16">
+<p>Returns the current record.</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="12.262%" class="whs17">
+<p><a href="psl_dbset_isempty.htm">isEmpty</a></td>
+<td width="82.155%" class="whs16">
+<p>Indicates whether the result set contains data.</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="12.262%" class="whs17">
+<p><a href="psl_dbset_next.htm">next</a></td>
+<td width="82.155%" class="whs16">
+<p>Positions the cursor at the next row of the DbSet.</td></tr>
+</table>
+
+<p class=Field>&nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

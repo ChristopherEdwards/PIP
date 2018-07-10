@@ -1,0 +1,359 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<ftstdata>
+<topic name="Functions in Computed Column Libraries" url="topics/functions_in_computed_column_libraries.htm" />
+<topic name="Abstract Classes" url="topics/psl_abstract_classes.htm" />
+<topic name="#ACCEPT" url="topics/psl_accept.htm" />
+<topic name="Access Keys" url="topics/psl_access_keys.htm" />
+<topic name="Batches and Procedures" url="topics/psl_batches_and_procedures.htm" />
+<topic name="Blob class" url="topics/psl_blob_class.htm" />
+<topic name="Boolean Class" url="topics/psl_boolean_class.htm" />
+<topic name="#BREAK" url="topics/psl_break.htm" />
+<topic name="#BYPASS" url="topics/psl_bypass.htm" />
+<topic name="ascii (byteString Class)" url="topics/psl_bytestring_ascii.htm" />
+<topic name="ByteString Class" url="topics/psl_bytestring_class.htm" />
+<topic name="extract (ByteString Class)" url="topics/psl_bytestring_extract.htm" />
+<topic name="find (Bytestring)" url="topics/psl_bytestring_find.htm" />
+<topic name="justify (ByteString Class)" url="topics/psl_bytestring_justify.htm" />
+<topic name="length (ByteString Class)" url="topics/psl_bytestring_length.htm" />
+<topic name="piece (ByteString Class)" url="topics/psl_bytestring_piece.htm" />
+<topic name="topSLExpression" url="topics/psl_bytestring_topslexpression.htm" />
+<topic name="translate (ByteString Class)" url="topics/psl_bytestring_translate.htm" />
+<topic name="Cache Class" url="topics/psl_cache_class.htm" />
+<topic name="getRecord (Cache Class)" url="topics/psl_cache_getrecord.htm" />
+<topic name="Caching the CUVAR and TRN Tables" url="topics/psl_caching_the_cuvar_table.htm" />
+<topic name="Casting Objects in PSL" url="topics/psl_casting_objects_in_psl.htm" />
+<topic name="Casting Objects" url="topics/psl_casting_of_objects.htm" />
+<topic name="Catching Exceptions" url="topics/psl_catching_errors.htm" />
+<topic name="Class Class" url="topics/psl_class_class.htm" />
+<topic name="Class Conversions Based on Expression Operations" url="topics/psl_class_conversions_based_on_expression_operations.htm" />
+<topic name="isAncestor" url="topics/psl_class_isancestor_method.htm" />
+<topic name="isClass" url="topics/psl_class_isclass.htm" />
+<topic name="isDecendant" url="topics/psl_class_isdecendant.htm" />
+<topic name="isValid" url="topics/psl_class_isvalid.htm" />
+<topic name="new" url="topics/psl_class_new.htm" />
+<topic name="Classes" url="topics/psl_classes.htm" />
+<topic name="ClassNew Parameter in Db.getRecord" url="topics/psl_classnew_parameter_in_db_getrecord.htm" />
+<topic name="Code Optimization" url="topics/psl_code_optimization.htm" />
+<topic name="Coding in Blocks" url="topics/psl_coding_in_blocks.htm" />
+<topic name="Column Class" url="topics/psl_column_class.htm" />
+<topic name="des" url="topics/psl_column_des.htm" />
+<topic name="journal" url="topics/psl_column_journal.htm" />
+<topic name="key" url="topics/psl_column_key.htm" />
+<topic name="len" url="topics/psl_column_len.htm" />
+<topic name="oldVal" url="topics/psl_column_oldval.htm" />
+<topic name="req" url="topics/psl_column_req.htm" />
+<topic name="typ" url="topics/psl_column_typ.htm" />
+<topic name="Comments" url="topics/psl_comments.htm" />
+<topic name="Compiler Commands" url="topics/psl_compiler_commands.htm" />
+<topic name="Compiling PSL Code" url="topics/psl_compiling_psl_code.htm" />
+<topic name="Computed Columns" url="topics/psl_computed_columns.htm" />
+<topic name="Computed Columns and Database Object Instantiation" url="topics/psl_computed_columns_and_database_object_instantiation.htm" />
+<topic name="Data Encapsulation - Graphic" url="topics/psl_data_encapsulation_graphic.htm" />
+<topic name="Database Optimization" url="topics/psl_database_optimization.htm" />
+<topic name="Date Class" url="topics/psl_date_class.htm" />
+<topic name="day" url="topics/psl_date_day.htm" />
+<topic name="dayofMonth" url="topics/psl_date_dayofmonth.htm" />
+<topic name="dayOfYear" url="topics/psl_date_dayofyear.htm" />
+<topic name="daysInMonth" url="topics/psl_date_daysinmonth.htm" />
+<topic name="daysToEOY" url="topics/psl_date_daystoeoy.htm" />
+<topic name="isBusDate" url="topics/psl_date_isbusdate.htm" />
+<topic name="isLeapYear" url="topics/psl_date_isleapyear.htm" />
+<topic name="month" url="topics/psl_date_month.htm" />
+<topic name="monthOfYear" url="topics/psl_date_monthofyear.htm" />
+<topic name="nextBusDate" url="topics/psl_date_nextbusdate.htm" />
+<topic name="nextFreqDate" url="topics/psl_date_nextfreqdate.htm" />
+<topic name="prevBusDate" url="topics/psl_date_prevbusdate.htm" />
+<topic name="toString (Date Class)" url="topics/psl_date_tostring.htm" />
+<topic name="year" url="topics/psl_date_year.htm" />
+<topic name="Db Class" url="topics/psl_db_class.htm" />
+<topic name="currVal" url="topics/psl_db_currval.htm" />
+<topic name="delete" url="topics/psl_db_delete.htm" />
+<topic name="fastDelete" url="topics/psl_db_fastdelete.htm" />
+<topic name="getList" url="topics/psl_db_getlist.htm" />
+<topic name="getOneRow" url="topics/psl_db_getonerow.htm" />
+<topic name="getRecord (Db Class)" url="topics/psl_db_getrecord.htm" />
+<topic name="getSchemaTable" url="topics/psl_db_getschematable.htm" />
+<topic name="insert (Db Class)" url="topics/psl_db_insert.htm" />
+<topic name="isDefined" url="topics/psl_db_isdefined.htm" />
+<topic name="nextKey" url="topics/psl_db_nextkey.htm" />
+<topic name="nextVal" url="topics/psl_db_nextval.htm" />
+<topic name="prevKey" url="topics/psl_db_prevkey.htm" />
+<topic name="prevVal" url="topics/psl_db_prevval.htm" />
+<topic name="select" url="topics/psl_db_select.htm" />
+<topic name="selectDbSet" url="topics/psl_db_selectdbset.htm" />
+<topic name="update" url="topics/psl_db_update.htm" />
+<topic name="DbSet Class" url="topics/psl_dbset_class.htm" />
+<topic name="getRecord (DbSet Class)" url="topics/psl_dbset_getrecord.htm" />
+<topic name="isEmpty (DbSet Class)" url="topics/psl_dbset_isempty.htm" />
+<topic name="next (DbSet Class)" url="topics/psl_dbset_next.htm" />
+<topic name="Declaring Procedures" url="topics/psl_declaring_procedures.htm" />
+<topic name="deleteTable" url="topics/psl_deletetable.htm" />
+<topic name="Documenting Arguments" url="topics/psl_documenting_arguments.htm" />
+<topic name="#ELSE" url="topics/psl_else.htm" />
+<topic name="Encapsulation" url="topics/psl_encapsulation_2.htm" />
+<topic name="#END" url="topics/psl_end.htm" />
+<topic name="#ENDBYPASS" url="topics/psl_endbypass.htm" />
+<topic name="#ENDIF" url="topics/psl_endif.htm" />
+<topic name="Error Class" url="topics/psl_error_class.htm" />
+<topic name="context" url="topics/psl_error_context.htm" />
+<topic name="description (Error class)" url="topics/psl_error_description.htm" />
+<topic name="throw" url="topics/psl_error_throw.htm" />
+<topic name="thrownAt" url="topics/psl_error_thrownat.htm" />
+<topic name="type" url="topics/psl_error_type.htm" />
+<topic name="Errors and Warnings" url="topics/psl_errors_and_warnings.htm" />
+<topic name="Features Not Available in PSL" url="topics/psl_features_not_available_in_psl.htm" />
+<topic name="Formatting Programming Code" url="topics/psl_formatting_programming_code.htm" />
+<topic name="Functions that Support Method Coding" url="topics/psl_functions_that_support_method_coding.htm" />
+<topic name="Global Scope of Objects" url="topics/psl_global_scope_of_objects.htm" />
+<topic name="Exception Handling" url="topics/psl_handling_errors.htm" />
+<topic name="addAttrib" url="topics/psl_html_addattrib.htm" />
+<topic name="addCol" url="topics/psl_html_addcol.htm" />
+<topic name="addElement" url="topics/psl_html_addelement.htm" />
+<topic name="addList" url="topics/psl_html_addlist.htm" />
+<topic name="addProp" url="topics/psl_html_addprop.htm" />
+<topic name="addRow" url="topics/psl_html_addrow.htm" />
+<topic name="addString" url="topics/psl_html_addstring.htm" />
+<topic name="addTitle" url="topics/psl_html_addtitle.htm" />
+<topic name="HTML Class" url="topics/psl_html_class.htm" />
+<topic name="#IF" url="topics/psl_if.htm" />
+<topic name="Implementing M Arrays" url="topics/psl_implementing_m_arrays.htm" />
+<topic name="Implementing Methods" url="topics/psl_implementing_methods.htm" />
+<topic name="#INFO" url="topics/psl_info.htm" />
+<topic name="Inheritance" url="topics/psl_inheritance2.htm" />
+<topic name="Inheritance - Graphic" url="topics/psl_inheritance__graphic.htm" />
+<topic name="Instantiating a Row Class Object" url="topics/psl_instantiating_a_row_class_object.htm" />
+<topic name="Instrinsic M Functions" url="topics/psl_instrinsic_m_functions.htm" />
+<topic name="Introduction to Object-Oriented Programming" url="topics/psl_introduction_to_objectoriented_programming.htm" />
+<topic name="charsetElemName Property" url="topics/psl_io_charsetelemname.htm" />
+<topic name="charsetElemType Property" url="topics/psl_io_charsetelemtype.htm" />
+<topic name="charsetName Property (IO Class)" url="topics/psl_io_charsetname.htm" />
+<topic name="IO Class" url="topics/psl_io_class.htm" />
+<topic name="close" url="topics/psl_io_close.htm" />
+<topic name="device" url="topics/psl_io_device.htm" />
+<topic name="directory" url="topics/psl_io_directory.htm" />
+<topic name="fileName" url="topics/psl_io_filename.htm" />
+<topic name="open" url="topics/psl_io_open.htm" />
+<topic name="openParams" url="topics/psl_io_openparams.htm" />
+<topic name="read" url="topics/psl_io_read.htm" />
+<topic name="recordSize" url="topics/psl_io_recordsize.htm" />
+<topic name="timeout" url="topics/psl_io_timeout.htm" />
+<topic name="write" url="topics/psl_io_write.htm" />
+<topic name="Issues to Review for Custom Code" url="topics/psl_issues_to_review_for_custom_code.htm" />
+<topic name="Label Naming Conventions" url="topics/psl_label_naming_conventions.htm" />
+<topic name="Lexical Scope of Objects" url="topics/psl_lexical_scope_of_objects.htm" />
+<topic name="add" url="topics/psl_list_add.htm" />
+<topic name="List Class" url="topics/psl_list_class.htm" />
+<topic name="contains" url="topics/psl_list_contains.htm" />
+<topic name="count (List class)" url="topics/psl_list_count.htm" />
+<topic name="position" url="topics/psl_list_position.htm" />
+<topic name="sort" url="topics/psl_list_sort.htm" />
+<topic name="Literal Scope Variables" url="topics/psl_literal_scope_variables.htm" />
+<topic name="M Statements" url="topics/psl_m_statements.htm" />
+<topic name="Mapping Reference Data Types" url="topics/psl_mapping_reference_data_types.htm" />
+<topic name="Memo Class" url="topics/psl_memo_class.htm" />
+<topic name="Method Naming Conventions" url="topics/psl_method_naming_conventions.htm" />
+<topic name="Method Return Expressions" url="topics/psl_method_return_expressions.htm" />
+<topic name="Methods Supported for Literal Scope Variables" url="topics/psl_methods_supported_for_literal_scope_variables.htm" />
+<topic name="Module Interfaces" url="topics/psl_module_interfaces.htm" />
+<topic name="Non-Object Reference Variable Scope in PSL" url="topics/psl_non_object_reference_variable_scope_in_psl.htm" />
+<topic name="byte" url="topics/psl_number_byte.htm" />
+<topic name="char" url="topics/psl_number_char.htm" />
+<topic name="Number Class" url="topics/psl_number_class.htm" />
+<topic name="fnumber Method" url="topics/psl_number_fnumber.htm" />
+<topic name="random Method" url="topics/psl_number_random.htm" />
+<topic name="roundCur" url="topics/psl_number_roundcur.htm" />
+<topic name="roundDec" url="topics/psl_number_rounddec.htm" />
+<topic name="toString (Number Class)" url="topics/psl_number_tostring.htm" />
+<topic name="zero" url="topics/psl_number_zero.htm" />
+<topic name="Object Class" url="topics/psl_object_class_2.htm" />
+<topic name="data" url="topics/psl_object_data.htm" />
+<topic name="exists" url="topics/psl_object_exists.htm" />
+<topic name="getClass" url="topics/psl_object_getclass.htm" />
+<topic name="isPrimitive" url="topics/psl_object_isprimitive.htm" />
+<topic name="Object Memory Management" url="topics/psl_object_memory_management.htm" />
+<topic name="Object Methods" url="topics/psl_object_methods.htm" />
+<topic name="Object Names" url="topics/psl_object_names.htm" />
+<topic name="order" url="topics/psl_object_order.htm" />
+<topic name="Object Properties" url="topics/psl_object_properties.htm" />
+<topic name="Object Properties in PSL" url="topics/psl_object_properties_in_psl.htm" />
+<topic name="query" url="topics/psl_object_query.htm" />
+<topic name="Object Scope in PSL" url="topics/psl_object_scope_in_psl.htm" />
+<topic name="toString (Object Class)" url="topics/psl_object_tostring.htm" />
+<topic name="Objects" url="topics/psl_objects.htm" />
+<topic name="#OPTIMIZE" url="topics/psl_optimize.htm" />
+<topic name="Optimizing Method Code" url="topics/psl_optimizing_method_code.htm" />
+<topic name="#OPTION" url="topics/psl_option.htm" />
+<topic name="Organization of Method-Building Subroutines" url="topics/psl_organization_of_method_building_subroutines.htm" />
+<topic name="Passing Arrays" url="topics/psl_passing_arrays.htm" />
+<topic name="Passing Entities by Reference" url="topics/psl_passing_entities_by_reference.htm" />
+<topic name="Passing Objects" url="topics/psl_passing_objects.htm" />
+<topic name="Passing Parameters" url="topics/psl_passing_parameters.htm" />
+<topic name="Passing Values Instead of Objects" url="topics/psl_passing_values_instead_of_objects.htm" />
+<topic name="Polymorphism" url="topics/psl_polymorphism_2.htm" />
+<topic name="Preference of Record&lt;Class&gt;.bypassSave Over Other Update Methods" url="topics/psl_preference_of_record_class_bypasssave_over_other_update_methods.htm" />
+<topic name="Primitive and Reference Data Types" url="topics/psl_primitive_and_reference_data_types.htm" />
+<topic name="Primitive Class" url="topics/psl_primitive_class.htm" />
+<topic name="Primitive Classes" url="topics/psl_primitive_classes.htm" />
+<topic name="get" url="topics/psl_primitive_get.htm" />
+<topic name="isNull" url="topics/psl_primitive_isnull.htm" />
+<topic name="Profile Scripting Language Programming Guidelines" url="topics/psl_profile_scripting_language_programming_guide.htm" />
+<topic name="PSL and M Relationship" url="topics/psl_psl_and_m_relationship.htm" />
+<topic name="PSL Class Hierarchy" url="topics/psl_psl_class_hierarchy.htm" />
+<topic name="PSL Classes" url="topics/psl_psl_classes.htm" />
+<topic name="PSL Code Management" url="topics/psl_psl_code_management.htm" />
+<topic name="PSL Compiler Program Naming Conventions" url="topics/psl_psl_compiler_program_naming_standards.htm" />
+<topic name="PSL Data Types" url="topics/psl_psl_data_types.htm" />
+<topic name="PSL Programming Standards" url="topics/psl_psl_programming_standards.htm" />
+<topic name="Qualifiers on Filers" url="topics/psl_qualifiers_on_filers.htm" />
+<topic name="bypassSave" url="topics/psl_record_bypasssave.htm" />
+<topic name="Record Class" url="topics/psl_record_class.htm" />
+<topic name="compare" url="topics/psl_record_compare.htm" />
+<topic name="copy (Record class)" url="topics/psl_record_copy.htm" />
+<topic name="fromArray" url="topics/psl_record_fromarray.htm" />
+<topic name="getMode" url="topics/psl_record_getmode.htm" />
+<topic name="isChanged" url="topics/psl_record_ischanged.htm" />
+<topic name="overlay" url="topics/psl_record_overlay.htm" />
+<topic name="save" url="topics/psl_record_save.htm" />
+<topic name="setAuditFlag" url="topics/psl_record_setauditflag.htm" />
+<topic name="setCreateOnly" url="topics/psl_record_setcreateonly.htm" />
+<topic name="setMode" url="topics/psl_record_setmode.htm" />
+<topic name="setUpdateOnly" url="topics/psl_record_setupdateonly.htm" />
+<topic name="toArray" url="topics/psl_record_toarray.htm" />
+<topic name="toString (Record Class)" url="topics/psl_record_tostring.htm" />
+<topic name="RecordACN Class" url="topics/psl_recordacn_class.htm" />
+<topic name="RecordCIF Class" url="topics/psl_recordcif_class.htm" />
+<topic name="default" url="topics/psl_recordcifdepln_default.htm" />
+<topic name="RecordDEP Class" url="topics/psl_recorddep_class.htm" />
+<topic name="renew" url="topics/psl_recorddepln_renew.htm" />
+<topic name="RecordLN Class" url="topics/psl_recordln_class.htm" />
+<topic name="Reference Class" url="topics/psl_reference_class.htm" />
+<topic name="Reference Classes" url="topics/psl_reference_classes.htm" />
+<topic name="copy (Reference class)" url="topics/psl_reference_copy.htm" />
+<topic name="equals" url="topics/psl_reference_equals.htm" />
+<topic name="getPointer" url="topics/psl_reference_getpointer.htm" />
+<topic name="getStoredValue" url="topics/psl_reference_getstoredvalue.htm" />
+<topic name="setStoredValue" url="topics/psl_reference_setstoredvalue.htm" />
+<topic name="toString (Reference class)" url="topics/psl_reference_tostring.htm" />
+<topic name="ResultSet Class" url="topics/psl_resultset_class.htm" />
+<topic name="getCol" url="topics/psl_resultset_getcol.htm" />
+<topic name="getColProt" url="topics/psl_resultset_getcolprot.htm" />
+<topic name="getRow" url="topics/psl_resultset_getrow.htm" />
+<topic name="getRowProt" url="topics/psl_resultset_getrowprot.htm" />
+<topic name="isEmpty (ResultSet Class)" url="topics/psl_resultset_isempty.htm" />
+<topic name="next (ResultSet Class)" url="topics/psl_resultset_next.htm" />
+<topic name="Row Class" url="topics/psl_row_class.htm" />
+<topic name="getColumns" url="topics/psl_row_getcolumns.htm" />
+<topic name="getDelimiter" url="topics/psl_row_getdelimiter.htm" />
+<topic name="setColumns" url="topics/psl_row_setcolumns.htm" />
+<topic name="setDelimiter" url="topics/psl_row_setdelimiter.htm" />
+<topic name="toRecord" url="topics/psl_row_torecord.htm" />
+<topic name="toString (Row Class)" url="topics/psl_row_tostring.htm" />
+<topic name="charset" url="topics/psl_runtime_charset.htm" />
+<topic name="charsetName Property (Runtime Class)" url="topics/psl_runtime_charsetname.htm" />
+<topic name="Runtime Class" url="topics/psl_runtime_class.htm" />
+<topic name="commit" url="topics/psl_runtime_commit.htm" />
+<topic name="delErrXBAD" url="topics/psl_runtime_delerrxbad.htm" />
+<topic name="rollback" url="topics/psl_runtime_rollback.htm" />
+<topic name="setErrMSG" url="topics/psl_runtime_seterrmsg.htm" />
+<topic name="setErrXBAD" url="topics/psl_runtime_seterrxbad.htm" />
+<topic name="setErrSTBLER" url="topics/psl_runtime_setstbler.htm" />
+<topic name="start" url="topics/psl_runtime_start.htm" />
+<topic name="Schema Class" url="topics/psl_schema_class.htm" />
+<topic name="createTable" url="topics/psl_schema_createtable.htm" />
+<topic name="getTableName" url="topics/psl_schema_gettablename.htm" />
+<topic name="SchemaTable Class" url="topics/psl_schematable_class.htm" />
+<topic name="columnDelimiter" url="topics/psl_schematable_columndelimiter.htm" />
+<topic name="count (SchemaTable class)" url="topics/psl_schematable_count.htm" />
+<topic name="database" url="topics/psl_schematable_database.htm" />
+<topic name="dataType" url="topics/psl_schematable_datatype.htm" />
+<topic name="dateCreated" url="topics/psl_schematable_datecreated.htm" />
+<topic name="dateUpdated" url="topics/psl_schematable_dateupdated.htm" />
+<topic name="defaultList" url="topics/psl_schematable_defaultlist.htm" />
+<topic name="description (SchemaTable class)" url="topics/psl_schematable_description.htm" />
+<topic name="existsNode" url="topics/psl_schematable_existsnode.htm" />
+<topic name="filerPGM" url="topics/psl_schematable_filerpgm.htm" />
+<topic name="global" url="topics/psl_schematable_global.htm" />
+<topic name="hasBlob" url="topics/psl_schematable_hasblob.htm" />
+<topic name="hasMemo" url="topics/psl_schematable_hasmemo.htm" />
+<topic name="hasSubfield" url="topics/psl_schematable_hassubfield.htm" />
+<topic name="isAutoLog" url="topics/psl_schematable_isautolog.htm" />
+<topic name="parentTable" url="topics/psl_schematable_parenttable.htm" />
+<topic name="primaryKeys" url="topics/psl_schematable_primarykeys.htm" />
+<topic name="publishPGM" url="topics/psl_schematable_publishpgm.htm" />
+<topic name="recordType" url="topics/psl_schematable_recordtype.htm" />
+<topic name="requiredList" url="topics/psl_schematable_requiredlist.htm" />
+<topic name="systemName" url="topics/psl_schematable_systemname.htm" />
+<topic name="table" url="topics/psl_schematable_table.htm" />
+<topic name="timeCreated" url="topics/psl_schematable_timecreated.htm" />
+<topic name="timeUpdated" url="topics/psl_schematable_timeupdated.htm" />
+<topic name="userCreated" url="topics/psl_schematable_usercreated.htm" />
+<topic name="userUpdated" url="topics/psl_schematable_userupdated.htm" />
+<topic name="verifyPGM" url="topics/psl_schematable_verifypgm.htm" />
+<topic name="Scope of Objects and Variables" url="topics/psl_scope_of_objects.htm" />
+<topic name="Selecting Data" url="topics/psl_selecting_data.htm" />
+<topic name="Separators" url="topics/psl_separators.htm" />
+<topic name="Statements and Keywords" url="topics/psl_statements_and_keywords.htm" />
+<topic name="addQuotes" url="topics/psl_string_addquotes.htm" />
+<topic name="ascii (String Class)" url="topics/psl_string_ascii.htm" />
+<topic name="beginsWith" url="topics/psl_string_beginswith.htm" />
+<topic name="blank" url="topics/psl_string_blank.htm" />
+<topic name="byteLimitSubstring" url="topics/psl_string_bytelimitsubstring.htm" />
+<topic name="String Class" url="topics/psl_string_class.htm" />
+<topic name="complexUnpack" url="topics/psl_string_complexunpack.htm" />
+<topic name="endsWith" url="topics/psl_string_endswith.htm" />
+<topic name="extract (String Class)" url="topics/psl_string_extract.htm" />
+<topic name="find (String Class)" url="topics/psl_string_find.htm" />
+<topic name="getSub" url="topics/psl_string_getsub.htm" />
+<topic name="insert (String Class)" url="topics/psl_string_insert.htm" />
+<topic name="isInteger" url="topics/psl_string_isinteger.htm" />
+<topic name="isLike" url="topics/psl_string_islike.htm" />
+<topic name="isLiteral" url="topics/psl_string_isliteral.htm" />
+<topic name="isNumber" url="topics/psl_string_isnumber.htm" />
+<topic name="justify (String Class)" url="topics/psl_string_justify.htm" />
+<topic name="length (String Class)" url="topics/psl_string_length.htm" />
+<topic name="lowerCase" url="topics/psl_string_lowercase.htm" />
+<topic name="piece (String Class)" url="topics/psl_string_piece.htm" />
+<topic name="putSub" url="topics/psl_string_putsub.htm" />
+<topic name="replace" url="topics/psl_string_replace.htm" />
+<topic name="reverse" url="topics/psl_string_reverse.htm" />
+<topic name="stripQuotes" url="topics/psl_string_stripquotes.htm" />
+<topic name="toByteString" url="topics/psl_string_tobytestring.htm" />
+<topic name="toDate" url="topics/psl_string_todate.htm" />
+<topic name="toNumber" url="topics/psl_string_tonumber.htm" />
+<topic name="toRow" url="topics/psl_string_torow.htm" />
+<topic name="toTime" url="topics/psl_string_totime.htm" />
+<topic name="translate (String Class)" url="topics/psl_string_translate.htm" />
+<topic name="trim" url="topics/psl_string_trim.htm" />
+<topic name="unpack" url="topics/psl_string_unpack.htm" />
+<topic name="upperCase" url="topics/psl_string_uppercase.htm" />
+<topic name="System Keywords" url="topics/psl_system_keywords.htm" />
+<topic name="Throwing Exceptions" url="topics/psl_throwing_errors.htm" />
+<topic name="Time Class" url="topics/psl_time_class.htm" />
+<topic name="toString (Time Class)" url="topics/psl_time_tostring.htm" />
+<topic name="TranSet Class" url="topics/psl_transet_class.htm" />
+<topic name="copyTran" url="topics/psl_transet_copytran.htm" />
+<topic name="getTran" url="topics/psl_transet_gettran.htm" />
+<topic name="postTSet" url="topics/psl_transet_posttset.htm" />
+<topic name="status" url="topics/psl_transet_status.htm" />
+<topic name="Troubleshooting Compiler Errors" url="topics/psl_troubleshooting_compiler_errors.htm" />
+<topic name="Troubleshooting Compiler Warnings" url="topics/psl_troubleshooting_compiler_warnings.htm" />
+<topic name="Use of #IF/#ELSE and Literal Scope Variables (Database Optimization)" url="topics/psl_use_of_if_else_and_literal_scope_variables.htm" />
+<topic name="Use of #IF/#ELSE and Literal Scope Variables (Code Optimization)" url="topics/psl_use_of_if_else_and_literal_scope_variables_(code_optimization).htm" />
+<topic name="Use of Qualifiers with Db.insert and Db.update" url="topics/psl_use_of_qualifiers_with_db_insert_and_db_update.htm" />
+<topic name="Use of Result Sets Versus Db Sets" url="topics/psl_use_of_result_sets_versus_db_sets.htm" />
+<topic name="Use of the Cache Class" url="topics/psl_use_of_the_cache_class.htm" />
+<topic name="Use of the #OPTIMIZE Compiler Command" url="topics/psl_use_of_the_optimize_compiler_command.htm" />
+<topic name="Use of #WHILE Compiler Command" url="topics/psl_use_of_while_compiler_command.htm" />
+<topic name="Using DATA-QWIK Column Protection in Result Sets" url="topics/psl_using_dq_column_protect_in_dbselect_and_resultset.htm" />
+<topic name="Using PSL" url="topics/psl_using_psl.htm" />
+<topic name="Variable Scope in PSL" url="topics/psl_variable_scope_in_psl.htm" />
+<topic name="Variables and Objects" url="topics/psl_variables.htm" />
+<topic name="Variables Used within Method Subroutines" url="topics/psl_variables_used_within_method_subroutines.htm" />
+<topic name="#WARN" url="topics/psl_warn.htm" />
+<topic name="What's New in This Help Release" url="topics/psl_what_s_new_in_this_help_release.htm" />
+<topic name="#WHILE" url="topics/psl_while.htm" />
+<topic name="Whitespace" url="topics/psl_whitespace.htm" />
+<topic name="#XECUTE" url="topics/psl_xecute.htm" />
+<topic name="Variables and Input Parameters in Computed Columns" url="topics/variables_and_input_parameters_in_computed_columns.htm" />
+
+</ftstdata>  

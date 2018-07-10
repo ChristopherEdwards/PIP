@@ -1,0 +1,215 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Row Class</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+ul.whs1 { list-style:square; }
+table.whs2 { x-cell-content-align:top; width:77.112%; border-spacing:0px; }
+col.whs3 { width:1in; }
+col.whs4 { width:3.25in; }
+tr.whs5 { x-cell-content-align:top; }
+td.whs6 { width:95px; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; border-top-style:none; }
+p.whs7 { font-weight:bold; }
+td.whs8 { width:311px; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; border-top-style:none; }
+td.whs9 { width:95px; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; }
+td.whs10 { width:311px; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; }
+col.whs11 { width:12.262%; }
+col.whs12 { width:82.155%; }
+td.whs13 { width:12.262%; padding-right:10px; padding-left:10px; background-color:#c0c0c0; border-left-style:none; border-right-style:none; border-bottom-style:none; border-top-style:none; }
+p.whs14 { font-weight:bold; margin-left:0px; }
+td.whs15 { width:82.155%; padding-right:10px; padding-left:10px; background-color:#c0c0c0; }
+td.whs16 { width:12.262%; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; }
+td.whs17 { width:82.155%; padding-right:10px; padding-left:10px; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs14 {margin-left:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nRow Class\nRow Class");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Row Class</h1>
+
+<p>The <span style="color: #0000ff; font-weight: bold;"><font color=blue ><B>Row class</B></font></span> 
+ describes and manages strings that contain delimited fields of data. Implementing 
+ strings as Row objects improves code abstraction, readability, and maintainability. 
+ The Row class provides a natural interface between ResultSets and the 
+ application logic. Other notable features of Row objects include:</p>
+
+<ul type="square" class="whs1">
+	
+	<li class=kadov-p><p>The properties of a Row object can be updated 
+ (e.g., set RowObject.lnm = &quot;JONES&quot;).</p></li>
+	
+	<li class=kadov-p><p>References to Row object properties return the 
+ class of the property.</p></li>
+	
+	<li class=kadov-p><p>Passing Row objects into functions is more efficient 
+ than passing ResultSet objects, because Row objects have a more efficient 
+ implementation.</p></li>
+	
+	<li class=kadov-p><p>Row objects can be copied into Record&lt;Class&gt; 
+ objects using the Row.toRecord method.</p></li>
+	
+	<li class=kadov-p><p>Row objects can be assigned to Strings, and String 
+ functions can be performed on them (this requires the {String} cast to 
+ access the String methods). PSL operators can be used on Row objects.</p></li>
+	
+	<li class=kadov-p><p>Row objects accept the property indirection syntax: 
+ RowObject.@variable.</p></li>
+	
+	<li class=kadov-p><p>Row objects are comprised of one or multiple properties 
+ (or columns). Each column must have an associated name and class. The 
+ values of the Row object properties must be stored in their internal value 
+ (e.g., Date columns are stored as Julian dates).</p></li>
+	
+	<li class=kadov-p><p>Property templates provide &quot;formal&quot; 
+ declarations of delimited strings as returned values in utilities.</p></li>
+</ul>
+
+<p>Refer to the <a href="psl_instantiating_a_row_class_object.htm">Instantiating 
+ a Row Class Object</a> section for additional information.</p>
+
+<table x-use-null-cells cellspacing="0" width="77.112%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="95px" class="whs6">
+<p class="whs7">Ancestor</td>
+<td width="311px" class="whs8">
+<p><a href="psl_reference_class.htm">Reference</a></td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="95px" class="whs9">
+<p class="whs7">Descendants</td>
+<td colspan="1" rowspan="1" width="311px" class="whs10">
+<p>None</td></tr>
+</table>
+
+<table x-use-null-cells cellspacing="0" width="77.112%" class="whs2">
+<col class="whs11">
+<col class="whs12">
+
+<tr valign="top" class="whs5">
+<td bgcolor="#C0C0C0" width="12.262%" class="whs13">
+<p class="whs14">Methods</td>
+<td bgcolor="#C0C0C0" width="82.155%" class="whs15">
+<p class="whs7">Description</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="12.262%" class="whs16">
+<p><a href="psl_row_getcolumns.htm">getColumns</a></td>
+<td width="82.155%" class="whs17">
+<p>Returns a list of columns in a Row object.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="12.262%" class="whs16">
+<p><a href="psl_row_getdelimiter.htm">getDelimiter</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs17">
+<p>Returns the delimiter character used by the Row object.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="12.262%" class="whs16">
+<p><a href="psl_row_setcolumns.htm">setColumns</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs17">
+<p>Sets the properties (columns) of a Row object.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="12.262%" class="whs16">
+<p><a href="psl_row_setdelimiter.htm">setDelimiter</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs17">
+<p>Sets the delimiter of a Row object.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="12.262%" class="whs16">
+<p><a href="psl_row_torecord.htm">toRecord</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs17">
+<p>Copies the properties of the Row object into a Record object.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="12.262%" class="whs16">
+<p><a href="psl_row_tostring.htm">toString</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs17">
+<p>Transforms the Row object into a formatted string.</td></tr>
+</table>
+
+<p class=Field>&nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

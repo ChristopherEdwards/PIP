@@ -1,0 +1,157 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Primitive and Reference Data Types</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<style type="text/css">
+<!--
+table.whs1 { margin-left:4.50pt; width:625px; border-spacing:0px; }
+col.whs2 { width:5.76%; }
+col.whs3 { width:94.24%; }
+tr.whs4 { x-cell-content-align:top; }
+td.whs5 { width:5.76%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+img_whs6 { width:15px; height:15px; float:none; border-style:none; }
+td.whs7 { width:94.24%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Introduction to Object-Oriented Programming\nPrimitive and Reference Data Types");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Primitive and Reference Data Types</h1>
+
+<p>Conceptually, there are two types of data in PSL:</p>
+
+<ul>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1><a href="psl_primitive_classes.htm">Primitive 
+ types</a></p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1><a href="psl_reference_classes.htm">Reference 
+ types</a></p></li>
+</ul>
+
+<p>A <span style="font-weight: bold;"><B>primitive data type </B></span>represents 
+ a single value. Examples of primitive data types are:</p>
+
+<ul>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>Blob</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>Boolean</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>Date</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>Memo</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>Number</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>String</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>Time</p></li>
+</ul>
+
+<p><span style="font-weight: bold;"><B>Reference data types </B></span>contain 
+ values that point to or identify objects such as a RecordDEP object or 
+ a ResultSet object. The name of the class is used as the type. When you 
+ declare a variable using the name of a class for its type, the variable 
+ will contain a r<span style="font-style: italic;"><I>eference</I></span> to an 
+ object of that class.</p>
+
+<p>A <span style="font-style: italic;"><I>Type</I></span> enclosed in braces {} 
+ specifies a type cast operation. A cast always produces a pure value of 
+ the specified type, by converting its operand to that type if necessary. 
+ A cast can convert between certain primitive types. A cast between reference 
+ types never alters the type or content of the object.</p>
+
+<table x-use-null-cells cellspacing="0" width="625" class="whs1">
+<col class="whs2">
+<col class="whs3">
+
+<tr valign="top" class="whs4">
+<td width="5.76%" class="whs5">
+<p class=Note><img src="../image/i_blue_sm.jpg" alt="image\msgs.gif" x-maintain-ratio="TRUE" width="15px" height="15px" border="0" class="img_whs6"></td>
+<td width="94.24%" class="whs7">
+<p class=Note>PSL supports specific operators (+ - * / \ # _ ‘ = &gt; &lt; 
+ [ ] ) on primitive data types. However, PSL does not support these operators 
+ on reference data types. Attempting to use these operators on reference 
+ data types will produce a compile time error.</td></tr>
+</table>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

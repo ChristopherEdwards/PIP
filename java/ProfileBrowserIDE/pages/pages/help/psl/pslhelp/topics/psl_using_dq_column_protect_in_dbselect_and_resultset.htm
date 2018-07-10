@@ -1,0 +1,127 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Using DATA-QWIK Column Protection in Result Sets</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Using PSL\nImplementing Methods\nUsing DATA-QWIK Column Protection in Db.Select() and ResultSet");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Using DATA-QWIK Column Protection in Result Sets</h1>
+
+<p>PSL supports the DATA-QWIK column protection scheme, provided you adhere 
+ to the following rules.</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>The protection scheme relies 
+ on passing a literal PSQLparameter containing &quot;/PROTECTION=n&quot; 
+ to the <a href="psl_db_select.htm">Db.select()</a> method that instantiates 
+ the ResultSet. The PSQLparameter is the sixth parameter in the Db.select() 
+ method. The values of the /PROTECTION parameter correspond to the values 
+ of the Data Item Protection Logic attribute (DBTBL5H.RESFLG).</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>If <span style="font-weight: bold;"><B>&quot;/PROTECTION=0&quot;</B></span> 
+ is specified, then the generated code ignores the data item protection 
+ schema. Both <a href="psl_resultset_getcolprot.htm">ResultSet.getColProt()</a> 
+ and <a href="psl_resultset_getrowprot.htm">ResultSet.getRowProt()</a> 
+ will return an empty string.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>If <span style="font-weight: bold;"><B>&quot;/PROTECTION=1&quot;</B></span>, 
+ then the generated routine includes code that maintains the protection 
+ values of the individual columns, if at least one table specified in the 
+ Db.select() method has a data item for which protection is defined. Because 
+ the PSL compiler must be able to detect this at compile time, the tableName 
+ parameter of the Db.select() method must also be literal.<br>
+	<br>
+	Because the intent of &quot;/PROTECTION=1&quot; is to disallow access 
+ to individual column values, but allow column usage in aggregates, the 
+ developer must look at and interpret the individual column protection 
+ values through ResultSet.getColProt().</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1><span style="font-weight: bold;"><B>&quot;/PROTECTION=2&quot;</B></span> 
+ implies that neither access to individual column values nor access through 
+ aggregates is allowed when the column is protected. In this case, <a href="psl_resultset_next.htm">ResultSet.next()</a> 
+ will replace the column value by NULL when access to the column is not 
+ granted. Because ResultSet.next() forces the NULL, both ResultSet.getCol() 
+ and ResultSet.getRow() will return NULL as the column value.</p></li>
+</ul>
+
+<p class=Example>Example</p>
+
+<p class=BodyIndent>Refer to the examples provided for the <a href="psl_resultset_getcolprot.htm">ResultSet.getColProt</a> 
+ and <a href="psl_resultset_getrowprot.htm">ResultSet.getRowProt</a> methods.</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Standard is Enforced</p>
+
+<p class=BodyIndent
+	style="x-condition: NotPrintedDocn;">Profile v7.0</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

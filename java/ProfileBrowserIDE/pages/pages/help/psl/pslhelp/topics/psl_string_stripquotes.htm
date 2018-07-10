@@ -1,0 +1,229 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>stripQuotes</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { width:552px; margin-left:18pt; border-spacing:0px; }
+tr.whs2 { x-cell-content-align:top; }
+td.whs3 { width:120px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs4 { width:432px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs5 { margin-left:0px; }
+p.whs6 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs5 {margin-left:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nString Class\nMethods\nstripQuotes");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>stripQuotes Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">String</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class=BodyIndent>This method strips the specified quote character from 
+ the string. This method is the inverse of <a href="psl_string_addquotes.htm">String.addQuotes()</a>. 
+ Applying String.stripQuotes() after applying String.addQuotes() yields 
+ the original value.</p>
+
+<p class=BodyIndent>&nbsp;</p>
+
+<p class=BodyIndent>The stripQuotes method applies the following algorithm:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>If <a href="psl_string_beginswith.htm">String.beginsWith(char)</a> 
+ and <a href="psl_string_endswith.htm">String.endsWith(char)</a>, then 
+ the leading and trailing quote characters are removed.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Quote characters that do 
+ not occur in pairs are removed.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>One quote character is 
+ removed from all quote characters that occur in pairs.</p></li>
+</ul>
+
+<p class=BodyIndent>This method replaces the $$QSUB^%ZS() function.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>StringObject.stripQuotes(String char)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="552" class="whs1">
+
+<tr valign="top" class="whs2">
+<td width="120px" class="whs3">
+<p>char</td>
+<td width="432px" class="whs4">
+<p class="whs5">The quote character to strip from the string. 
+ If absent or empty, the double quote (&quot;) is used.</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>A String.</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs6">v7.0</p>
+
+<p class=Example>Example</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String STR = &quot;'This is just 
+ a ''String''!'&quot;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// Since STR does not contain &quot;, 
+ next examples return STR</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String SAME = <span style="font-weight: bold;"><B>STR.stripQuotes()</B></span> 
+ &nbsp;&nbsp;&nbsp;// 
+ SAME = STR</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">set SAME = <span style="font-weight: bold;"><B>STR.stripQuotes(&quot;&quot;)</B></span></p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">set SAME = <span style="font-weight: bold;"><B>STR.stripQuotes(&quot;&quot;&quot;&quot;)</B></span></p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// Removing layer of single quote ('), 
+ all paired</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// returns &quot;This is just a 'String'!&quot;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// This is the only example that will 
+ deliver the original</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// string when addQUotes() is applied 
+ afterwards</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String STRIP = <span style="font-weight: bold;"><B>STR.stripQuotes(&quot;'&quot;)</B></span></p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String ORIG = STRIP.addQuotes(&quot;'&quot;)</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">if STR=ORIG write &quot;inverse!&quot;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// Next one produces &quot;'Thisisjusta''String''!'&quot;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type NOSP = <span style="font-weight: bold;"><B>STR.stripQuotes(&quot; 
+ &quot;)</B></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ removes all spaces</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// Next one produces &quot;m, swiming 
+ in sumer is nice&quot;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String SUMMER = &quot;mmm, swimming 
+ in summer is nice&quot;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">set STRIP = <span style="font-weight: bold;"><B>SUMMER.stripQuotes(&quot;m&quot;)</B></span></p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

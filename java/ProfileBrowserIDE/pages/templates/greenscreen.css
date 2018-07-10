@@ -1,0 +1,52 @@
+
+
+body {
+	background-color: black;
+
+}
+
+
+TABLE.psl-RS {
+	BORDER: 0px;
+	PADDING-RIGHT: 2px;
+	PADDING-LEFT: 2px;
+	FONT-SIZE: 90%;
+	PADDING-BOTTOM: 0px;
+	PADDING-TOP: 2px;
+	font-family: courier;
+	BORDER-COLLAPSE: collapse;
+	color: navy;
+
+}
+
+TABLE.psl-RS TH {
+	BORDER: 0px;
+	PADDING-RIGHT: 4px;
+	PADDING-LEFT: 3px;
+	FONT-SIZE: 85%;
+	PADDING-BOTTOM: 3px;
+	PADDING-TOP: 3px;
+	font-family: courier;
+	BORDER-COLLAPSE: collapse;
+	BACKGROUND-COLOR: white;
+	color: black;
+	text-align: right;
+
+}
+
+TABLE.psl-RS TD {
+	BORDER: 0px;
+	PADDING-RIGHT: 4px;
+	PADDING-LEFT: 3px;
+	FONT-SIZE: 90%;
+	PADDING-BOTTOM: 2px;
+	PADDING-TOP: 2px;
+	font-family: courier;
+	BORDER-COLLAPSE: collapse;
+	BACKGROUND-COLOR: black;
+	border-spacing: 2px;
+	color: white;
+text-align: right;
+
+}
+

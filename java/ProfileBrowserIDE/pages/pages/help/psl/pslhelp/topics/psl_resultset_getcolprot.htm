@@ -1,0 +1,656 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>getColProt</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+p.whs1 { margin-left:24px; }
+table.whs2 { margin-left:4.50pt; width:642px; border-spacing:0px; }
+col.whs3 { width:8.255%; }
+col.whs4 { width:91.745%; }
+tr.whs5 { x-cell-content-align:top; }
+td.whs6 { width:8.255%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+img_whs7 { width:15px; height:15px; float:none; border-style:none; }
+td.whs8 { width:91.745%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+table.whs9 { width:558px; margin-left:18pt; border-spacing:0px; }
+td.whs10 { width:120px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs11 { width:438px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs12 { margin-left:24px; x-condition:NotPrintedDocn; }
+table.whs13 { x-cell-content-align:top; width:80.369%; border-spacing:0px; }
+col.whs14 { width:20.738%; }
+col.whs15 { width:17.459%; }
+col.whs16 { width:14.508%; }
+col.whs17 { width:19.099%; }
+col.whs18 { width:14.837%; }
+col.whs19 { width:13.358%; }
+td.whs20 { width:20.738%; padding-right:10px; padding-left:10px; border-left-style:Solid; border-left-color:#000000; border-top-color:#000000; border-top-style:Solid; border-right-style:Solid; border-right-color:#000000; border-bottom-color:#000000; border-bottom-style:Solid; border-right-width:1px; border-left-width:1px; border-top-width:1px; border-bottom-width:1px; background-color:#bfbfbf; }
+p.whs21 { font-weight:bold; text-align:center; }
+td.whs22 { width:17.459%; padding-right:10px; padding-left:10px; border-top-color:#000000; border-top-style:Solid; border-right-style:Solid; border-right-color:#000000; border-bottom-color:#000000; border-bottom-style:Solid; border-right-width:1px; border-top-width:1px; border-bottom-width:1px; background-color:#bfbfbf; }
+p.whs23 { font-weight:bold; }
+td.whs24 { width:14.508%; padding-right:10px; padding-left:10px; border-top-color:#000000; border-top-style:Solid; border-right-style:Solid; border-right-color:#000000; border-bottom-color:#000000; border-bottom-style:Solid; border-right-width:1px; border-top-width:1px; border-bottom-width:1px; background-color:#bfbfbf; }
+td.whs25 { width:19.099%; padding-right:10px; padding-left:10px; border-top-color:#000000; border-top-style:Solid; border-right-style:Solid; border-right-color:#000000; border-bottom-color:#000000; border-bottom-style:Solid; border-right-width:1px; border-top-width:1px; border-bottom-width:1px; background-color:#bfbfbf; }
+td.whs26 { width:14.837%; padding-right:10px; padding-left:10px; border-top-color:#000000; border-top-style:Solid; border-right-style:Solid; border-right-color:#000000; border-bottom-color:#000000; border-bottom-style:Solid; border-right-width:1px; border-top-width:1px; border-bottom-width:1px; background-color:#bfbfbf; }
+td.whs27 { width:13.358%; padding-right:10px; padding-left:10px; border-top-color:#000000; border-top-style:Solid; border-right-style:Solid; border-right-color:#000000; border-bottom-color:#000000; border-bottom-style:Solid; border-top-width:1px; border-bottom-width:1px; border-right-width:1px; background-color:#bfbfbf; }
+td.whs28 { width:20.738%; padding-right:10px; padding-left:10px; border-left-style:Solid; border-left-color:#000000; border-left-width:1px; border-right-style:Solid; border-right-color:#000000; border-right-width:1px; border-bottom-width:1px; border-bottom-color:#000000; border-bottom-style:Solid; }
+p.whs29 { text-align:center; }
+td.whs30 { width:17.459%; padding-right:10px; padding-left:10px; border-right-style:Solid; border-right-color:#000000; border-right-width:1px; border-bottom-width:1px; border-bottom-color:#000000; border-bottom-style:Solid; }
+td.whs31 { width:14.508%; padding-right:10px; padding-left:10px; border-right-style:Solid; border-right-color:#000000; border-right-width:1px; border-bottom-width:1px; border-bottom-color:#000000; border-bottom-style:Solid; }
+td.whs32 { width:19.099%; padding-right:10px; padding-left:10px; border-right-style:Solid; border-right-color:#000000; border-right-width:1px; border-bottom-width:1px; border-bottom-color:#000000; border-bottom-style:Solid; }
+td.whs33 { width:14.837%; padding-right:10px; padding-left:10px; border-right-style:Solid; border-right-color:#000000; border-right-width:1px; border-bottom-width:1px; border-bottom-color:#000000; border-bottom-style:Solid; }
+td.whs34 { width:13.358%; padding-right:10px; padding-left:10px; border-right-style:Solid; border-right-color:#000000; border-right-width:1px; border-bottom-width:1px; border-bottom-color:#000000; border-bottom-style:Solid; }
+td.whs35 { width:20.738%; border-left-width:1px; border-left-color:#000000; border-left-style:Solid; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; padding-right:10px; padding-left:10px; }
+td.whs36 { width:17.459%; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; padding-right:10px; padding-left:10px; }
+td.whs37 { width:14.508%; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; padding-right:10px; padding-left:10px; }
+td.whs38 { width:19.099%; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; padding-right:10px; padding-left:10px; }
+td.whs39 { width:14.837%; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; padding-right:10px; padding-left:10px; }
+td.whs40 { width:13.358%; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; padding-right:10px; padding-left:10px; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nResultSet Class\nMethods\ngetColProt");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>getColProt Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">ResultSet</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class="whs1">This method returns the protection value 
+ for the specified column of the current row in the result set. To use 
+ this method, you must adhere to the <a href="psl_using_dq_column_protect_in_dbselect_and_resultset.htm">specific 
+ rules.</a></p>
+
+<table x-use-null-cells cellspacing="0" width="642" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="8.255%" class="whs6">
+<p class=Note
+	style="margin-left: 12px;"><img src="../image/i_blue_sm.jpg" alt="image\msgs.gif" x-maintain-ratio="TRUE" width="15px" height="15px" border="0" class="img_whs7"></td>
+<td width="91.745%" class="whs8">
+<p class=Note>This method was created to facilitate the Profile v7.0 report 
+ writer conversion to PSL.</td></tr>
+</table>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>ResultSet.getColProt(String columnRef)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="558" class="whs9">
+
+<tr valign="top" class="whs5">
+<td width="120px" class="whs10">
+<p>columnRef</td>
+<td width="438px" class="whs11">
+<p>The column for which to return the protection value. Either a columnName 
+ or columnNumber may be supplied.</p>
+<p>The columnName can only be used in the subroutine where the ResultSet 
+ is instantiated, and only if the selectlist is supplied as a literal in 
+ the <a href="psl_db_select.htm">Db.select</a> method.</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>0 when no access restrictions apply to the column</p>
+
+<p class=BodyIndent>2 when the userclass has read access to the column 
+ values</p>
+
+<p class=BodyIndent>3 when the userclass has no access to the column value</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs12">Profile v7.0</p>
+
+<p class=Example>Examples</p>
+
+<p>Profile's data item protection provides a framework, used by individual 
+ sites to impose access rules on data items. Since the implementation is 
+ the exclusive responsibility of the customer, the following examples only 
+ serve to demonstrate the interaction between data item protection logic 
+ and PSL code.</p>
+
+<p>The examples assume that the following data item protection rules have 
+ been defined on the DEP file, and that the actual UserClass matches the 
+ specified value (&quot;TLR&quot;):</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Tellers (denoted by %UserClass=&quot;TLR&quot;) 
+ are prohibited from seeing the balances (DEP.BAL) of employees (denoted 
+ by .DEP.CCODE=&quot;EMP&quot;).</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Tellers have read-only 
+ access to the available interest accrued (DEP.AIACR) of employees.</p></li>
+</ul>
+
+<p>The sample DEP table contains the following matching records:</p>
+
+<table x-use-null-cells cellspacing="0" width="80.369%" class="whs13">
+<script language='JavaScript'><!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4)) document.write("</table><table x-use-null-cells cellspacing='0' width='80.369%' border='1' bordercolor='black' bordercolorlight='black' bordercolordark='black'>");
+//--></script>
+<col class="whs14">
+<col class="whs15">
+<col class="whs16">
+<col class="whs17">
+<col class="whs18">
+<col class="whs19">
+
+<tr valign="top" class="whs5">
+<td bgcolor="#BFBFBF" width="20.738%" class="whs20">
+<p align="center" class="whs21">reference ID</td>
+<td bgcolor="#BFBFBF" width="17.459%" class="whs22">
+<p class="whs23">CID</td>
+<td bgcolor="#BFBFBF" width="14.508%" class="whs24">
+<p class="whs23">ACN</td>
+<td bgcolor="#BFBFBF" width="19.099%" class="whs25">
+<p class="whs23">BAL</td>
+<td bgcolor="#BFBFBF" width="14.837%" class="whs26">
+<p class="whs23">CCODE</td>
+<td bgcolor="#BFBFBF" width="13.358%" class="whs27">
+<p class="whs23">AIACR</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="20.738%" class="whs28">
+<p align="center" class="whs29">A</td>
+<td width="17.459%" class="whs30">
+<p>300</td>
+<td width="14.508%" class="whs31">
+<p>9347</td>
+<td width="19.099%" class="whs32">
+<p>17553.25</td>
+<td width="14.837%" class="whs33">
+<p>REG</td>
+<td width="13.358%" class="whs34">
+<p>17.55</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="20.738%" class="whs35">
+<p align="center" class="whs29">B</td>
+<td width="17.459%" class="whs36">
+<p>35002</td>
+<td width="14.508%" class="whs37">
+<p>35000</td>
+<td width="19.099%" class="whs38">
+<p>258085.00</td>
+<td width="14.837%" class="whs39">
+<p>EMP</td>
+<td width="13.358%" class="whs40">
+<p>23.45</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="20.738%" class="whs35">
+<p align="center" class="whs29">C</td>
+<td width="17.459%" class="whs36">
+<p>3909999</td>
+<td width="14.508%" class="whs37">
+<p>6939</td>
+<td width="19.099%" class="whs38">
+<p>10000.00</td>
+<td width="14.837%" class="whs39">
+<p>PRF</td>
+<td width="13.358%" class="whs40">
+<p>9.03</td></tr>
+<script language='JavaScript'><!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4)) document.write("</table></table><table>");
+//--></script>
+</table>
+
+<p>&nbsp;</p>
+
+<p class=Example>Example #1 -- Discard Data Item Protection (by explicitly 
+ specifying &quot;/PROTECTION=0&quot;)</p>
+
+<p class=Code>&nbsp;&nbsp;write 
+ &quot;the userclass equals '&quot;, %UserClass, &quot;'&quot;, !</p>
+
+<p class=Code>&nbsp;&nbsp;do 
+ colProt0(&quot;ACN&quot;) // shows all values listed in table</p>
+
+<p class=Code>&nbsp;&nbsp;do 
+ colProt0(&quot;BAL&quot;) // shows all values listed in table</p>
+
+<p class=Code>&nbsp;&nbsp;do 
+ colProt0(&quot;AIACR&quot;) // shows all values listed in table</p>
+
+<p class=Code>&nbsp;&nbsp;quit</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>public colProt0( String sNmOrNr) &nbsp;&nbsp;&nbsp;&nbsp;// 
+ sample procedure</p>
+
+<p class=Code>&nbsp;&nbsp;type 
+ ResultSet rRs = Db.select(&quot;CID,ACN,BAL,CCODE,AIACR&quot;,</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;DEP&quot;,&quot;BAL 
+ &gt; 10000&quot;,,,</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span 
+ style="font-weight: bold;"><B>&quot;/PROTECTION=0&quot;</B></span>)</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>&nbsp;&nbsp;if 
+ rRs.isEmpty() do {</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ &quot;no records match your criteria&quot;,!</p>
+
+<p class=Code>&nbsp;&nbsp;}</p>
+
+<p class=Code>&nbsp;&nbsp;else 
+ &nbsp;do {</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ &quot;Column '&quot;,sNmOrNr,&quot;' of matching records:&quot;,!</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while 
+ rRs.next() do {</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ getRowProt() always empty in this case</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ &quot;row protection = '&quot;, rRs.getRowProt(<span style="font-weight: bold;"><B>)</B></span></p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ &quot;', column protection ='&quot;</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ getColProt() always empty in this case</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ <span style="font-weight: bold;"><B>rRs.getColProt(sNmOrNr)</B></span></p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ &quot;', and value ='&quot;, rRs.getCol(sNmOrNr)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ &quot;'&quot;, !</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+<p class=Code>&nbsp;&nbsp;}</p>
+
+<p class=Code>&nbsp;&nbsp;quit</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Example>Example #2 -- Same as Example #1, but it uses &quot;/PROTECTION=2&quot;</p>
+
+<p class=Code>&nbsp;&nbsp;write 
+ &quot;the userclass equals '&quot;, %UserClass, &quot;'&quot;, !</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>&nbsp;&nbsp;// 
+ ACN: shows all values, getColProt() always 0</p>
+
+<p class=Code>&nbsp;&nbsp;do 
+ colProt2(&quot;ACN&quot;)</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>&nbsp;&nbsp;// 
+ BAL: shows refids A and C (with getColProt() = 0),</p>
+
+<p class=Code>&nbsp;&nbsp;// 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;empty 
+ string for refid B (with getColProt() = 3)</p>
+
+<p class=Code>&nbsp;&nbsp;do 
+ colProt2(&quot;BAL&quot;)</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>&nbsp;&nbsp;// 
+ AIACR: shows refids A and C (with getColProt() = 0),</p>
+
+<p class=Code>&nbsp;&nbsp;// 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shows 
+ refid B as well (with getColProt() = 2)</p>
+
+<p class=Code>&nbsp;&nbsp;do 
+ colProt2(&quot;AIACR&quot;)</p>
+
+<p class=Code>&nbsp;&nbsp;quit</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>public colProt2( String sNmOrNr) &nbsp;&nbsp;&nbsp;// 
+ sample procedure</p>
+
+<p class=Code>&nbsp;&nbsp;type 
+ ResultSet rRs = Db.select(&quot;CID,ACN,BAL,CCODE,AIACR&quot;,</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;DEP&quot;,&quot;BAL 
+ &gt; 10000&quot;,,,</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span 
+ style="font-weight: bold;"><B>&quot;/PROTECTION=2&quot;</B></span>)</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>&nbsp;&nbsp;if 
+ rRs.isEmpty() do {</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ &quot;no records match your criteria&quot;,!</p>
+
+<p class=Code>&nbsp;&nbsp;}</p>
+
+<p class=Code>&nbsp;&nbsp;else 
+ &nbsp;do {</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ &quot;Column '&quot;,sNmOrNr,&quot;' of matching records:&quot;,!</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while 
+ rRs.next() do {</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ getRowProt: shows &quot;00000&quot; for refids A and C</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shows 
+ &quot;00302&quot; for refid B</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ &quot;row protection = '&quot;,( rRs.getRowProt<span style="font-weight: bold;"><B>)</B></span></p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ &quot;', column protection ='&quot;</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ <span style="font-weight: bold;"><B>rRs.getColProt(sNmOrNr)</B></span></p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ &quot;', and value ='&quot;, rRs.getCol(sNmOrNr)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ &quot;'&quot;, !</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+<p class=Code>&nbsp;&nbsp;}</p>
+
+<p class=Code>&nbsp;&nbsp;quit</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Example>Example #3 -- Use &quot;/PROTECTION=1&quot;, showing values 
+ and aggregates based on the protection values</p>
+
+<p class=Code>write &quot;the userclass equals '&quot;, %UserClass, &quot;'&quot;, 
+ !</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>type ResultSet rRs = Db.select(&quot;BAL&quot;,</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;DEP&quot;,&quot;BAL 
+ &gt; 10000&quot;,,,</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span 
+ style="font-weight: bold;"><B>&quot;/PROTECTION=1&quot;)</B></span></p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>if rRs.isEmpty() do {</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ &quot;no records match your criteria&quot;,!</p>
+
+<p class=Code>}</p>
+
+<p class=Code>else &nbsp;do 
+ {</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type 
+ Number COUNT &nbsp;= 
+ 0 // # rows in result</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type 
+ Number TOTBAL = 0</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type 
+ Number HIDDEN = 0 // # of &quot;hidden&quot; values</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while 
+ rRs.next() do {</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type 
+ Number BAL = rRs.getCol(&quot;BAL&quot;)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ COUNT &nbsp;= 
+ COUNT &nbsp;+ 
+ 1</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ TOTBAL = TOTBAL + BAL</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+ <span style="font-weight: bold;"><B>rRs.getColProt(&quot;BAL&quot;) = 3</B></span> 
+ do {</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ HIDDEN = HIDDEN + 1</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ &quot;***********&quot;, !</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else 
+ &nbsp;write BAL, 
+ !</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ if more than 1 HIDDEN balance, it is save to print</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ aggregates, else the HIDDEN balance can be derived</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+ HIDDEN &gt; 1 do {</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ &quot;total &nbsp;&nbsp;= 
+ &quot;, TOTBAL, !</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ &quot;average = &quot;, (TOTBAL/COUNT).roundCur(), !</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else 
+ &nbsp;write &quot;no 
+ aggregates will be provided&quot;, !</p>
+
+<p class=Code>}</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Example>Example #4 -- Same as Example #3, but uses &quot;/PROTECTION=2&quot;. 
+ Both aggregates simply discard the hidden balances.</p>
+
+<p class=Code>write &quot;the userclass equals '&quot;, %UserClass, &quot;'&quot;, 
+ !</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>type ResultSet rRs = Db.select(&quot;BAL&quot;,</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;DEP&quot;,&quot;BAL 
+ &gt; 10000&quot;,,,</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span 
+ style="font-weight: bold;"><B>&quot;/PROTECTION=2&quot;</B></span>)</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>if rRs.isEmpty() do {</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ &quot;no records match your criteria&quot;,!</p>
+
+<p class=Code>}</p>
+
+<p class=Code>else &nbsp;do 
+ {</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type 
+ Number COUNT &nbsp;= 
+ 0 // # rows in result</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type 
+ Number TOTBAL = 0</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type 
+ Number HIDDEN = 0 // # of &quot;hidden&quot; values</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while 
+ rRs.next() do {</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type 
+ Number BAL = rRs.getCol(&quot;BAL&quot;)</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ COUNT &nbsp;= 
+ COUNT &nbsp;+ 
+ 1</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ TOTBAL = TOTBAL + BAL</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+ <span style="font-weight: bold;"><B>rRs.getColProt(&quot;BAL&quot;) = 3</B></span> 
+ do {</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ HIDDEN = HIDDEN + 1</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ can always write BAL, because protection</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ routine will set value to NULL</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ BAL, !</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ TOTAL can always be printed, average will be</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ corrected to exclude HIDDEN balances</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ &quot;total &nbsp;&nbsp;= 
+ &quot;, TOTBAL, !</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ just in case every balance is HIDDEN ...</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+ COUNT &gt; HIDDEN do {</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ &quot;average = &quot;</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ (TOTBAL/(COUNT-HIDDEN)).roundCur(), !</p>
+
+<p class=Code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+<p class=Code>}</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

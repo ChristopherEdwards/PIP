@@ -1,0 +1,162 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Class Conversions Based on Expression Operations</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Programming Standards\nClass Conversions Based on Expression Operations");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Class Conversions Based on Expression Operations</h1>
+
+<p>The following rules apply to operations that occur between two different 
+ classes:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>If the operators ' [ ] 
+ = &lt; &gt; are used, the expression returns a Boolean class.<br>
+	<br>
+	 &nbsp;&nbsp;&nbsp;set 
+ x = a &gt; b</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>If the oeprators * / \ 
+ # + - are used, the expression returns a Number class.<br>
+	<br>
+	 &nbsp;&nbsp;&nbsp;set 
+ x = a * b</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>If the operator _ is used, 
+ the expression returns a String class.<br>
+	<br>
+	 &nbsp;&nbsp;&nbsp;set 
+ x = a_b</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>If multiple operators are 
+ used, the expression evaluates from left to right.<br>
+	<br>
+	 &nbsp;&nbsp;&nbsp;set 
+ x = a &gt; b * c &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ Returns a Number<br>
+	 &nbsp;&nbsp;&nbsp;set 
+ x = a * b &gt; c &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ Returns a Boolean</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>If one operand is a Date 
+ class, the other operand is a Number class, and the operator is + or -, 
+ the expression returns a Date class.<br>
+	<br>
+	 &nbsp;&nbsp;&nbsp;set 
+ x = %SystemDate + 1<br>
+	 &nbsp;&nbsp;&nbsp;set 
+ x = %CurrentTime - 60<br>
+	<br>
+	This rule is recursive.<br>
+	<br>
+	 &nbsp;&nbsp;&nbsp;set 
+ x = %SystemDate + 10 + 10</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>If both operands are Date 
+ or Time, the expression returns a Number class.<br>
+	<br>
+	 &nbsp;&nbsp;&nbsp;set 
+ x = %Currentdate - %SystemDate</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Methods use the class of 
+ the identifier.<br>
+	<br>
+	 &nbsp;&nbsp;&nbsp;set 
+ x = &quot;string&quot;_123.justify(12,2)<br>
+	<br>
+	where the 123 identifier is a number. Therefore, in this example, the 
+ expression returns a Number class.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Use parentheses to control 
+ classes.<br>
+	<br>
+	 &nbsp;&nbsp;&nbsp;set 
+ x = (&quot;string&quot;_123).extract(1,5) &nbsp;&nbsp;&nbsp;&nbsp;// 
+ expression is a string</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Methods can be applied 
+ directly to Strings, Numbers, [extrinsic] functions (as Strings), and 
+ variables.<br>
+	<br>
+	 &nbsp;&nbsp;&nbsp;set 
+ x = &quot;1,2,3&quot;.piece(&quot;,&quot;,2)<br>
+	 &nbsp;&nbsp;&nbsp;set 
+ y = 123.4.justify(12,2)<br>
+	 &nbsp;&nbsp;&nbsp;set 
+ z = $$^foo(par).extract(1,2)</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>M instrinsic functions 
+ are supported as methods for all primitive classes.</p></li>
+</ul>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

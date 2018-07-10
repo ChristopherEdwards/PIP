@@ -1,0 +1,212 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>fnumber Method</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { width:534px; margin-left:18pt; border-spacing:0px; }
+tr.whs2 { x-cell-content-align:top; }
+td.whs3 { width:96px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs4 { width:438px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs5 { margin-left:48px; text-indent:-24px; }
+p.whs6 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs5 {text-indent:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nNumber Class\nMethods\nfnumber");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>fnumber Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;"><span>Class: </span><span style="font-weight: normal;">Number</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class=BodyIndent>This method returns a formatted version of a number.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>NumberObject.fnumber(String formatCodes,Number decimal)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="534" class="whs1">
+
+<tr valign="top" class="whs2">
+<td width="96px" class="whs3">
+<p>formatCodes</td>
+<td width="438px" class="whs4">
+<p>A string of characters to control the result. Valid values include any 
+ combination of the following codes. Invalid characters or invalid combinations 
+ will throw a runtime error.</p>
+<p class="whs5"><span style="font-weight: bold;"><B>P</B></span> 
+ &nbsp;&nbsp;&nbsp;Represent 
+ negative values in parentheses, and positive values with a space on either 
+ side. This option can only be combined with &quot;,&quot;. All other combinations 
+ throw an exception.</p>
+<p class="whs5"><span style="font-weight: bold;"><B>T</B></span> 
+ &nbsp;&nbsp;&nbsp;Represent 
+ the number with a trailing sign, rather than a leading sign. Positive 
+ numbers have a trailing space.</p>
+<p class="whs5"><span style="font-weight: bold;"><B>+</B></span> 
+ &nbsp;&nbsp;&nbsp;Force 
+ the &quot;+&quot; symbol in front of positive values.</p>
+<p class="whs5"><span style="font-weight: bold;"><B>-</B></span> 
+ &nbsp;&nbsp;&nbsp;&nbsp;Suppress 
+ the minus sign on negative values.</p>
+<p class="whs5"><span style="font-weight: bold;"><B>,</B></span> 
+ &nbsp;&nbsp;&nbsp;&nbsp;Insert 
+ commas every three places before the decimal point.</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="96px" class="whs3">
+<p>decimal</td>
+<td colspan="1" rowspan="1" width="438px" class="whs4">
+<p>The number of decimal places to include in the formatted number. If 
+ this parameter is present, the number is rounded to the nearest value 
+ with the specified number of decimals before formatting is applied. If 
+ this value is not specified, formatting is applied to the canonical representation 
+ of the number.</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>A String.</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs6">Profile v7.0</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>// A positive and a negative value to demonstrate behavior</p>
+
+<p class=Code>type Number POS = 12345678.9876</p>
+
+<p class=Code>type Number NEG = -98765432.1234</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>Type String P1 = <span style="font-weight: bold;"><B>POS.fnumber(&quot;P&quot;,2)</B></span> 
+ &nbsp;&nbsp;&nbsp;// 
+ &quot; 12345678,99 &quot;</p>
+
+<p class=Code>Type String N1 = <span style="font-weight: bold;"><B>NEG.fnumber(&quot;P&quot;,2)</B></span> 
+ &nbsp;&nbsp;&nbsp;// 
+ &quot;(98765432,12)&quot;</p>
+
+<p class=Code>Type String P2 = <span style="font-weight: bold;"><B>POS.fnumber(&quot;,T&quot;,2)</B></span> 
+ &nbsp;&nbsp;// 
+ &quot;12,345,678.99 &quot;</p>
+
+<p class=Code>Type String N2 = <span style="font-weight: bold;"><B>NEG.fnumber(&quot;,T&quot;,2)</B></span> 
+ &nbsp;&nbsp;// 
+ &quot;98,765,432.12-&quot;</p>
+
+<p class=Code>Type String P3 = <span style="font-weight: bold;"><B>POS.fnumber(&quot;,T+&quot;,2</B></span>) 
+ &nbsp;// &quot;12,345,678.99+&quot;</p>
+
+<p class=Code>Type String N3 = <span style="font-weight: bold;"><B>NEG.fnumber(&quot;,T+&quot;,2)</B></span> 
+ &nbsp;// &quot;98,765,432.12-&quot;</p>
+
+<p class=Code>Type String P4 = <span style="font-weight: bold;"><B>POS.fnumber(&quot;+-&quot;,2)</B></span> 
+ &nbsp;&nbsp;// 
+ &quot;+12345678.99&quot;</p>
+
+<p class=Code>Type String N4 = <span style="font-weight: bold;"><B>NEG.fnumber(&quot;+-&quot;,2)</B></span> 
+ &nbsp;&nbsp;// 
+ &quot;98765432.12&quot;</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>// return absolute value of number (note: as a String!)</p>
+
+<p class=Code>Type String PABS = <span style="font-weight: bold;"><B>POS.fnumber(&quot;-&quot;)</B></span> 
+ &nbsp;&nbsp;&nbsp;// 
+ &quot;12345678.9876&quot;</p>
+
+<p class=Code>Type String NABS = <span style="font-weight: bold;"><B>NEG.fnumber(&quot;-&quot;)</B></span> 
+ &nbsp;&nbsp;&nbsp;// 
+ &quot;98765432.1234&quot;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

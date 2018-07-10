@@ -1,0 +1,214 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>find (String Class)</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { width:552px; margin-left:18pt; border-spacing:0px; }
+tr.whs2 { x-cell-content-align:top; }
+td.whs3 { width:120px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs4 { width:432px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs5 { background-color:Transparent; }
+p.whs6 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs5 {background-color:white; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nString Class\nMethods\nfind");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>find Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">String</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class=BodyIndent>This method locates the next position of a string. 
+ This method replaces the $FIND() function.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>StringObject.find(String find,Number start,Boolean ignoreCase,</p>
+
+<p class=Code>String quoteChar)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="552" class="whs1">
+
+<tr valign="top" class="whs2">
+<td width="120px" class="whs3">
+<p>find</td>
+<td width="432px" class="whs4">
+<p>The string for which to search. If absent or empty, the method returns 
+ the implied value of the start parameter, regardless of the values of 
+ the other arguments. (The empty string is located immediately before the 
+ start position.)</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="120px" class="whs3">
+<p>start</td>
+<td colspan="1" rowspan="1" width="432px" class="whs4">
+<p class="whs5">The character position at which 
+ to start the search (e.g., 1 denotes the first character, etc.). If you 
+ specify a value less than 1, the method uses 1. The default is 1.</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="120px" class="whs3">
+<p>ignoreCase</td>
+<td colspan="1" rowspan="1" width="432px" class="whs4">
+<p>An option that indicates whether the search ignores case. Valid values 
+ are 1 (ignore case) and 0 (do not ignore case). The default is 0.</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="120px" class="whs3">
+<p>quoteChar</td>
+<td colspan="1" rowspan="1" width="432px" class="whs4">
+<p>The quote character. Substrings enclosed by the quote character are 
+ ignored. If this parameter is not supplied, or if the empty string is 
+ supplied, no special treatment of a quoted substring occurs.</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>A Number that specifies the position of the character 
+ that follows the <span style="font-weight: bold;"><B>find</B></span> string. 
+ If the string is not found, zero is returned.</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs6">v7.0</p>
+
+<p class=Example>Example</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String STR = &quot;Behold! &quot;&quot;Be&quot;&quot; 
+ happy, be free&quot;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type Number N1 = <span style="font-weight: bold;"><B>STR.find(&quot;Be&quot;)</B></span> 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ &nbsp;3</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type Number N2 = <span style="font-weight: bold;"><B>STR.find(&quot;Be&quot;,1)</B></span> 
+ &nbsp;&nbsp;&nbsp;// 
+ &nbsp;3</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type Number N3 = <span style="font-weight: bold;"><B>STR.find(&quot;Be&quot;,5)</B></span> 
+ &nbsp;&nbsp;&nbsp;// 
+ 12</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type Number N4 = <span style="font-weight: bold;"><B>STR.find(&quot;Be&quot;,15)</B></span> 
+ &nbsp;&nbsp;// 
+ &nbsp;0</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// example with ignoreCase=1</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type Number NC = <span style="font-weight: bold;"><B>STR.find(&quot;Be&quot;,15,1)</B></span> 
+ // 23</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// examples with ignoreQuoted=1</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type Number NQ = <span style="font-weight: bold;"><B>STR.find(&quot;Be&quot;,5,0,1)</B></span> 
+ // &nbsp;0</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type Number NB = <span style="font-weight: bold;"><B>STR.find(&quot;Be&quot;,5,1,1)</B></span> 
+ // 23</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

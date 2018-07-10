@@ -1,0 +1,270 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Variables and Objects</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<style type="text/css">
+<!--
+p.whs1 { margin-left:48px; }
+table.whs2 { width:546px; margin-left:18.00pt; border-spacing:0px; }
+tr.whs3 { x-cell-content-align:top; }
+td.whs4 { width:126px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs5 { font-weight:bold; }
+td.whs6 { width:420px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+table.whs7 { width:618px; margin-left:18.00pt; border-spacing:0px; }
+td.whs8 { width:492px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Programming Standards\nVariables and Objects");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Variables and Objects</h1>
+
+<p class=BodyTextBold>General</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Minimize the use of Public 
+ scope variables. When used, clearly document and publicly type Public 
+ scope variables.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Explicitly type (i.e., 
+ do not new) and alphabetize all variables when they are on the same line.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Only Public scope variables 
+ may be used in function system variables.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Use Literal scope variables 
+ for static variables (e.g., in the column list of the Db.select method).</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Use variables consistently 
+ within other areas of the system.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Kill all &quot;garbage&quot; 
+ variables prior to completing a batch. Batches should exit without any 
+ variables specific to the batch program left behind. Variables used in 
+ the open section should be killed in the Schexit section.</p></li>
+</ul>
+
+<p class=BodyTextBold>Variable Syntax</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>PSL variable names cannot 
+ exceed eight characters in length.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Do not use v or V as the 
+ first letter in object or variable names. The compiler reserves these 
+ characters to prefix object storage data structures.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Do not use the following 
+ characters when naming variables:</p></li>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet1><p class=Bullet1>Control characters</p></li>
+		
+		<li class=kadov-p-CBullet1><p class=Bullet1>Period</p></li>
+		
+		<li class=kadov-p-CBullet1><p class=Bullet1>Comma</p></li>
+		
+		<li class=kadov-p-CBullet1><p class=Bullet1>Space</p></li>
+		
+		<li class=kadov-p-CBullet1><p class=Bullet1>Underscore </p></li>
+	</ul>
+</ul>
+
+<p class="whs1">PSL has specific interpretations for each 
+ of these characters. For example, PSL interprets commas and spaces as 
+ expression delimiters; underscores as string concatenators; and periods 
+ as extension delimiters. </p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Apply the following guidelines 
+ when choosing variable names for primitive datatypes and reference datatypes:</p></li>
+</ul>
+
+<ul>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet1><p class=Bullet1><span style="font-weight: bold;"><B>Primitive</B></span> 
+ - Use all uppercase letters in variable names. Variable names start with 
+ an alpha character or the percent character (%), and may be followed by 
+ up to 7 alpha characters or digits. Names are case sensitive.</p></li>
+	</ul>
+	
+	<ul>
+		
+		<li class=kadov-p-CBullet1><p class=Bullet1><span style="font-weight: bold;"><B>Reference</B></span> 
+ - Use all lowercase letters in variable names. </p></li>
+	</ul>
+</ul>
+
+<p class=Example
+	style="margin-left: 48px;">Example</p>
+
+<p class=Code
+	style="margin-left: 72px;">type RecordCIF cif = Db.getRecord(“CIF”,”:ACN”)</p>
+
+<p class=Code
+	style="margin-left: 72px;">set <span style="font-weight: bold;"><B>NAM</B></span> 
+ &nbsp;&nbsp;= 
+ cif.lnm</p>
+
+<p class=Code
+	style="margin-left: 72px;">set <span style="font-weight: bold;"><B>DOB</B></span> 
+ &nbsp;&nbsp;= 
+ cif.dob</p>
+
+<p class=Code
+	style="margin-left: 72px;">set <span style="font-weight: bold;"><B>TAXID</B></span> 
+ = cif.taxid</p>
+
+<p class=Code
+	style="margin-left: 72px;">________________________________________________________</p>
+
+<p class=Code
+	style="margin-left: 72px;">type ResultSet <span style="font-weight: bold;"><B>rs 
+ </B></span>= Db.select(“CID,BAL,IRN”,”DEP”)</p>
+
+<p class=Code
+	style="margin-left: 72px;">while rs.next() do {</p>
+
+<p class=Code
+	style="margin-left: 72px;">set <span style="font-weight: bold;"><B>data</B></span> 
+ = rs.getRow()</p>
+
+<p class=Code
+	style="margin-left: 72px;">set <span style="font-weight: bold;"><B>CID</B></span> 
+ = rs.getCol(1)</p>
+
+<p class=Code
+	style="margin-left: 72px;">set <span style="font-weight: bold;"><B>INT</B></span> 
+ = rs.getCol(1) * rs.getCol(2)</p>
+
+<p class=Code
+	style="margin-left: 72px;">}</p>
+
+<p class=BodyTextBold>Host Variables</p>
+
+<p>Methods that accept parameters that define the access keys (accessKeys) 
+ or an SQL WHERE clause (whereClause) must use host variables. That is, 
+ the parameter must be preceded by a colon (:). Previously, it was acceptable 
+ to use named variables.</p>
+
+<p class=Example>Example</p>
+
+<table x-use-null-cells cellspacing="0" width="546" class="whs2">
+
+<tr valign="top" class="whs3">
+<td width="126px" class="whs4">
+<p class="whs5">Unacceptable:</td>
+<td width="420px" class="whs6">
+<p><font style="font-family: 'Courier New';"
+		face="Courier New">type RecordACN acn = Db.getRecord(&quot;ACN&quot;,&quot;CID&quot;)</font></td></tr>
+
+<tr valign="top" class="whs3">
+<td width="126px" class="whs4">
+<p class="whs5">Acceptable:</td>
+<td width="420px" class="whs6">
+<p><font style="font-family: 'Courier New';"
+		face="Courier New">type RecordACN acn = Db.getRecord(&quot;ACN&quot;,&quot;:CID&quot;)</font></td></tr>
+</table>
+
+&nbsp; 
+
+<p class=Example>Example</p>
+
+<table x-use-null-cells cellspacing="0" width="618" class="whs7">
+
+<tr valign="top" class="whs3">
+<td width="126px" class="whs4">
+<p class="whs5">Unacceptable:</td>
+<td width="492px" class="whs8">
+<p><font style="font-family: 'Courier New';"
+		face="Courier New">type ResultSet rs = Db.select(&quot;ETC,TAMT&quot;,&quot;HIST&quot;,&quot;CID=CID 
+ ...AND TAMT&gt;XAMT&quot;)</font></td></tr>
+
+<tr valign="top" class="whs3">
+<td width="126px" class="whs4">
+<p class="whs5">Acceptable:</td>
+<td width="492px" class="whs8">
+<p><font style="font-family: 'Courier New';"
+		face="Courier New">type ResultSet rs = Db.select(&quot;ETC,TAMT&quot;,&quot;HIST&quot;,&quot;CID=:CID 
+ ...AND TAMT&gt;:XAMT&quot;)</font></td></tr>
+</table>
+
+<p class=BodyTextBold
+	style="margin-left: 24px;">When Standard is Enforced: v7.0</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

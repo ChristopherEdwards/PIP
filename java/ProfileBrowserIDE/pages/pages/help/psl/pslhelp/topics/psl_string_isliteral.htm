@@ -1,0 +1,156 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>isLiteral</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+p.whs1 { margin-left:24px; }
+table.whs2 { width:546px; margin-left:18pt; border-spacing:0px; }
+tr.whs3 { x-cell-content-align:top; }
+td.whs4 { width:114px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs5 { width:432px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs6 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nString Class\nMethods\nisLiteral");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>isLiteral Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">String</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class="whs1">This method indicates whether the value of 
+ the data stored in a String is a literal value.</p>
+
+<p class="whs1">A string represents a literal if either <a 
+ href="psl_string_isnumber.htm">StringObject.isNumber()</a> returns 1, 
+ OR if the first character and the last character of the string are the 
+ double quote character (&quot;) and all other occurrences of the double 
+ quote character occur in pairs.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>StringObject.isLiteral()</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="546" class="whs2">
+
+<tr valign="top" class="whs3">
+<td width="114px" class="whs4">
+<p>None.</td>
+<td width="432px" class="whs5">
+<p>&nbsp;</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>A Boolean:</p>
+
+<p class=BodyIndent>&nbsp;</p>
+
+<p class=BodyIndent>1 if the string represents a literal.<br>
+0 if the string does not represent a literal.</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs6">v6.4</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>type String STR1 = &quot;ABCD&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ this is not a literal</p>
+
+<p class=Code>type Boolean B1 = <span style="font-weight: bold;"><B>STR1.isLiteral()</B></span> 
+ // 0</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>set STR1=STR1.addQuotes() &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ addQuotes() creates literal</p>
+
+<p class=Code>set B1 = <span style="font-weight: bold;"><B>STR1.isLiteral()</B></span> 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ 1</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>type String NUM = &quot;123.45E3&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ isNumber() implies literal</p>
+
+<p class=Code>type Boolean B2 = <span style="font-weight: bold;"><B>NUM.isLiteral()</B></span> 
+ &nbsp;// 1</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

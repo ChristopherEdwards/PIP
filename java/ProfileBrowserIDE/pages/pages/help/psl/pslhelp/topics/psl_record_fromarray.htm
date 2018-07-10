@@ -1,0 +1,153 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>fromArray</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<style type="text/css">
+<!--
+table.whs1 { x-cell-content-align:top; width:100%; border-spacing:0px; }
+col.whs2 { width:7.087%; }
+col.whs3 { width:92.913%; }
+tr.whs4 { x-cell-content-align:top; }
+td.whs5 { width:7.087%; padding-right:10px; padding-left:10px; border-right-style:none; border-left-style:none; border-top-style:none; border-bottom-style:none; }
+img_whs6 { border:none; width:32px; height:32px; float:none; border-style:none; }
+td.whs7 { width:92.913%; padding-right:10px; padding-left:10px; border-top-style:none; border-bottom-style:none; border-right-style:none; }
+table.whs8 { width:560px; margin-left:18pt; border-spacing:0px; }
+td.whs9 { width:128px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs10 { width:432px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs11 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nRecord Class\nMethods\nfromArray");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>fromArray Method</h1>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs1">
+<col class="whs2">
+<col class="whs3">
+
+<tr valign="top" class="whs4">
+<td width="7.087%" class="whs5">
+<p><img src="../image/warning.gif" x-maintain-ratio="TRUE" width="32px" height="32px" border="0" class="img_whs6"></td>
+<td width="92.913%" class="whs7">
+<p>This method has been deprecated and should not be used in Profile versions 
+ v6.4 and above.</td></tr>
+</table>
+
+<p class=BodyTextBold>Class: <span style="font-weight: normal;">Record</span></p>
+
+<p class=BodyTextBold>Description</p>
+
+<p class=BodyIndent>This method copies data from an M array into a PSL 
+ object. This method defines the primary access keys for the object based 
+ on the local variables in the M array.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>objectName.fromArray(Literal MArrayReference,Literal keys)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="560" class="whs8">
+
+<tr valign="top" class="whs4">
+<td width="128px" class="whs9">
+<p>MArrayReference</td>
+<td width="432px" class="whs10">
+<p>The reference to an M array.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="128px" class="whs9">
+<p>keys</td>
+<td colspan="1" rowspan="1" width="432px" class="whs10">
+<p>A comma-separated field that provides a mechanism to have the keys of 
+ a record being copied, returned in variables as well as within the object.</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>Void</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs11">Profile v6.0</p>
+
+<p class=Example
+	style="background-color: Transparent;">Example</p>
+
+<p class=Code>type RecordDEP dep = Db.getRecord(&quot;DEP&quot;,&quot;CID&quot;)</p>
+
+<p class=Code>do <span style="font-weight: bold;"><B>dep.fromArray(&quot;%A(CID&quot;)</B></span> 
+ // Copy %A(CID,n) into vobj(object,n)</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

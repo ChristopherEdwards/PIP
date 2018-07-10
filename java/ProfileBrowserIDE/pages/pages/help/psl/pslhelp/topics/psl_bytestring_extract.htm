@@ -1,0 +1,171 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>extract (ByteString Class)</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { width:552px; margin-left:18pt; border-spacing:0px; }
+tr.whs2 { x-cell-content-align:top; }
+td.whs3 { width:120px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs4 { width:432px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs5 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nByteString Class\nMethods\nextract");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>extract Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">ByteString</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class=BodyIndent
+	style="text-align: justify;">This method extracts a portion of a ByteString 
+ based on a specified first and last byte position to extract. </p>
+
+<p class=BodyIndent>&nbsp;</p>
+
+<p class=BodyIndent
+	style="text-align: justify;">Because both the first and the last position 
+ are expressed as byte offsets, the resulting substring may no longer represent 
+ a valid character String, even if the source did represent a valid String 
+ (e.g. as obtained by String.toByteString()). Either the first or the last 
+ character of the source may have been &quot;cut in halves&quot;.</p>
+
+<p class=BodyIndent>&nbsp;</p>
+
+<p class=BodyIndent
+	style="text-align: justify;">Use ByteString.extract() if you want a 
+ sequence of bytes with exactly to-from +1 bytes (assuming <span style="font-weight: bold;"><B>from&gt;0</B></span> 
+ and <span style="font-weight: bold;"><B>to'&gt;byteString.length()</B></span>. 
+ If you want to be sure that substrings are character aligned consider 
+ using <a href="psl_string_extract.htm">String.extract()</a> or <a href="psl_string_bytelimitsubstring.htm">String.byteLimitSubstring()</a>.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>ByteString.extract(Number from,Number to)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="552" class="whs1">
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="120px" class="whs3">
+<p>from</td>
+<td colspan="1" rowspan="1" width="432px" class="whs4">
+<p>The first byte in the string to extract. The default is 1.</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="120px" class="whs3">
+<p>to </td>
+<td width="432px" class="whs4">
+<p>The last byte in the string to extract. The default is the value in 
+ the <span style="font-weight: bold;"><B>from</B></span> parameter.</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>A ByteString that is a substring of the source ByteString.</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs5">Profile V7.0</p>
+
+<p class=Example>Example #1</p>
+
+<p class=Code>type RecordCIFSIG cifsig = Db.getRecord(&quot;CIFSIG&quot;,&quot;ACN=:ACN&quot;)</p>
+
+<p class=Code>type ByteString SIG = cifsig.sig.toByteString()</p>
+
+<p class=Code>type ByteString CHUNK = <span style="font-weight: bold;"><B>SIG.extract(1,450)</B></span></p>
+
+<p class=Code>*ACN must be defined prior to the getRecord statement</p>
+
+<p class=Example>Example #2</p>
+
+<p class=Code>type String &nbsp;&nbsp;&nbsp;&nbsp;STR 
+ = &quot;Knäckebröd&quot;</p>
+
+<p class=Code>type ByteString BST = STR.toByteString()</p>
+
+<p class=Code>//</p>
+
+<p class=Code>// get first three byres (cuts the ä in halves)</p>
+
+<p class=Code>type ByteString XTR = <span style="font-weight: bold;"><B>BST.extract(1,3)</B></span></p>
+
+<p class=Code>type String ERROR = {String}XTR // may throw runtime exception 
+ !!</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

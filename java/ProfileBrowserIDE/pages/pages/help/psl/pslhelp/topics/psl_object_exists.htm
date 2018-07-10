@@ -1,0 +1,143 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>exists</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+p.whs1 { margin-left:24px; }
+p.whs2 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nObject Class\nMethods\nexists");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>exists Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">Object</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class=BodyIndent>This method returns an indication of whether an object 
+ instance (for reference datatypes) or value (for primitive datatypes, 
+ and including null) has been assigned to the variable.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>Object.exists()</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<p class=BodyIndent>None</p>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class="whs1">1 if the object instance or value has been 
+ assigned to the variable.<span style="margin-left: 24px;"><br>
+0 if the object instance or value has not yet been assigned to the variable.</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs2">Profile v7.0</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>type RecordDEP dep</p>
+
+<p class=Code>type OI iod</p>
+
+<p class=Code>type String STR</p>
+
+<p class=Code>type Boolean NO = <span style="font-weight: bold;"><B>dep.exists()</B></span></p>
+
+<p class=Code>set NO = <span style="font-weight: bold;"><B>iod.exists()</B></span></p>
+
+<p class=Code>set NO = <span style="font-weight: bold;"><B>STR.exists()</B></span></p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>set iod = Class.new(&quot;IO&quot;) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ assigns new instance</p>
+
+<p class=Code>type Boolean YES = <span style="font-weight: bold;"><B>iod.exists()</B></span></p>
+
+<p class=Code>set dep = Db.getRecord(&quot;DEP&quot;, &quot;CID=:CID&quot;) 
+ // new instance</p>
+
+<p class=Code>set YES = <span style="font-weight: bold;"><B>dep.exists()</B></span></p>
+
+<p class=Code>set STR = &quot;ABCDEFG&quot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ assigns new value</p>
+
+<p class=Code>set YES = <span style="font-weight: bold;"><B>STR.exists()</B></span></p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

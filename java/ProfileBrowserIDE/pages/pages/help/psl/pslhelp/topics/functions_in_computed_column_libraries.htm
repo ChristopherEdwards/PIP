@@ -1,0 +1,155 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Functions in Computed Column Libraries</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Programming Standards\nComputed Columns\nFunctions in Computed Column Libraries");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Functions in Computed Column Libraries</h1>
+
+<p>Adhere to the following guidelines for functions in computed column 
+ libraries:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Computed columns may be 
+ accessed by SQL, reports, screens, and PSL code. Therefore, label all 
+ functions with computed column libraries as Public functions.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Functions cannot throw 
+ errors or return error flags. Code all functions to complete under all 
+ circumstances, including errors. The functions should return either a 
+ null value or default value (as documented) if they process an unrecoverable 
+ error condition. The functions can log error conditions as appropriate.</p></li>
+</ul>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Functions should not use 
+ Cache objects, with the exception of CUVAR.</p></li>
+</ul>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Computed libraries should 
+ only contain functions that relate to the associated tables that are joined 
+ to it. If a table does not have a computed library procedure, create one.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Functions cannot make durable 
+ or externally visible changes to the database state. A function is provided 
+ to report the results of a view of data that cannot be provided by static 
+ columns.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Functions must represent 
+ the current process state of PSL objects on the associated table. Joined 
+ tables will contain the current database state relative to the process 
+ scope (i.e., uncommitted database transactions will be visible).</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>If a function must instantiate 
+ the object that the function refers to, use the classNew parameter in 
+ the <a href="psl_db_getrecord.htm">Db.getRecord</a> method.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>A computed function must 
+ be independent of any variable in the run-time environment, other than 
+ system variables. All variables used by the computed column, other than 
+ system variables, must be typed within the function.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Computed library routines 
+ should be compiled with the <a href="psl_optimize.htm">#OPTIMIZE</a> and 
+ <a href="psl_warn.htm">#WARN</a> switches on.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Computed library routines 
+ should correlate to DATA-QWIK tables on a one-to-one basis (e.g., the 
+ DEPCDI library routine contains computed columns for DEP only). The library 
+ routines should only contain line tags that have a computed column in 
+ the dictionary, or are used as a common subroutine by computed functions 
+ within the routine.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Tests for correctness of 
+ how a computed function is written include:</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1
+									style="margin-left: 48px;">If a computed 
+ function is executed with an empty symbol table as a starting point, the 
+ symbol table is still empty after the function execution.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1
+									style="margin-left: 48px;">No Public 
+ scope declarations are made within the function.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1
+									style="margin-left: 48px;">No scope 
+ warnings occur at compile time.</p></li>
+</ul>
+
+<p class=BodyTextBold>When Standard is Enforced: Profile v7.0</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

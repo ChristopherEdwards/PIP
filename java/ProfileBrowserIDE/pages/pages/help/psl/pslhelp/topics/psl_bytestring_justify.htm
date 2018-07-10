@@ -1,0 +1,178 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>justify (ByteString Class)</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { width:552px; margin-left:18pt; border-spacing:0px; }
+tr.whs2 { x-cell-content-align:top; }
+td.whs3 { width:120px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs4 { width:432px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs5 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nByteString Class\nMethods\njustify");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>justify Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;"><span><span style="x-condition: NotPrintedDocn;">Class: 
+ <span style="font-weight: normal; x-condition: NotPrintedDocn;">ByteString</span></span></span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class=BodyIndent
+	style="text-align: justify;">This method returns a right justified 
+ form of its source that consists of at least the specified number of bytes.</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1
+									style="text-align: justify;">If the 
+ byte length of the byte string is less than the specified fieldLength, 
+ SPACE character is prepended to the result.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1
+									style="text-align: justify;">If the 
+ byte length of the byte string is greater than the specified fieldLength, 
+ the complete source is returned unchanged.</p></li>
+</ul>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>ByteString.justify(Number fieldlength)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="552" class="whs1">
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="120px" class="whs3">
+<p>fieldLength </td>
+<td colspan="1" rowspan="1" width="432px" class="whs4">
+<p>The length of the field to justify, specified as a number of bytes.</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>A ByteString of at least fieldLength bytes.</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs5">Profile V7.0</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>type String &nbsp;&nbsp;&nbsp;&nbsp;STR 
+ = &quot;Knäckebröd&quot; // contains 2 two-byte characters</p>
+
+<p class=Code>type ByteString BST = STR.toByteString() // byte length = 
+ 12</p>
+
+<p class=Code>//</p>
+
+<p class=Code>// difference between byte length and character length: 2</p>
+
+<p class=Code>type Number DIF1 = BST.length() - STR.length()</p>
+
+<p class=Code>//</p>
+
+<p class=Code>type ByteString BS1 = BST.<span style="font-weight: bold;"><B>justify( 
+ 8)</B></span> // too short anyway</p>
+
+<p class=Code>type ByteString BS2 = BST.<span style="font-weight: bold;"><B>justify(10)</B></span> 
+ // still too short &nbsp;(byte 
+ count!)</p>
+
+<p class=Code>type ByteString BS3 = BST.<span style="font-weight: bold;"><B>justify(12)</B></span> 
+ // exact ...</p>
+
+<p class=Code>type ByteString BS4 = BST.<span style="font-weight: bold;"><B>justify(14)</B></span> 
+ // now it makes a difference</p>
+
+<p class=Code>//</p>
+
+<p class=Code>// ByteString.justify() preserves character string</p>
+
+<p class=Code>// Difference between byte length and character length not 
+ affected</p>
+
+<p class=Code>type String OK = {String}BS4</p>
+
+<p class=Code>type Number DIF2 = BS4.length() - OK.length()</p>
+
+<p class=Code>//</p>
+
+<p class=Code>if DIF1 '= DIF2 write &quot;I don't understand ...&quot;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

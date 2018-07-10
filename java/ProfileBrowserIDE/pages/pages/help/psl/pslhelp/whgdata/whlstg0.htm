@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>Glossary words list</title>
+
+<meta name="generator" content="RoboHelp by eHelp Corporation   www.ehelp.com">
+<meta name="description" content="WebHelp 5.50">
+<base target="bsscright">
+<style>
+<!--
+body {margin-left:1pt; margin-top:1pt; margin-right:1pt;font-family:Arial; font-size:9pt;}
+
+A:link {font-family:Arial; font-size:9pt; color:#000000;  font-style:normal;  text-decoration:none; }
+A:visited {font-family:Arial; font-size:9pt; color:#000000; font-style:normal;  text-decoration:none; }
+A:active {background-color:#cccccc;}
+A:hover {font-family:Arial; font-size:9pt; color:#007f00; font-style:normal;  text-decoration:underline; }
+
+.tabs {background-color:#c0c0c0;}
+.glsheader {margin-left:10pt; margin-top:0pt;}
+.glsbody {margin-left:10pt; margin-top:0pt;}
+.inactive {color:#666666;}
+.glsheader {background-color:White; } 
+
+body {background-color:White; } 
+p {color:Black; } p {font-family:Tahoma; } p {font-size:8pt; } p {font-style:Normal; } p {text-decoration:none; } 
+A:link {color:Black; } A:link {font-family:Tahoma; } A:link {font-size:8pt; } A:link {font-style:Normal; } A:link {text-decoration:none; } 
+A:visited {color:Black; } A:visited {font-family:Tahoma; }A:visited {font-size:8pt; } A:visited {font-style:Normal; } A:visited {text-decoration:none; } 
+A:active {background-color:Silver; } 
+A:hover {color:Navy; } A:hover {font-family:Tahoma; } A:hover {font-size:8pt; } A:hover {font-style:Normal; } A:hover {text-decoration:underline; } 
+
+-->
+</style>
+</head>
+<body marginheight="0"  marginwidth="0" bgproperties="fixed">
+<p class="glsbody" style="margin-bottom:1pt;"><a name="bm_A"></a><nobr><b>abstract class</b></nobr></p>
+<p class="glsbody" style="margin-top:1pt;">A superclass that declares the structure of a class without providing a complete implementation of every method. You may want to define a superclass that only defines a generic form that is shared by all its subclasses, yet enabling each subclass to specify the details. For example, the PSL Record class contains all the methods used by its subclasses RecordACN, RecordDEP, RecordLN, RecordCRCD, etc. You cannot create an instance of the Record class because it has no meaning. However, the Record class does contain the methods of all its subclasses.<p>
+<p class="glsbody" style="margin-bottom:1pt;"><a name="bm_C"></a><nobr><b>class</b></nobr></p>
+<p class="glsbody" style="margin-top:1pt;">An entity that defines the structure and behavior (i.e., data and code) shared by a set of objects. Each object, therefore, has the structure and behavior defined by its class. The class defines the allowable properties of the objects in that class, as well as the methods that operate on the objects in the class. A class is therefore a template for an object, and an object is an instance of a class. Categories of classes supported in PSL include the following: final class, abstract class, subclass, and superclass.<p>
+<p class="glsbody" style="margin-bottom:1pt;"><a name="bm_E"></a><nobr><b>encapsulation</b></nobr></p>
+<p class="glsbody" style="margin-top:1pt;">The ability to hide the details of the implementation of an object, while making the object’s functionality available to other objects. In other words, PSL enables you to wrap an object, its properties, and its methods into a self-contained unit without enabling outside source code to access the code or data within the unit. You know how to access the encapsulated code and can therefore use it regardless of the implementation details. Encapsulation, therefore, enables you to migrate your code to multiple platforms without disrupting program modules or methods.<p>
+<p class="glsbody" style="margin-bottom:1pt;"><a name="bm_F"></a><nobr><b>final class</b></nobr></p>
+<p class="glsbody" style="margin-top:1pt;">A class that you cannot designate as a superclass. The properties and methods of a final class cannot be inherited by other classes. For example, if you define the XYZ class as final, you cannot create subclasses based on (i.e., inherited from) the XYZ class. The concept of Final Classes is not available in this PSL release.<p>
+<p class="glsbody" style="margin-bottom:1pt;"><a name="bm_I"></a><nobr><b>inheritance</b></nobr></p>
+<p class="glsbody" style="margin-top:1pt;">A way of organizing related classes so that they can share common code. Inheritance facilitates the creation of hierarchical classifications. That is, you can create a class (i.e., the subclass) by having it inherit all the properties of any existing class definition (i.e., the superclass). For example, the deposit record class (RecordDEP) and loan record class (RecordLN) inherit their attributes from the account superclass (RecordACN). Inheritance enables you to leverage development efforts over time.<p>
+<p class="glsbody" style="margin-bottom:1pt;"><nobr><b>instance</b></nobr></p>
+<p class="glsbody" style="margin-top:1pt;">One manifiestation of a class.<p>
+<p class="glsbody" style="margin-bottom:1pt;"><a name="bm_M"></a><nobr><b>method</b></nobr></p>
+<p class="glsbody" style="margin-top:1pt;">The operations or procedures that manipulate object data. For example, if you define an object called Office Telephone, methods used by the Office Telephone object may include the Ring method and the Call Forward method. In Profile, methods for objects defined in the ResultSet class include getCol, getRow, isEmpty, and next. A method contains executable code similar to functions or procedures. You can pass parameters to the method from the calling program; the method can also return a result to the calling program. A method declaration defines the type of value returned by the method. If the method does not return a value, declare the method return type as \"void.\"<p>
+<p class="glsbody" style="margin-bottom:1pt;"><a name="bm_O"></a><nobr><b>object</b></nobr></p>
+<p class="glsbody" style="margin-top:1pt;">An object is a collection of variables and associated methods that is described by a class. A particular object is an instance of a specific class. You can have multiple instances of an object active at a time (e.g., multiple windows, multiple buttons). An object definition consists of two components -- properties and methods.<p>
+<p class="glsbody" style="margin-bottom:1pt;"><nobr><b>object-oriented design</b></nobr></p>
+<p class="glsbody" style="margin-top:1pt;">A design theory that focuses on the design of the data (i.e., the objects) and on the interfaces to it. This design, therefore, enables developers to concentrate on the resulting product or application rather than on the tools used to complete the task. For example, PSL provides an object-like extension of the M programming language. Standard object-oriented features (i.e., class, method, and property definitions, as well as data encapsulation, inheritance, and polymorphism) are incorporated into the PSL development environment. PSL enables developers to create modular code related to objects with certain properties and operations that the objects can perform.<p>
+<p class="glsbody" style="margin-bottom:1pt;"><nobr><b>Object Class</b></nobr></p>
+<p class="glsbody" style="margin-top:1pt;">The Object class is the superclass of all other PSL classes. Because every other class is a subset of the Object class, every other class inherits all the methods and properties accessible from the Object class.<p>
+<p class="glsbody" style="margin-bottom:1pt;"><a name="bm_P"></a><nobr><b>polymorphism</b></nobr></p>
+<p class="glsbody" style="margin-top:1pt;">The ability to use one interface for a general set of actions. You develop self-contained, generic methods that can be used in a variety of situations. For example, a spell checker program is designed so that any application can use it. Each application must simply provide an interface to access the spell checker and provide data interpretation. The use of polymorphism in an object-oriented design enables you to develop one method that can be used in a variety of situations. Polymorphism enables you to create clean and adaptable code.<p>
+<p class="glsbody" style="margin-bottom:1pt;"><nobr><b>property</b></nobr></p>
+<p class="glsbody" style="margin-top:1pt;">A characteristic that describes an object. For example, the properties of a particular keyboard may be that it is white and has 90 keys. The properties of an object are also called the instance variables for the object. Database file definitions define all properties of objects in the Record class. Forexample, the DEP file definition defines all the properties (i.e., data items) of the RecordDEP object.<p>
+<p class="glsbody" style="margin-bottom:1pt;"><a name="bm_S"></a><nobr><b>subclass</b></nobr></p>
+<p class="glsbody" style="margin-top:1pt;">A class that inherits all the properties of any existing class definition (i.e., the superclass). For example, the deposit record class (RecordDEP) and loan record class (RecordLN) inherit their attributes from the account superclass (RecordACN). You can then add properties and methods as needed to the new class, as well as modify attributes and methods inherited from the superclass. The subclass, therefore, contains all the attributes of the superclass plus any that you add to it. A class can have any number of subclasses. A subclass can, in turn, be a superclass of another subclass.<p>
+<p class="glsbody" style="margin-bottom:1pt;"><nobr><b>superclass</b></nobr></p>
+<p class="glsbody" style="margin-top:1pt;">A class definition that serves as a basis for other class definitions. That is, you can create a class (i.e., the subclass) by having it inherit all the methods and properties of any existing class definition (i.e., the superclass). For example, the deposit record class (RecordDEP) and loan record class (RecordLN) inherit their attributes from the account superclass (RecordACN).&nbsp; A class can only have one immediate superclass.<p>
+<p class="glsbody" style="margin-bottom:1pt;"><a name="bm_V"></a><nobr><b>variable</b></nobr></p>
+<p class="glsbody" style="margin-top:1pt;">An entity that contains a reference (i.e., pointer) to an object. A variable, therefore, does not define the object or its identifier. If two variables of the same type exist and one is assigned to the other, both variables refer to the same object.<p>
+<p class="glsbody"><br><br></p>
+
+</body>
+
+</html>
+

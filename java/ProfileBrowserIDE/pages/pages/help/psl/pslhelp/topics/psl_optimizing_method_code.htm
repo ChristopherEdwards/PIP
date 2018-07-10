@@ -1,0 +1,117 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Optimizing Method Code</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Using PSL\nImplementing Methods\nOptimizing Method Code");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Optimizing Method Code</h1>
+
+<p>PSL compiler state information and literal parameter data can be used 
+ effectively to eliminate run-time schema and database lookups; resolve 
+ variables at compile time; and trim generated code paths at compile time. 
+ As a rule, if a value can be resolved at compile time (i.e., it is available 
+ at compile time and the logic determines that it will never change at 
+ run time), do so. Use the same technique for code paths. For example, 
+ if the method references a table that does not contain BLOBS and the table 
+ is a literal value, do not generate code to deal with BLOBS. Also, do 
+ not generate any run-time code to reference the table in the schema. Instead, 
+ do it all at compile time.</p>
+
+<p>In some cases, it is possible to optimize method code after PSL has 
+ passed the entire program and all the method calls are resolved; all the 
+ subroutines are identified; and all the call paths are identified. This 
+ optimization occurs in various ways.</p>
+
+<ul>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>PSL optimizes database 
+ IO for the <a href="psl_db_getrecord.htm">Db.getRecord</a> method.</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>PSL also optimizes result 
+ set logic based on whether a result set is parsed into an external program. 
+ The postProc(n) array contains executable expressions that are created 
+ by the methods and usually dispatch to post-processor subroutines.</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>Use the methods(reference) 
+ array to determine whether a method has already been referenced within 
+ the program and whether it may be possible to re-use appended subroutines. 
+ This feature is used by Db.getRecord (which generates subroutines for 
+ each table $$vDb&lt;nn&gt;) to generate only one subroutine per table, 
+ regardless of the number of references to the method.</p></li>
+</ul>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

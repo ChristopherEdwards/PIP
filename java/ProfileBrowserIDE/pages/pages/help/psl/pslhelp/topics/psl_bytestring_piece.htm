@@ -1,0 +1,178 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>piece (ByteString Class)</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { width:552px; margin-left:18pt; border-spacing:0px; }
+tr.whs2 { x-cell-content-align:top; }
+td.whs3 { width:120px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs4 { width:432px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs5 { text-align:justify; }
+p.whs6 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nByteString Class\nMethods\npiece");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>piece Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class:<span style="font-weight: normal;"> 
+ ByteString</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class=BodyIndent>This method extracts one or more elements from a delimited 
+ byte string.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>ByteStringObject.piece(ByteString delimiter, Number first, 
+ Number last)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="552" class="whs1">
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="120px" class="whs3">
+<p>delimiter</td>
+<td colspan="1" rowspan="1" width="432px" class="whs4">
+<p class="whs5">The byte string that is used to separate 
+ elements within the byte string.</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="120px" class="whs3">
+<p>first </td>
+<td colspan="1" rowspan="1" width="432px" class="whs4">
+<p class="whs5">The first delimited piece of the byte string 
+ to extract. The default value is 1.</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="120px" class="whs3">
+<p>last </td>
+<td width="432px" class="whs4">
+<p class="whs5">The last delimited piece of the byte string 
+ to extract. The default value is the value of <span style="font-weight: bold;"><B>first</B></span>.</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>A Byte String</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs6">Profile V7.0</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>type String &nbsp;&nbsp;&nbsp;&nbsp;STR 
+ = &quot;the kNäckerkNödle&quot; // contains 2 two-byte characters</p>
+
+<p class=Code>type ByteString BST = STR.toByteString() // the string as 
+ byte string</p>
+
+<p class=Code>type ByteString DEL1 = &quot;kN&quot;.toByteString() // a 
+ two byte delimiter</p>
+
+<p class=Code>type ByteString DEL2 = &quot;N&quot;.toByteString()_ 195.byte() 
+ // also two byte</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>// examples with DEL1 are &quot;String safe&quot;:</p>
+
+<p class=Code>// a well-formed String will remain well-formed</p>
+
+<p class=Code>type ByteString BS1 = <span style="font-weight: bold;"><B>BST.piece( 
+ DEL1, 2,3)</B></span> // BS1 = &quot;äckerkNödle&quot;</p>
+
+<p class=Code>type String STOK = {String}BS1 // no %GTM-E runtime ever!</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>// examples with DEL2 are not &quot;String safe&quot;:</p>
+
+<p class=Code>// the delimiter will result in partial byte sequences that 
+ will never</p>
+
+<p class=Code>// result in a well-formed String (except if BST'[DEL2)</p>
+
+<p class=Code>type ByteString BS2 = <span style="font-weight: bold;"><B>BST.piece( 
+ DEL2, 2)</B></span> // start of BS2 is invalid</p>
+
+<p class=Code>write BS2.ascii() // writes 164</p>
+
+<p class=Code>type String STERR = {String}BS2 // likely %GTM-E runtime!</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

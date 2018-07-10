@@ -1,0 +1,130 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Passing Entities by Reference</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Using PSL\nPassing Parameters\nPassing Entities by Reference");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Passing Entities by Reference</h1>
+
+<p>The PSL compiler supports passing the following entities by reference:</p>
+
+<ul>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>Object identifiers and 
+ arrays</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>Individual array subscripts</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>Object properties</p></li>
+</ul>
+
+<p>This enables you to avoid passing the entire object into a procedure 
+ or method. For example, </p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">type RecordDEP dep=Db.getRecord(&quot;DEP&quot;,&quot;:CID&quot;)</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">type RecordDEP dep()</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">set dep(1)=Db.getRecord(&quot;DEP&quot;,2)</p>
+
+<p class=Code
+	style="margin-left: 36.00pt; font-weight: bold;">do SUB(.dep,.dep.bal,.dep(1).bal)</p>
+
+<p class=Code
+	style="margin-left: 36.00pt; font-weight: bold;">write !,dep.bal</p>
+
+<p class=Code
+	style="margin-left: 36.00pt; font-weight: bold;">write !,dep(1).bal</p>
+
+<p class=Code
+	style="margin-left: 36.00pt; font-weight: bold;">quit</p>
+
+<p class=Code
+	style="margin-left: 36.00pt; text-indent: -18.00pt;">SUB(RecordDEP 
+ dep,bal,newbal)</p>
+
+<p class=Code
+	style="margin-left: 36.00pt; text-indent: -18.00pt;">set bal=10000,newbal=bal+22</p>
+
+<p class=Code
+	style="margin-left: 36.00pt; text-indent: -18.00pt;">quit</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

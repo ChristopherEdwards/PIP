@@ -1,0 +1,402 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Functions that Support Method Coding</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<style type="text/css">
+<!--
+table.whs1 { width:588px; margin-left:0.35pt; border-spacing:0px; }
+tr.whs2 { x-cell-content-align:top; }
+td.whs3 { width:127px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; border-top-style:Solid; border-top-color:#000000; border-right-style:none; border-bottom-style:Solid; border-bottom-color:#000000; border-left-style:none; border-top-width:1px; border-bottom-width:1px; }
+p.whs4 { margin-top:6pt; margin-bottom:6pt; }
+td.whs5 { width:173px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; border-top-style:Solid; border-top-color:#000000; border-right-style:none; border-bottom-style:Solid; border-bottom-color:#000000; border-top-width:1px; border-bottom-width:1px; }
+td.whs6 { width:95px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; border-top-style:Solid; border-top-color:#000000; border-right-style:none; border-bottom-style:Solid; border-bottom-color:#000000; border-top-width:1px; border-bottom-width:1px; }
+p.whs7 { font-weight:bold; margin-top:6pt; margin-bottom:6pt; }
+td.whs8 { width:190px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; border-top-style:Solid; border-top-color:#000000; border-bottom-style:Solid; border-bottom-color:#000000; border-top-width:1px; border-bottom-width:1px; border-right-style:none; }
+td.whs9 { width:127px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; background-color:#dde0f7; }
+p.whs10 { margin-top:5pt; margin-bottom:5pt; }
+td.whs11 { width:173px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; background-color:#dde0f7; }
+td.whs12 { width:95px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; background-color:#dde0f7; }
+td.whs13 { width:190px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; background-color:#dde0f7; }
+td.whs14 { width:127px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs15 { width:173px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs16 { width:95px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs17 { width:190px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs18 { margin-top:0; margin-bottom:0; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "table.whs1 {margin-left:1pt; }";
+  strNSS += "p.whs18 {margin-top:1pt;margin-bottom:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Using PSL\nImplementing Methods\nFunctions that Support Method Coding");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Functions that Support Method Coding</h1>
+
+<p>A number of functions exist within UCGM that support method coding. 
+ The list below contains the most frequently used methods. Many additional 
+ methods frequently call string functions within ^%ZS, such as $$ATOM, 
+ $$QSUB, $$QADD, $$TOK, and $$UNTOK.</p>
+
+<table x-use-null-cells cellspacing="0" width="588" class="whs1">
+
+<tr valign="top" class="whs2">
+<td width="127px" class="whs3">
+<p class="whs4"><span style="font-weight: bold;"><B>Function</B></span></td>
+<td width="173px" class="whs5">
+<p class="whs4"><span style="font-weight: bold;"><B>Parameters</B></span></td>
+<td width="95px" class="whs6">
+<p class="whs7">Return</td>
+<td width="190px" class="whs8">
+<p class="whs7">Description</td></tr>
+
+<tr valign="top" class="whs2">
+<td bgcolor="#DDE0F7" width="127px" class="whs9">
+<p class="whs10">addSubr^UCGM</td>
+<td bgcolor="#DDE0F7" width="173px" class="whs11">
+<p class="whs10">label,params,comment</td>
+<td bgcolor="#DDE0F7" width="95px" class="whs12">
+<p class="whs10">&lt;void&gt;</td>
+<td bgcolor="#DDE0F7" width="190px" class="whs13">
+<p class="whs10">Add a subroutine to the 
+ program in the append() array</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="127px" class="whs14">
+<p class="whs10">append^UCGM</td>
+<td width="173px" class="whs15">
+<p class="whs10">code,label</td>
+<td width="95px" class="whs16">
+<p class="whs10">&lt;void&gt;</td>
+<td width="190px" class="whs17">
+<p class="whs10">Add code to the end of 
+ subroutine &quot;label&quot;</td></tr>
+
+<tr valign="top" class="whs2">
+<td bgcolor="#DDE0F7" width="127px" class="whs9">
+<p class="whs10">ERROR^UCGM</td>
+<td bgcolor="#DDE0F7" width="173px" class="whs11">
+<p class="whs10">message</td>
+<td bgcolor="#DDE0F7" width="95px" class="whs12">
+<p class="whs10">&lt;void&gt;</td>
+<td bgcolor="#DDE0F7" width="190px" class="whs13">
+<p class="whs10">Output a compiler error</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="127px" class="whs14">
+<p class="whs10">getClass^UCGM</td>
+<td width="173px" class="whs15">
+<p class="whs10">var,.newLevel</td>
+<td width="95px" class="whs16">
+<p class="whs10">String</td>
+<td width="190px" class="whs17">
+<p class="whs10">The class of var</td></tr>
+
+<tr valign="top" class="whs2">
+<td bgcolor="#DDE0F7" width="127px" class="whs9">
+<p class="whs10">getInst^UCGM</td>
+<td bgcolor="#DDE0F7" width="173px" class="whs11">
+<p class="whs10">var,.newLevel</td>
+<td bgcolor="#DDE0F7" width="95px" class="whs12">
+<p class="whs10">Integer</td>
+<td bgcolor="#DDE0F7" width="190px" class="whs13">
+<p class="whs10">The line in msrc that var 
+ was instantiated</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="127px" class="whs14">
+<p class="whs10">getNew^UCGM</td>
+<td width="173px" class="whs15">
+<p class="whs10">var,.newLevel</td>
+<td width="95px" class="whs16">
+<p class="whs10">Integer</td>
+<td width="190px" class="whs17">
+<p class="whs10">The line in msrc that var 
+ is currently scoped</td></tr>
+
+<tr valign="top" class="whs2">
+<td bgcolor="#DDE0F7" width="127px" class="whs9">
+<p class="whs10">getScope^UCGM</td>
+<td bgcolor="#DDE0F7" width="173px" class="whs11">
+<p class="whs10">var,.newLevel</td>
+<td bgcolor="#DDE0F7" width="95px" class="whs12">
+<p class="whs10">String</td>
+<td bgcolor="#DDE0F7" width="190px" class="whs13">
+<p class="whs10">The scope of var</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="127px" class="whs14">
+<p class="whs10">initLine^UCGM</td>
+<td width="173px" class="whs15">
+<p class="whs10">level</td>
+<td width="95px" class="whs16">
+<p class="whs10">String</td>
+<td width="190px" class="whs17">
+<p class="whs10">Initialize a line at block 
+ &quot;level&quot;</td></tr>
+
+<tr valign="top" class="whs2">
+<td bgcolor="#DDE0F7" width="127px" class="whs9">
+<p class="whs10">isArr^UCGM</td>
+<td bgcolor="#DDE0F7" width="173px" class="whs11">
+<p class="whs10">expr</td>
+<td bgcolor="#DDE0F7" width="95px" class="whs12">
+<p class="whs10">Boolean</td>
+<td bgcolor="#DDE0F7" width="190px" class="whs13">
+<p class="whs10">Array reference</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="127px" class="whs14">
+<p class="whs10">isExt^UCGM</td>
+<td width="173px" class="whs15">
+<p class="whs10">expr</td>
+<td width="95px" class="whs16">
+<p class="whs10">Boolean</td>
+<td width="190px" class="whs17">
+<p class="whs10">Extrinsic function</td></tr>
+
+<tr valign="top" class="whs2">
+<td bgcolor="#DDE0F7" width="127px" class="whs9">
+<p class="whs10">isFun^UCGM</td>
+<td bgcolor="#DDE0F7" width="173px" class="whs11">
+<p class="whs10">expr</td>
+<td bgcolor="#DDE0F7" width="95px" class="whs12">
+<p class="whs10">Boolean</td>
+<td bgcolor="#DDE0F7" width="190px" class="whs13">
+<p class="whs10">Instrinsic or extrinsic 
+ function</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="127px" class="whs14">
+<p class="whs10">isInt^UCGM</td>
+<td width="173px" class="whs15">
+<p class="whs10">expr</td>
+<td width="95px" class="whs16">
+<p class="whs10">Boolean</td>
+<td width="190px" class="whs17">
+<p class="whs10">Integer</td></tr>
+
+<tr valign="top" class="whs2">
+<td bgcolor="#DDE0F7" width="127px" class="whs9">
+<p class="whs10">isLit^UCGM</td>
+<td bgcolor="#DDE0F7" width="173px" class="whs11">
+<p class="whs10">expr</td>
+<td bgcolor="#DDE0F7" width="95px" class="whs12">
+<p class="whs10">Boolean</td>
+<td bgcolor="#DDE0F7" width="190px" class="whs13">
+<p class="whs10">Literal string or number</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="127px" class="whs14">
+<p class="whs10">isNum^UCGM</td>
+<td width="173px" class="whs15">
+<p class="whs10">expr</td>
+<td width="95px" class="whs16">
+<p class="whs10">Boolean</td>
+<td width="190px" class="whs17">
+<p class="whs10">Number</td></tr>
+
+<tr valign="top" class="whs2">
+<td bgcolor="#DDE0F7" width="127px" class="whs9">
+<p class="whs10">isObj^UCGM</td>
+<td bgcolor="#DDE0F7" width="173px" class="whs11">
+<p class="whs10">expr</td>
+<td bgcolor="#DDE0F7" width="95px" class="whs12">
+<p class="whs10">Boolean</td>
+<td bgcolor="#DDE0F7" width="190px" class="whs13">
+<p class="whs10">Object.property or Object.method</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="127px" class="whs14">
+<p class="whs10">isRecord^UCGM</td>
+<td width="173px" class="whs15">
+<p class="whs10">expr</td>
+<td width="95px" class="whs16">
+<p class="whs10">Boolean</td>
+<td width="190px" class="whs17">
+<p class="whs10">Record&lt;Class&gt; identifier</td></tr>
+
+<tr valign="top" class="whs2">
+<td bgcolor="#DDE0F7" width="127px" class="whs9">
+<p class="whs10">isSys^UCGM</td>
+<td bgcolor="#DDE0F7" width="173px" class="whs11">
+<p class="whs10">expr</td>
+<td bgcolor="#DDE0F7" width="95px" class="whs12">
+<p class="whs10">Boolean</td>
+<td bgcolor="#DDE0F7" width="190px" class="whs13">
+<p class="whs10">M system variable</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="127px" class="whs14">
+<p class="whs10">isVar^UCGM</td>
+<td width="173px" class="whs15">
+<p class="whs10">expr</td>
+<td width="95px" class="whs16">
+<p class="whs10">Boolean</td>
+<td width="190px" class="whs17">
+<p class="whs10">Variable or object identifier</td></tr>
+
+<tr valign="top" class="whs2">
+<td bgcolor="#DDE0F7" width="127px" class="whs9">
+<p class="whs10">newLabel^UCGM</td>
+<td bgcolor="#DDE0F7" width="173px" class="whs11">
+<p class="whs10">name,.labels,.ref</td>
+<td bgcolor="#DDE0F7" width="95px" class="whs12">
+<p class="whs10">String</td>
+<td bgcolor="#DDE0F7" width="190px" class="whs13">
+<p class="whs10">Next linetag (&quot;v&quot;_name_&lt;nn&gt;)</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="127px" class="whs14">
+<p class="whs10">newLine^UCGM</td>
+<td width="173px" class="whs15">
+<p class="whs10">code,line,level</td>
+<td width="95px" class="whs16">
+<p class="whs10">&lt;void&gt;</td>
+<td width="190px" class="whs17">
+<p class="whs10">Insert a line in msrc after 
+ &quot;line&quot;</td></tr>
+
+<tr valign="top" class="whs2">
+<td bgcolor="#DDE0F7" width="127px" class="whs9">
+<p class="whs10">nxtSym^UCGM</td>
+<td bgcolor="#DDE0F7" width="173px" class="whs11">
+<p class="whs10">(None)</td>
+<td bgcolor="#DDE0F7" width="95px" class="whs12">
+<p class="whs10">String</td>
+<td bgcolor="#DDE0F7" width="190px" class="whs13">
+<p class="whs10">Next variable name (&quot;vo&quot;_&lt;nn&gt;)</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="127px" class="whs14">
+<p class="whs10">setInst^UCGM</td>
+<td width="173px" class="whs15">
+<p class="whs10">var,line,expr,.newLevel</td>
+<td width="95px" class="whs16">
+<p class="whs10">&lt;void&gt;</td>
+<td width="190px" class="whs17">
+<p class="whs10">Set line and expression 
+ that instantiated var</td></tr>
+
+<tr valign="top" class="whs2">
+<td bgcolor="#DDE0F7" width="127px" class="whs9">
+<p class="whs10">setOpti^UCGM</td>
+<td bgcolor="#DDE0F7" width="173px" class="whs11">
+<p class="whs10">var,newLevel,integer</td>
+<td bgcolor="#DDE0F7" width="95px" class="whs12">
+<p class="whs10">&lt;void&gt;</td>
+<td bgcolor="#DDE0F7" width="190px" class="whs13">
+<p class="whs10">Set object optimization 
+ flag</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="127px" class="whs14">
+<p class="whs10">setScope^UCGM</td>
+<td width="173px" class="whs15">
+<p class="whs10">var,newLevel,msrc,scope</td>
+<td width="95px" class="whs16">
+<p class="whs10">&lt;void&gt;</td>
+<td width="190px" class="whs17">
+<p class="whs10">Set the scope of var</td></tr>
+
+<tr valign="top" class="whs2">
+<td bgcolor="#DDE0F7" width="127px" class="whs9">
+<p class="whs10">setType^UCGM</td>
+<td bgcolor="#DDE0F7" width="173px" class="whs11">
+<p class="whs10">var,class,.newLevel</td>
+<td bgcolor="#DDE0F7" width="95px" class="whs12">
+<p class="whs10">&lt;void&gt;</td>
+<td bgcolor="#DDE0F7" width="190px" class="whs13">
+<p class="whs10">Set the class of var</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="127px" class="whs14">
+<p class="whs10">WARN^UCGM</td>
+<td width="173px" class="whs15">
+<p class="whs10">message</td>
+<td width="95px" class="whs16">
+<p class="whs10">&lt;void&gt;</td>
+<td width="190px" class="whs17">
+<p class="whs10">Output a compiler warning</td></tr>
+</table>
+
+<p class="whs18">&nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>setErrMSG</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<style type="text/css">
+<!--
+table.whs1 { width:558px; margin-left:18pt; border-spacing:0px; }
+tr.whs2 { x-cell-content-align:top; }
+td.whs3 { width:120px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs4 { width:438px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs5 { margin-left:24px; x-condition:NotPrintedDocn; }
+table.whs6 { margin-left:4.50pt; width:642px; border-spacing:0px; }
+col.whs7 { width:7.321%; }
+col.whs8 { width:92.679%; }
+td.whs9 { width:7.321%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+img_whs10 { width:15px; height:15px; float:none; border-style:none; }
+td.whs11 { width:92.679%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nRuntime Class\nMethods\nsetErrMSG");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>setErrMSG Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">Runtime</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class=BodyIndent>This method generates error messages for messages pre-defined 
+ in the System Messages table (STBLMSG).</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>Runtime.setErrMSG(String table, Number msg, String varList)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="558" class="whs1">
+
+<tr valign="top" class="whs2">
+<td width="120px" class="whs3">
+<p>table</td>
+<td width="438px" class="whs4">
+<p>The table name under which the error will be reported.</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="120px" class="whs3">
+<p>msg</td>
+<td width="438px" class="whs4">
+<p>The message number that corresponds to the message that needs to be 
+ displayed from the STBLMSG table.</td></tr>
+
+<tr valign="top" class="whs2">
+<td width="120px" class="whs3">
+<p>varList</td>
+<td width="438px" class="whs4">
+<p>A list of host variables that will fill the variable locations of the 
+ message being created.</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>Void</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs5">Profile v6.3</p>
+
+<p class=Example>Example</p>
+
+<table x-use-null-cells cellspacing="0" width="642" class="whs6">
+<col class="whs7">
+<col class="whs8">
+
+<tr valign="top" class="whs2">
+<td width="7.321%" class="whs9">
+<p class=Note><img src="../image/i_blue_sm.jpg" alt="image\msgs.gif" x-maintain-ratio="TRUE" width="15px" height="15px" border="0" class="img_whs10"></td>
+<td width="92.679%" class="whs11">
+<p class=Note
+	style="margin-left: 0px;">This method must always contain a clause 
+ on the same line of code to check the value of ER and quit if this method 
+ has set the variable.</td></tr>
+</table>
+
+<p>When multiple variables are required, those variables must be quoted 
+ and delimited with the tilde symbol (~).</p>
+
+<p class=Code>do <span style="font-weight: bold;"><B>Runtime.setErrMSG(“DEP”,125,dep.gcrtfcid)</B></span></p>
+
+<p class=Code>do <span style="font-weight: bold;"><B>Runtime.setErrMSG(“DEP”,1801,x)</B></span></p>
+
+<p class=Code>do<span style="font-weight: bold;"><B> Runtime.setErrMSG(“DEP”8472)</B></span></p>
+
+<p class=Code>do <span style="font-weight: bold;"><B>Runtime.setErrMSG(“DEP”762,“DESC~K~J”)</B></span></p>
+
+<p class=Code>do <span style="font-weight: bold;"><B>Runtime.setErrMSG(“DEP”,7531,“DI”)</B></span></p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Catching Exceptions</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { margin-left:4.50pt; width:539px; border-spacing:0px; }
+col.whs2 { width:14.471%; }
+col.whs3 { width:461px; }
+tr.whs4 { x-cell-content-align:top; }
+td.whs5 { width:14.471%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+img_whs6 { width:32px; height:32px; border-style:none; }
+td.whs7 { width:461px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs8 { margin-left:0px; }
+table.whs9 { margin-left:4.50pt; width:631px; border-spacing:0px; }
+col.whs10 { width:6.497%; }
+col.whs11 { width:93.503%; }
+td.whs12 { width:6.497%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+img_whs13 { width:15px; height:15px; float:none; border-style:none; }
+td.whs14 { width:93.503%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs8 {margin-left:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Using PSL\nException Handling\nCatching Exceptions");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Catching Exceptions</h1>
+
+<p>You can include multiple <span style="font-weight: bold;"><B>catch</B></span> 
+ blocks within a calling subroutine to conditionally segregate exception 
+ handling based on exception codes. A catch statement marks the starting 
+ code location from which the compiler processes exceptions by the catch 
+ block. The compiler code evaluates catch blocks sequentially from top 
+ to bottom from the point of the call within a subroutine until the compiler 
+ encounters an exception filter containing the exception type. An exception 
+ filter can test for a single exception type or a comma-separated list 
+ of exception types. Conversely, a catch block without an exception filter 
+ processes all exception types.</p>
+
+<p>Refer to the <a href="psl_error_class.htm">Error Class</a> for a detailed 
+ description of &nbsp;the 
+ properties and statements used in Exception Handling.</p>
+
+<table x-use-null-cells cellspacing="0" width="539" class="whs1">
+<col class="whs2">
+<col class="whs3">
+
+<tr valign="top" class="whs4">
+<td width="14.471%" class="whs5">
+<p class=Note><img src="../image/warning.gif" alt="image\warning.gif" width="32px" height="32px" border="0" class="img_whs6"></td>
+<td width="461px" class="whs7">
+<p class=Note>Use the catch statement and catch block structure instead 
+ of the GT.M exception handlers &quot;set $zt…&quot;. This approach simplifies 
+ the readability of the code and integrates GT.M and application exception 
+ handling. Internally, PSL uses the GT.M exception handling infrastructure 
+ to implement branching, logging, and stack management for exceptions.</td></tr>
+</table>
+
+<p>The syntax to catch an exception is:</p>
+
+<p class=Code
+	style="margin-left: 36.00pt; text-indent: -18.00pt;">catch Error {</p>
+
+<p class=Code
+	style="margin-left: 36.00pt; text-indent: -18.00pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+<p class=Example>Example #1</p>
+
+<p>The following example demonstrates catching GT.M exceptions and logging 
+ the exceptions to the Profile Error Report (SCAER).</p>
+
+<p class=Code
+	style="text-indent: -18.00pt; margin-left: 48px;">catch Error {</p>
+
+<p class=Code
+	style="text-indent: -18.00pt; margin-left: 48px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ ET=Error.type</p>
+
+<p class=Code
+	style="text-indent: -18.00pt; margin-left: 48px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+ ET[“%GTM-“ do ZE^UTLERR quit</p>
+
+<p class=Code
+	style="text-indent: -18.00pt; margin-left: 48px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ ET=ET_”-“_Error.thrownAt</p>
+
+<p class=Code
+	style="text-indent: -18.00pt; margin-left: 48px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ RM=Error.description</p>
+
+<p class=Code
+	style="text-indent: -18.00pt; margin-left: 48px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do 
+ ^UTLERR </p>
+
+<p class=Code
+	style="text-indent: -18.00pt; margin-left: 48px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} 
+ </p>
+
+<p class=Example>Example #2</p>
+
+<p class="whs8">The following example demonstrates catching 
+ a GT.M exception and logging the exception to the Dayend Exception Report, 
+ SCA006:</p>
+
+<p class=Code
+	style="text-indent: -18.00pt; margin-left: 48px;">catch Error {</p>
+
+<p class=Code
+	style="text-indent: -18.00pt; margin-left: 48px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ ET=Error.type</p>
+
+<p class=Code
+	style="text-indent: -18.00pt; margin-left: 48px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ ETLOC=Error.thrownAt</p>
+
+<p class=Code
+	style="text-indent: -18.00pt; margin-left: 48px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ RM=Error.description</p>
+
+<p class=Code
+	style="text-indent: -18.00pt; margin-left: 48px;">&nbsp;</p>
+
+<p class=Code
+	style="text-indent: -18.00pt; margin-left: 48px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do 
+ LOG^UTLEXC(“ZBCHLETEFT”, ... ”*”,””$G(CID)_”,”_$G(SEQ),ETLOC,ET)</p>
+
+<p class=Code
+	style="text-indent: -18.00pt; margin-left: 48px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+ ET[“%GTM-“ do ZE^UTLERR quit</p>
+
+<p class=Code
+	style="text-indent: -18.00pt; margin-left: 48px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do 
+ ^UTLERR</p>
+
+<p class=Code
+	style="text-indent: -18.00pt; margin-left: 48px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+
+<p>The compiler code sequentially evaluates catch blocks that appear in 
+ the calling block after the method or procedure, until it encounters a 
+ catch block containing the exception filter with the thrown exception 
+ type or it encounters a catch block without an exception filter. When 
+ the compiler encounters the catch block with the thrown exception type, 
+ it processes the catch block and deletes the exception object.</p>
+
+<p>The scope of a catch block is the current stack level and descending 
+ stack levels, unless another catch statement is encountered. If multiple 
+ catch statements exist at the same stack level, the second statement overlays 
+ the first statement at the location of the second statement. If multiple 
+ catch statements exist at different stack levels, the second statement 
+ overlays the first statement at the location and stack level of the second 
+ statement. When the stack level is decremented (e.g., Quit), the scope 
+ of the first block is restored.</p>
+
+<p>If the compiler does not catch an exception within a block, it passes 
+ the exception up the stack until it is caught or the program exits. When 
+ a stack level receives a thrown exception, the compiler code exits at 
+ the location of the method or procedure call after the appropriate catch 
+ block processes. The compiler code &quot;cleans&nbsp;up&quot; any objects 
+ that were instantiated within the scope of the calling block as if the 
+ compiler exited the block normally.</p>
+
+<p>Catch blocks are normal PSL code blocks and can throw exceptions or 
+ receive exceptions from called methods and procedures like any other code 
+ block. </p>
+
+<table x-use-null-cells cellspacing="0" width="631" class="whs9">
+<col class="whs10">
+<col class="whs11">
+
+<tr valign="top" class="whs4">
+<td width="6.497%" class="whs12">
+<p class=Note><img src="../image/i_blue_sm.jpg" alt="image\msgs.gif" x-maintain-ratio="TRUE" width="15px" height="15px" border="0" class="img_whs13"></td>
+<td width="93.503%" class="whs14">
+<p class=Note>If an error is thrown from inside a catch block, the compiler 
+ passes it to the catch block in effect at the previous stack error (to 
+ prevent infinite loops).</td></tr>
+</table>
+
+<p>&nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

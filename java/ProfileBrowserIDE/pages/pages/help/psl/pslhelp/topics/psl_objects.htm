@@ -1,0 +1,232 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Objects</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+ol.whs1 { list-style:decimal; }
+table.whs2 { margin-left:4.50pt; width:640px; border-spacing:0px; }
+col.whs3 { width:6.563%; }
+col.whs4 { width:93.437%; }
+tr.whs5 { x-cell-content-align:top; }
+td.whs6 { width:6.563%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+img_whs7 { width:21px; height:19px; border-style:none; }
+td.whs8 { width:93.437%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+img_whs9 { width:17px; height:15px; border-style:none; }
+table.whs10 { margin-left:4.50pt; width:636px; border-spacing:0px; }
+col.whs11 { width:6.604%; }
+col.whs12 { width:93.396%; }
+td.whs13 { width:6.604%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+img_whs14 { width:15px; height:15px; float:none; border-style:none; }
+td.whs15 { width:93.396%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs16 { x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Introduction to Object-Oriented Programming\nObjects\nObjects");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Objects</h1>
+
+<p>An object is a real or abstract item that stores data and the operations 
+ that manipulate data. Therefore, an object is a collection of one or more 
+ properties and associated methods that is described by a class. </p>
+
+<p>A particular object is an instance of a specific class. You can have 
+ multiple instances of an object active simultaneously (e.g.,&nbsp;multiple 
+ windows, multiple buttons). </p>
+
+<p>An object definition consists of two components:</p>
+
+<ul>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1><a href="psl_object_properties.htm">Properties</a> 
+ </p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1><a href="psl_object_methods.htm">Methods</a> 
+ </p></li>
+</ul>
+
+<p>When you create a class, you define a new data type. You can then use 
+ that data type to declare objects of that type. Creating objects of a 
+ class is a two step process:</p>
+
+<ol type="1" class="whs1">
+	
+	<li class=kadov-p-CNumbered-List><p class=Numbered-List
+										style="margin-left: 0px;">Declare 
+ a variable of the data type. This informs the PSL code generator that 
+ any subsequent references to the variable are associated with the class 
+ that was declared, including any method and property references and instantiation 
+ expressions. For example, you can define the variable &quot;cif&quot; 
+ within the RecordCIF class using the following PSL command:</p></li>
+</ol>
+
+<p class=Code
+	style="margin-left: 60px;"><span style="margin-left: 36.00pt;">type 
+ RecordCIF cif</span></p>
+
+<ol start="2" type="1" class="whs1">
+	
+	<li class=kadov-p-CNumbered-List><p class=Numbered-List>Acquire a physical 
+ copy of the object and assign it to the identifier (i.e.,&nbsp;variable). 
+ This process is called instantiating (i.e.,&nbsp;creating) the object. 
+ For example, you can extract a record from the CIF table and assign it 
+ to the variable &quot;cif&quot; using the following PSL command:</p></li>
+</ol>
+
+<p class=Code
+	style="margin-left: 60px;">set cif = Db.getRecord(&quot;CIF&quot;,&quot;ACN&quot;)</p>
+
+<p>You can combine these steps into one PSL statement:</p>
+
+<p class=Code>type RecordCIF cif = Db.getRecord(&quot;CIF&quot;,&quot;ACN&quot;)</p>
+
+&nbsp; 
+
+<p>The following examples all instantiate objects:</p>
+
+<table x-use-null-cells cellspacing="0" width="640" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="6.563%" class="whs6">
+<p class=Note><img src="../image/tip.gif" alt="image\tip.gif" width="21px" height="19px" border="0" class="img_whs7"></td>
+<td width="93.437%" class="whs8">
+<p class=Note>Click the <img src="../image/maxwindow.gif" alt="image\maxwindow.gif" width="17px" height="15px" border="0" class="img_whs9"> control box to view the intended 
+ line breaks in coding examples.</td></tr>
+</table>
+
+<p class=Example><br>
+Example 1</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">type ResultSet rs = Db.select(&quot;CID,LNM,BAL&quot;,&quot;ACN&quot;,&quot;BAL&gt;:BAL&quot;)</p>
+
+<p class=Example>Example 2</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">type ResultSet rs</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">set rs=Db.select(&quot;CID,LNM,BAL&quot;,&quot;ACN&quot;,&quot;BAL&gt;:BAL&quot;)</p>
+
+<p class=Example>Example 3</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">type RecordDEP dep=Class.new(&quot;RecordDEP&quot;)</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">&nbsp;</p>
+
+<table x-use-null-cells cellspacing="0" width="636" class="whs10">
+<col class="whs11">
+<col class="whs12">
+
+<tr valign="top" class="whs5">
+<td width="6.604%" class="whs13">
+<p class=Note><img src="../image/i_blue_sm.jpg" alt="image\msgs.gif" x-maintain-ratio="TRUE" width="15px" height="15px" border="0" class="img_whs14"></td>
+<td width="93.396%" class="whs15">
+<p class=Note>The Db.getRecord method returns one existing object. The 
+ Db.select method also returns a single object; however, it is a ResultSet 
+ that contains zero or more objects of the Row class. The Class.new method 
+ creates new objects.</td></tr>
+</table>
+
+<p class="whs16"><br>
+For additional details concerning objects, refer to the following sections:</p>
+
+<p class=Field
+	style="x-condition: NotPrintedDocn;"><a href="psl_object_properties.htm">Object 
+ Properties</a></p>
+
+<p class=Field
+	style="x-condition: NotPrintedDocn;"><a href="psl_object_methods.htm">Object 
+ Methods</a></p>
+
+<p class=Field
+	style="x-condition: NotPrintedDocn;"><a href="psl_object_memory_management.htm">Object 
+ Memory Management</a></p>
+
+<p class=Field
+	style="x-condition: NotPrintedDocn;"><a href="psl_lexical_scope_of_objects.htm">Lexical 
+ Scope of Objects</a></p>
+
+<p class=Field
+	style="x-condition: NotPrintedDocn;"><a href="psl_global_scope_of_objects.htm">Global 
+ Scope of Objects</a></p>
+
+<p class=Field
+	style="x-condition: NotPrintedDocn;"><a href="psl_casting_of_objects.htm">Casting 
+ Objects</a></p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

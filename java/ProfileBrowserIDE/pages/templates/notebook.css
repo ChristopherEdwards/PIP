@@ -1,0 +1,49 @@
+
+TABLE.psl-RS {
+	BORDER-RIGHT: #99ffcc 0px inset;
+	PADDING-RIGHT: 2px;
+	BORDER-TOP: brown 2px inset;
+	PADDING-LEFT: 2px;
+	FONT-SIZE: 80%;
+	PADDING-BOTTOM: 0px;
+	BORDER-LEFT: #99ffcc 0px inset;
+	PADDING-TOP: 2px;
+	BORDER-BOTTOM: brown 0px inset;
+	font-family: Comic Sans MS;
+	BORDER-COLLAPSE: collapse;
+	BACKGROUND-COLOR: brown;
+	color: navy;
+	
+}
+
+TABLE.psl-RS TH {
+	BORDER-RIGHT: #99ffcc 0px inset;
+	PADDING-RIGHT: 4px;
+	BORDER-TOP: brown 0px inset;
+	PADDING-LEFT: 3px;
+	FONT-SIZE: 80%;
+	PADDING-BOTTOM: 3px;
+	BORDER-LEFT: #99ffcc 0px inset;
+	PADDING-TOP: 3px;
+	BORDER-BOTTOM: #99ffcc 0px inset;
+	font-family: Comic Sans MS;
+	BORDER-COLLAPSE: collapse;
+	BACKGROUND-COLOR: #ebeef4;
+
+}
+
+TABLE.psl-RS TD {
+	BORDER-RIGHT: #99ffcc 0px inset;
+	PADDING-RIGHT: 4px;
+	BORDER-TOP: #99ffcc 1px inset;
+	PADDING-LEFT: 3px;
+	FONT-SIZE: 80%;
+	PADDING-BOTTOM: 2px;
+	BORDER-LEFT: #99ffcc 0px inset;
+	PADDING-TOP: 2px;
+	BORDER-BOTTOM: #99ffcc 1px inset;
+	font-family: Comic Sans MS;
+	BORDER-COLLAPSE: collapse;
+	BACKGROUND-COLOR: #ffff99;
+	border-spacing: 2px;
+}

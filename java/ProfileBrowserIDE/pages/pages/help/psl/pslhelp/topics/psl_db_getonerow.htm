@@ -1,0 +1,234 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>getOneRow</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<style type="text/css">
+<!--
+table.whs1 { x-cell-content-align:top; width:100%; border-spacing:0px; }
+col.whs2 { width:7.087%; }
+col.whs3 { width:92.913%; }
+tr.whs4 { x-cell-content-align:top; }
+td.whs5 { width:7.087%; padding-right:10px; padding-left:10px; border-right-style:none; border-left-style:none; border-top-style:none; border-bottom-style:none; }
+img_whs6 { border:none; width:32px; height:32px; float:none; border-style:none; }
+td.whs7 { width:92.913%; padding-right:10px; padding-left:10px; border-top-style:none; border-bottom-style:none; border-right-style:none; }
+p.whs8 { background-color:Transparent; }
+table.whs9 { width:534px; margin-left:18pt; border-spacing:0px; }
+td.whs10 { width:102px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs11 { width:432px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs12 { margin-left:24px; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs8 {background-color:white; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nDb Class\nMethods\ngetOneRow");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>getOneRow Method</h1>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs1">
+<col class="whs2">
+<col class="whs3">
+
+<tr valign="top" class="whs4">
+<td width="7.087%" class="whs5">
+<p><img src="../image/warning.gif" x-maintain-ratio="TRUE" width="32px" height="32px" border="0" class="img_whs6"></td>
+<td width="92.913%" class="whs7">
+<p class="whs8">This method has been deprecated 
+ and should not be used in Profile versions v6.4 and above. There are more 
+ effective ways of performing the function previously fulfilled by the 
+ Db.getOneRow method. At a future date, this method may be removed from 
+ the PSL compiler. Therefore, FIS recommends that instead of using the 
+ Db.getOneRow method, instantiate the object using <a href="psl_db_getrecord.htm"
+														style="background-color: Transparent;">Db.getRecord</a>.</td></tr>
+</table>
+
+<p class=BodyTextBold>Class: <span style="font-weight: normal;">Db</span></p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>Db.getOneRow(columnList,tableName,accessKeys,delimiter)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="534" class="whs9">
+
+<tr valign="top" class="whs4">
+<td width="102px" class="whs10">
+<p>columnList</td>
+<td width="432px" class="whs11">
+<p>A comma-separated list of columns to retrieve from the table.</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="102px" class="whs10">
+<p>tableName</td>
+<td width="432px" class="whs11">
+<p>A valid database table name.</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="102px" class="whs10">
+<p>accessKeys</td>
+<td width="432px" class="whs11">
+<p>A comma-separated list of access keys for the table. This parameter 
+ can also specify an assignment (e.g.,&nbsp;&quot;ACN=:CIFNUM&quot;) or 
+ a column reference (e.g.,&nbsp;DEP.ACN).</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="102px" class="whs10">
+<p>delimiter</td>
+<td width="432px" class="whs11">
+<p>An ASCII number that acts as a field delimiter. The default delimiter 
+ is a TAB.</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>A string of column data, separated by delimiters.</p>
+
+<p class=BodyTextBold>Description</p>
+
+<p class=BodyIndent>This method retrieves columns from a single record 
+ from the database without creating an object. Only use this method for 
+ Read Only information, such as User, System, Common, and Institution Variables 
+ tables.</p>
+
+<p class=BodyTextBold>When Became Available</p>
+
+<p class="whs12">Profile v6.3</p>
+
+<p class=Example>Examples</p>
+
+<p class=Code>// Select a single column</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>set des = <span style="font-weight: bold;"><B>Db.getOneRow(&quot;DESC&quot;,&quot;UTBLBRCD&quot;,&quot;BR&quot;)</B></span></p>
+
+<p class=Code
+	style="font-weight: bold;">&nbsp;</p>
+
+<p class=Code
+	style="font-weight: normal;">// Select columns from table without key</p>
+
+<p class=Code
+	style="font-weight: bold;">&nbsp;</p>
+
+<p class=Code
+	style="font-weight: bold;"><span style="font-weight: normal;">set TJD 
+ = </span>Db.getOneRow(&quot;TJD&quot;,&quot;CUVAR&quot;)</p>
+
+<p class=Code
+	style="font-weight: normal;">&nbsp;</p>
+
+<p class=Code
+	style="font-weight: normal;">// Select multiple columns</p>
+
+<p class=Code
+	style="font-weight: normal;">&nbsp;</p>
+
+<p class=Code
+	style="font-weight: bold;"><span style="font-weight: normal;">set data 
+ = </span>Db.getOneRow(&quot;CID,BAL,LNM,BOO,IRN&quot;,&quot;DEP&quot;,&quot;XCID&quot;)</p>
+
+<p class=Code
+	style="font-weight: normal;">&nbsp;</p>
+
+<p class=Code
+	style="font-weight: normal;">// Select computed column</p>
+
+<p class=Code
+	style="font-weight: normal;">&nbsp;</p>
+
+<p class=Code
+	style="font-weight: bold;"><span style="font-weight: normal;">set data 
+ = </span>Db.getOneRow(&quot;ACN,TAXID,AGE&quot;,&quot;CIF&quot;,&quot;XACN&quot;)</p>
+
+<p class=Code
+	style="font-weight: bold;">&nbsp;</p>
+
+<p class=Code
+	style="font-weight: normal;">// Select columns from table with multiple 
+ keys</p>
+
+<p class=Code
+	style="font-weight: bold;"><span style="font-weight: normal;">set data 
+ = </span>Db.getOneRow(&quot;TAMT,TCMT&quot;,&quot;HIST&quot;,&quot;XCID,YSEQ&quot;)</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

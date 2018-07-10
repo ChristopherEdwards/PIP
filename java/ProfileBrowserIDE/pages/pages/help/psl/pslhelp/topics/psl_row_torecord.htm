@@ -1,0 +1,201 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>toRecord</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+p.whs1 { margin-left:24px; }
+table.whs2 { width:558px; margin-left:18pt; border-spacing:0px; }
+tr.whs3 { x-cell-content-align:top; }
+td.whs4 { width:120px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs5 { width:438px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs6 { background-color:Transparent; }
+p.whs7 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs6 {background-color:white; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nRow Class\nMethods\ntoRecord");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>toRecord Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">Row</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class="whs1">This method copies the properties of the 
+ Row object into the same property names in a Record&lt;Class&gt; object. 
+ This method inserts a Row class object into a RecordClass object based 
+ on matching column names. Multiple Row objects can be inserted into a 
+ Record object. Row objects can contain properties that are not mapped 
+ (i.e., no matching name or explicit map). <span style="margin-left: 24px;">Row 
+ columns that are named the same as a column in the Row object are moved 
+ to that location. All other columns must be manually defined in the columnMap 
+ parameter.</span></p>
+
+<p class="whs1">This method is useful for applications that 
+ import data from a file or message interface and subsequently store them 
+ in the database (e.g., conversion interfaces).</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>Row.toRecord(Record rec,String columnMap)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="558" class="whs2">
+
+<tr valign="top" class="whs3">
+<td width="120px" class="whs4">
+<p>rec</td>
+<td width="438px" class="whs5">
+<p class="whs6">The record to which the row is 
+ copied. The record must have been instantiated before it is passed to 
+ this method.</td></tr>
+
+<tr valign="top" class="whs3">
+<td colspan="1" rowspan="1" width="120px" class="whs4">
+<p>columnMap</td>
+<td colspan="1" rowspan="1" width="438px" class="whs5">
+<p>The comma-separated list of column names to explicitly map between the 
+ Row class and the Record object. Each mapping is in the form NameInRow=NameInRecord.</p>
+<p>If the NameInRecord portion is empty (e.g., NameInRow=), then the corresponding 
+ column in the Row object will not be mapped (ignored).</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>Void</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs7">Profile v7.0</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>// uses table ZFSW04RW with columns XNAME,DNAME,DOB</p>
+
+<p class=Code>type ResultSet rs = Db.select( &quot;NAM,XNAME,DOB,TYPE&quot;, 
+ &quot;CIF&quot;)</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>do Db.fastDelete(&quot;ZFSW04RW&quot;) // clear target table</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>while rs.next() do {</p>
+
+<p class=Code>&nbsp;&nbsp;type 
+ RecordZFSW04RW zfsw04rw = Class.new(&quot;RecordZFSW04RW&quot;)</p>
+
+<p class=Code>&nbsp;&nbsp;type 
+ Row rRow = rs.getRow()</p>
+
+<p class=Code>&nbsp;&nbsp;// 
+ translate Row to Record by mapping:</p>
+
+<p class=Code>&nbsp;&nbsp;// 
+ CIF.NAM &nbsp;&nbsp;to 
+ ZFSW04RW.DNAME</p>
+
+<p class=Code>&nbsp;&nbsp;// 
+ CIF.XNAME to ZFSW04RW.XNAME</p>
+
+<p class=Code>..// CIF.DOB &nbsp;&nbsp;to 
+ ZFSW04RW.DOB</p>
+
+<p class=Code>..//.and ignoring CIF.TYPE</p>
+
+<p class=Code>&nbsp;&nbsp;do 
+ <span style="font-weight: bold;"><B>rRow.toRecord(zfsw04rw, &quot;DNAME=NAM&quot;)</B></span></p>
+
+<p class=Code>&nbsp;&nbsp;do 
+ zfsw04rw.bypassSave()</p>
+
+<p class=Code>&nbsp;&nbsp;write 
+ &quot;copied &quot;,rRow.xname,&quot; to ZFSW04RW&quot;,!</p>
+
+<p class=Code>}</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Selecting Data</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { x-cell-content-align:top; margin-left:0.5in; border-spacing:0px; width:91.15%; }
+col.whs2 { width:21.21%; }
+col.whs3 { width:23.404%; }
+col.whs4 { width:55.385%; }
+tr.whs5 { x-cell-content-align:top; }
+td.whs6 { padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-top-color:#000000; border-top-width:1px; border-top-style:Solid; border-bottom-color:#000000; border-bottom-style:Solid; border-bottom-width:1px; }
+p.whs7 { font-weight:bold; margin-left:0px; margin-top:6pt; margin-bottom:6pt; }
+td.whs8 { padding-right:10px; padding-left:10px; border-right-style:none; border-top-color:#000000; border-top-width:1px; border-top-style:Solid; border-bottom-color:#000000; border-bottom-style:Solid; border-bottom-width:1px; }
+p.whs9 { font-weight:bold; margin-top:6pt; margin-bottom:6pt; }
+td.whs10 { padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; background-color:#dde0f7; }
+p.whs11 { margin-left:0px; margin-top:6pt; margin-bottom:6pt; }
+td.whs12 { padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; background-color:#dde0f7; }
+p.whs13 { margin-top:6pt; margin-bottom:6pt; }
+td.whs14 { padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; }
+td.whs15 { padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "table.whs1 {margin-left:1pt; }";
+  strNSS += "p.whs7 {margin-left:1pt; }";
+  strNSS += "p.whs11 {margin-left:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Programming Standards\nSelecting Data");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Selecting Data</h1>
+
+<p>Use the following guidelines when selecting data from the database:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Avoid multiple selects 
+ of the same logical database record when possible. This is critical within 
+ a single transaction, but should be evaluated within a process lifetime 
+ as well.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Use the methods listed 
+ below to select data in the implementations described:</p></li>
+</ul>
+
+<table x-use-null-cells width="91.15%" cellspacing="0" class="whs1">
+<col class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="21.21%" class="whs6">
+<p class="whs7">Class</td>
+<td width="23.404%" class="whs8">
+<p class="whs9">Method</td>
+<td width="55.385%" class="whs8">
+<p class="whs9">Implementation</td></tr>
+
+<tr valign="top" class="whs5">
+<td bgcolor="#DDE0F7" width="21.21%" class="whs10">
+<p class="whs11">DbSet</td>
+<td bgcolor="#DDE0F7" width="23.404%" class="whs12">
+<p class="whs13">&nbsp;</td>
+<td bgcolor="#DDE0F7" width="55.385%" class="whs12">
+<p class="whs13">Use instead of ResultSet 
+ class if an object is subsequently instantiated from the selected keys.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="21.21%" class="whs14">
+<p class="whs11">DbSet<br>
+ResultSet</td>
+<td width="23.404%" class="whs15">
+<p class="whs13">&nbsp;</td>
+<td width="55.385%" class="whs15">
+<p class="whs13">Use either class to collate 
+ through primary keys. Do not use Db.nextKey.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="21.21%" class="whs10">
+<p class="whs11">Db</td>
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="23.404%" class="whs12">
+<p class="whs13">getRecord</td>
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="55.385%" class="whs12">
+<p class="whs13">When instantiating records 
+ that may be new or existing, use the <a href="psl_db_getrecord.htm">Db.getRecord</a>(Class,keys,classNew) 
+ method to minimize IO. Db.getRecord is optimized for single row selects 
+ and should always be used if the intention of the program logic is to 
+ select a single row from a single table. Specifying a value for the classNew 
+ parameter will provide better performance results than using <a href="psl_db_isdefined.htm">Db.isDefined</a> 
+ followed by If/Else coding to instantiate a record or do a <a href="psl_class_new.htm">Class.new</a> 
+ on the record.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="21.21%" class="whs14">
+<p class="whs11">Db</td>
+<td colspan="1" rowspan="1" width="23.404%" class="whs15">
+<p class="whs13">getOneRow</td>
+<td colspan="1" rowspan="1" width="55.385%" class="whs15">
+<p class="whs13">Returns a single row. Do 
+ not use this method when Db.getRecord can satisfy the program's requirements.<br>
+<br>
+NOTE: There are more effective ways of performing the function previously 
+ fulfilled by the Db.getOneRow method. At a future date, this method may 
+ be removed from the PSL compiler. Therefore, Fidelity recommends that 
+ instead of using the Db.getOneRow method, instantiate the object.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="21.21%" class="whs10">
+<p class="whs11">Db</td>
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="23.404%" class="whs12">
+<p class="whs13">select</td>
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="55.385%" class="whs12">
+<p class="whs13">Generally used to return 
+ individual columns from multiple rows.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="21.21%" class="whs14">
+<p class="whs11">Db</td>
+<td colspan="1" rowspan="1" width="23.404%" class="whs15">
+<p class="whs13">selectDbSet</td>
+<td colspan="1" rowspan="1" width="55.385%" class="whs15">
+<p class="whs13">Use the Db.selectDbSet 
+ method any time the program logic loops through a ResultSet and subsequently 
+ instantiates Record&lt;class&gt; objects based on the key columns. The 
+ <a href="psl_db_selectdbset.htm">Db.selectDbSet</a> and <a href="psl_db_getrecord.htm">Db.getRecord</a> 
+ method provide improved performance over the combination of <a href="psl_db_select.htm">Db.select</a> 
+ and Db.getRecord.</p>
+<p class="whs13">Use the Db.selectDbSet 
+ method in conjunction with the DbSet.getRecord method when a single table 
+ select is required.</td></tr>
+</table>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>In general, do not try 
+ to outperform the SQL engine. Use the SQL aggregate functions COUNT, SUM, 
+ AVE, MIN, and MAX instead of calculating these results yourself. Use the 
+ SQL WHERE clause, GROUP BY clause, and ORDER BY clause to retrieve only 
+ the required rows in the order needed.</p></li>
+</ul>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

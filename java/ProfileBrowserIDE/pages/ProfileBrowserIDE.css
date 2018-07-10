@@ -1,0 +1,1490 @@
+/* CSS Document */
+
+/*********** Global styles *************/
+
+
+html { 
+	height : 100%;
+} 
+
+body { 
+	background-image: url(images/pgBG.jpg);
+	background-repeat: repeat-x;
+	background-position: top left;	
+	text-align: center;
+	margin:0 auto;
+    padding:0;
+    height:100%;
+    border:none;
+}
+
+a {	
+	color: #3366CC;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+a:visited {	
+	color: #3366CC; 
+}
+
+a:hover {
+	color: #a3d963;
+	text-decoration:underline;
+}
+
+a:active {
+	color: #3366CC;
+	text-decoration: none;
+}
+
+
+p {
+	color: black;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	padding-bottom: 2px;
+	padding-left: 4px;
+}
+
+
+
+ul {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	list-style-image: url(images/arrow.gif);
+	line-height: 20px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-right:10px;
+}
+
+ul li {
+	border-bottom: 1px solid #dcdcdc;
+	padding-bottom: 1px;
+}
+
+h1, h2, h3, h4 {
+	font-family: Arial,Helvetica,sans-serif;
+	border-bottom: 1px solid #a3d963;
+
+}
+
+
+.gwt-ListBox {
+	font-family: Arial, Tahoma, sans-serif;
+	font-size: 11px;
+}
+
+.gwt-Hyperlink {
+	color: #3366CC;
+	text-decoration: none;
+	font-size: 12px;
+	
+}
+
+.gwt-Hyperlink a:visited {
+	color: #3366CC;
+
+}
+
+.gwt-Hyperlink a:hover {
+	color: #66FF33;
+	text-decoration:underline;
+	cursor: hand;
+
+}
+
+.gwt-Hyperlink a:active {
+	color: #00244d; 
+
+}
+
+.gwt-DialogBox {
+	background-color: white;
+	border: 1px solid #788cb3;
+	border-right: 1px outset #788cb3;
+	border-bottom: 1px outset #788cb3;		
+}
+
+.gwt-DialogBox .Caption {
+	background-image: url(images/tab_bg.jpg);
+	background-repeat: repeat-x;
+	border-bottom: 1px solid #788CB3;
+	margin-top: 0;
+	padding-top: 3px;
+	padding-bottom: 2px;
+	padding-left: 4px;
+	color: #00244D;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+}
+	
+.dialogContent {
+	color: black;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	padding: 4px;
+	line-height: 18px;
+	height: 100%;
+	
+}
+
+/***** Console Results ******/
+
+.consoleMono{
+	margin-top: 15px;
+	font-family: Arial,12px;
+}
+
+#Runtime {
+	color: #red;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	padding: 3px;
+	}
+
+.gwt-MenuBar {
+	background-image:url(images/details_bg2.jpg);
+	background-repeat:repeat-x;
+	background-position: top left;
+	border: 1px solid #788cb3;
+	text-align: center;
+	padding: 0px;
+	margin-right: 2px;
+	width: 50px;
+	
+}
+
+.gwt-MenuItem {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	font-size: 75%;
+	font-family: Arial,Helvetica,sans-serif;
+	color: #00244d;
+	text-align: left;
+}
+
+.gwt-MenuBg {
+	background-color: #f3f3f3;
+	border: 1px solid #788cb3;
+}
+
+.gwt-MenuItem-selected {
+	background-color: #a3d963;
+	font-family: Arial,Helvetica,sans-serif;
+	color: #00244d;	
+}
+
+.gwt-Tree {
+}
+
+.gwt-Tree .gwt-TreeItem {
+	font-size: 80%;
+	
+}
+
+.gwt-Tree .gwt-TreeItem-selected {
+	background-color: #C3D9FF;
+}
+
+.gwt-StackPanel {
+	background-color: white;
+	border: 1px solid #788cb3;
+
+}
+
+.gwt-StackPanel .gwt-StackPanelItem {
+	background-image: url(images/details_bg2.jpg);
+	background-repeat: repeat-x;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size: smaller;
+	color: #767676;
+	font-weight: bold;
+	padding-top: 4px;
+	padding-left: 4px;
+	padding-bottom: 4px;
+	border-top: 1px solid #788cb3;
+	border-bottom: 1px solid #788cb3;
+	
+}
+
+.gwt-StackPanel .gwt-StackPanelItem:hover {
+	background-image: url(images/stack_hoverbg.gif);
+	background-repeat: repeat-x;
+	background-color: #D0E9B3;
+	font-weight: bold;
+	color: #00244D;
+	}
+
+.gwt-StackPanel .gwt-StackPanelItem-selected {
+	background-image: url(images/tab_bg.jpg);
+	background-repeat: repeat-x;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size: smaller;
+	font-weight: bold;
+	color: #00244D;
+	padding-top: 4px;
+	padding-left: 4px;
+	padding-bottom: 4px;
+	border-top: 0px solid #788cb3;
+	border-bottom: 1px solid #788cb3;
+		
+}
+
+.stack-img {
+	width: 23px;
+	text-align: center;	
+	}
+
+.gwt-DisclosurePanel {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	width: 100%;
+}
+
+.gwt-DisclosurePanel td {
+	color: black;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.gwt-DisclosurePanel-closed {
+	background-color: dcdcdc;
+		
+}
+
+.gwt-DisclosurePanel-open {
+	background-color: #D3EDB2;
+		
+}
+
+.gwt-DisclosurePanel a {
+	color: #A3D963;
+}
+
+
+
+.header a:hover {
+	color: blue;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	text-decoration: none;
+	
+}
+
+/********** the vertical split panel itself ************/
+.gwt-VerticalSplitPanel {
+
+}
+
+/********** the top container ************/
+.gwt-VerticalSplitPanel top  {
+	
+}
+
+/********** the bottom container ************/
+.gwt-VerticalSplitPanel bottom   {
+	
+}
+
+
+/********** the splitter ************/
+.gwt-VerticalSplitPanel vsplitter  {	
+}
+
+
+/***************** Main Tabs ******************/
+
+.main-outer {  /** page container **/
+	margin-top: 1px;
+	padding: 0px;
+	width: 100%;
+	
+}
+
+.main-bg {
+	background-image: url(images/pgBG.jpg);
+	background-repeat: repeat-x;
+	background-position: top left;		
+}
+
+
+/****** 
+
+.splitter {
+	background-color: black;
+	size: 600px;
+}
+
+******/
+
+.main-TabPanel {
+	background-color: #dadada;
+	font-family: sans-serif;
+	margin-top: 0px;
+	padding: 0px;
+	width: 100%;
+	
+}
+
+.main-TabPanelBottom {
+	background-image: url(images/pgBG.jpg);
+	background-repeat: repeat-x;
+	background-position: top left;	
+	border-right: 1px solid #788cb3;
+	border-left: 1px solid #788cb3;
+}
+
+.main-TabPanel .gwt-TabBar {
+	background-image: url(images/main_tab_bar.jpg);
+	background-repeat: repeat-x;
+	background-position: bottom left;
+	padding-top: 1px;
+	font-size: 80%;
+
+}
+
+.main-TabPanel .gwt-TabBar .gwt-TabBarFirst {
+	border-bottom: 1px solid #788cb3;
+}
+
+.main-TabPanel .gwt-TabBar .gwt-TabBarRest {
+	border-bottom: 1px solid #788cb3;
+}
+
+.main-TabPanel .gwt-TabBar .gwt-TabBarItem {
+	background-image: url(images/tab_unsel.jpg);
+	background-repeat: repeat-x;
+	border-bottom: 1px solid #788cb3;
+	padding-top: 3px;
+	padding-bottom: 2px;
+	text-align: center;
+	color: #767676;
+	white-space: nowrap; 
+	width: 100px;
+	
+}
+
+.main-TabPanel .gwt-TabBar .gwt-TabBarItem:hover {
+	cursor:hand;
+	}
+
+.main-TabPanel .gwt-TabBar .gwt-TabBarItem-selected {
+	background-image: url(images/tab_sel.jpg);
+	background-repeat: repeat-x;
+	background-position: top center;
+	border-bottom: 1px solid #dadada;
+	padding-top: 3px;
+	padding-bottom: 2px;
+	color: #00244d;
+	font-weight: bold;
+	text-align: center;
+	width: 102px;
+	
+}
+
+
+/****************** Inner Editor Tabs *******************/
+
+
+.inner-bg {
+	background-color: white;
+}
+
+.gwt-TabPanel {
+	
+}
+
+.gwt-TabPanelBottom {
+	border-right: 1px solid #788cb3;
+	border-bottom: 1px solid #cccccc;
+	border-left: 1px solid #788cb3;
+}
+
+.gwt-TabPanel .gwt-TabBar {
+	background-image: url(images/tabbar_bg_t.gif);
+	backgound-repeat: repeat-x;
+	background-position: bottom left;
+	padding-top: 1px;
+	font-size: 11px;
+	
+}
+
+.gwt-TabPanel .gwt-TabBar .gwt-TabBarFirst {
+	border-bottom: 1px solid #788cb3;
+}
+
+.gwt-TabPanel .gwt-TabBar .gwt-TabBarRest {
+	border-bottom: 1px solid #788cb3;
+}
+
+.gwt-TabPanel .gwt-TabBar .gwt-TabBarItem {
+	background-image: url(images/tab_inner_unsel.jpg);
+	backgound-repeat: repeat-x;
+	background-position: center center;
+	border-bottom: 1px solid #788cb3;
+	padding-top: 6px;
+	padding-bottom: 2px;
+	color: #767676;
+	text-align: center;
+	white-space: nowrap;
+	width: 75px;
+
+}
+
+.gwt-TabPanel .gwt-TabBar .gwt-TabBarItem-selected {
+	background-image: url(images/tab_inner_sel.jpg);
+	background-repeat: repeat-x;
+	background-position: center center;
+	border-bottom: 1px solid white;
+	padding-top: 6px;
+	padding-bottom: 2px;
+	color: #00244d;
+	font-weight: normal;
+	text-align: center;
+	width: 77px;
+
+}
+
+/************* Home Tab ****************/
+
+
+.panelhome {
+	/*background-color: #dadada;*/
+	margin-top: 3px;
+	margin-left: 2px;
+	
+}
+
+.panelprop {
+	margin-top: 0px;
+	padding-top: 0px;
+	background-color: White;
+}
+
+
+.subhead {
+	background-color: #dcdcdc;
+	color:black;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	border-collapse: collapse;
+	border-top-width: 1px;
+	width: 15%;
+}
+
+.homeOuter {
+	padding-top: 0px;
+	padding-bottom: 10px;
+	height: 100%;
+	width: 100%;
+
+}
+
+/************* Home html div containers ***************/
+
+#logout {
+	text-align: right;
+	padding: 3px;
+	margin:0px;
+	width: 95%
+
+}
+
+#left {
+	float: left;
+	width: 46%;
+	margin-top: 0px;
+	text-align:left;
+
+}
+
+#right {
+	float: left;
+	width: 46%;
+	margin-top: 0px;
+	margin-left: 5px;
+	text-align:left;
+}
+
+#explore {
+	float:left;
+	margin-top:0px;
+	width: 100%;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	height: 180px;
+
+}
+
+#explore:hover {
+	cursor: hand;
+
+}
+
+#settings {
+	float:left;
+	clear:both;
+	margin-top:10px;
+	width: 100%;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	height: 180px;
+
+}
+
+
+#settings:hover {
+	cursor: hand;
+
+}
+
+#sql {
+	float:left;
+	margin-top:0px;
+	width: 100%;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	height: 180px;
+	clear: both;
+
+}
+
+#sql:hover {
+	cursor: hand;
+
+}
+
+#help {
+	float:left;
+	clear:both;
+	margin-top:10px;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	width: 100%;
+	height: 180px;
+
+}
+
+#help:hover {
+	cursor: hand;
+
+}
+
+/******** Home tab rounded boxes **********/
+
+
+.container {
+width: 100%;
+text-align: center;
+padding: 1px 1px 1px 1px;
+	
+}
+
+.topleft {
+background-image:url(images/header_leftBG.jpg);
+background-repeat: no-repeat;
+background-position:top;
+float: left;
+margin-top: 0px;
+margin-bottom: 0px;
+width: 4px;
+height: 21px;
+}
+
+.topright {
+background-image:url(images/header_rtBG.jpg);
+background-repeat: no-repeat;
+background-position: right;
+float: right;
+margin-top: 0px;
+margin-bottom: 0px;
+width: 4px;
+height: 21px;
+
+}
+
+
+.topmid {
+background-image:url(images/header_midBG.jpg);
+background-repeat:repeat-x;
+background-position:top;
+margin-top: 0px;
+margin-bottom: 0px;
+padding: 0px;
+height: 21px;
+
+}
+/******** rounded box header **********/
+
+
+h5 {
+	color:black;
+	border-bottom: 1px solid #cccccc;
+	margin: 0px;
+	padding-top: 2px;
+	padding-left: 6px;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+
+}
+
+/******** rounded box content container **********/
+
+.mid {
+	background-color: #ffffff;
+	border-left: 1px solid #9aa9c6;
+	border-right:1px solid #9aa9c6;
+	border-bottom:1px solid #9aa9c6; 
+	margin-top: 0px;
+	text-align: left;
+	padding: 0px;
+	height:160px;
+
+}
+
+
+
+/***********  Labels *************/
+
+.main-Label {
+	  background-color: #F3F3F3;
+      color: Black;
+      font-size: 12px;
+      font-style: normal;
+      text-decoration: none;
+
+}
+
+
+.gwt-Label {
+	color: Black;
+	font-family: sans-serif, Arial;
+	font-size: 12px;
+	font-style: normal;
+	text-decoration: none;
+	background-color: white;
+}
+
+.gwt-LabelSmall {
+      color: Black;
+      font-size: 11px;
+      font-style: normal;
+      text-decoration: none;
+	  font-weight: bold;
+}
+
+.LabelSmall {
+      color: Black;
+      font-size: 11px;
+      font-style: normal;
+      text-decoration: none;
+	  font-weight: normal;
+	  padding: 4px;
+}
+
+.gwt-LabelRequired {
+      color: Red;
+      font-size: 12px;
+      font-style: normal;
+      text-decoration: none;
+      background-color: white;
+}
+
+.gwt-LabelMessage {
+      color: lightsteelblue;
+      font-size: 12px;
+      font-style: normal;
+      text-decoration: none;
+      background-color: white;
+      font-weight: bold;
+}
+
+.gwt-LabelBold {
+	color: Black;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: bold;
+	white-space: nowrap;
+	text-decoration: none;
+}
+
+.gwt-LabelLink {
+      background-color: white; 
+      color: lightsteelblue;
+      font-size: 10px;
+      font-style: normal;
+      text-decoration: underline;
+      
+}
+
+
+/******** Explore Tab - Resource Table *********/
+
+
+.resPanel {
+	background-color: #f3f3f3;
+	margin: 2px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	padding-left: 4px;
+	padding-right: 2px;
+
+}
+
+
+.resource-inner {
+	background-color: #ffffff;
+}
+
+.filterPanel {
+	background-color: #ffffff;
+	padding-top: 1px;
+	padding-bottom: 2px;
+	padding-right: 2px;
+	padding-left: 5px;
+	margin: 2px;
+
+}
+
+.filterText {
+	background-color: white;
+	width: 75px;
+	font-size: 11px;
+	padding-left: 1px;
+}
+
+
+.textDisabled {
+	  background-color: d3d3d3;
+	  color: grey;
+      font-size: 12px;
+      font-style: normal;
+      text-decoration: none;
+
+}
+
+.headerbg {   /******** Table Header *********/
+      background-color: #dcdcdc;
+      color: Black;
+      font-size: 11px;
+      font-weight: bold;
+
+}
+
+.tablesection {
+      background-color: white;
+      border-collapse: collapse;
+	  border: 0px solid #cccccc;
+      padding: 1px;
+      color: Black;
+      font-size: 11px;
+      font-style: normal;
+      text-decoration: none;
+     
+}
+
+.tablesectionwithborder {
+      background-color: white;
+      border-collapse: collapse;
+	  border: 1px solid #cccccc;
+      padding: 1px;
+      color: Black;
+      font-size: 11px;
+      font-style: normal;
+      text-decoration: none;
+     
+}
+
+
+.tablesection td  {
+	border-top: 1px solid #788cb3;
+	border-bottom: 1px solid #788cb3;
+    margin: 0;
+    padding: 1px;
+}
+
+
+.rowbghighlight {
+      background-color: #DEDEDE;
+      color: Black;
+      font-size: 11px;
+    
+}
+
+.rowbg {
+      background-color: white;
+      color: Black;
+      font-size: 11px;
+     
+       
+}
+
+
+
+
+
+/************* Buttons *************/
+
+
+.buttonPanel {
+	margin-left: auto; 
+	padding: 0px;
+	}
+
+.button {
+	background-image: url(images/details_bg.jpg);
+	background-repeat: repeat-x;
+	color: #00244D;
+	margin-right: 1px;
+	margin-left: 1px;
+	padding-right: 1px;
+	padding-left: 1px;
+	border-top: 1px outset #788cb3;
+	border-right: 1px solid #788cb3;
+	border-bottom: 1px solid #788cb3;
+	border-left: 1px outset #788cb3;
+	font-size: 11px;
+	text-align: center;
+	text-decoration: none;
+	cursor: hand;
+
+}
+
+.button:hover {
+	background-image: url(images/details_bg.jpg);
+	background-repeat: repeat-x;
+	margin-right: 1px;
+	margin-left: 1px;
+	border-top: 1px outset #a3d963;
+	border-right: 1px solid #a3d963;
+	border-bottom: 1px solid #a3d963;
+	border-left: 1px outset #a3d963;
+	color: #00244d;
+	font-size: 11px;
+	padding-left: 1px;
+	padding-right: 1px;
+	text-align: center;
+	text-decoration: none;
+	cursor: hand;
+}
+
+
+.button2 {
+	background-image: url(images/details_bg.jpg);
+	background-repeat: repeat-x;
+	color: #00244D;
+	border-top: 1px outset #788cb3;
+	border-right: 1px solid #788cb3;
+	border-bottom: 1px solid #788cb3;
+	border-left: 1px outset #788cb3;
+	padding: 2px;
+	font-size: 11px;
+	text-align: center;
+	text-decoration: none;
+	cursor: hand;
+
+
+}
+
+.button2 hover {
+	background-image: url(images/details_bg.jpg);
+	background-repeat: repeat-x;
+	color: #00244D;
+	border-top: 1px outset #a3d963;
+	border-right: 1px solid #a3d963;
+	border-bottom: 1px solid #a3d9633;
+	border-left: 1px outset #a3d963;
+	padding: 2px;
+	font-size: 11px;
+	text-align: center;
+	text-decoration: none;
+	cursor: hand;
+
+
+}
+
+
+
+/******* PSL Resource table nav buttons ********/ 
+
+.buttonGo1 {
+	background-image: url(images/arrow-first.gif);
+	background-repeat: no-repeat;
+	background-position: bottom center;
+	background-color: #ffffff;
+	border: 0px;
+	padding-right: 1px;
+
+	width: 15px;
+	height: 11px;
+	cursor: hand;
+}
+
+.buttonGo2 {
+	background-image: url(images/arrow-ff.gif);
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	background-color: #ffffff;
+	border: 0px;
+	padding-right: 1px;
+	
+	width: 15px;
+	height: 11px;
+	cursor: hand;
+}
+
+.buttonGoPrev {
+	background-image: url(images/arrow-fr.gif);
+	background-repeat: no-repeat;
+	background-position: bottom center;
+	background-color: #ffffff;
+	border: 0px;
+	padding-right: 1px;
+	
+	width: 15px;
+	height: 11px;
+	cursor: hand;
+}
+
+.buttonGoContainer {
+	background-color: #ffffff;
+	border: 1px solid #f3f3f3;
+	padding-left: 2px;
+	margin-left: 0px;
+	font-size: 11px;
+	text-align: center;
+	width: 90%;
+}
+
+	
+.status {
+	background-color: #ffffff;
+	color: #00244D;
+	margin-left: 3px;
+	padding: 0px;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: left;
+}
+
+.nav {
+	background-color: #ffffff;
+	margin-left: 1px;
+	margin-right: 1px;
+	padding: 0px;
+	text-align: center;
+}
+
+
+/********** Explore PSL Tab - Properties Panel **************/
+
+.inner-prop {
+	background-color: white;
+	padding-top: 8px;
+	padding-left: 5px;
+	color: Black;
+	font-family: sans-serif, Arial;
+	font-size: 12px;
+	font-style: normal;
+	
+}
+
+/************* PSL Reference within StackPanel *****************/
+
+.psl_ref {	/* frame */  
+	width: 99%;
+	height: 500px;
+	padding: 0px;
+}
+
+table.object {
+	background-color: white;
+	padding: 0px;
+	text-align: left;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	width: 100%;
+}
+
+table.object th {
+	background-color: #f3f3f3;
+	text-align: left;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+table.object td {
+	vertical-align: top;
+}
+
+
+.objclass {
+	background-color: #cccccc;
+	font-family:Arial, Helvetica, sans-serif;
+	color: black;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.classname {
+	font-family: courier;
+	background-color: #f3f3f3;
+	}
+
+.objtitle {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	color: 788cb3;
+}
+
+/************ Settings Tab Panel ****************/
+
+.headerModify {
+	border-bottom: 1px solid #cccccc;
+	margin-top: 0;
+	margin-left: 2px;
+	margin-right: 2px;
+	padding-top: 3px;
+	padding-bottom: 2px;
+	padding-left: 4px;
+	color: #00244D;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	width: 100%;
+	
+}
+
+
+.panelModify  {
+	background-color: white;
+	border: 1px solid #788cb3;
+	margin-top: 3px;
+	padding-bottom: 10px;
+	font-family:Arial,Helvetica,sans-serif;
+	color:black;
+	font-size: 12px;
+	width: 100%;
+
+	
+}
+.modify {
+	color: black;
+	font-size: 12px;
+	text-align: left;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 6px;
+	width: 100%;
+}
+
+	
+
+
+.toolbarBg {
+	background-image: url(images/details_bg2.jpg);
+	background-repeat: repeat-x;
+	background-position: bottom left;
+	padding-top: 2px;
+	padding-bottom: 1px;
+	padding-left: 0px;
+	padding-right: 0px;
+	width: 100%;
+	
+}
+
+.toolbar  {
+	color: black;
+	font-size: 11px;
+	text-align: left;
+	padding-top: 2px;
+	padding-bottom: 1px;
+	padding-left: 4px;
+	padding-right: 1px;
+}
+
+.resultPopup {
+	background-image: url(images/tab_bg.jpg);
+	background-repeat: repeat-x;
+	background-position: top left;
+	background-color: white;
+	border: 2px outset #788cb3;
+	color: black;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	padding: 4px;
+
+	
+}
+
+.consolePopup {
+	background-image: url(images/tab_bg.jpg);
+	background-repeat: repeat-x;
+	background-position: top left;
+	background-color: white;
+	border: 2px outset #788cb3;
+
+	padding: 4px;
+
+	
+}
+
+.popupTitle {
+	border-bottom: 1px solid #788CB3;
+	margin-top: 0;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	width: 100%;
+	color: #00244D;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.popupButton {
+	border-top: 1px solid #dcdcdc;
+	padding-top: 4px;
+	border-top: 1px solid #dcdcdc;
+	width: 100%;
+	text-align: right;
+	
+	}
+	
+.popupForm {
+	margin: 0px;
+	padding: 0px;
+	
+	}
+
+
+/*************** login / admin pages ******************/
+
+
+#login-mainheader {
+	background-image: url(images/login_h3.jpg);
+	background-repeat: repeat-x;
+	white-space: nowrap;
+	background-position: top;
+	padding-left: 10px;
+	padding-top: 20px;
+	padding-bottom: 4px;
+	border-bottom: 1px solid #788cb3;
+	width: 100%;
+	text-align: left;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #00244d;
+	
+}
+
+
+#login-error {
+	color:red;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	width: 500px;
+	margin: 0 auto;
+	text-align:center;
+	padding: 10px;
+
+}
+#login {
+	background-color: white;
+	border: 1px solid #788cb3;
+	width: 500px;
+	margin: 0 auto;
+	text-align:center;
+	padding: 10px;
+	
+
+}
+#created {
+	background-color: #EDF7E0;
+	padding: 10px;
+	border: 1px solid #A3D963;
+	margin: 0 auto;
+	text-align:center;
+	width: 500px;
+
+}
+
+#denied {
+	background-color: #F5E8EB;
+	padding: 10px;
+	border: 1px solid #991f36;
+	margin: 0 auto;
+	text-align:center;
+	width: 500px;
+
+}
+
+#login-footer {
+	background-image: url(images/logo.gif);
+	background-repeat:no-repeat;
+	padding-top: 25px;
+	padding-bottom: 35px;
+	position:absolute;
+ 	bottom:0;
+ 	right:0;
+  	width:15%;
+	
+}
+
+#admin_home {
+	background-color: white;
+	width: 500px;
+	margin: 0 auto;
+	text-align:center;
+	padding: 10px;
+	border: 1px solid #788cb3;
+
+}
+
+table.header2 {
+	background-color: #f3f3f3;
+	color:black;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-bottom: 1px;
+	border-bottom: 1px solid #788cb3;
+	text-align:left;
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px;
+
+}
+
+table.created {
+	color:black;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-bottom: 1px;
+	border-bottom: 1px solid #A3D963;
+	text-align:left;
+	margin-left: auto;
+	margin-right: auto;
+	width: 450px;
+
+}
+
+table.denied {
+	color:black;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-bottom: 1px;
+	border-bottom: 1px solid #991f36;
+	text-align:left;
+	margin-left: auto;
+	margin-right: auto;
+	width: 450px;
+
+}
+
+
+table.login {
+	background-color: white;
+	color:black;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	text-align:left;
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px;
+
+}
+
+table.account {
+	background-color: #f3f3f3;
+	color:black;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	border-top: 1px solid #788cb3;
+	text-align:left;
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px;
+
+}
+
+table.admin {
+	background-color: #f3f3f3;
+	border-top: 1px solid #788cb3;
+	border: 1px solid #788cb3;
+	color:black;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	text-align:left;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+
+}
+
+.login-label {
+	text-align: right;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	color: #00244d;
+	
+}
+
+.arrow {
+	color: #A3D963;
+	font-weight: bold;
+
+}
+
+.subtext {
+	color:black;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	padding: 10px;
+	text-align:center
+}
+
+.alignbutton {
+	text-align: center;
+}
+.res-env {
+	background-color: dcdcdc;
+	padding-bottom: 0px;
+	text-align: left;
+	width: 100%;
+	
+}
+
+.envPanel {
+	background-image: url(images/details_bg.jpg);
+	background-repeat: repeat-x;
+	background-position: bottom left;
+	color: black;
+	font-size: 11px;
+	text-align: left;
+	padding-top: 2px;
+	padding-bottom: 1px;
+	padding-left: 4px;
+	width: 100%;
+	
+}
+
+
+.envName {
+	color: black;
+	font-size: 11px;
+	text-align: left;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	
+}
+
+input.loginfld {
+	background-color: #f3f3f3;
+	border: 1px solid #a3d963;
+	font-size: 12px;
+	width: 150px;
+	}
+	
+	
+
+/*********** Help Tab ****************/
+
+
+.helplinks {
+	background-color: #ffffff;
+	padding-top: 2px;
+	margin: 0px auto;
+	margin-top: 10px;
+	color: black;
+	font-size: 11px;
+	text-align: left;
+	width: 80%;
+}
+
+.helplinks a {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+
+}
+	
+.helppanel {
+    background-color: #ffffff;
+	margin-top: 3px;
+	padding: 0px;
+	border: 1px solid #788cb3;
+	width: 100%;
+}
+
+.headerPanel {
+	background-image: url(images/tab_bg.jpg);
+	background-repeat: repeat-x;
+	background-position: top left;
+	height: 100%;
+	width: 100%;
+}
+
+/************ Help pages ***************/
+
+#webtoolsHelp {
+	background-color: #ffffff;
+	padding: 10px;
+	text-align: left;
+
+}
+
+#webtoolsHelp ul {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	list-style-image: url(images/arrow.gif);
+	line-height: 15px;
+}
+
+#webtoolsHelp ul li {
+	border-bottom: 0px solid #ffffff;
+	padding-bottom: 1px;
+}
+
+.helpContents {	
+	background-color: #f3f3f3;
+	border: 1px solid #a3d963;
+	padding: 5px;
+}
+
+#webtoolsHelp h4 {
+	font-family: Arial,Helvetica,sans-serif;
+	border-bottom: 0px solid #ffffff;
+
+}
+.divider {
+	padding-right: 5px;
+	padding-left: 5px;
+	vertical-align: middle;
+}
+
+
+
+
+
+
+

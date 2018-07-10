@@ -1,0 +1,163 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Variables and Input Parameters in Computed Columns</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+p.whs1 { margin-left:72px; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Programming Standards\nComputed Columns\nVariables and Input Parameters in Computed Columns");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Variables and Input Parameters in Computed Columns</h1>
+
+<p>Adhere to the following guidelines for variables and input parameters 
+ in computed columns:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>No Public scope variables 
+ are allowed, except system variables.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Explicitly type all variables.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>System variables (e.g., 
+ %SystemDate) referenced within functions must be accessible from all service 
+ classes.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>System variables should 
+ simply be used, not defined or checked as to their existence within the 
+ function.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Whenever possible, formal 
+ input parameters should be values and not objects. Objects add significant 
+ overhead (especially to SQL).</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>The only parameters that 
+ may be passed to a computed function are either columns from the primary 
+ table (e.g., BAL), constants (e.g., 5), or a reference to the current 
+ row PSL Record object using the &quot;*&quot; syntax. In the latter case, 
+ PSL and SQL will instantiate a record-type object for the row and pass 
+ that to the function.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Since the calls to the 
+ computed libraries are handled by generated code, all parameters should 
+ contain a value once processing has passed to the function. Do not use 
+ $Data and $Get checking with the PSL instrinsic functions .data() and 
+ .get() for formal parameters, unless the DATA-QWIK computed definition 
+ is missing parameters.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Data required by the function 
+ from the current row of the primary table must be passed to the function 
+ as parameters. For complex functions (where a very large number of such 
+ parameters would exist) or when you must have an instantiated copy of 
+ the row defined as a PSL object, the PSL record object should be passed 
+ as a parameter. In other words, computed functions should never instantiate 
+ the referenced object. Either the object should either be passed in as 
+ a parameter, or, preferably, the required properties should be passed 
+ in as parameters.</p></li>
+</ul>
+
+<p class=Example
+	style="margin-left: 72px;">Example</p>
+
+<p class="whs1">To pass a deposit record to a computed function:</p>
+
+<p class=Code
+	style="margin-left: 96px;">$$ABC^XYZ(*) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ Computed function call</p>
+
+<p class=Code
+	style="margin-left: 96px;">---</p>
+
+<p class=Code
+	style="margin-left: 96px;">ABC(RecordDEP dep) &nbsp;&nbsp;&nbsp;// 
+ Entry point for computed XYZ</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>If an instantiated record 
+ is passed to a computed function, as per the above syntax, the record 
+ must be treated as read-only. It must not be updated within the function.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>If reference to database 
+ objects other than the current record of the primary table is required, 
+ these should be instantiated within the computed function using standard 
+ PSL methods. For tables that may be cached (e.g., CUVAR), use syntax to 
+ take advantage of caching:</p></li>
+</ul>
+
+<p class=Code
+	style="margin-left: 84px;">type Public Cache %CUVAR</p>
+
+<p class=BodyTextBold>When Standard Is Enforced: Profile v7.0</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

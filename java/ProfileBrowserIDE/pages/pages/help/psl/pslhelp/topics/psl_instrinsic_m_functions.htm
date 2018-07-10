@@ -1,0 +1,258 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Instrinsic M Functions</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { x-cell-content-align:top; width:100%; border-spacing:0px; }
+col.whs2 { width:34.133%; }
+col.whs3 { width:65.867%; }
+tr.whs4 { x-cell-content-align:top; }
+td.whs5 { width:34.133%; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-top-color:#000000; border-top-width:1px; border-top-style:Solid; border-bottom-color:#000000; border-bottom-style:Solid; border-bottom-width:1px; }
+p.whs6 { font-weight:bold; margin-top:6pt; margin-bottom:6pt; }
+td.whs7 { width:65.867%; padding-right:10px; padding-left:10px; border-right-style:none; border-top-color:#000000; border-top-width:1px; border-top-style:Solid; border-bottom-color:#000000; border-bottom-style:Solid; border-bottom-width:1px; }
+td.whs8 { width:34.133%; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; background-color:#dfe1f9; }
+p.whs9 { margin-top:6pt; margin-bottom:6pt; margin-left:60px; }
+td.whs10 { width:65.867%; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; background-color:#dfe1f9; }
+p.whs11 { margin-top:6pt; margin-bottom:6pt; margin-left:0px; }
+td.whs12 { width:34.133%; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; }
+td.whs13 { width:65.867%; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; }
+td.whs14 { width:34.133%; padding-right:10px; padding-left:10px; background-color:#dfe1f9; border-left-style:none; border-right-style:none; border-bottom-style:none; }
+td.whs15 { width:65.867%; padding-right:10px; padding-left:10px; background-color:#dfe1f9; border-right-style:none; border-bottom-style:none; }
+td.whs16 { width:34.133%; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; background-color:#dde0f7; }
+td.whs17 { width:65.867%; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; background-color:#dde0f7; }
+p.whs18 { margin-top:6pt; margin-bottom:6pt; margin-left:0px; background-color:Transparent; }
+td.whs19 { width:34.133%; padding-right:10px; padding-left:10px; background-color:#dde0f7; border-left-style:none; border-right-style:none; border-bottom-style:none; }
+td.whs20 { width:65.867%; padding-right:10px; padding-left:10px; background-color:#dde0f7; border-right-style:none; border-bottom-style:none; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs11 {margin-left:1pt; }";
+  strNSS += "p.whs18 {margin-left:1pt;background-color:white; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Programming Standards\nPSL and M Relationship\nInstrinsic M Functions");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Instrinsic M Functions</h1>
+
+<p>Most intrinsic M functions are supported as <span style="font-weight: bold;"><B>instrinsic 
+ methods</B></span> of a primitive class (e.g., String, Number, Date, Boolean, 
+ Time). The parameter list for the methods is the same as it was for the 
+ M functions, except that the first parameter is eliminated as it is now 
+ the object identifier. For example,</p>
+
+<p class=Code>// M function</p>
+
+<p class=Code
+	style="margin-left: 24px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ x = $P(y,&quot;|&quot;,2)</p>
+
+<p class=Code
+	style="margin-left: 36.00pt;">&nbsp;</p>
+
+<p class=Code>//is the same as PSL method </p>
+
+<p class=Code>set x = y.piece(&quot;|&quot;,2)</p>
+
+<p>However, you may need to add explicit typecasting to prevent method 
+ mismatch warnings. Use the following PSL intrinsic methods instead of 
+ the associated M intrinsic function. No other M intrinsic functions are 
+ supported by PSL.</p>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs1">
+<col class="whs2">
+<col class="whs3">
+
+<tr valign="top" class="whs4">
+<td width="34.133%" class="whs5">
+<p class="whs6">Replace M Instrinsic Function...</td>
+<td width="65.867%" class="whs7">
+<p class="whs6">With PSL Instrinsic Method...</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" bgcolor="#DFE1F9" width="34.133%" class="whs8">
+<p class="whs9">$ASCII</td>
+<td colspan="1" rowspan="1" bgcolor="#DFE1F9" width="65.867%" class="whs10">
+<p class="whs11"><a href="psl_string_ascii.htm">String.ascii()</a></td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="34.133%" class="whs12">
+<p class="whs9">$CHAR</td>
+<td colspan="1" rowspan="1" width="65.867%" class="whs13">
+<p class="whs11">Copied.(*)</td></tr>
+
+<tr valign="top" class="whs4">
+<td bgcolor="#DFE1F9" width="34.133%" class="whs14">
+<p class="whs9">$DATA</td>
+<td bgcolor="#DFE1F9" width="65.867%" class="whs15">
+<p class="whs11">Consider recoding into <a href="psl_object_exists.htm">Object.exists()</a>, 
+ unless the code explicitly or implicitly uses the values <span style="font-weight: bold;"><B>10</B></span> 
+ and <span style="font-weight: bold;"><B>11</B></span>.</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="34.133%" class="whs12">
+<p class="whs9">$EXTRACT</td>
+<td width="65.867%" class="whs13">
+<p class="whs11"><a href="psl_string_extract.htm">String.extract</a></td></tr>
+
+<tr valign="top" class="whs4">
+<td bgcolor="#DFE1F9" width="34.133%" class="whs8">
+<p class="whs9">$FIND</td>
+<td bgcolor="#DFE1F9" width="65.867%" class="whs10">
+<p class="whs11"><a href="psl_string_find.htm">String.find()</a></td></tr>
+
+<tr valign="top" class="whs4">
+<td width="34.133%" class="whs12">
+<p class="whs9">$FNUMBER</td>
+<td width="65.867%" class="whs13">
+<p class="whs11"><a href="psl_number_fnumber.htm">Number.fnumber()</a></td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="34.133%" class="whs16">
+<p class="whs9">$GET</td>
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="65.867%" class="whs17">
+<p class="whs11"><a href="psl_primitive_get.htm">Primitive.get()</a></td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="34.133%" class="whs12">
+<p class="whs9">$JUSTIFY</td>
+<td colspan="1" rowspan="1" width="65.867%" class="whs13">
+<p class="whs11"><a href="psl_string_justify.htm">String.justify()</a> 
+ or <a href="psl_number_rounddec.htm">Number.roundDec()</a></td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="34.133%" class="whs16">
+<p class="whs9">$LENGTH</td>
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="65.867%" class="whs17">
+<p class="whs11"><a href="psl_string_length.htm">String.length()</a></td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="34.133%" class="whs12">
+<p class="whs9">$ORDER</td>
+<td colspan="1" rowspan="1" width="65.867%" class="whs13">
+<p class="whs11"><a href="psl_object_order.htm">Object.order()</a></td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="34.133%" class="whs16">
+<p class="whs9">$PIECE</td>
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="65.867%" class="whs17">
+<p class="whs11"><a href="psl_string_piece.htm">String.piece()</a></td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="34.133%" class="whs12">
+<p class="whs9">$QUERY</td>
+<td colspan="1" rowspan="1" width="65.867%" class="whs13">
+<p class="whs11"><a href="psl_object_query.htm">Object.query()</a></td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="34.133%" class="whs16">
+<p class="whs9">$RANDOM</td>
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="65.867%" class="whs17">
+<p class="whs11"><a href="psl_number_random.htm">Number.random()</a></td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="34.133%" class="whs12">
+<p class="whs9">$SELECT</td>
+<td colspan="1" rowspan="1" width="65.867%" class="whs13">
+<p class="whs18">Copied.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="34.133%" class="whs16">
+<p class="whs9">$TRANSLATE</td>
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="65.867%" class="whs17">
+<p class="whs11"><a href="psl_string_translate.htm">String.translate()</a></td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="34.133%" class="whs12">
+<p class="whs9">$ZDATE</td>
+<td colspan="1" rowspan="1" width="65.867%" class="whs13">
+<p class="whs11">Although this function is copied, consider 
+ replacing by <a href="psl_date_tostring.htm">Date.toString()</a>.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="34.133%" class="whs19">
+<p class="whs9">$ZJOBEXAM</td>
+<td colspan="1" rowspan="1" bgcolor="#DDE0F7" width="65.867%" class="whs20">
+<p class="whs18">Copied.</td></tr>
+</table>
+
+<p>(*) Copied indicates that the function is not part of the official PSL 
+ specification. However, you can simply copy the code from the PSL source 
+ to the M target routine.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Object Methods</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { margin-left:4.50pt; width:630px; border-spacing:0px; }
+col.whs2 { width:5.873%; }
+col.whs3 { width:94.127%; }
+tr.whs4 { x-cell-content-align:top; }
+td.whs5 { width:5.873%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+img_whs6 { width:15px; height:15px; float:none; border-style:none; }
+td.whs7 { width:94.127%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Introduction to Object-Oriented Programming\nObjects\nObject Methods");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Object Methods</h1>
+
+<p>The methods associated with an object define the operations or procedures 
+ that manipulate object data. For example, if you define an object called 
+ <span style="font-weight: bold;"><B>Telephone</B></span>, methods used by the 
+ <span style="font-weight: bold;"><B>Telephone</B></span> object may include the 
+ <span style="font-weight: bold;"><B>Ring</B></span> method and the <span style="font-weight: bold;"><B>Call 
+ Forward</B></span> method. In PSL, methods for objects defined in the ResultSet 
+ class include getCol, getRow, isEmpty, and next.</p>
+
+<p>A method contains executable code similar to functions or procedures. 
+ You can pass parameters to the method from the calling program; the method 
+ can also return a result to the calling program. A method declaration 
+ defines the type of value returned by the method. If the method does not 
+ return a value, declare the method return type as &quot;void.&quot;</p>
+
+<p>The return has to match the object type.</p>
+
+<p class=BodyTextBold>Inheritance of Methods</p>
+
+<p>A subclass inherits the methods of its superclass. Therefore, because 
+ the Object class is a superclass for all other classes, all classes inherit 
+ the methods defined for the Object class. During processing, if procedure 
+ code references a method that is not defined for the specified object, 
+ the system looks for the method in any superclasses defined for the class. 
+ For example, if the procedure code references the <span style="font-weight: bold;"><B>copy()</B></span> 
+ method, but the class of the associated object does not define a <span 
+ style="font-weight: bold;"><B>copy() </B></span>method, the system processes 
+ the <span style="font-weight: bold;"><B>copy()</B></span> method that is defined 
+ for the superclass (or the Object class if no other superclass is associated 
+ with the object). However, if a method of the same name, number of parameters, 
+ and types of parameters exists for both the subclass and the superclass, 
+ the subclass uses its own method.</p>
+
+<p class=BodyTextBold>Invoking a Class Method</p>
+
+<p>You can invoke a class method in two ways:</p>
+
+<ul>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>Assignment expression, 
+ if the method returns a value</p></li>
+</ul>
+
+<p class=Code
+	style="margin-left: 60px;">set rs = Db.getRecord(&quot;CIF&quot;,&quot;ACN&quot;)</p>
+
+<ul>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>Procedure call, if the 
+ method does not return a value</p></li>
+</ul>
+
+<p class=Code
+	style="margin-left: 60px;">do dep.save()</p>
+
+<table x-use-null-cells cellspacing="0" width="630" class="whs1">
+<col class="whs2">
+<col class="whs3">
+
+<tr valign="top" class="whs4">
+<td width="5.873%" class="whs5">
+<p class=Note><img src="../image/i_blue_sm.jpg" alt="image\msgs.gif" x-maintain-ratio="TRUE" width="15px" height="15px" border="0" class="img_whs6"></td>
+<td width="94.127%" class="whs7">
+<p class=Note>PSL does not support &quot;overloading methods.&quot; That 
+ is, you cannot create methods with the same name but different numbers 
+ or types of parameters.</td></tr>
+</table>
+
+<p class=BodyTextBold>Implementing Methods</p>
+
+<p>For information on implementing methods, refer to the <a href="psl_implementing_methods.htm">Implementing 
+ Methods</a> section.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

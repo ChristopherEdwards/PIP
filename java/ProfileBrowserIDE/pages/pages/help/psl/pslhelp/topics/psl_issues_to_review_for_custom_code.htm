@@ -1,0 +1,154 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Issues to Review for Custom Code</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Using PSL\nIssues to Review for Custom Code");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Issues to Review for Custom Code</h1>
+
+<p>If using the PSL code generator in Profile v6.4 and Profile v7.0, review 
+ the following items prior to writing custom code. These versions of PSL 
+ are not backward compatible with the following classes, methods, etc.</p>
+
+<p class=BodyTextBold>Record Class</p>
+
+<p>The copy method previously accepted a parameter that would change the 
+ mode of the record being copied to. The copy method creates a second version 
+ of an instantiated record. In some cases, the new object will be filed 
+ into the database with a different set of keys. For example, escrow account 
+ creation copies the address record from the loan and saves it to the database 
+ using its own account number. The required change is to remove the parameter 
+ from the use of the method and add a second line of code that uses the 
+ <a href="psl_record_setmode.htm">record.setMode</a> method.</p>
+
+<p class=BodyTextBold>Row Class</p>
+
+<p>Row columns that are named the same as one in the dep object will be 
+ moved into that location. All others such as the XXX name must be manually 
+ defined in the column Map parameter.</p>
+
+<p class=BodyTextBold>Schema Class</p>
+
+<p>The previous iteration of the <a href="psl_schema_createtable.htm">createTable</a> 
+ method allowed the use of literals as a key. However, the quotes that 
+ were required around the literals did not follow the industry standard 
+ of “”literal”” since the keys were embedded within quotes. This has been 
+ changed. The compiler now prints an error message when using the previous 
+ literal format in the schema create.</p>
+
+<p class=BodyTextBold>Db Class</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>The <a href="psl_db_isdefined.htm">Db.isDefined</a> 
+ method cannot be used with tables that contain only one record (e.g., 
+ Institution Variables table (CUVAR)), because the Db.isDefined method 
+ requires keys. The code needs to be written to use <a href="psl_db_getrecord.htm">getRecord</a> 
+ with a new third parameter, which does not throw an error if the record 
+ does not exist.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>The Db.isDefined method 
+ previously allowed the programmer to not quote the keys. This error has 
+ been closed in this generation.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Previously, the compiler 
+ ignored PSL code that contained an extra } or ). If the PSL code contains 
+ an extra } or ), the compiler now reports an error during the compilation 
+ process. This occurs in <a href="psl_db_select.htm">Db.select</a> and 
+ <a href="psl_db_getonerow.htm">Db.getOneRow</a> coding.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>The getOneRow method was 
+ rewritten to provide a better review of the keys supplied for the method. 
+ If an incorrect number of keys was supplied before the change, the compiler 
+ did not recognize it and the data retrieved was null. Due to the rewrite, 
+ the compiler will throw an error if the method receives the wrong number 
+ of keys to properly retrieve data. This method also previously accepted 
+ the word ‘distinct’ as a column, but did not compile the code correctly 
+ without warning. This situation will now throw an error.</p></li>
+</ul>
+
+<p class=BodyTextBold>Issues Unrelated to a Class</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Using $Get around a PSL 
+ object was previously allowed, but the compiler threw it out. It is now 
+ reported as an error.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>PSL cannot allow exclusive 
+ new commands. The effect of their use is that the internal object array 
+ is hidden. Even though the object pointer could be in the exclusive list, 
+ the objects would not be. The compiler now throws an error when an exclusive 
+ new is found in the code.</p></li>
+</ul>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

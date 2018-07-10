@@ -1,0 +1,308 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Reference Classes</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { x-cell-content-align:top; width:77.112%; border-spacing:0px; }
+col.whs2 { width:12.262%; }
+col.whs3 { width:82.155%; }
+tr.whs4 { x-cell-content-align:top; }
+td.whs5 { width:12.262%; padding-right:10px; padding-left:10px; border-left-style:none; border-top-style:none; border-right-style:none; border-bottom-style:none; background-color:#c0c0c0; }
+p.whs6 { font-weight:bold; margin-left:0px; }
+td.whs7 { width:82.155%; padding-right:10px; padding-left:10px; background-color:#c0c0c0; }
+p.whs8 { font-weight:bold; }
+td.whs9 { width:12.262%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; border-left-style:none; }
+td.whs10 { width:82.155%; padding-right:10px; padding-left:10px; }
+td.whs11 { width:12.262%; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs6 {margin-left:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nTypes of Classes\nReference Classes");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Reference Classes</h1>
+
+<p>A <span style="font-weight: bold;"><B>Reference</B></span> class is a class 
+ that contains more than one property. The properties of a reference class 
+ object are accessed with the syntax <span style="font-style: italic;"><I>Identifier.property</I></span>. 
+ The variable used as the identifier of a reference class may contain some 
+ or all of the properties of the object, or may be a pointer to other data 
+ structures that contain some or all of the properties. The implementation 
+ is dependent on the class itself and the optimization logic associated 
+ with the code generator.</p>
+
+<p>The following guidelines apply to reference classes:</p>
+
+<ul>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>All reference classes can 
+ be implicitly cast into their ancestor classes.</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>An object of a reference 
+ class can be explicitly cast to another reference class or primitive class, 
+ if a method exists to cast it.</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>Reference classes cannot 
+ be declared as Public scope and must be passed between procedures as parameters.</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>Only the = and '= operators 
+ can be used on a reference class object.</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>Multiple references to 
+ a reference class object refer to the same object and return a &quot;true&quot; 
+ value to an equality test (e.g., a=b is true if it is the same object).</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>The length of a reference 
+ object is subject to the implementation of the length method within that 
+ class hierarchy.</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1>A reference class object 
+ cannot be null.</p></li>
+</ul>
+
+<p>The following reference classes exist in PSL:</p>
+
+<table x-use-null-cells cellspacing="0" width="77.112%" class="whs1">
+<col class="whs2">
+<col class="whs3">
+
+<tr valign="top" class="whs4">
+<td bgcolor="#C0C0C0" width="12.262%" class="whs5">
+<p class="whs6">Class</td>
+<td bgcolor="#C0C0C0" width="82.155%" class="whs7">
+<p class="whs8">Description</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="12.262%" class="whs9">
+<p><a href="psl_cache_class.htm">Cache</a></td>
+<td width="82.155%" class="whs10">
+<p>Contains methods used to retrieve Record&lt;class&gt; objects from within 
+ a process' local memory, calling the <a href="psl_db_getrecord.htm">Db.getRecord</a> 
+ method if a record does not exist in the cache.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="12.262%" class="whs11">
+<p><a href="psl_class_class.htm">Class</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs10">
+<p>Provides a runtime description of the class methods and properties.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="12.262%" class="whs11">
+<p><a href="psl_column_class.htm">Column</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs10">
+<p>Contains properties that enable programmers to reference the attributes 
+ of a table column.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="12.262%" class="whs11">
+<p><a href="psl_db_class.htm">Db</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs10">
+<p>Contains the set of all records within the database.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="12.262%" class="whs11">
+<p><a href="psl_dbset_class.htm">DbSet</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs10">
+<p>Contains the set of all records of a single table that satisfy a common 
+ condition.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="12.262%" class="whs11">
+<p><a href="psl_error_class.htm">Error</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs10">
+<p>Contains properties and methods that enable programmers to identify 
+ and throw exceptions. The properties describe the exception and the location 
+ in the code where it occurred.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="12.262%" class="whs11">
+<p><a href="psl_html_class.htm">HTML</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs10">
+<p>Contains methods used to create XML documents that are typically used 
+ with web access interfaces.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="12.262%" class="whs11">
+<p><a href="psl_io_class.htm">IO</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs10">
+<p>Provides methods and properties for data input and output.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="12.262%" class="whs11">
+<p><a href="psl_list_class.htm">List</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs10">
+<p>Contains methods used to add and locate elements in a list.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="12.262%" class="whs11">
+<p><a href="psl_object_class_2.htm">Object</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs10">
+<p>The superclass of all of the classes in PSL.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="12.262%" class="whs11">
+<p><a href="psl_record_class.htm">Record</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs10">
+<p>Defines objects based on database table definitions. This class contains 
+ all the methods used by the database tables.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="12.262%" class="whs11">
+<p><a href="psl_recordacn_class.htm">RecordACN</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs10">
+<p>Subset of the Record class. It is also the account superclass (ancestor) 
+ of the RecordDEP and RecordLN classes. The RecordACN class exists exclusively 
+ to provide methods and properties for the ACN table.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="12.262%" class="whs11">
+<p><a href="psl_recordcif_class.htm">RecordCIF</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs10">
+<p>The customer record class. The RecordCIF class exists exclusively to 
+ provide methods and properties for the CIF table.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="12.262%" class="whs11">
+<p><a href="psl_recorddep_class.htm">RecordDEP</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs10">
+<p>The deposit record class. It is a subset of the RecordACN class. The 
+ RecordDEP class exists exclusively to provide methods and properties for 
+ the DEP table.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="12.262%" class="whs11">
+<p><a href="psl_recordln_class.htm">RecordLN</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs10">
+<p>The loan record class. &nbsp;It 
+ is a subset of the RecordACN class. The RecordLN class exists exclusively 
+ to provide methods and properties for the LN table.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="12.262%" class="whs11">
+<p><a href="psl_resultset_class.htm">ResultSet</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs10">
+<p>Defines the set of rows and columns resulting from a database selection 
+ operation.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="12.262%" class="whs11">
+<p><a href="psl_row_class.htm">Row</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs10">
+<p>Treats a delimited string as a row from a table, allowing reference 
+ to elements by &quot;column name&quot;.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="12.262%" class="whs11">
+<p><a href="psl_runtime_class.htm">Runtime</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs10">
+<p>Contains methods that evaluate or produce data during the execution 
+ of the code generated by PSL, or perform other “runtime” actions, such 
+ as the Transaction Processing methods. Generally the methods found in 
+ this class cannot be pre-compiled by PSL.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="12.262%" class="whs11">
+<p><a href="psl_schema_class.htm">Schema</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs10">
+<p><span style="font-weight: bold;"><B>Deprecated.</B></span> Contains properties 
+ that describe a DQ schema table.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="12.262%" class="whs11">
+<p><a href="psl_schematable_class.htm">SchemaTable</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs10">
+<p>Provides a description of a DATA-QWIK table.</td></tr>
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="12.262%" class="whs11">
+<p><a href="psl_transet_class.htm">TranSet</a></td>
+<td colspan="1" rowspan="1" width="82.155%" class="whs10">
+<p>Contains properties and methods associated with transaction processing.</td></tr>
+</table>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Formatting Programming Code</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Programming Standards\nFormatting Programming Code");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Formatting Programming Code</h1>
+
+<p>Use the following guidelines when formatting programming code:</p>
+
+<p class=BodyTextBold>General</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Use lowercase PSL syntax 
+ instead of uppercase M commands.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Use PSL keywords in place 
+ of M variables. Refer to the <a href="psl_system_keywords.htm">System 
+ Keywords</a> section for a list of system keywords.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Group operations with parentheses 
+ when appropriate, to avoid any unexpected results.</p></li>
+</ul>
+
+<p class=BodyTextBold>Line Tags</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Line tags must start on 
+ the first column.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Line tags must be labeled 
+ with private, public, or not at all.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Public line tags are accessible 
+ to other procedures regardless of the functionality calling into the line 
+ tag (e.g., utility line tags). The compiler treats this line tag as being 
+ called from an external procedure and generates code accordingly.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Private line tags are not 
+ reusable to other procedures. Although these line tags are called from 
+ external procedures, they are considered supporting functions or sub-procedures 
+ of the calling procedure. The compiler treats this line tag as being called 
+ from an external procedure and generates code accordingly.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Line tags not labeled public 
+ or private are considered local. These line tags are called only from 
+ within the same procedure and are not for external use.</p></li>
+</ul>
+
+<p class=BodyTextBold>Code Blocks</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Ensure that all loops terminate.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Define all structured blocks 
+ with open and close brackets.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Use tabs for each level 
+ of a new block of code.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>If logic is reusable, use 
+ new subroutines instead of structured blocks of code.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Move subroutines that have 
+ a single caller, into the caller as a code block. The <a href="psl_optimize.htm">#OPTIMZE</a> 
+ command works better in that situation, and the actual code execution 
+ (net of PSL) is significantly faster if the code is adjacent, rather than 
+ in a separate label or program.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Align If/Else pairs.</p></li>
+</ul>
+
+<p class=BodyTextBold>Scope</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Whenever appropriate, CUVAR 
+ properties and other static tables should be scoped as &quot;Literal&quot; 
+ objects in PSL source. Using CUVAR.&lt;columnName&gt; within a PSL program 
+ for columns that do not change will enable the compiler to generate code 
+ that contains the value of the field and then prevents run-time lookup 
+ of that information.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Run-time indirection and 
+ execution of Record&lt;class&gt; columns should be avoided when possible. 
+ It impacts performance by having to determine the location of the column 
+ within the record at runtime rather than compile time. Use Literal scope 
+ to minimize, if possible.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Exclusive scope (e.g., 
+ new(a,b,c)) is prohibited.</p></li>
+</ul>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

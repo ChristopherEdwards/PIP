@@ -1,0 +1,4804 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Troubleshooting Compiler Errors</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+p.whs1 { x-condition:NotPrintedDocn; }
+table.whs2 { x-cell-content-align:top; width:100%; border-spacing:0px; }
+col.whs3 { width:15%; }
+col.whs4 { width:85%; }
+tr.whs5 { x-cell-content-align:top; }
+td.whs6 { width:15%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; border-left-style:none; border-top-style:none; }
+p.whs7 { font-weight:bold; color:#0000ff; }
+td.whs8 { width:85%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-top-style:none; border-right-style:none; }
+td.whs9 { width:15%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; border-left-style:none; }
+td.whs10 { width:85%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; }
+td.whs11 { width:15%; padding-right:10px; padding-left:10px; border-right-style:none; border-left-style:none; border-bottom-style:none; }
+td.whs12 { width:85%; padding-right:10px; padding-left:10px; x-cell-content-align:bottom; }
+p.whs13 { margin-left:24px; }
+td.whs14 { width:15%; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; }
+td.whs15 { width:85%; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; }
+td.whs16 { width:85%; padding-right:10px; padding-left:10px; }
+p.whs17 { background-color:Transparent; }
+tr.whs18 { x-cell-content-align:top; height:21px; }
+tr.whs19 { x-cell-content-align:top; height:17px; }
+td.whs20 { width:85%; padding-right:10px; padding-left:10px; x-cell-content-align:center; }
+tr.whs21 { x-cell-content-align:top; height:18px; }
+td.whs22 { width:15%; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; border-top-style:none; }
+td.whs23 { width:85%; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; border-top-style:none; }
+h6.whs24 { background-color:Transparent; }
+p.whs25 { font-weight:bold; }
+p.whs26 { font-weight:normal; }
+td.whs27 { width:15%; padding-right:10px; padding-left:10px; border-top-style:none; border-right-style:none; border-bottom-style:none; border-left-style:none; }
+td.whs28 { width:15%; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; border-left-style:none; }
+p.whs29 { margin-left:24px; text-indent:-24px; }
+tr.whs30 { x-cell-content-align:top; height:20px; }
+tr.whs31 { x-cell-content-align:top; height:44px; }
+tr.whs32 { x-cell-content-align:top; height:38px; }
+tr.whs33 { x-cell-content-align:top; height:30px; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs17 {background-color:white; }";
+  strNSS += "h6.whs24 {background-color:white; }";
+  strNSS += "p.whs29 {text-indent:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Troubleshooting Compiler Errors and Warnings\nTroubleshooting Compiler Errors");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Troubleshooting Compiler Errors</h1>
+
+<p>To view the causes and solutions of PSL compilation errors, click the 
+ first letter of the error message text:</p>
+
+<p class="whs1"><a href="#A_Errors"
+											style="x-condition: NotPrintedDocn;">A</a> 
+ &nbsp;<a href="#B_Errors"
+										style="x-condition: NotPrintedDocn;">B</a> 
+ &nbsp;<a href="#C_Errors"
+										style="x-condition: NotPrintedDocn;">C</a> 
+ &nbsp;<a href="#D_Errors"
+										style="x-condition: NotPrintedDocn;">D</a> 
+ &nbsp;<a href="#E_Errors"
+										style="x-condition: NotPrintedDocn;">E</a> 
+ &nbsp;F &nbsp;<a 
+ href="#G_Errors"
+	style="x-condition: NotPrintedDocn;">G</a> 
+ &nbsp;H &nbsp;<a 
+ href="#I_Errors"
+	style="x-condition: NotPrintedDocn;">I</a> 
+ &nbsp;J &nbsp;<a 
+ href="#K_Errors"
+	style="x-condition: NotPrintedDocn;">K</a> 
+ &nbsp;<a href="#L_Errors"
+										style="x-condition: NotPrintedDocn;">L</a> 
+ &nbsp;<a href="#M_Errors"
+										style="x-condition: NotPrintedDocn;">M</a> 
+ &nbsp;N &nbsp;<a 
+ href="#O_Errors"
+	style="x-condition: NotPrintedDocn;">O</a> 
+ &nbsp;<a href="#P_Errors"
+										style="x-condition: NotPrintedDocn;">P</a> 
+ &nbsp;Q &nbsp;<a 
+ href="#R_Errors"
+	style="x-condition: NotPrintedDocn;">R</a> 
+ &nbsp;<a href="#S_Errors"
+										style="x-condition: NotPrintedDocn;">S</a> 
+ &nbsp;<a href="#T_Errors"
+										style="x-condition: NotPrintedDocn;">T</a> 
+ &nbsp;<a href="#U_Errors"
+										style="x-condition: NotPrintedDocn;">U</a> 
+ &nbsp;<a href="#V_Errors"
+										style="x-condition: NotPrintedDocn;">V</a> 
+ &nbsp;W &nbsp;X 
+ &nbsp;Y &nbsp;Z</p>
+
+<h6>&lt;tab&gt; delimiter is illegal</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>The &lt;tab&gt; character was used as a column delimiter.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Do not use the &lt;tab&gt; character as a delimiter.</td></tr>
+</table>
+
+<h6>$$NEW^%ZT is obsolete in Profile01</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>The $$NEW^%ZT function is not available in PSL in Profile v6.4 and later.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>This utility and SET^%ZT were used to trap errors. Replace these functions 
+ with a catch block.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs11">
+<p>&nbsp;</td>
+<td width="85%" class="whs10">
+<p class=BodyIndent>main // Main subroutine</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;catch 
+ xyz {</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ !,&quot;Tag main:&quot;,xyz.type,&quot; Thrown at:&quot;,xyz.thrownAt</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;do 
+ subr</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;type 
+ RecordDEP dep = Db.getRecord(&quot;DEP&quot;,1212)</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;quit</p>
+<p class=BodyIndent>subr // </p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;catch 
+ error{</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write 
+ !,&quot;Tag subr:&quot;,error.type,&quot; Thrown at: &quot;,error.thrownAt</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw 
+ MyError</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;if 
+ x // will generate %GTM_E_UNDEF</p>
+<p class=BodyIndent>quit</td></tr>
+</table>
+
+<h6>$$ Extrinsic not supported: &lt;atom&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>String methods are not supported on extrinsic functions.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td width="85%" class="whs10">
+<p class=BodyIndent
+	style="margin-left: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ x = a.extract(1)</p>
+<p class=BodyIndent
+	style="margin-left: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ x = &quot;String&quot;.extract(1)</p>
+<p class=BodyIndent
+	style="font-weight: bold; margin-left: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ x = $$tag^rou().extract(1)</p>
+<p class=BodyIndent
+	style="font-weight: bold; margin-left: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Modify the code to not specify a string method for an extrinsic function.</td></tr>
+</table>
+
+<h6><a name=A_Errors></a>Argumentless Kill is not supported</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>A Kill statement does not specify the required arguments.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>PSL manages several variables in the background. If programmers kill 
+ all variables, that would result in undefined errors on those variables.</p>
+<p>Instead, set a break in the program at the location where the kill is 
+ intended. Determine which variables are related to the processing, and 
+ kill each individually.</td></tr>
+</table>
+
+<h6>Assigning a value to a read-only system variable:&quot;_atom&quot;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>An attempt was made to assign a value to a read-only system variable. 
+ In the following example, UserName is a system keyword that identifies 
+ the name used by the user when he or she signed on to the operating system. 
+ This value cannot be manually changed.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td valign="bottom" width="85%" class="whs12">
+<p class="whs13">set %UserName=12</p>
+<p class="whs13">&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Do not use a system keyword in an assignment statement.</td></tr>
+</table>
+
+<h6>Assignment function is not supported</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>The fourth parameter of the piece method (i.e., Boolean ignoreQuoted) 
+ was used on the left side of an assignment command.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Do not use the ignoreQuoted parameter on the left side of an assignment 
+ command using the piece method.</td></tr>
+</table>
+
+<h6><a name=B_Errors></a>Block initiator expected</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>The beginning of a catch of code was not delimited by a { character.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Add the appropriate { to mark the beginning of the block of code; enter 
+ the necessary lines of code; and close the block with a closing }.</td></tr>
+</table>
+
+<h6><a name=C_Errors></a>Cannot assign: &lt;table&gt; to: &lt;class&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>The class of an object being assigned the result of a Dbset.getRecord 
+ does not match the table used in the Db.selectDbset.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review the object class, and correct it to match the table within the 
+ Db.selectDbset.</td></tr>
+</table>
+
+<h6>Cannot modify computed data item &lt;table&gt;.&lt;property&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>The code attempted to modify a computed column.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Remove the code that attempted to modify the computed column.</td></tr>
+</table>
+
+<h6>Cannot use an array identifier as a secondary point: &lt;variable&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>Multiple identifiers can be assigned to a single object. However, the 
+ second identifier cannot be an array.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td valign="bottom" width="85%" class="whs12">
+<p class=BodyIndent>type RecordDEP dep = Db.getRecord (&quot;DEP&quot;,&quot;:CID&quot;)</p>
+<p class=BodyIndent>type RecordDEP dep2 = dep</p>
+<p class=BodyIndent>type RecordDEP a()</p>
+<p class=BodyIndent
+	style="font-weight: bold;">set a(1)=dep</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Do not assign an array as a secondary identifier in an object.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>type RecordDEP dep = Db.getRecord (&quot;DEP&quot;,&quot;:CID&quot;)</p>
+<p class=BodyIndent>type RecordDEP dep2 = dep</p>
+<p class=BodyIndent>type RecordDEP dep3 = dep</td></tr>
+</table>
+
+<h6>Casting terminator expected</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>An object is being cast as another Record class, but does not have the 
+ appropriate casting terminator (i.e., }).</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td valign="bottom" width="85%" class="whs12">
+<p class=BodyIndent>type RecordACN acn = Db.getRecord (&quot;ACN&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent>if acn.cls = &quot;D&quot; do {</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;<span 
+ style="font-weight: bold;"><B>&nbsp;set acn 
+ = {RecordDEP.acn</B></span></p>
+<p class=BodyIndent>}</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Insert the casting terminator following the Record class.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>type RecordACN acn = Db.getRecord (&quot;ACN&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent>if acn.cls = &quot;D&quot; do {</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;<span 
+ style="font-weight: bold;"><B>set acn = {RecordDEP}.acn</B></span></p>
+<p class=BodyIndent>}</td></tr>
+</table>
+
+<h6>Class is not instantiable: &lt;class&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>A program attempts to instantiate a class that cannot be used to instantiate 
+ objects. That is, the Not Instantiable Flag (OBJECT.NOINSTANT) for that 
+ class is selected. For example, the Db class has this flag set because 
+ the class is used to provide methods to access the database. Those methods 
+ are used on objects created under other classes.</p>
+<p>This error only occurs when using the Class.new method.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td valign="bottom" width="85%" class="whs12">
+<p class=BodyIndent>type Db x = Class.new(&quot;Db&quot;)</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>There is no reason to instantiate an object of class Db.</td></tr>
+</table>
+
+<h6>Column class property is read-only</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>The properties of the Column class are read-only (e.g., DES, KEY, LEN, 
+ OLDVAL,TYPE).<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Remove the code that is attempting to set those properties.</td></tr>
+</table>
+
+<h6>Column expression: &lt;expression&gt; is not in the select list: &lt;columnList&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>A column reference was made in a Row or ResultSet class object that 
+ does not exist in the list of columns associated with that object.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Remove the column reference, or ensure that the column name is part 
+ of the list of columns for the object.</td></tr>
+</table>
+
+<h6>Column name: &lt;name&gt; is not in the select list: &lt;list&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>A column name is referenced in the ResultSet.getCol method that has 
+ not previously been selected using Db.select ro Db.selectDbSet.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td valign="bottom" width="85%" class="whs12">
+<p class=BodyIndent>type ResultSet rs = Db.select(&quot;LNM,CID&quot;,&quot;DEP&quot;)<br>
+while rs.next() do {<br>
+write !,rs.getCol(&quot;bal&quot;),&quot; &quot;,rs.getCol(&quot;lnm&quot;)<br>
+}</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Include the column name in the select statement.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>type ResultSet rs = Db.select(&quot;BAL,LNM,CID&quot;,&quot;DEP&quot;)<br>
+while rs.next() do {<br>
+write !,rs.getCol(&quot;bal&quot;),&quot; &quot;,rs.getCol(&quot;lnm&quot;)<br>
+}</td></tr>
+</table>
+
+<h6>Column names can only be used in the instantiating scope</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>The ResultSet.getCol method used the columnName parameter in a subroutine 
+ other than where the result set is instantiated.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td valign="bottom" width="85%" class="whs12">
+<p class=BodyIndent>xxx</p>
+<p class=BodyIndent>type ResultSet rs = Db.select(&quot;IRN&quot;,&quot;DEP&quot;)</p>
+<p class=BodyIndent>if rs.isEmpty() quit</p>
+<p class=BodyIndent>while rs.next() do {</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do 
+ XXX(.rs)</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+ rs.getCol(&quot;IRN&quot;) = 5 quit</p>
+<p class=BodyIndent
+	style="margin-left: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p class=BodyIndent>quit</p>
+<p class=BodyIndent>XXX(ResultSet rs)</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+ rs.getCol(&quot;IRN&quot;) = 5 quit</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quit</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Use the columnNumber parameter in subroutines other than where the result 
+ set is instantiated.</td></tr>
+</table>
+
+<h6>Column parameter required</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>The getCol method was used without providing either the column name 
+ or its ordinal position within the result set.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review the use of the method, and add either a column name or numeric 
+ pointer to the column needed.</td></tr>
+</table>
+
+<h6>Column reference (col1) is greater than selected columns (col2)</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>A resultSet.getCol method lists one number of columns, while the resultset 
+ lists a larger number of columns.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs16">
+<p class="whs17">Review the getCol method used. 
+ The sequence number entered is greater than the number of columns in the 
+ select command.</td></tr>
+</table>
+
+<h6>Command delimiter expected</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs18">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>A catch statement is not followed by a block delimiter &quot;{&quot;.</td></tr>
+
+<tr valign="top" class="whs19">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td valign="middle" width="85%" class="whs20">
+<p class=BodyIndent>catch error:RECNOF</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs21">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Enter a delimiter in the catch statement.</td></tr>
+
+<tr valign="top" class="whs21">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>catch error:RECNOF {</td></tr>
+</table>
+
+<h6>Command does not support a post-conditional expression: &lt;command&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A command in the procedure does not permit the use of post-conditional 
+ expressions. </td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>if X new abc<br>
+<br>
+OR<br>
+<br>
+new abc:x</p>
+<p class=BodyIndent
+	style="margin-left: 0px;">&nbsp;</p>
+<p class=BodyIndent
+	style="margin-left: 0px;">Commands that do not support the use of post-conditional 
+ expressions include CATCH, ELSE, FOR, IF, NEW, and TYPE.</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Remove the post-conditional expression from the offending command. You 
+ may need to modify the program logic to perform the same task as the post-conditional 
+ expression. </td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>if X do {</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new 
+ abc</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do 
+ more</p>
+<p class=BodyIndent><span style="margin-left: 24px;">}</span></td></tr>
+</table>
+
+<h6>Compare class must be the same</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The two objects being compared by the Record.compare method are not 
+ of the same class.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>None.</td></tr>
+</table>
+
+<h6>Compiler cannot interpret SQL</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The Db.nextVal, Db.currVal, and Db.preVal methods must generate a single 
+ line of code that can order through the requested table. The PSL compiler 
+ uses the Profile SQL code generator to generate this code. This error 
+ occurs when the code generator produces code that is more than one line.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review the table as well as the keys used in the method to ensure that 
+ the correct number of keys were used for the method.</td></tr>
+</table>
+
+<h6>Compiler Error: Copy^UCPATCH</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>This is an internal PSL compiler error and should not occur.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Report the error to FIS PSL Support.</td></tr>
+</table>
+
+<h6><a name=D_Errors></a>Data variable required</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The IO.write method is missing the first parameter, recordData.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Add the first parameter to the IO.write method reference.</td></tr>
+</table>
+
+<h6>Db class is read-only under Literal scope</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The user attempted to update a Literal scope object in the Db class.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Convert the Literal scope object to be instantiated at run time.</td></tr>
+</table>
+
+<h6>Dynamic isDefined is not supported</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The Db.isDefined method was used. However, the compiler cannot determine 
+ the table or access keys (e.g., variables were specified instead of literal 
+ values).<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>None. The closest equivalent is to create a result set using Db.select, 
+ and verify the results with the isEmpty method.</td></tr>
+</table>
+
+<h6><a name=E_Errors></a>Equal sign expected</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>An expression does not contain an equal sign. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td valign="bottom" width="85%" class="whs12">
+<p class=BodyIndent>new dep</p>
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set dep = Db.getRecord(&quot;DEP&quot;,12345)</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>set dep.bal 100</p>
+<p class=BodyIndent>quit</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Modify the PSL source code to use an equal sign where you make an assignment. 
+ For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>new dep</p>
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set dep = Db.getRecord(&quot;DEP&quot;,12345)</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>set dep.bal = 100</p>
+<p class=BodyIndent>quit</td></tr>
+</table>
+
+<h6>Error creating temporary table &lt;table&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>The code specifies the schema.createTable method. However, during table 
+ creation in a relational database, a failure occurred. This error occurs 
+ only when using a non-M database.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>None.</td></tr>
+</table>
+
+<h6>Error deleting temporary table &lt;table&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>The code specifies the schema.deleteTable method. However, during table 
+ creation in a relational database, a failure occurred. This error occurs 
+ only when using a non-M database.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>None.</td></tr>
+</table>
+
+<h6>Error type parameter is required</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>The error type (i.e., from the Errors system table (ET)) must be specified 
+ when throwing a run-time error.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Specify the error type when throwing the error.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>catch ERROR {</p>
+<p class=BodyIndent
+	style="font-weight: normal;">set ET = ERROR.type</p>
+<p class=BodyIndent>set CONTEXT = ERROR.context</td></tr>
+</table>
+
+<h6>Exclusive new's are not allowed: &lt;expression&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>A user attempted to use an exclusive new statement.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td valign="bottom" width="85%" class="whs12">
+<p class=BodyIndent
+	style="background-color: Transparent;">new (XYZ)</p>
+<p class=BodyIndent
+	style="background-color: Transparent;">&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>PSL does not permit exclusive new statements as they can cause memory 
+ leaks as well as unusual undefined errors when an object name is include 
+ in the protect list without the PSL internal object array.</p>
+<p>In M code, FIS discourages their use. In PSL code, they are prohibited.</td></tr>
+</table>
+
+<h6>Expression expected</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>A valid M or PSL expression was expected but not found. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td valign="bottom" width="85%" class="whs12">
+<p class=BodyIndent>new dep</p>
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set Db.getRecord(&quot;DEP&quot;,12345)</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>set dep.bal = </p>
+<p class=BodyIndent>quit</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Modify the source code to ensure the line contains valid M or PSL expressions. 
+ Check for missing expressions or extra delimiters (e.g.,&nbsp;space, comma, 
+ colon).</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>new dep</p>
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set Db.getRecord(&quot;DEP&quot;,12345)</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>set dep.bal = bal + tamt</p>
+<p class=BodyIndent>quit</td></tr>
+</table>
+
+<h6>Expression must return a class: &lt;expression&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>A method does not return a class, when it is required to do so.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td valign="bottom" width="85%" class="whs12">
+<p class=BodyIndent>x = dep.newMethod()</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Modify the code to return a class.</td></tr>
+</table>
+
+<h6>Expression not allowed in group set: &lt;expression&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>A $ variable was included as part of a group of columns within one command.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td valign="bottom" width="85%" class="whs12">
+<p class=BodyIndent>set ($ZT) = 12</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Do not set these special GTM variables as part of a group of columns 
+ in one command.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>set $ZT = 12</td></tr>
+</table>
+
+<h6><a name=G_Errors></a>Global name cannot exceed 8 characters</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>The global name specified in the Schema.createTable method parameter 
+ list is greater than 8 characters in length.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Specify a global name that is less than or equal to 8 characters in 
+ length.</td></tr>
+</table>
+
+<h6>Goto command is invalid in object scope</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>The GOTO command is invalid in the object scope. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td valign="bottom" width="85%" class="whs12">
+<p class=BodyIndent>abc&nbsp;//</p>
+<p class=BodyIndent>&nbsp; &nbsp;&nbsp;&nbsp;type 
+ RecordDEP dep</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ dep = Db.getRecord(&quot;DEP&quot;,CID)</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ bal = dep.bal</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;go 
+ def</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quit</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>def //</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ bal = bal + tamt</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quit</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Modify the source code to eliminate the GOTO command at the specified 
+ line. You may need to modify the logic as a result of this change. For 
+ example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>abc&nbsp;//</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type 
+ RecordDEP dep</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ dep = Db.getRecord(&quot;DEP&quot;,CID)</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ bal = dep.bal</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>def //</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ bal = bal + tamt</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quit</td></tr>
+</table>
+
+<h6><a name=I_Errors></a>Identifier class must be a Record&lt;class&gt;: 
+ &lt;variable class&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>The Record.copy method can be used to copy records from one Record class 
+ to another Record class. However, do not use it to copy from a Record 
+ class to a totally different class.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td valign="bottom" width="85%" class="whs12">
+<p class=BodyIndent>type String xxx</p>
+<p class=BodyIndent>type RecordUTBLBRCD brcd = Db.getRecord(&quot;UTBLBRCD&quot;,&quot;X&quot;)</p>
+<p class=BodyIndent>set xxx = brcd.copy()</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Declare xxx as class RecordUTBLBRCD.</td></tr>
+</table>
+
+<h6>Identifier must be local scope for dynamic SQL: &lt;name&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>The ResultSet is defined in one label passed to another, where the columns 
+ being selected are dynamic.</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p>&nbsp;</td>
+<td valign="bottom" width="85%" class="whs12">
+<p class=BodyIndent>type ResultSet rs</p>
+<p class=BodyIndent>do xxx(.rs)</p>
+<p class=BodyIndent>quit</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>xxx(ResultSet rs)</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#warn</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type 
+ Public String IRN</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ rs = Db.select(IRN,&quot;DEP&quot;)</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+ rs.isEmpty() quit</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while 
+ rs.next() do {</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quit</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Move the type statement for the result set into the xxx level.</td></tr>
+</table>
+
+<h6>Illegal reference to abstract class: &lt;class&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs6">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs8">
+<p>When using the Class.new method to create a new object, the object is 
+ defined for an abstract class. An abstract class is defined by selecting 
+ the Abstract Class Flag (OBJECT.ABSTRACT) option. Abstract classes should 
+ not be associated with a particular instance of an object. For example, 
+ the Record class is used to instantiate many different types of Table 
+ objects and should therefore not be associated with a particular instance 
+ of an object.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Use a valid class.</td></tr>
+</table>
+
+<h6>Illegal sentinel character</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>Reference was made to a variable that contains sentinel characters (i.e.,&nbsp;the 
+ characters <span style="font-weight: bold;"><B>vo</B></span> in the variable 
+ name). For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>new dep</p>
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set Db.getRecord(&quot;DEP&quot;,12345)</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>set dep.bal = 100</p>
+<p class=BodyIndent>s vo = 100</p>
+<p class=BodyIndent>quit</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Rename the variable that begins with the characters &quot;vo&quot;. 
+ These characters are sentinel characters, and are reserved for use by 
+ the PSL compiler. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>new dep</p>
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set Db.getRecord(&quot;DEP&quot;,12345)</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>set dep.bal = 100</p>
+<p class=BodyIndent>s amt = 100</p>
+<p class=BodyIndent>quit</td></tr>
+</table>
+
+<h6>Incorrect Change value entered</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A value other than SYSTEM or USER was specified as the second parameter 
+ (i.e., changeType) for the Record.isChanged method.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Correct the value of the second parameter.</td></tr>
+</table>
+
+<h6>Incorrect number of keys</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The number of keys specified for the Db.isDefined method is less than 
+ the number of keys defined for the table.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Use the correct number of keys.</td></tr>
+</table>
+
+<h6>Invalid $SELECT syntax</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>An invalid $SELECT syntax exists. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>new dep</p>
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set dep = Db.getRecord(&quot;DEP&quot;,12345)</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>set dep.bal = 100</p>
+<p class=BodyIndent>set dep.bal = $SELECT(dep.bal&gt;100,100)</p>
+<p class=BodyIndent>quit</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Check the syntax for $S[ELECT]. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>new dep</p>
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set dep = Db.getRecord(&quot;DEP&quot;,12345)</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>set dep.bal = 100</p>
+<p class=BodyIndent>set dep.bal = $SELECT(dep.bal&gt;100,1:100)</p>
+<p class=BodyIndent>quit</td></tr>
+</table>
+
+<h6>Invalid assignment function</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>An instrinsic function was used on the left side of an expression.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>set $E(FFF,&quot;|&quot;,2) = 3</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>The only intrinsic function that may appear on the left side of an expression 
+ is the $piece function. Review the code. It is possible that the programmer 
+ meant to use a $piece function.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>set $P(FFF,&quot;|&quot;,2) = 3</td></tr>
+</table>
+
+<h6>Invalid assignment on array: &lt;expr&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>An attempt was made to assign an array to a value with a type command.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>type RecordDEP dep() = Db.getRecord(&quot;DEP&quot;,&quot;:CID&quot;)</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Remove the array assignment from the type command.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>type RecordDEP dep = Db.getRecord(&quot;DEP&quot;,&quot;:CID&quot;)</td></tr>
+</table>
+
+<h6>Invalid block termination</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The system attempted to terminate a block that had not been opened. 
+ For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>new dep</p>
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set dep = Db.getRecord(&quot;DEP&quot;,12345)</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>set dep.bal = 100</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>do {</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ dep.bal = 100</p>
+<p class=BodyIndent><span style="margin-left: 24px;">}</span></p>
+<p class=BodyIndent><span style="margin-left: 24px;">}</span></p>
+<p class=BodyIndent>quit</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Modify the PSL source code to ensure that each block of code that opens 
+ with a left curly bracket&nbsp;{ character also terminates with a right 
+ curly bracket&nbsp;} character. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>new dep</p>
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set dep = Db.getRecord(&quot;DEP&quot;,12345)</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>set dep.bal = 100</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>do {</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ dep.bal = 100</p>
+<p class=BodyIndent>}</p>
+<p class=BodyIndent>quit</td></tr>
+</table>
+
+<h6 class="whs24">Invalid cast - Class: &lt;class&gt; 
+ cannot be cast as: &lt;cast&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The attempted cast is illegal because the classes are not compatible.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>None.</td></tr>
+</table>
+
+<h6>Invalid command</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A specified M command does not exist. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>x = y</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Modify the PSL source code to include a valid M command (e.g.,&nbsp;set, 
+ if, for, else) on the specified line. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent><span style="font-weight: bold;"><B>set</B></span> x = y</td></tr>
+</table>
+
+<h6>Invalid DATA-QWIK table: &lt;tableName&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A Record&lt;class&gt; specified in the code does not exist in the database 
+ dictionary.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>x = y</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Verify the spelling and case of the table specified in the object declaration. 
+ For example, the following statement produces this error because dep is 
+ not a valid DATA-QWIK table. Use DEP instead.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>type Record<span style="font-weight: bold;"><B>dep</B></span> 
+ deposit</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p>If referencing a new table, verify that it exists in DATA-QWIK.</td></tr>
+</table>
+
+<h6 class="whs24">Invalid expression: &lt;expression&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>PSL cannot evaluate a part of a line of code. The compiler attempts 
+ to determine if the expression is a variable, function, or intrinsic M 
+ variable. For example, this error occurs when an intrinsic M variable 
+ has not been added to the PSL compiler, or if certain combinations of 
+ operators are used (e.g., x = y//3).<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review and correct the expression. If a valid case can be made for adding 
+ an intrinsic M variable to the PSL compiler, PSL will be changed to include 
+ it.</td></tr>
+</table>
+
+<h6>Invalid function</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A specified M function does not exist. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>set x = $K(abc)</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Modify the PSL source code to include a valid M function (e.g.,&nbsp;$P[iece], 
+ $G[et], $D[ata], $L[ength], etc.). For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>set x = $L(abc)</td></tr>
+</table>
+
+<h6 class="whs24">Invalid identifier: &lt;key&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The column name specified as an access key in a Db class method is not 
+ a key used to access the record.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review the key list used, and remove any column names that are not keys.</td></tr>
+</table>
+
+<h6>Invalid in multiple command lines</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A compiler command was used on a line with other application code.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>if X = 3 #IF condition</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Modify the code so that the compiler command appears by itself on a 
+ line of code.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>#if condition</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+ X = 3...</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>#ENDIF</td></tr>
+</table>
+
+<h6>Invalid inside nested structures</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A GOTO command appears within a nested DO block. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>&nbsp; &nbsp;&nbsp;&nbsp;do 
+ {</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ x = x + 1</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+ x &gt; 10 goto abc</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>abc&nbsp;set er = 1</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Remove the GOTO command within a nested DO block. This may require a 
+ change to the logic contained within the DO block. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;do 
+ {</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ x = x + 1</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+ x &gt; 10 set er = 1</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit</td></tr>
+</table>
+
+<h6>Invalid map expression: &lt;expression&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The format of the colMap parameter in the Record.copy method is incorrect.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>The correct format of the colMap parameter is <span style="font-weight: bold;"><B>column 
+ name = column name</B></span>. Ensure that neither column name is null and 
+ the equal sign appears in the parameter expression.</td></tr>
+</table>
+
+<h6 class="whs24">Invalid method for data type: 
+ &lt;type&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The Db.nextVal method was used against a table to calculate the sequence 
+ number of the next record to insert into the database. However, the table's 
+ last key is defined as text, upper_case, frequency, or logical. Therefore, 
+ the system cannot calculate a numeric next value.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>This method cannot be used for the table. Determine another alternative 
+ for setting the value.</td></tr>
+</table>
+
+<h6 class="whs24">Invalid method for table: &lt;table&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The Db.nextVal, Db.currVal, or Db.preVal method was used on a table 
+ (e.g., CUVAR) that is defined as a single record table. The primary key 
+ on such tables is typically listed as &quot;*&quot;.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>None, do not use these methods on single record tables.</td></tr>
+</table>
+
+<h6>Invalid object identifier: &lt;atom&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>An array of objects was declared and set with a single command.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>type RecordACN acn(1) = Db.getRecord(&quot;ACN&quot;,&quot;CID=:CID&quot;)</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Declare the array and instantiate objects on separate lines.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>type RecordACN acn()</p>
+<p class=BodyIndent>set acn(1) = Db.getRecord(&quot;ACN&quot;,&quot;CID=:CID&quot;)</td></tr>
+</table>
+
+<h6>Invalid ORDER BY keyword in WHERE clause</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>In a non-M database environment, the Db.select method contains the words 
+ &quot;Order by&quot; in its orderBy parameter. This error does not occur 
+ in an M environment.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Remove the words &quot;Order by&quot; from the Db.select method statement.</td></tr>
+</table>
+
+<h6>Invalid SQL expression (&lt;expression&gt;), &lt;message&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>When using the Db.select method, the parameters supplied do not make 
+ a syntactically correct SQL statement.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review the Db.select method statement to ensure that its parameters 
+ are correct. The SQL utility call will provide additional details, which 
+ can help identify the specific scenario causing the error.</td></tr>
+</table>
+
+<h6>Invalid SQL syntax (&lt;expression&gt;), &lt;message&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>When using the Db.delete method, the parameters supplied do not make 
+ a syntactically correct SQL statement.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review the Db.delete method statement to ensure that its parameters 
+ are correct. The SQL utility call will provide additional details, which 
+ can help identify specific scenario causing the error.</td></tr>
+</table>
+
+<h6>Invalid Subroutine name: &lt;expression&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A subroutine label contains parameters and is either missing the closing 
+ parenthesis or does not terminate a parameter with a comma.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>label(parameter1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ Parameter #1</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parameter 
+ 2) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ Parameter #2</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Insert missing parenthesis or comma.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>label(parameter1, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ Parameter #1</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parameter 
+ 2) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ Parameter #2</td></tr>
+</table>
+
+<h6>Invalid syntax</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The syntax of a method is incorrect.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>s data = Db.getOneRow(&quot;ACN,TAXID&quot;,&quot;CIF&quot;,&quot;&quot;)</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Correct the syntax to match the prescribed method format.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>s data = Db.getOneRow(&quot;ACN,TAXID&quot;,&quot;CIF&quot;,&quot;XACN&quot;)</td></tr>
+</table>
+
+<h6>Invalid table name</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The following conditions exist for a table to be deleted using the Schema.deleteTable 
+ method:</p>
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>The date the table was 
+ last updated (DBTBL1.LTD) is blank, AND the user ID of the person who 
+ last updated the table (DBTBL.USER) is blank.<span style="font-weight: bold;"><B><br>
+	OR</B></span><br>
+	The user ID (DBTBL.USER) is ZZZZZZ.</p></li>
+</ul>
+<p><span style="font-weight: bold;"><B>AND</B></span></p>
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>The file type associated 
+ with the table (DBTBL.FILETYP) is 5 (Dummy Table).</p></li>
+</ul></td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review the code. Either a table was not created by a Schema.createTable, 
+ or there are multiple Schema.deleteTable commands in the code.</td></tr>
+</table>
+
+<h6>Invalid void method in nested syntax: &lt;atom&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A void method has been specified in a nested expression.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>type RecordDEP dep=Db.getRecord(&quot;DEP&quot;,&quot;:CID&quot;)</p>
+<p class=BodyIndent>set x = dep.bal.curVal().len</p>
+<p class=BodyIndent
+	style="font-weight: bold;">set x = dep.save().extract(1)</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Modify the code to remove the void method from the nested expression.</td></tr>
+</table>
+
+<h6><a name=K_Errors></a>Key expression required</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The Db.prevVal method did not specify a value for the second parameter 
+ (i.e., accessKeys).</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>set TRC = Db.prevVal(&quot;TTX&quot;)</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Add data for the second parameter to define the WHERE clause.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>set X=Db.prevVal(&quot;TTX&quot;,&quot;TTP,BRCD,XYZ,&quot;&quot;&quot;&quot;&quot;)</td></tr>
+</table>
+
+<h6><a name=L_Errors></a>Label already exists: &lt;label&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A label appears multiple times within the same source module. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>label&nbsp;set x = y</p>
+<p class=BodyIndent>label&nbsp;set y = z</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Rename one of the label references within the source module. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>label&nbsp;set x = y</p>
+<p class=BodyIndent>label1&nbsp;set y = z</td></tr>
+</table>
+
+<h6>Label called does not exist: &lt;??&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>Within the PSL element being compiled, a subroutine is being called 
+ that does not exist in the element.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Either add the subroutine, or remove the call.</td></tr>
+</table>
+
+<h6>Label Expected: &lt;expression&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A Literal scope variable has a null value. This error occurs in the 
+ following example if the value of CUVAR.PGM is null.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>xecute &quot;DO ^&quot;_CUVAR.PGM&quot;</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Modify the code to ensure that the proper values are assigned at the 
+ time of compilation.</td></tr>
+</table>
+
+<h6>Left nibble position required</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The third parameter (i.e., leftNib) was not specified for the Number.complexUnpack 
+ method.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Specify the proper value for the third parameter.</td></tr>
+</table>
+
+<h6>Length required</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The Number, unpack, Number.unpack2, or Number.zero method did not specify 
+ a value for the first parameter, which is the length of the return data.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Specify the first parameter value.</td></tr>
+</table>
+
+<h6>Literal parameter expected: &lt;parameter&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A method requires a literal as one of its parameters. However, the literal 
+ does not exist in the code. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>new ts</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>type TranSet ts</p>
+<p class=BodyIndent><span style="font-weight: bold;"><B>set ts = Class.new()</B></span></p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Include the missing literal in the method’s parameter list. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>new ts</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>type TranSet ts</p>
+<p class=BodyIndent>set ts = Class.new(&quot;TranSet&quot;)</td></tr>
+</table>
+
+<h6>Literal scope not allowed in group set: &lt;atom&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A variable is typed as a Literal variable and subsequently initialized 
+ in a group set.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>type Literal String dim</p>
+<p class=BodyIndent>set (x,dim) = 1</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Remove the variable typed as a Literal from the group, and set it individually.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>type Literal String dim</p>
+<p class=BodyIndent>set x = 1</p>
+<p class=BodyIndent>set dim = 1</td></tr>
+</table>
+
+<h6><a name=M_Errors></a>M global reference: &lt;atom&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>This message identifies a place where a global reference was included. 
+ This message appears as a warning in versions prior to Profile version 
+ 7.0, and as an error in version 7.0 and later.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Modify the code to avoid the use of globals.</td></tr>
+</table>
+
+<h6>Method can not be applied to local scope object: &lt;objectName&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The RecordClass.setCreateOnly() or RecordClass.setUpdateOnly method 
+ was used with an object that is local scope.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>These methods can only be used for objects that are either Public scope 
+ or passed in as a formal parameter.</td></tr>
+</table>
+
+<h6>Method is invalid for Primitive objects</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>When using the object.storeValue method, the user specified a reference 
+ object of primitive type (e.g., Blob, Boolean, Date, Memo, Number, String, 
+ or Time).</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>type Number xyz</p>
+<p class=BodyIndent>do xyz.storeValue(&quot;ABC&quot;)</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>None, you cannot use the method.</td></tr>
+</table>
+
+<h6>Missing actual keys: &lt;keys&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>Database access methods (except Db.select) fail to provide all the keys 
+ necessary to retrieve the record from the database.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>type RecordHIST hist = Db.getRecord(&quot;HIST&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review the key list, and add missing keys to the second parameter.</td></tr>
+</table>
+
+<h6>Missing label name</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A label is Public and includes parameters. However, the label was not 
+ named as such.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Include a label name in the line of code.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>Public (xcv)</td></tr>
+</table>
+
+<h6>Missing parameter terminator: &lt;rec&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>Subroutine parameters span multiple lines. However, each line of parameters 
+ is not terminated with either a comma or closing parentheses.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>XYZ(abc</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Insert the missing comma or closing parentheses at the end of each line 
+ in the parameter list.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>XYZ(abc,</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def)</td></tr>
+</table>
+
+<h6>Missing QUIT from previous subroutine: &lt;subroutine&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A subroutine that instantiated an object did not include a <span style="font-weight: bold;"><B>quit</B></span> 
+ command prior to the start of another label that receives parameters.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>XYZ</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;type 
+ RecordDEP dep=Db.getRecord(&quot;DEP&quot;,&quot;cid&quot;)</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>tyu(&quot;xyt&quot;)</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;quit</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>PSL inserts a line with a Quite prior to the label.</p>
+<p class="whs25">OR</p>
+<p class="whs26">You can insert a quit command prior to 
+ the start of the second label.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>XYZ</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;type 
+ RecordDEP dep=Db.getRecord(&quot;DEP&quot;,&quot;cid&quot;)</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;<span 
+ style="font-weight: bold;"><B>quit</B></span></p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>tyu(&quot;xyt&quot;)</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;quit</td></tr>
+</table>
+
+<h6>Missing table name</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The method did not include the table name in its parameter list.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>s data = Db.getOneRow(&quot;ACN,TAXID&quot;,&quot;&quot;,&quot;XACN&quot;)</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Include the necessary table name in the method parameter list.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>s data = Db.getOneRow(&quot;ACN,TAXID&quot;,&quot;CIF&quot;,&quot;XACN&quot;)</td></tr>
+</table>
+
+<h6>Mode parameter required</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The parameter for the Record.setMode method was not specified.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Specify a value of 0 (insert) or 1 (update) to indicate the mode of 
+ the object.</td></tr>
+</table>
+
+<h6>More actual parameters than formal parameters</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A routine is attempting to pass more parameters to a label than the 
+ label has defined.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review parameters of the label being called and the routine calling 
+ that label. Determine which has the correct number of parameters. If you 
+ need to modify the label being called, review all routines calling that 
+ label to ensure that they pass the correct number of parameters.</td></tr>
+</table>
+
+<h6>Multi-node records must be the same class</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>When using the Record.copy method, one or both of the tables being copied 
+ are type 10, and the tables are not the same.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>None, this method cannot be used in this way.</td></tr>
+</table>
+
+<h6>Multiple dynamic selects or variable name conflict (exe,vsql)</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A dynamic select was used, but the local variables &quot;exe&quot; or 
+ &quot;vsql&quot; are already in scope. This can occur in either of the 
+ following ways:</p>
+<p>(1) The programmer used the names &quot;exe&quot; or &quot;vsql&quot;.</p>
+<p>(2) There is already a dynamic select used in the same scope as this 
+ one.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Correct the error as follows based on the cause listed above:</p>
+<p>(1)&nbsp;Do not use the variable names &quot;exe&quot; or &quot;vsql&quot;.</p>
+<p>(2) Do not use more than one dynamic select in the same scope.</td></tr>
+</table>
+
+<h6>Multiple reference at parameters: &lt;param1&gt; and : &lt;param2&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The same parameter was passed more than once.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>label(RecordDEP dep(), RecordDEP dep())</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Modify the code to pass the parameter only once.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>label(RecordDEP dep())</td></tr>
+</table>
+
+<h6>MUMPS structured block syntax is not supported</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The code includes a period (.) in a DO structure block.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>FOR I=1:1:10 DO</p>
+<p class=BodyIndent>.S D = 3</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Implement a DO block with the { } syntax.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>for I=1:1:10 DO {</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;S 
+ D = 3</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+</table>
+
+<h6><a name=O_Errors></a>Object cast cannot be conditionally executed</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A cast expression cannot be placed into a conditional expression, because 
+ logical conditions cannot be tested at compile time. This error occurred 
+ because a cast expression was placed in a conditional expression.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>type RecordACN acn = Db.getRecord(&quot;ACN&quot;,&quot;CID=:AREF&quot;)</p>
+<p class=BodyIndent>if acn.cls = &quot;L&quot; set acn = {RecordLN}acn</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Modify the code to separate the conditional statement from the casting 
+ statement.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>type RecordACN acn = Db.getRecord(&quot;ACN&quot;,&quot;CID=:AREF&quot;)</p>
+<p class=BodyIndent>if acn.cls = &quot;L&quot;</p>
+<p class=BodyIndent
+	style="margin-left: 21px;">&nbsp;&nbsp;&nbsp;set 
+ acn = {RecordLN}acn</td></tr>
+</table>
+
+<h6>Object identifier required</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>An object name (i.e., identifier) was not specified when attempting 
+ to catch a run-time error.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>CATCH</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Enter the correct syntax for the CATCH command.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>CATCH vError{</td></tr>
+</table>
+
+<h6>Object invalid in FOR expression</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A FOR command argument is not of the String data type. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>new dep</p>
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set dep = Db.getRecord(&quot;DEP&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent>for I = 1:1:<span style="font-weight: bold;"><B>dep</B></span> 
+ set x = x + 1</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p>You cannot use the dep object in the above position in a FOR statement.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Remove the object from the FOR command, and use one of the following 
+ alternative statements:</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=Example>Example 1</p>
+<p class=BodyIndent>for I = 1:1:<span style="font-weight: bold;"><B>10</B></span> 
+ set x = x + 1<br>&nbsp;</p>
+<p class=Example>Example 2</p>
+<p class=BodyIndent>for I = 1:1:<span style="font-weight: bold;"><B>dep.trmd</B></span> 
+ set x = x + 1<br>
+&nbsp;</td></tr>
+</table>
+
+<h6>Object invalid in relational expression</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A relational operand is not of the String data type. The code attempts 
+ to compare an M variable to an object. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>new dep,x</p>
+<p class=BodyIndent>set x = &quot;TEST&quot;</p>
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set dep = Db.getRecord(&quot;DEP&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent>if x = dep quit</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Use a field from the object for the test. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>new dep,x</p>
+<p class=BodyIndent>set x = &quot;TEST&quot;</p>
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set dep = Db.getRecord(&quot;DEP&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent><span style="font-weight: bold;"><B>if x = dep.title1</B></span> 
+ quit</td></tr>
+</table>
+
+<h6>Object is already instantiated: &lt;objectName&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>This error may occur if you re-instantiate an object. For example, the 
+ following code attempts to instantiate an object that already exists for 
+ a given identifier within a given M scope:</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>t RecordDEP dep</p>
+<p class=BodyIndent>set dep = Db.getRecord(&quot;DEP&quot;,rs.getCol(1))</p>
+<p class=BodyIndent>set dep = Db.getRecord(&quot;DEP&quot;,rs.getCol(2))</p>
+<p class=BodyIndent>At run-time, the second assignment produces this error.</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>If you want to use the same identifier for two assignments, use the 
+ following coding structure:</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>tagA</p>
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set dep = Db.getRecord(&quot;DEP&quot;,someKey)</p>
+<p class=BodyIndent>do tag(.dep)</p>
+<p class=BodyIndent>quit</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>tagB(RecordDEP dep)</p>
+<p class=BodyIndent>if ‘$D(dep) set dep = Db.getRecord(&quot;DEP&quot;,someKey)</td></tr>
+</table>
+
+<h6>Object is already referenced: &lt;objectName&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The object has been previously referenced within this subroutine.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>tag(RecordDEP dep) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ x = dep.bal</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do 
+ dep.setUpdateOnly()</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quit</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Place this method at the top of the subroutine.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>tag(RecordDEP dep) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do 
+ dep.setUpdateOnly()</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ x = dep.bal</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quit</td></tr>
+</table>
+
+<h6>Object is an invalid subscript</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>An array subscript is not of the String data type. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>new dep</p>
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set dep = Db.getRecord(&quot;DEP&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent><span style="font-weight: bold;"><B>set x(dep) = 2</B></span></p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p>Because dep is an object name, you cannot use it as a subscript to an 
+ array.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Either do not use the object name as a subscript, or use a field from 
+ the object. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>new dep</p>
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set dep = Db.getRecord(&quot;DEP&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent><span style="font-weight: bold;"><B>set x(dep.cid) = 2</B></span></td></tr>
+</table>
+
+<h6>Object is invalid function argument</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>An M function parameter is not of the String data type. For example, 
+ the compiler does not enable commands such as $EXTRACT to extract data 
+ from an object.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>new dep</p>
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set dep = Db.getRecord(&quot;DEP&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent><span style="font-weight: bold;"><B>set xyz = $E(dep,1,2)</B></span></p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Change the object reference to a column within the object. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>new dep</p>
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set dep = Db.getRecord(&quot;DEP&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent><span style="font-weight: bold;"><B>set xyz = dep.title1</B></span></td></tr>
+</table>
+
+<h6>Object reference required</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The objectName parameter is missing from the Class.isValid method.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>if Class.isValid() quit</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Specify the name of the object to validate.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>if Class.isValid(dep) quit</td></tr>
+</table>
+
+<h6 class="whs24">Object scope is not visible: 
+ this.&lt;reference&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs16">
+<p>A compiler method scopes a variable that has the same name as a property 
+ of the compiler.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>type String objectName</p>
+<p class=BodyIndent>if this.objectName.isLiteral() writer &quot;wow&quot; 
+ &nbsp;&nbsp;</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;//compiler 
+ property has the same name as the local identifier</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs16">
+<p>Do not use property names as variable names.</td></tr>
+</table>
+
+<h6>Objects must be the same type</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>When using the object.equals method, the objects are not of the same 
+ class.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>The objects must be of the same class.</td></tr>
+</table>
+
+<h6>Objects must be passed by reference</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>An object that was passed to a subroutine as an actual parameter must 
+ be passed by reference.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>if Class.isValid() quit</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>When passing an object to a label, insert a dot (.) before the object 
+ name to pass the object by reference. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>&nbsp; &nbsp;&nbsp;&nbsp;set 
+ dep = Db.getRecord(&quot;DEP&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do 
+ abc<span style="font-weight: bold;"><B>(.dep)</B></span></p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>abc(RecordDEP dep)</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quit</td></tr>
+</table>
+
+<h6><a name=P_Errors></a>Parameter &lt;parameter&gt; is multiply defined</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>An object was passed twice to a subroutine.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>type RecordDEP dep=Db.getRecord(&quot;DEP&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent
+	style="font-weight: bold;">D XXX(x.,.dep,.dep)</p>
+<p class=BodyIndent>quit</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent
+	style="font-weight: bold;">XXX(x,RecordDEP dep,RecordDEP dep)</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Pass the parameter only once to the subroutine.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>type RecordDEP dep=Db.getRecord(&quot;DEP&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent
+	style="font-weight: bold;">D XXX(x.,.dep)</p>
+<p class=BodyIndent>quit</p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent
+	style="font-weight: bold;">XXX(x,RecordDEP dep)</td></tr>
+</table>
+
+<h6>Parameter 1 required - postTSet</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The first parameter of the TranSet.postTset method (i.e., processingDate) 
+ was not specified.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Modify the code to include this required parameter.</td></tr>
+</table>
+
+<h6>Parameter 2 required - postTSet</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The second parameter of the TranSet.postTset method (i.e., branchCode) 
+ was not specified.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Modify the code to include this required parameter.</td></tr>
+</table>
+
+<h6>Parameter 3 required - postTSet</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The third parameter of the TranSet.postTset method (i.e., qualifier) 
+ was not specified.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Modify the code to include this required parameter.</td></tr>
+</table>
+
+<h6>Parameter list contains duplicate references</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A variable or array reference appears more than once in a formal or 
+ actual parameter list. For example, parameter dep() below is multiply 
+ defined.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent><span style="font-weight: bold;"><B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do 
+ subr(dep,.dep(),.dep(),CID1,CID2)</B></span></p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>subr(RecordDEP dep, ReocrdDEP dep(), CID1,CID2)</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quit</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>PSL allows a variable to be multiply defined in the actual parameters 
+ but not in the formal parameters. In order to support array passing by 
+ dimension, PSL does not support duplicate references in the actual parameters. 
+ Remove the duplicate references.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent><span style="font-weight: bold;"><B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do 
+ subr(dep,.dep(),CID1,CID2)</B></span></p>
+<p class=BodyIndent>&nbsp;</p>
+<p class=BodyIndent>subr(RecordDEP dep, ReocrdDEP dep(), CID1,CID2)</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quit</td></tr>
+</table>
+
+<h6>Parameter list is too long: &lt;expression&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The parameter list (including parameters and delimiters) for a subroutine 
+ has more than 1024 characters.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review the code to determine a better method to pass the data. Perhaps 
+ rewrite the code in smaller function calls. If you cannot rewrite the 
+ code, shorten parameter names. If the columns being passed are from an 
+ object, consider passing the object instead of the individual columns.</td></tr>
+</table>
+
+<h6>Parameter required</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The first parameter of the TranSet.getTran method (i.e., transactionSeq) 
+ was not specified.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Modify the code to include this required parameter.</td></tr>
+</table>
+
+<h6>Parenthesis expected</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs27">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>Parentheses are mismatched.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs28">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Ensure that you include the same number of closing parentheses as opening 
+ parentheses in the line.</td></tr>
+</table>
+
+<h6>Property is not an index: &lt;reference&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The code refers to an object as though the Array Flag (OBJECTPROP.ARRAY) 
+ is selected, indicating that the class is a container class.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>object.tts{SEQ}.tamt</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Rewrite the code without {} references when referring to an object property.</td></tr>
+</table>
+
+<h6>Property name expected</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>An object was instantiated, but a reference was made to the object without 
+ indicating the property of the object.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>type RecordDEP dep = Db.getRecord(&quot;DEP,&quot;CID&quot;)</p>
+<p class=BodyIndent>set x=dep</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Add the property reference.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>type RecordDEP dep = Db.getRecord(&quot;DEP,&quot;CID&quot;)</p>
+<p class=BodyIndent>set x=dep.bal</td></tr>
+</table>
+
+<h6>Property: &lt;reference&gt; does not exist in class: &lt;class&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A user made a reference to a property on an object from a class other 
+ than the Record class.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>type IO io = Class.new(&quot;IO&quot;)</p>
+<p class=BodyIndent>set io.xyz = 3</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Only use properties with objects for which they are valid.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>type IO io = Class.new(&quot;IO&quot;)</p>
+<p class=BodyIndent>set io = 3</td></tr>
+</table>
+
+<h6><a name=R_Errors></a>Read length or timeout expected</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>An error occurred in either the timeout or maximum length syntax. This 
+ error may occur in the READ command.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review and correct the timeout and length syntax.</td></tr>
+</table>
+
+<h6>Read timeout expected</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The timeout period qualifier to the READ command was not entered properly.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review and correct the timeout syntax.</td></tr>
+</table>
+
+<h6>Record does not exist</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>This error occurs on a table when the record being instantiated during 
+ the compile does not exist. (Most literal instantiation of tables within 
+ PSL will occur on the CUVAR table, which should always exist.)<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review the literal instantiation of the record. If it does not exist 
+ during the compilation of the element, is should not be a compile time 
+ instantiation.</td></tr>
+</table>
+
+<h6>Recursive loop, Label called by label within lower level of stack list: 
+ &lt;list&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>Subroutine &quot;a&quot; calls subroutine &quot;n&quot; which calls 
+ subroutine &quot;a&quot;.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ Subroutine a</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;do 
+ n</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;quit</p>
+<p class=BodyIndent>n &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+ Subroutine n</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;do 
+ a</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;quit</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Do not structure code for infinite loops.</td></tr>
+</table>
+
+<h6>Reference cannot be on for/while line &lt;expression&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>Embedded within the PSL DbSet class is a capability to refer to a single 
+ property directly without specifically instantiating the record. This 
+ error occurs if that functionality is used on the same line as a FOR or 
+ WHILE command.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>type DbSet ds = Db.selectDbSet('DEP&quot;)</p>
+<p class=BodyIndent>while ds.next() set bal = bal + ds.getRecord().bal</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Add a structure block after the next() method, and move the setting 
+ of bal into the structured block.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent
+	style="background-color: Transparent;">type DbSet ds = Db.selectDbSet('DEP&quot;)</p>
+<p class=BodyIndent
+	style="background-color: Transparent;">while ds.next() do {</p>
+<p class=BodyIndent
+	style="background-color: Transparent;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set 
+ bal= bal + ds.getRecord().bal</p>
+<p class=BodyIndent
+	style="background-color: Transparent;">}</td></tr>
+</table>
+
+<h6>Reference parameter is not supported in post-conditional expression: 
+ &lt;atom&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A user attempted to update an array object reference or object property 
+ in a post-conditional expression.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>do:true tag(.array(ref))</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs16">
+<p class="whs17">Rewrite the code.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs16">
+<p class=BodyIndent
+	style="background-color: Transparent;">if true do tag(.array(ref))</td></tr>
+</table>
+
+<h6>ResultSet expected: &lt;variable&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The resultSet parameter for the HTML.addCol and HTML.addRow methods 
+ is required but was not specified.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Specify the resultSet parameter.</td></tr>
+</table>
+
+<h6>Return type expected</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The called method requires a return type. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>new dep</p>
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set dep = Db.getRecord(&quot;DEP&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent>do Db.isDefined(&quot;DEP&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p>The isDefined method uses the following syntax, expecting a value to 
+ be returned:</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>if Db.isDefined(&quot;DEP&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review the correct use of the method. Rewrite the code to reflect the 
+ correct syntax.</td></tr>
+</table>
+
+<h6>Return type not expected</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The called method does not require a return type. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>new dep</p>
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set dep = Db.getRecord(&quot;DEP&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent><span style="font-weight: bold;"><B>set x = dep.toArray(&quot;%A(CID&quot;)</B></span></p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p>The toArray method is called using the following syntax:</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>do dep.toArray(&quot;%A(CID&quot;)</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review the correct use of the method. Rewrite the code to reflect the 
+ correct syntax.</td></tr>
+</table>
+
+<h6>Right Index delimiter '}' Expected: &lt;reference&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A class is defined as an array (i.e., the Array Flag (OBJECTPROP.ARRAY) 
+ is selected). However, a reference to the array does not include the closing 
+ delimiter.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>object.tts{SEQ.tamt</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Insert the closing delimiter in the array reference.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>object.tts{SEQ}.tamt</td></tr>
+</table>
+
+<h6>Routine does not exist: &lt;routine&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A routine being called does not exist.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review the code to determine why the section being called is missing. 
+ Modify the element calling it, or create the code that is missing.</td></tr>
+</table>
+
+<h6><a name=S_Errors></a>Scope mismatch between: &lt;var&gt; and: &lt;lvn&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>An array expression does not have the same scope as the variable name.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>type Public ResultSet abc</p>
+<p class=BodyIndent>type ResultSet abc()</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Modify the code so that the variable and array expression have the same 
+ scope.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>type Public ResultSet abc</p>
+<p class=BodyIndent>type Public ResultSet abc()</td></tr>
+</table>
+
+<h6>Signed indicator required</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The user did not specify the required second parameter (i.e., signed) 
+ for the Number.complexUnpack method.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Specify the second parameter.</td></tr>
+</table>
+
+<h6>Space character expected</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A FOR loop is written incorrectly. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>for I=1:1:3:4</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>The compiler expects to find a space at the position where the third 
+ colon (:) appears. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>for I=1:1:3</td></tr>
+</table>
+
+<h6>Sub-sequence must have value SYSTEM or SECONDARY</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The user specified a value other than SYSTEM or SECONDARY for the fourth 
+ parameter (i.e., secTran) of the tranSet.copyTran parameter.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Specify either SYSTEM or SECONDARY for the fourth parameter.</td></tr>
+</table>
+
+<h6>Subroutine name required</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>Part of the method building code is building a buffer of code that is 
+ then inserted into the program. The buffer.insert method did not specify 
+ the subroutine name in the first parameter.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Determine where in the code the buffer.insert() method was used. Add 
+ the subroutine name as a parameter.</td></tr>
+</table>
+
+<h6>Subroutine does not exist within routine: &lt;label&gt;^&lt;routine&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A subroutine being called does not exist.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review the code to determine why the section being called is missing. 
+ Modify the element calling it, or create the code that is missing.</td></tr>
+</table>
+
+<h6><a name=T_Errors></a>Table parameter is required</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The Dbset.selectDbset method did not specify a table name. The Dbset.getRecord 
+ method does not require a table name. However, if the table name is not 
+ supplied to this method, it will get the table name from the Dbset.selectDbset 
+ method.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review the use of the Dbset.selectDbset and Dbset.getRecord methods. 
+ Add the missing table names for those methods.</td></tr>
+</table>
+
+<h6>Table parameter: &lt;actual&gt; does not match: &lt;table&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The table named in the Dbset.getRecord method does not match the table 
+ named in the Record class definition.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>type RecordTTXFDT ttxfdt = ds.getRecord(&quot;TTX&quot;)</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Make the table names the same.</td></tr>
+</table>
+
+<h6>Tag parameter is required</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The first parameter (i.e., Tag) of the object.storeValue is missing.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review the use of the object.storeValue method, and add the required 
+ Tag parameter.</td></tr>
+</table>
+
+<h6>Thrown object must be class Error</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>An attempt was made to throw an error for an object that is not defined 
+ in the Error class.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>if XETC = &quot;&quot; throw INVLDTC($$^MSG(2692))</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Define the object in the Error class.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>if XETC = &quot;&quot; throw Class.new(&quot;INVLDTC&quot;,$$^MSG(2692))</td></tr>
+</table>
+
+<h6>Too many access keys</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The keys for the Db.getRecord method are not named, and more than the 
+ number of keys were provided to the method.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review the keys provided, and reduce them to the correct number of keys.</td></tr>
+</table>
+
+<h6>Transaction ID required</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The first parameter of the runtime.start method is a Transaction ID 
+ that indicates if the process is batch or client/server. This message 
+ indicates that the related batch or client/server was not added.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review the runtime.start method reference. Add the necessary process.</td></tr>
+</table>
+
+<h6>Type command cannot be conditionally executed</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The <span style="font-weight: bold;"><B>type</B></span> command appears on 
+ the same line as a conditional <span style="font-weight: bold;"><B>if</B></span> 
+ statement.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>if x = 3 type RecordDEP dep = Db.getRecord</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>The <span style="font-weight: bold;"><B>type</B></span> command must appear 
+ on its own line. In the following example, the assumption is made that 
+ dep will be instantiated using either a class.new or getRecord method. 
+ Run-time errors will occur if you do not instantiate the object.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>type RecordDep dep</p>
+<p class=BodyIndent>if x = 3 set dep = Db.getRecord(&quot;DEP&quot;,&quot;CID&quot;)</td></tr>
+</table>
+
+<h6>Type &lt;eClass&gt; can not be assigned to type &lt;aClass&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>This error appears when any of the following conditions exist:</p>
+<p>(1)&nbsp;The identifier &lt;aClass&gt; is declared as a different type 
+ than the assignment expression &lt;eClass&gt;. For example, the following 
+ code generates this error, because it attempts to assign LN to dep, which 
+ has been defined as type RecordDEP.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set dep = Db.getRecord(&quot;LN&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p>(2)&nbsp;The object is not defined. For example, the following code 
+ generates this error, because the dep identifier type was not defined.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>set dep = Db.getRecord(&quot;DEP&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p>(3)&nbsp;An attempt is made to copy an object of one class to an object 
+ of another class.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>type RecordACN acn = Db.getRecord(&quot;ACN&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent>type RecordLN ln = acn.copy()</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Correct the error as follows based on the cause listed above:</p>
+<p>(1)&nbsp;Either change the class specified <span style="font-weight: bold;"><B>type</B></span> 
+ statement to match the class of the object in the getRecord method, or 
+ vice versa. That is, either change RecordDEP to RecordLN, or change the 
+ &quot;LN&quot; in the getRecord method to &quot;DEP&quot;.</p>
+<p>(2) &nbsp;Insert a <span style="font-weight: bold;"><B>type</B></span> statement 
+ prior to the set statement defining the type of the identifier. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set dep = Db.getRecord(&quot;DEP&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p>(3) &nbsp;Only copy an object of one class to another object in the 
+ same class. For example,</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>type RecordACN acn = Db.getRecord(&quot;ACN&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent>type RecordACN acn1 = acn.copy()</td></tr>
+</table>
+
+<h6><a name=U_Errors></a>Undefined class: &lt;class or cast or type&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>There are multiple causes of this error:</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class="whs29">(1) When an object is 
+ cast from one class to another, the new class is not a valid class.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>type recordACN acn = Class.new(&quot;RecordACN&quot;)</p>
+<p class=BodyIndent>set acn = {DEP}acn</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class="whs29">(2) An invalid class 
+ of objects is found within the parameters of a subroutine.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>SUB(Str xyz)</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class="whs29">(3) The class of an object 
+ being instantiated is not valid.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>type RecordXYZ acn</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Corresponding solutions are:</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class="whs29">(1) Change the class 
+ value in the brackets {} to a valid class (e.g., RecordDEP).</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class="whs29">(2) Correct the class 
+ in the parameter list (e.g., String xyz).</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class="whs29">(3) Change the class 
+ to a valid class (e.g., RecordACN).</td></tr>
+</table>
+
+<h6>Undefined instance variable: &lt;var&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs30">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The instance variable was declared as a single variable but is referenced 
+ as an array. For example,</td></tr>
+
+<tr valign="top" class="whs31">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>type RecordTTX ttx</p>
+<p class=BodyIndent>set ttx(seq) = x</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs32">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Either correct the object declaration if using multiple elements, or 
+ correct the expression to reference the object as a single element. For 
+ example,</td></tr>
+
+<tr valign="top" class="whs33">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>type RecordTTX ttx()</p>
+<p class=BodyIndent>set ttx(seq) = x</td></tr>
+</table>
+
+<h6>Undefined method: &lt;method&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The method does not exist in the OBJECTMET table.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs32">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Verify the spelling and case of the specified method. Method names are 
+ case-sensitive. Also, review the valid list of methods. If you specify 
+ a new method, verify that it also appears in the OBJECTMET table.</td></tr>
+</table>
+
+<h6>Unexpected character: &lt;character&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>There is a mismatch of quotes in a method statement. In the following 
+ example, TJD is intended to be a literal string. The rules for defining 
+ a literal string require two sets of quotes around it. The error reported 
+ will display T from TJD, because it is in the location where the second 
+ quote should be.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>do Schema.createTable(&quot;TMPREGDD&quot;,&quot;&quot;TJD&quot;,JOB,PERS,REGD,CAT&quot;,&quot;BAL&quot;, 
+ tmpregd&quot;)</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Enter the appropriate number of quotes.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>do Schema.createTable(&quot;TMPREGDD&quot;,&quot;&quot;&quot;TJD&quot;&quot;,JOB,PERS,REGD,CAT&quot;,&quot;BAL&quot;, 
+ tmpregd&quot;)</td></tr>
+</table>
+
+<h6>Unexpected compiler command: &lt;command&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A # appears in front of code that is not one of the valid compiler commands.</td></tr>
+
+<tr valign="top" class="whs21">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>#set x = x + 1</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Determine the intent of the statement. Either add a compiler command 
+ that is valid, or remove the # symbol.</td></tr>
+
+<tr valign="top" class="whs21">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>set x = x + 1</td></tr>
+</table>
+
+<h6>Unexpected expression: &lt;expression&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The PSL parser could not interpret an expression. This can occur, for 
+ example, when GT.M special variables are used but not coded into PSL.</td></tr>
+
+<tr valign="top" class="whs21">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>quit:'$T</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Review the code. GT.M special variables that have not been accounted 
+ for are probably intentionally not part of PSL and therefore should not 
+ be used.</td></tr>
+</table>
+
+<h6>Unexpected expression after catch block: &lt;xrec&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>The catch statement syntax does not allow for coding to follow the { 
+ on the same line.</td></tr>
+
+<tr valign="top" class="whs21">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>CATCH verror { q:x</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;do 
+ ^xxx</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;}</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Move the extra code from the CATCH statement line to its own line.</td></tr>
+
+<tr valign="top" class="whs21">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>CATCH verror {</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;do 
+ ^xxx</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;}</td></tr>
+</table>
+
+<h6>Unexpected return expression in FOR loop</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>You cannot return a variable when quitting a FOR loop. For example,</td></tr>
+
+<tr valign="top" class="whs21">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>set x = 2</p>
+<p class=BodyIndent>for i=1:1 quit:x &gt; 2 x do {</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code…</p>
+<p class=BodyIndent>}</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Rewrite the code to quit with the value after the loop finishes processing. 
+ For example,</td></tr>
+
+<tr valign="top" class="whs21">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>set x = 2</p>
+<p class=BodyIndent>for i=1:1 quit:x &gt; 2 do {</p>
+<p class=BodyIndent>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code…</p>
+<p class=BodyIndent>}</p>
+<p class=BodyIndent>quit x</td></tr>
+</table>
+
+<h6>Uninstantiated object: &lt;objectName&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>An object has been typed but not instantiated.</td></tr>
+
+<tr valign="top" class="whs21">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set x = dep.bal</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Modify the code to also instantiate the object.</td></tr>
+
+<tr valign="top" class="whs21">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>type RecordDEP dep</p>
+<p class=BodyIndent>set dep = Db.getRecord(&quot;DEP&quot;,&quot;CID&quot;)</p>
+<p class=BodyIndent>set x = dep.bal</td></tr>
+</table>
+
+<h6>Unknown compiler switch: &lt;atom&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>PSL supports compiler switches by prefixing the command with a # symbol. 
+ This error indicates that a # prefixed a command that is not defined as 
+ a valid compiler switch.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Remove the # symbol. Review the code to determine whether additional 
+ changes are required to obtain the desired functionality.</td></tr>
+</table>
+
+<h6>Unknown cache logic, PSL error</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>This is an internal PSL compiler error and should not occur.<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Report the error to FIS PSL Support.</td></tr>
+</table>
+
+<h6>Unsupported method under static scope: &lt;method&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A table such as CUVAR has been instantiated in static scope, thereby 
+ prohibiting the use of many methods on the object.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>do CUVAR.save()</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Change CUVAR to lowercase, and instantiate the record. Set the appropriate 
+ properties, and then use the save method.</td></tr>
+</table>
+
+<h6>Unsupported table in RecordSet class: &lt;table&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A DbSet class method has specified a table with only one record (e.g., 
+ CUVAR table).<br>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Instantiate the record using the Db.getRecord method.</td></tr>
+</table>
+
+<h6><a name=V_Errors></a>Variable expected: &lt;expression&gt;</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>This error may occur for several reasons. For example, </p>
+<p>(1) You use a global reference in Profile version 7.0.</p>
+<p>(2) The new command is used improperly with a special M variable (e.g., 
+ $H).</p>
+<p>(3) A column is excluded from a table.column reference.</td></tr>
+
+<tr valign="top" class="whs21">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent
+	style="margin-left: 36px;">set DSP2 = $$DSPRT(crcd.finspot,crcd.)</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>The solution depends on the cause of the error:</p>
+<p>(1) Write the code without a global.</p>
+<p>(2) Review the use of the new command. Consider converting to a type 
+ class variable.</p>
+<p>(3) Include the missing column reference.</td></tr>
+
+<tr valign="top" class="whs21">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent
+	style="margin-left: 36px;">set DSP2 = $$DSPRT(crcd.finspot,crcd.crcd)</td></tr>
+</table>
+
+<h6>Void method expected</h6>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs22">
+<p class="whs7">Cause:</td>
+<td width="85%" class="whs23">
+<p>A method that is not a void method is used incorrectly.</td></tr>
+
+<tr valign="top" class="whs21">
+<td colspan="1" rowspan="1" width="15%" class="whs9">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs10">
+<p class=BodyIndent>type IO io = Class.new(&quot;IO&quot;)</p>
+<p class=BodyIndent>do io.read()</p>
+<p class=BodyIndent>&nbsp;</td></tr>
+
+<tr valign="top" class="whs5">
+<td width="15%" class="whs9">
+<p class="whs7">Solution:</td>
+<td width="85%" class="whs10">
+<p>Modify the code to use the method correctly.</td></tr>
+
+<tr valign="top" class="whs21">
+<td colspan="1" rowspan="1" width="15%" class="whs14">
+<p class="whs7">&nbsp;</td>
+<td colspan="1" rowspan="1" width="85%" class="whs15">
+<p class=BodyIndent>type IO io = Class.new(&quot;IO&quot;)</p>
+<p class=BodyIndent>set x = io.read()</td></tr>
+</table>
+
+<p>&nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

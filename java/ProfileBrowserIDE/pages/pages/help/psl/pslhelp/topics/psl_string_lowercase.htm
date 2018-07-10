@@ -1,0 +1,207 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>lowerCase</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { width:552px; margin-left:18pt; border-spacing:0px; }
+col.whs2 { width:151px; }
+col.whs3 { width:393px; }
+tr.whs4 { x-cell-content-align:top; }
+td.whs5 { width:151px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs6 { width:393px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs7 { margin-left:0px; }
+p.whs8 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs7 {margin-left:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nString Class\nMethods\nlowerCase");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>lowerCase Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">String</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class=BodyIndent>This method returns the lowercase version of a string. 
+ The first character can optionally be capitalized. This method replaces 
+ the $$LOWER^%ZFUNC() function.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>StringObject.lowerCase(Boolean capitalizeFirstChar)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="552" class="whs1">
+<col class="whs2">
+<col class="whs3">
+
+<tr valign="top" class="whs4">
+<td width="151px" class="whs5">
+<p>capitalizeFirstChar</td>
+<td width="393px" class="whs6">
+<p class="whs7">A Boolean value that indicates if the first 
+ character of the result must be capitalized. If absent, 0 will be used.</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>The string in which all characters are converted to 
+ lowercase characters (if capitalizeFirstChar = 0 or absent).</p>
+
+<p class=BodyIndent>The string in which the first character is converted 
+ to titlecase, and all other characters are converted to lowercase (if 
+ capitalizeFirstChar = 1).c</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs8">v7.0</p>
+
+<p class=Example>Example</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String MIXED = &quot;Hello World!&quot;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String LOWER = <span style="font-weight: bold;"><B>MIXED.lowerCase()</B></span> 
+ // &quot;hello world!&quot;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String TITLE = MIXED.lowerCase(1) 
+ // &quot;Hello world!&quot;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// The example below uses the (Dutch) 
+ Unicode characters &#306; (196, 178)</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// and &#307; (196, 179) and the well-known 
+ Frysian name &#306;sbrand.</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// The composed characters are combinations 
+ of the traditional ASCII</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// characters I and J (and i and j).</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// Note the difference for capitalizeFirstChar 
+ = 1</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String NAMEUNI = &quot;&#306;sBrAnD&quot; 
+ // 7 characters</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String NAMEASC = &quot;IJsBrAnD&quot; 
+ // 8 characters</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String LOWERUNI = NAMEUNI.lowerCase() 
+ // &quot;&#307;sbrand&quot;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String LOWERASC = NAMEASC.lowerCase() 
+ // &quot;ijsbrand&quot;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String TITLEUNI = NAMEUNI.lowerCase(1) 
+ // &quot;&#306;sbrand&quot;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String TITLEASC = NAMEASC.lowerCase(1) 
+ // &quot;Ijsbrand&quot;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

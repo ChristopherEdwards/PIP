@@ -1,0 +1,202 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>isDefined</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<style type="text/css">
+<!--
+p.whs1 { margin-left:24px; }
+table.whs2 { x-cell-content-align:top; width:100%; border-spacing:0px; }
+col.whs3 { width:8.44%; }
+col.whs4 { width:91.56%; }
+tr.whs5 { x-cell-content-align:top; }
+td.whs6 { width:8.44%; padding-right:10px; padding-left:10px; border-right-style:none; border-left-style:none; border-top-style:none; border-bottom-style:none; }
+p.whs7 { text-align:center; }
+img_whs8 { border:none; width:15px; height:15px; float:none; border-style:none; }
+td.whs9 { width:91.56%; padding-right:10px; padding-left:10px; border-top-style:none; border-bottom-style:none; border-right-style:none; }
+p.whs10 { margin-left:0px; }
+table.whs11 { width:534px; margin-left:18pt; border-spacing:0px; }
+td.whs12 { width:102px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs13 { width:432px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs14 { background-color:Transparent; }
+p.whs15 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs10 {margin-left:1pt; }";
+  strNSS += "p.whs14 {background-color:white; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nDb Class\nMethods\nisDefined");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>isDefined Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class:&nbsp;<span style="font-weight: normal;">Db</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class="whs1">This method returns an indication of whether 
+ a record exists in the database.</p>
+
+<p class="whs1">As of Profile v6.3, this method supports 
+ lowercase variables, object.property, and system variables within the 
+ host variable syntax. PSL maps these variables and object references into 
+ uppercase host variables.</p>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs2">
+<col class="whs3">
+<col class="whs4">
+
+<tr valign="top" class="whs5">
+<td width="8.44%" class="whs6">
+<p align="center" class="whs7"><img src="../image/i_blue_sm.jpg" x-maintain-ratio="TRUE" width="15px" height="15px" border="0" class="img_whs8"></td>
+<td width="91.56%" class="whs9">
+<p>When using the classNew parameter for the <a href="psl_db_getrecord.htm">Db.getRecord</a> 
+ method, you can avoid a series of method usages such as:</p>
+<p class="whs1">Db.isDefined<br>
+If Yes, then use Db.getRecord.<br>
+If no, then use Class.new to instantiate the record.</p>
+<p class="whs10">This should reduce the valid uses of the Db.isDefined 
+ method. Review each use of Db.isDefined to ensure that it is valid.</td></tr>
+</table>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>Db.isDefined(literal String tableName,literal String whereClause, 
+ </p>
+
+<p class=Code>Number matchCount)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="534" class="whs11">
+
+<tr valign="top" class="whs5">
+<td width="102px" class="whs12">
+<p>tableName</td>
+<td width="432px" class="whs13">
+<p>A valid database table name.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="102px" class="whs12">
+<p>whereClause</td>
+<td colspan="1" rowspan="1" width="432px" class="whs13">
+<p>An SQL WHERE clause. For backward compatibility, a comma-separated list 
+ of access keys for the table is also acceptable. The list will be translated 
+ into the corresponding whereClause.</td></tr>
+
+<tr valign="top" class="whs5">
+<td colspan="1" rowspan="1" width="102px" class="whs12">
+<p>matchCount</td>
+<td colspan="1" rowspan="1" width="432px" class="whs13">
+<p class="whs14">The number of records matching 
+ the specified table and access keys (i.e., whereClause). When using this 
+ parameter, it is not necessary to specify all the keys. In addition, non-key 
+ columns can also be specified in the whereClause parameter.</p>
+<p class="whs14">If matchCount is not specified, 
+ the default is 1.</td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>1 if at least matchCount distinct records satisfy the 
+ whereClause.<br>
+0 if less than the matchCount records satisfy the whereClause.</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs15">v6.0</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>if ‘<span style="font-weight: bold;"><B>Db.isDefined(&quot;CIF&quot;,&quot;ACN=:ACN&quot;)</B></span> 
+ quit</p>
+
+<p class=Code>else ...</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>* Variable ACN must be defined prior to the getRecord statement.</p>
+
+<p class=Code>* The else statement is incomplete.</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

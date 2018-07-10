@@ -1,0 +1,9 @@
+/*
+ * CodePress color styles for PSL syntax highlighting
+ */
+
+b {color:#7F0055;font-weight:bold;font-style:normal;} /* reserved words */
+u {color:#00f;font-weight:bold;} /* classes */
+big {color:#000;background-color:#f00;font-weight:bold;} /* important words */
+i, i b, i s, i u, i big {color:#999;font-weight:bold;} /* comments */
+s, s b, s u, s big {color:#f00;font-weight:normal;} /* strings */

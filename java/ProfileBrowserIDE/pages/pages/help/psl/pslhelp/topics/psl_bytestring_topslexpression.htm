@@ -1,0 +1,177 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>topSLExpression</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+p.whs1 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nByteString Class\nMethods\ntoPSLExpression");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>toPSLExpression Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;"><span style="x-condition: NotPrintedDocn;">Class:<span 
+ style="font-weight: normal; x-condition: NotPrintedDocn;"> ByteString</span></span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class=BodyIndent
+	style="text-align: justify;">This method converts the value of the 
+ byte string into a PSL/M expression that represents the value, and can 
+ be inserted in M code.</p>
+
+<p class=BodyIndent
+	style="text-align: justify;">&nbsp;</p>
+
+<p class=BodyIndent
+	style="text-align: justify;">If the byte string represents a canonic 
+ numeric value, then the value is returned unchanged. Otherwise, the byte 
+ string does not contain control characters or invalid sequences, the method 
+ returns ({String}ByteStringObject).addQuotes(). </p>
+
+<p class=BodyIndent
+	style="text-align: justify;">&nbsp;</p>
+
+<p class=BodyIndent
+	style="text-align: justify;">Otherwise, the method returns a single 
+ $CHAR()-function or $ZCHAR()-function that lists all the byte values.</p>
+
+<p class=BodyIndent
+	style="text-align: justify;">&nbsp;</p>
+
+<p class=BodyIndent
+	style="text-align: justify;">The current implementation of the function 
+ assumes that the $CHAR() or $ZCHAR() code generated to represent the value 
+ does not exceed a length limit.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>ByteStringObject.toPSLExpression()</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<p class=BodyIndent>none</p>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>A PSLExpression that will only contain characters that 
+ is valid in M / PSL source code.</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs1">Profile V7.0</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>type String STR1 = &quot;Knäckebröd&quot;</p>
+
+<p class=Code>type String STR2 = &quot;123.456&quot;</p>
+
+<p class=Code>type String STR3 = &quot;Knäcke&quot;_9.char()_bröd&quot;</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>type String BS1 = STR1.toByteString()</p>
+
+<p class=Code>type String BS2 = STR2.toByteString()</p>
+
+<p class=Code>type String BS3 = STR3.toByteString()</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>// The value returned for BS1 and for BS2 will be independent 
+ of</p>
+
+<p class=Code>// Runtime.charsetName</p>
+
+<p class=Code>type PSLExpression PE1 = <span style="font-weight: bold;"><B>BS1.toPSLExpression()</B></span> 
+ // 123.456</p>
+
+<p class=Code>type PSLExpression PE2 = <span style="font-weight: bold;"><B>BS2.toPSLExpression()</B></span> 
+ // &quot;Knäckebröd&quot; (quoted)</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>// The text that you see when you write BS3 depends on Runtime.charsetName</p>
+
+<p class=Code>// for &quot;M&quot;: $C(75,110,228,99,107,101,9,98,114,246,100)</p>
+
+<p class=Code>// for &quot;UTF-8&quot;: $ZC(75,110,195,164,99,107,101,9,98,114,195,182,100)</p>
+
+<p class=Code>type PSLExpression PE3 = <span style="font-weight: bold;"><B>BS3.toPSLExpression()</B></span></p>
+
+<p class=Code>write PE3</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"> <property name="basename" 
+
+value="messages"/> </bean> 
+
+	<bean id="urlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="urlMap">
+			<map>
+				<entry key="pslService">
+					<ref bean="ServiceController" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="ServiceController"
+		class="com.fis.profile.ide.browser.server.ServletWrappingController">
+		<property name="servletName" value="pslService" />
+		<property name="servletInstance">
+			<ref bean="pslService" />
+		</property>		
+	</bean>
+
+	<bean id="pslService"
+		class="com.fis.profile.ide.browser.server.PSLServiceImpl">
+		<property name="auditManager"><ref bean="auditManager"/></property>
+		<property name="userManager"><ref bean="userManager"/></property>
+	</bean>
+
+	<bean id="userDao"
+		class="com.fis.profile.ide.browser.logon.UserDaoSpring">
+		<property name="dataSource">
+			<ref bean="dataSource"/>
+		</property>
+	</bean>
+	<bean id="authorityDao"
+		class="com.fis.profile.ide.browser.logon.AuthorityDaoSpring">
+		<property name="dataSource">
+			<ref bean="dataSource"/>
+		</property>
+	</bean>
+	
+	<bean id="userManager" class="com.fis.profile.ide.browser.logon.UserManagerBackend">
+ 		<property name="userDao"><ref bean="userDao" /></property>
+		<property name="authorityDao"><ref bean="authorityDao" /></property>
+ 	</bean>
+ 	
+ 	<bean id="auditDao"
+		class="com.fis.profile.ide.browser.server.audit.AuditDaoSpring">
+		<property name="dataSource">
+			<ref bean="dataSource"/>
+		</property>
+	</bean>
+	
+	<bean id="auditManager" class="com.fis.profile.ide.browser.server.audit.AuditManagerBackend">
+ 		<property name="auditDao"><ref bean="auditDao" /></property>
+ 	</bean>
+ 	
+	<bean id="changePasswordValidator" class="com.fis.profile.ide.browser.logon.ChangePasswordValidator">
+    	<property name="userManager"><ref bean="userManager"/></property>
+    </bean>
+    <bean id="changePasswordForm" class="com.fis.profile.ide.browser.logon.ChangePasswordController">
+        <property name="sessionForm"><value>true</value></property>
+        <property name="commandName"><value>changePassword</value></property>
+        <property name="commandClass"><value>com.fis.profile.ide.browser.logon.ChangePassword</value></property>
+        <property name="validator"><ref bean="changePasswordValidator"/></property>
+        <property name="formView"><value>changePassword</value></property>
+        <property name="successView"><value>passwordChanged.jsp</value></property>
+        <property name="userManager"><ref bean="userManager"/></property>
+    </bean>
+    
+    <bean id="createAccountValidator" class="com.fis.profile.ide.browser.logon.CreateAccountValidator">
+    	<property name="userManager"><ref bean="userManager"/></property>
+    </bean>
+	
+	<bean id="createAccountForm" class="com.fis.profile.ide.browser.logon.CreateAccountController">
+        <property name="sessionForm"><value>true</value></property>
+        <property name="commandName"><value>createAccount</value></property>
+        <property name="commandClass"><value>com.fis.profile.ide.browser.logon.CreateAccount</value></property>
+        <property name="validator"><ref bean="createAccountValidator"/></property>
+        <property name="formView"><value>createAccount</value></property>
+        <property name="successView"><value>accountCreated</value></property>
+        <property name="userManager"><ref bean="userManager"/></property>
+    </bean>
+    
+
+	<bean id="accountAdminValidator" class="com.fis.profile.ide.browser.logon.admin.AccountAdminValidator">
+    	<property name="userManager"><ref bean="userManager"/></property>
+    </bean>
+	<bean id="accountAdminForm" class="com.fis.profile.ide.browser.logon.admin.AccountAdminController">
+        <property name="sessionForm"><value>true</value></property>
+        <property name="commandName"><value>accountAdmin</value></property>
+        <property name="commandClass"><value>com.fis.profile.ide.browser.logon.admin.AccountAdmin</value></property>
+        <property name="validator"><ref bean="accountAdminValidator"/></property>
+        <property name="formView"><value>accountAdmin</value></property>
+        <property name="successView"><value>/pages/admin/accountAdmin.do</value></property>
+        <property name="userManager"><ref bean="userManager"/></property>
+    </bean>
+    
+	 <bean id="pageMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>                
+                <prop key="/changePassword.do">changePasswordForm</prop>
+                <prop key="/createAccount.do">createAccountForm</prop>
+                <prop key="/pages/admin/accountAdmin.do">accountAdminForm</prop>
+            </props>
+        </property>
+    </bean>
+  
+<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
+	<property name="viewClass">
+		<value>org.springframework.web.servlet.view.JstlView</value>
+	</property>
+ 	<property name="prefix">
+ 		<value></value>
+ 	</property> 
+ 	<property name="suffix">
+ 		<value>.jsp</value>
+ 	</property>
+ </bean> 
+
+
+</beans>

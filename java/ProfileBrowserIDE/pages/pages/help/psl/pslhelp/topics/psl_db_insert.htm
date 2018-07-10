@@ -1,0 +1,248 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>insert (Db Class)</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js" name="EHELP_DHTM"></script>
+
+<style type="text/css">
+<!--
+table.whs1 { x-cell-content-align:top; width:100%; border-spacing:0px; }
+col.whs2 { width:7.087%; }
+col.whs3 { width:92.913%; }
+tr.whs4 { x-cell-content-align:top; }
+td.whs5 { width:7.087%; padding-right:10px; padding-left:10px; border-right-style:none; border-left-style:none; border-top-style:none; border-bottom-style:none; }
+img_whs6 { border:none; width:32px; height:32px; float:none; border-style:none; }
+td.whs7 { width:92.913%; padding-right:10px; padding-left:10px; border-top-style:none; border-bottom-style:none; border-right-style:none; }
+p.whs8 { background-color:Transparent; }
+p.whs9 { margin-left:24px; }
+table.whs10 { margin-left:4.50pt; x-cell-content-align:Center; width:615px; border-spacing:0px; }
+col.whs11 { width:7.642%; }
+col.whs12 { width:92.358%; }
+td.whs13 { width:7.642%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+img_whs14 { width:15px; height:15px; float:none; border-style:none; }
+td.whs15 { width:92.358%; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+table.whs16 { width:534px; margin-left:18pt; border-spacing:0px; }
+td.whs17 { width:102px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs18 { width:432px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs8 {background-color:white; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nDb Class\nMethods\ninsert");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>insert Method</h1>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs1">
+<col class="whs2">
+<col class="whs3">
+
+<tr valign="top" class="whs4">
+<td width="7.087%" class="whs5">
+<p><img src="../image/warning.gif" x-maintain-ratio="TRUE" width="32px" height="32px" border="0" class="img_whs6"></td>
+<td width="92.913%" class="whs7">
+<p class="whs8">This method has been deprecated 
+ and should not be used in Profile versions v6.4 and above. There are more 
+ effective ways of performing the function previously fulfilled by the 
+ Db.insert method. At a future date, this method may be removed from the 
+ PSL compiler. Therefore, FIS recommends that instead of using the Db.insert 
+ method, you instantiate an object as <a href="psl_class_new.htm"
+										style="background-color: Transparent;">Class.new</a> 
+ and use the <a href="psl_record_save.htm"
+				style="background-color: Transparent;">save</a> or <a href="psl_record_bypasssave.htm"
+	style="background-color: Transparent;">bypassSave</a> method.</td></tr>
+</table>
+
+<p class=BodyTextBold>Class: <span style="font-weight: normal;">Db</span></p>
+
+<p class=BodyTextBold>Description</p>
+
+<p class="whs9">This method inserts a new record into the 
+ database. This method is equivalent to the SQL INSERT statement. To update 
+ an existing record in the database, use the <a href="psl_db_update.htm">Db.update</a> 
+ method.</p>
+
+<p class="whs9">Example SQL INSERT statement:</p>
+
+<p class=Code
+	style="margin-left: 48px;">INSERT INTO UTBLBRCD(BRCD,DESC) VALUES (:BR,:NAME)</p>
+
+<p class="whs9">As of Profile version 6.3, this method supports 
+ lowercase variables, object.property, and system variables within the 
+ host variable syntax. PSL maps these variables and object references into 
+ uppercase host variables.</p>
+
+<table x-use-null-cells cellspacing="0" width="615" class="whs10">
+<col class="whs11">
+<col class="whs12">
+
+<tr valign="top" class="whs4">
+<td width="7.642%" class="whs13">
+<p class=Note
+	style="margin-left: 12px;"><img src="../image/i_blue_sm.jpg" alt="image\msgs.gif" x-maintain-ratio="TRUE" width="15px" height="15px" border="0" class="img_whs14"></td>
+<td width="92.358%" class="whs15">
+<p class=Note>To ensure high performance batch processing and transaction 
+ processing requirements where data integrity is controlled in the program 
+ procedural logic, use the <a href="psl_record_bypasssave.htm">RecordClass.bypassSave</a> 
+ method.</td></tr>
+</table>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>Db.insert(tableName,columnList,valueList,qualifiers)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="534" class="whs16">
+
+<tr valign="top" class="whs4">
+<td width="102px" class="whs17">
+<p>tableName</td>
+<td width="432px" class="whs18">
+<p>A valid database table name.</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="102px" class="whs17">
+<p>columnList</td>
+<td width="432px" class="whs18">
+<p>A comma-separated list of table column names into which to insert data.</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="102px" class="whs17">
+<p>valueList</td>
+<td width="432px" class="whs18">
+<p>A comma-separated list of values to insert into the specified columns.</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="102px" class="whs17">
+<p>qualifiers</td>
+<td width="432px" class="whs18">
+<p>A list of qualifiers to process when executing the method. Qualifiers 
+ are separated by slashes (/). The following qualifiers are already pre-programmed 
+ into the Db.insert method. You can, however, include additional qualifiers 
+ in the method.</p>
+<ul>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1
+									style="line-height: Normal;
+											margin-top: 6pt;
+											margin-bottom: 6pt;">NOVKCHK=1</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1
+									style="line-height: Normal;
+											margin-top: 6pt;
+											margin-bottom: 6pt;">NOVALDD</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1
+									style="line-height: Normal;
+											margin-top: 6pt;
+											margin-bottom: 6pt;">NOVALREQ</p></li>
+	
+	<li style="font-size: 10pt;"
+		class=kadov-p-CBullet1><p class=Bullet1
+									style="line-height: Normal;
+											margin-top: 6pt;
+											margin-bottom: 0pt;">NOVALRI</p></li>
+</ul></td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>Void</p>
+
+<p class=BodyTextBold>When Became Available</p>
+
+<p class=footnote-text
+	style="margin-left: 24px;">v6.0</p>
+
+<p class=Example>Example 1</p>
+
+<p class=Code>do <span style="font-weight: bold;"><B>Db.insert(&quot;UTBLBRCD&quot;,&quot;BRCD,DESC&quot;,&quot;:BRANCH,:NAME1&quot;)</B></span></p>
+
+<p class=Code>do <span style="font-weight: bold;"><B>Db.insert(&quot;UTBLCC&quot;,&quot;CCODE,DESC&quot;,&quot;123,’New 
+ Cost Center’&quot;)</B></span></p>
+
+<p class=Example>Example 2 – Use of Qualifiers</p>
+
+<p class=Code>do <span style="font-weight: bold;"><B>Db.insert(&quot;DEP&quot;,&quot;CID&quot;,&quot;:CID&quot;,&quot;/VALDD/NOTRIGAFT&quot;)</B></span></p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

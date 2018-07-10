@@ -1,0 +1,230 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>insert (String Class)</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { width:552px; margin-left:18pt; border-spacing:0px; }
+tr.whs2 { x-cell-content-align:top; }
+td.whs3 { width:120px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+td.whs4 { width:432px; padding-left:1px; padding-top:1px; padding-right:1px; padding-bottom:1px; }
+p.whs5 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nString Class\nMethods\ninsert");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>insert Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Class: <span style="font-weight: normal;">String</span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class=BodyIndent>This method returns an edited form of the String object 
+ in which the value of the <span style="font-weight: bold;"><B>replacement</B></span> 
+ parameter is inserted into, or replaces part of the String object.</p>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>StringObject.insert(String replacement,Number offset,</p>
+
+<p class=Code>String padCharacter,Boolean displace)</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<table x-use-null-cells cellspacing="0" width="552" class="whs1">
+
+<tr valign="top" class="whs2">
+<td width="120px" class="whs3">
+<p>replacement</td>
+<td width="432px" class="whs4">
+<p>The string to insert.</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="120px" class="whs3">
+<p>offset</td>
+<td colspan="1" rowspan="1" width="432px" class="whs4">
+<p>The position within the String object where the insert starts (e.g.&nbsp;,1&nbsp;denotes 
+ the first character, etc.). The default offset is 1.</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="120px" class="whs3">
+<p>padCharacter</td>
+<td colspan="1" rowspan="1" width="432px" class="whs4">
+<p>The character appended to the String object to ensure that its length 
+ is at least <span style="font-weight: bold;"><B>offset</B></span> number of characters. 
+ If padCharacter contains more than one character, the first character 
+ is used. If not specified, a space is used.</td></tr>
+
+<tr valign="top" class="whs2">
+<td colspan="1" rowspan="1" width="120px" class="whs3">
+<p>displace</td>
+<td colspan="1" rowspan="1" width="432px" class="whs4">
+<p>An option that indicates whether the inserted characters shift existing 
+ characters to the right.</p>
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>If 1, the <span style="font-weight: bold;"><B>replacement</B></span> 
+ is inserted, and all characters from <span style="font-weight: bold;"><B>offset</B></span> 
+ to the end of the String object's value shift to the right.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>If 0, the <span style="font-weight: bold;"><B>replacement</B></span> 
+ replaces characters starting at <span style="font-weight: bold;"><B>offset</B></span> 
+ and ending at {<span style="font-weight: bold;"><B>offset</B></span> + <span 
+ style="font-weight: bold;"><B>replacement</B></span>.length()-1}.</p></li>
+</ul></td></tr>
+</table>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent
+	style="background-color: Transparent;">A String.</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">When Became Available</p>
+
+<p class="whs5">v7.0</p>
+
+<p class=Example>Example</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String STR = &quot;be free, fly 
+ far away&quot;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// All defaults: replace first n characters:</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// &quot;BE Free, fly far away&quot;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String INS1 = <span style="font-weight: bold;"><B>STR.insert(&quot;BE 
+ F&quot;)</B></span></p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// Insert in the middle:</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// &quot;be free, fly FAR away&quot;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String INS2 = <span style="font-weight: bold;"><B>STR.insert(&quot;FAR&quot;,14)</B></span></p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// Insert in the middle and displace;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// pad character is irrelevant when displace 
+ occurs</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// &quot;be free, fly VERY far away&quot;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String INS3 = <span style="font-weight: bold;"><B>STR.insert(&quot;VERY 
+ &quot;,14,,1)</B></span></p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String INS4 = <span style="font-weight: bold;"><B>STR.insert(&quot;VERY 
+ &quot;,14,&quot;#&quot;,1)</B></span></p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">&nbsp;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// Append and use alternate pad character;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// displace is irrelevant when padding 
+ is applied</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">// &quot;be free, fly far away ***!&quot;</p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String INS5 = <span style="font-weight: bold;"><B>STR.insert(&quot;! 
+ &quot;,25,&quot;*&quot;,0)</B></span></p>
+
+<p class=Code
+	style="margin-left: 22.50pt;">type String INS6 = <span style="font-weight: bold;"><B>STR.insert(&quot;! 
+ &quot;,25,&quot;*&quot;,1)</B></span></p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

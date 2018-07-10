@@ -1,0 +1,200 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Instantiating a Row Class Object</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { x-cell-content-align:top; width:100%; border-spacing:0px; }
+col.whs2 { width:6.939%; }
+col.whs3 { width:93.061%; }
+tr.whs4 { x-cell-content-align:top; }
+td.whs5 { width:6.939%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; border-left-style:none; border-top-style:none; }
+p.whs6 { font-weight:bold; }
+td.whs7 { width:93.061%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-top-style:none; border-right-style:none; }
+td.whs8 { width:6.939%; padding-right:10px; padding-left:10px; border-left-style:none; border-right-style:none; border-bottom-style:none; }
+p.whs9 { text-align:center; }
+td.whs10 { width:93.061%; padding-right:10px; padding-left:10px; border-right-style:none; border-bottom-style:none; }
+td.whs11 { width:6.939%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; border-left-style:none; }
+td.whs12 { width:93.061%; padding-right:10px; padding-left:10px; border-bottom-style:none; border-right-style:none; }
+p.whs13 { margin-left:0px; }
+img_whs14 { border:none; width:15px; height:15px; float:none; border-style:none; }
+p.whs15 { margin-left:24px; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs13 {margin-left:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Using PSL\nInstantiating a Row Class Object");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Instantiating a Row Class Object</h1>
+
+<p>There are four ways to instantiate a Row Class object.</p>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs1">
+<col class="whs2">
+<col class="whs3">
+
+<tr valign="top" class="whs4">
+<td colspan="1" rowspan="1" width="6.939%" class="whs5">
+<p class="whs6">Option</td>
+<td colspan="1" rowspan="1" width="93.061%" class="whs7">
+<p class="whs6">&nbsp;</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="6.939%" class="whs8">
+<p align="center" class="whs9">1</td>
+<td width="93.061%" class="whs10">
+<p>type Row identifier = Class.new(&quot;Row&quot;,columnList)</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="6.939%" class="whs11">
+<p align="center" class="whs9">2</td>
+<td width="93.061%" class="whs12">
+<p>type Row identifier = StringVariableOrLiteral.toRow(columnList,delimiter)</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="6.939%" class="whs11">
+<p align="center" class="whs9">3</td>
+<td width="93.061%" class="whs12">
+<p>type Row identifier = ResultSetIdentifier.getRow(delimiter,columnList)</td></tr>
+
+<tr valign="top" class="whs4">
+<td width="6.939%" class="whs11">
+<p align="center" class="whs9">4</td>
+<td width="93.061%" class="whs12">
+<p>type String identifier = ResultSetIdentifier.getrow().propertyName</p>
+<p class="whs13"><img src="../image/i_blue_sm.jpg" x-maintain-ratio="TRUE" width="15px" height="15px" border="0" class="img_whs14"> &nbsp;Option 
+ 4 supports temporary instantiation.</td></tr>
+</table>
+
+<p class=BodyTextBold>Parameters</p>
+
+<p>The <span style="font-weight: bold;"><B>columnList</B></span> parameter must 
+ be defined and not null. This parameter corresponds to the ordinal position 
+ of the data in the row object (i.e., the first column name maps to the 
+ first position in the row, etc.). This parameter consists of the PSL Class 
+ of the column followed by a space character, followed by the designated 
+ column name. If a column does not contain this pattern, the String class 
+ defaults, and the column name is the value at that position. Columns are 
+ comma-separated.</p>
+
+<p class="whs15"><span style="margin-left: 24px;">columnList 
+ = &quot;String LNM,NumberBAL&quot; or &quot;LNM,NumberBAL&quot;</span></p>
+
+<p>The columnList parameter can be a literal, variable, or a reference 
+ to an extrinsic function or template definition.</p>
+
+<p class="whs15">type Row abc = Class.new(Row&quot;,&quot;String 
+ LNM,Number Bal,Number TYPE&quot;) &nbsp;// 
+ Literal</p>
+
+<p class="whs15">type Row abc = Class.new(&quot;Row&quot;,var) 
+ &nbsp;// Variable.</p>
+
+<p class="whs15">type Row abc = Class.new(&quot;Row,&quot;,&quot;#$$GETLIST^XXX(&quot;&quot;DEP&quot;&quot;)&quot;)&quot; 
+ &nbsp;// Compile 
+ time extrinsic function</p>
+
+<p class="whs15">type Row abc = Class.new(&quot;Row&quot;,&quot;#fsn^SQLDD(fsn()))&quot;) 
+ &nbsp;// Compile 
+ time template lookup</p>
+
+<p>In option 3, this parameter is optional because the column list defaults 
+ to the select statement of the ResultSet object.</p>
+
+<p>The <span style="font-weight: bold;"><B>delimiter</B></span> parameter defaults 
+ to the &lt;tab&gt; delimiter if it is not defined or is null.</p>
+
+<p class=Example>Example - Option 1</p>
+
+<p>&nbsp;</p>
+
+<p class=Example>Example - Option 2</p>
+
+<p>&nbsp;</p>
+
+<p class=Example>Example - Option 3</p>
+
+<p>&nbsp;</p>
+
+<p class=Example>Example - Option 4</p>
+
+<p>&nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

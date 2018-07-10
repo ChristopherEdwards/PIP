@@ -1,0 +1,115 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Object Names</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Programming Standards\nScope of Objects and Variables\nObject Names");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Object Names</h1>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Because M only uses the 
+ first eight characters of a variable name, PSL object names cannot have 
+ greater than eight characters.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>For Record objects, the 
+ object name should be identical to the table name to which it references. 
+ &nbsp;</p></li>
+</ul>
+
+<p class=Example
+	style="margin-left: 48px;">Example</p>
+
+<p class=Code
+	style="margin-left: 72px;">type RecordCIF <span style="font-weight: bold;"><B>cif</B></span> 
+ = Db.getRecord(“CIF”,”:ACN”)</p>
+
+<p class=Code
+	style="margin-left: 72px;">set NAM &nbsp;&nbsp;= 
+ cif.lnm</p>
+
+<p class=Code
+	style="margin-left: 72px;">set DOB &nbsp;&nbsp;= 
+ cif.dob</p>
+
+<p class=Code
+	style="margin-left: 72px;">set TAXID = cif.taxid</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1>Do not use <span style="font-weight: bold;"><B>v</B></span> 
+ or <span style="font-weight: bold;"><B>V</B></span> as the first letter in object 
+ names. &nbsp;The 
+ compiler reserves these characters to prefix object storage data structures.</p></li>
+</ul>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>

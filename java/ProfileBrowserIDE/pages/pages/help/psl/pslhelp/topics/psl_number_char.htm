@@ -1,0 +1,226 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>char</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="../reports_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../reports.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+p.whs1 { margin-left:24px; x-condition:NotPrintedDocn; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="../whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="../whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="../whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("PSL Classes, Properties, and Methods\nNumber Class\nMethods\nchar");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../pslprogramming_guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>char Method</h1>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;"><span style="x-condition: NotPrintedDocn;">Class:<span 
+ style="font-weight: normal; x-condition: NotPrintedDocn;"> Number</span></span></p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;">Description</p>
+
+<p class=BodyIndent
+	style="text-align: justify;">This method instantiates a String consisting 
+ of a single character. The value returned by the method depends on the 
+ value of the Number instance:</p>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1
+									style="text-align: justify;">If the 
+ method is applied to a Number instance with a value less than zero, then 
+ the empty string is returned.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1
+									style="text-align: justify;">If the 
+ method is applied to a Number instance with a value greater than or equal 
+ to zero and less than 256, then that character is returned under all circumstances. 
+ Note that the representation of the character depends on the value of 
+ <a href="psl_runtime_charsetname.htm">Runtime.charsetName</a>.</p></li>
+</ul>
+
+<ul>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1
+									style="text-align: justify;">If Runtime.charsetName 
+ = &quot;M&quot;, and the value is greater than or equal to 256, then the 
+ empty string will be returned.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1
+									style="text-align: justify;">If Runtime.charsetName 
+ = &quot;UTF-8&quot;, and the value represents a valid code point in the 
+ Unicode character set, then that character is returned.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1
+									style="text-align: justify;">If Runtime.charsetName 
+ = &quot;UTF-8&quot;, and the value does not represents a valid code point 
+ in the Unicode character set, and VIEW &quot;BADCHAR&quot; is not in effect, 
+ then the empty string will be returned.</p></li>
+	
+	<li class=kadov-p-CBullet1><p class=Bullet1
+									style="text-align: justify;">If Runtime.charsetName 
+ = &quot;UTF-8&quot;, and the value does not represents a valid code point 
+ in the Unicode character set, and VIEW &quot;BADCHAR&quot; is in effect, 
+ then a %GTM-E-BADCHAR runtime exception will be thrown.</p></li>
+</ul>
+
+<p class=BodyTextBold>Syntax</p>
+
+<p class=Code>NumberObject.char()</p>
+
+<p class=BodyTextBold>Parameters</p>
+
+<p class=BodyIndent>none</p>
+
+<p class=BodyTextBold>Returns</p>
+
+<p class=BodyIndent>A String consisting of a single character</p>
+
+<p class=BodyTextBold>Throws</p>
+
+<p class=BodyIndent
+	style="text-align: justify;">Throws error %GTM-E-BADCHAR if the method 
+ is applied to a Number instance with a positive value that does not map 
+ to a valid character in Runtime.charsetName, and VIEW &quot;BADCHAR&quot; 
+ is in effect for the current process.</p>
+
+<p class=BodyTextBold
+	style="x-condition: NotPrintedDocn;"><span style="x-condition: NotPrintedDocn;">When 
+ Became Available</span></p>
+
+<p class="whs1">Profile V7.0</p>
+
+<p class=Example>Example</p>
+
+<p class=Code>// These examples always work on all platforms, although 
+ the internal</p>
+
+<p class=Code>// representation may be different depending on Runtime.charsetName</p>
+
+<p class=Code>type Number NUM1 = 120</p>
+
+<p class=Code>type String STR1 = <span style="font-weight: bold;"><B>NUM1.char()</B></span> 
+ // &quot;x&quot;</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>type Number NUM2 = -120</p>
+
+<p class=Code>type String STR2 = <span style="font-weight: bold;"><B>NUM2.char()</B></span> 
+ // &quot;&quot;</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>type Number NUM3 = 246</p>
+
+<p class=Code>type String STR1 = <span style="font-weight: bold;"><B>NUM3.char()</B></span> 
+ // &quot;ö&quot;</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>// This one is also OK under all circumstances, although 
+ the implied</p>
+
+<p class=Code>// value will depend on Runtime.charsetName</p>
+
+<p class=Code>type String MXCHR = PSL.maxCharValue.char()</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>// Code point 526 is a valid Unicode character, but beyond 
+ the</p>
+
+<p class=Code>// maximum for Ruuntime.charsetName=&quot;M&quot;</p>
+
+<p class=Code>type Number MUM4 = 526</p>
+
+<p class=Code>type String STR4 = <span style="font-weight: bold;"><B>NUM4.char()</B></span></p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>write STR4.length() // 0 (for &quot;M&quot;) or 1 (for &quot;UTF-8&quot;)</p>
+
+<p class=Code>&nbsp;</p>
+
+<p class=Code>// Code point 55296 (U+D800) is a not valid Unicode character</p>
+
+<p class=Code>// if Runtime.charsetName=&quot;M&quot;: returns &quot;&quot;</p>
+
+<p class=Code>// if Runtime.charsetName=&quot;M&quot; and VIEW &quot;BADCHAR&quot; 
+ off: returns &quot;&quot;</p>
+
+<p class=Code>// if Runtime.charsetName=&quot;M&quot; and VIEW &quot;BADCHAR&quot; 
+ on: throws %GTM-E-BADCHAR</p>
+
+<p class=Code>type Number MUMERR = 55296</p>
+
+<p class=Code>type String STRERR = <span style="font-weight: bold;"><B>NUMERR.char()</B></span></p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body>
+</html>
