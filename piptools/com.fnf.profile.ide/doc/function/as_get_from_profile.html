@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+	<HEAD>
+		<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<META http-equiv="Content-Style-Type" content="text/css">
+		<LINK href="book.css" type="text/css" charset="ISO-8859-1" rel="STYLESHEET">
+			<META content="MSHTML 6.00.2600.0" name="GENERATOR">
+			<TITLE>Profile Interface Features</TITLE>
+	</HEAD>
+	<body bgcolor="white" lang="EN-US" link="blue" vlink="blue" style='tab-interval:.5in'>
+		<div class="Section1">
+			<h1>Get From Profile</h1>
+			<p>Profile resources can be retrieved from a Profile RTE with the Get from Profile 
+				function. This function can be accessed from the right-click menu on the 
+				Resource Navigator in the Fidelity Profile Perspective.
+			</p>
+			<p align="center"><img border="0" src="images/new_menu.jpg" ></p>
+			<p><B>Note: </B>Profile M routines currently cannot be retrieved from a Profile RTE 
+				via Application Studio.</p>
+			<H2>Get from Profile Wizard</H2>
+				<p align="center"><img border="0" src="images/get_wizard.jpg" ></p>
+			<h4>Fields</h4>
+			<ul style='MARGIN-TOP:0in' type="disc">
+				<li class="MsoNormal" style='COLOR:black;mso-list:l1 level1 lfo3;tab-stops:list .5in'>
+					<span style='FONT-SIZE:10pt;FONT-FAMILY:Arial'>Data-QWIK Object Type -
+     By clicking on one of the choices in this box, the remainder of the fields
+     in the tab are repainted accordingly.</span>
+				<li class="MsoNormal" style='COLOR:black;mso-list:l1 level1 lfo3;tab-stops:list .5in'>
+					<span style='FONT-SIZE:10pt;FONT-FAMILY:Arial'>Table - This field is
+     required for columns and triggers. To retrieve a column or a trigger, the table
+     name must be specified first and then the column or trigger.</span><li class="MsoNormal" style='COLOR:black;mso-list:l1 level1 lfo3;tab-stops:list .5in'>
+					<span style='FONT-SIZE:10pt;FONT-FAMILY:Arial'>Data-QWIK Object Name -
+     The description of this field changes based on the selected Data-QWIK
+     Object type. Enter the name of the Data-QWIK object to be retrieved. NOTE:
+     A look-up table is not available for Data resources. You must enter the
+     global name and keys delimited by a dash. For example
+     ^STBL("MSG") should be entered as STBL-MSG.</span><li class="MsoNormal" style='COLOR:black;mso-list:l1 level1 lfo3;tab-stops:list .5in'>
+					<span style='FONT-SIZE:10pt;FONT-FAMILY:Arial'>Target Directory - This
+     field is the directory path where retrieved object is saved. This should
+     be the same as the StarTeam working folder path.</span><li class="MsoNormal" style='COLOR:black;mso-list:l1 level1 lfo3;tab-stops:list .5in'>
+					<span style='FONT-SIZE:10pt;FONT-FAMILY:Arial'>Local Target File - This
+     field is computed based on the Object Name, Target Directory, and the
+     Object Type. The value is populated after a successful Get. It cannot be
+     manually edited.</span><li class="MsoNormal" style='COLOR:black;mso-list:l1 level1 lfo3;tab-stops:list .5in'>
+					<span style='FONT-SIZE:10pt;FONT-FAMILY:Arial'>Get Columns - This check
+     box indicates whether to retrieve all of the columns associated with a
+     table or just retrieve the table definition.</span><li class="MsoNormal" style='COLOR:black;mso-list:l1 level1 lfo3;tab-stops:list .5in'>
+					<span style='FONT-SIZE:10pt;FONT-FAMILY:Arial'>Open file for editing when done
+     - This check box indicates whether the file should be opened in the
+     editor after a successful Get. </span></li>
+			</ul>
+			<h4>Buttons and Actions</h4>
+			<ul style='MARGIN-TOP:0in' type="disc">
+				<li class="MsoNormal" style='COLOR:black;mso-list:l3 level1 lfo6;tab-stops:list .5in'>
+					<span style='FONT-SIZE:10pt;FONT-FAMILY:Arial'>The Table Look-up - opens
+     a new window with tables beginning with the characters entered in the
+     Table field. For example if DEP is entered in the Table field, all tables
+     beginning with DEP will appear in the look-up window. </span>
+				<li class="MsoNormal" style='COLOR:black;mso-list:l3 level1 lfo6;tab-stops:list .5in'>
+					<span style='FONT-SIZE:10pt;FONT-FAMILY:Arial'>The Object Look-up -
+     opens a new window with Data-QWIK objects beginning with the characters in
+     the Data-QWIK Object Name field. For example if Procedure is selected and
+     A is entered in the Procedure field, all procedures beginning with A will
+     appear in the look-up window. </span></li>
+			</ul>
+		</div>
+		<p></p>
+	</body>
+</HTML>

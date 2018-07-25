@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin
+   id="com.fnf.profile.monitor"
+   name="Profile Monitor Plug-in"
+   version="3.3.2"
+   provider-name="FIS"
+   class="com.fnf.profile.monitor.MonitorPlugin">
+   <runtime>
+      <library name="monitor.jar">
+         <export name="com.fnf.profile.monitor.connprop.util.*"/>
+      </library>
+   </runtime>
+
+   
+   <requires>
+      <import plugin="com.fnf.profile.ide"/>
+      <import plugin="org.eclipse.ui"/>
+  		<import plugin="org.eclipse.core.runtime"/>
+  		<import plugin="com.fnf.studio"/>
+  		<import plugin="org.eclipse.core.resources"/>
+   </requires>
+   
+    <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="FIS Profile"
+            id="com.fnf.studio">
+      </category>
+      <view
+            name="Profile Environments"
+            icon="icons/profile_environ.gif"
+            category="com.fnf.studio"
+            class="com.fnf.profile.monitor.views.FidelityProfileEnvView"
+            id="com.fnf.profile.monitor.views.FidelityProfileEnvView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="com.fnf.profile.perspective">
+         <view
+               id="com.fnf.profile.monitor.views.FidelityProfileEnvView"
+               moveable="true"
+               relationship="stack"
+               relative="org.eclipse.ui.views.TaskList"
+               visible="true">
+         </view>
+         <viewShortcut id="com.fnf.profile.monitor.views.FidelityProfileEnvView"/>
+      </perspectiveExtension>
+   </extension>
+</plugin>

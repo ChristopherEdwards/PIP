@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+	<HEAD>
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+		<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+		<LINK REL="STYLESHEET" HREF="book.css" CHARSET="ISO-8859-1" TYPE="text/css">
+		<TITLE>PSL Editor</TITLE>
+	</HEAD>
+	<BODY>
+		<H1>PSL Editor</H1>
+		<H2>Editor Window</H2>
+		<P>The Fidelity Application Studio has an editor specifically designed 
+		for coding PSL programs.
+		</P>
+		<ul>
+			<li>
+				This editor is defined as the default editor for Procedures, 
+				Triggers and Batch Definitions. 
+			</li>
+			<li>
+				PSL classes, methods, keywords and comments are color coded to 
+				improve readability. 
+			</li>
+			<li>
+				<A href="../function/as_profile_interface.html">Interface functions</A> are 
+				readily available as a right click menu option. 
+			</li>
+			<li>
+				Hover help is available for instance variables of PSL classes.</li>
+		</ul>
+		<p align="center"><img border="0" src="images/sas_PS7.jpg"></P>
+		<H2>Troubleshooting Compile Errors and Warnings</H2>
+		<P>Compile errors and warnings are displayed as Problems in the 
+		&quot;Problems&quot; view. Double clicking on the Problem will jump the curser to 
+		the line of the warning or error.</P>
+		<H3>Pop-up Help</H3>
+		<P>When the cursor is on a line of code with a compile warning or error, 
+		pop-up help can be displayed hovering over the error marker (red X) in 
+		the margin.</P>
+		<blockquote>
+			<p align="center"><img border="0" src="images/sas_PS8.jpg"></P>
+		</blockquote>
+		<H2><a name="Using PSL Snippets">Using PSL Snippets</a></H2>
+		<P>PSL Snippets are available in the PSL editor via Ctrl+Space or 
+		through the menu path Edit -&gt; Content Assist. When you invoke the PSL 
+		snippets, the list of snippets is filtered based on the characters to 
+		the left of the cursor. For example, if you type an <b>f</b> and then 
+		Ctrl+Space, you will be presented with a list of snippets that begin 
+		with <b>f</b>. if you continue to type, the list will shorten to match 
+		the characters to the left to the cursor.</P>
+		<P>You can use the arrow keys to browse through the list. If you leave 
+		the selection highlighted for more than a fraction of a second, the 
+		contents of the snippet pop-up next to the look-up table. To insert the 
+		snippet code into your program, highlight the desired snippet and press 
+		enter.</P>
+		<H3>Content Assist Example</H3>
+		<p>Notice the characters <b>ty</b> to the left of the cursor.</p>
+		<blockquote>
+			<p align="center"><img border="0" src="images/sas_PS4.jpg" width="700" height="264"></p>
+		</blockquote>
+		<H2><a name="Method and Property Assist">Method and Property Assist</a></H2>
+		<p>When using classes and instance variables in PSL a pop-up lookup 
+		table will appear 500 milliseconds after typing the dot separator. For 
+		example, if you have and instance of RecordDEP named dep, after typing <b>
+		&quot;dep.&quot; </b>you will get the lookup table of all columns in the DEP 
+		table. After another 500 mille seconds, the help documentation for the 
+		highlighted column appears.</p>
+		<blockquote>
+			<p align="center"><img border="0" src="images/sas_PS9.jpg"></p>
+		</blockquote>
+		<p>You can continue to type to narrow the scope of the lookup table. If 
+		the lookup table disappears you can re-display it by pressing 
+		Ctrl+Space. Note, your cursor must immediately to the right of the dot 
+		or a portion of the column name.</p>
+		<p>Methods and properties are available in the lookup tables for all PSL 
+		Classes and instance variables.</p>
+		<blockquote>
+			<p>&nbsp;</p>
+		</blockquote>
+		<p><b>Instance method example</b></p>
+		<blockquote>
+			<p align="center"><img border="0" src="images/sas_PS10.jpg"></p>
+		</blockquote>
+		<p><b>Class method example</b></p>
+		<blockquote>
+			<p align="center"><img border="0" src="images/sas_PS11.jpg"></p>
+		</blockquote>
+		
+		<H2><a name="Format Function">Format Function</a></H2>
+		
+		<p>The Format function in the right click menu will clean up white space and 
+		structured blocks.</p>
+		<blockquote>
+			<p align="center"><img border="0" src="images/sas_PS12.jpg"></p>
+		</blockquote>
+		<p>&nbsp;</p>		 
+	</BODY>
+</HTML>

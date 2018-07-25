@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin
+   id="com.fnf.profile.cheatsheet"
+   name="Cheatsheet Plug-in"
+   version="3.3.2"
+   provider-name="FIS"
+   class="com.fnf.profile.cheatsheet.Activator">
+   
+   <runtime>
+      <library name="cheatsheet.jar"/>
+   </runtime>
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.ui"/>
+   </requires>
+   <extension
+         point="org.eclipse.ui.cheatsheets.cheatSheetContent">
+      <category
+            id="com.fis.profile.category"
+            name="FIS Profile"/>
+      <cheatsheet
+            category="com.fis.profile.category"
+            composite="false"
+            contentFile="cheatsheets/SqlExplorerSetup.cheatsheet"
+            id="com.fnf.profile.workbench.cheatsheet.sqlSetup"
+            name="Setup SQL Explorer for Profile Database"/>
+      <cheatsheet
+            category="com.fis.profile.category"
+            composite="false"
+            contentFile="cheatsheets/Dayend_Processing.cheatsheet"
+            id="com.fnf.profile.workbench.cheatsheet.dayend"
+            name="Dayend Processing"/>
+   </extension>
+
+</plugin>

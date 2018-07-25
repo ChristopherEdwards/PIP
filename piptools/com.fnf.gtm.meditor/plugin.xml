@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="com.fnf.gtm.meditor"
+   name="%pluginName"
+   version="3.3.2"
+   provider-name="%providerName"
+   class="com.fnf.gtm.meditor.MEditorPlugin">
+
+   <runtime>
+      <library name="meditor.jar"/>
+      <library name="NetComponents.jar"/>
+   </runtime>
+   <requires>
+   <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.ui.views"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="com.fnf.studio"/>
+   </requires>
+
+
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            name="M Editor"
+            icon="icons/meditor.gif"
+            extensions="m"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            class="com.fnf.gtm.meditor.editor.MEditor"
+            id="com.fnf.gtm.meditor.MEditor">
+      </editor>
+   </extension>
+   <extension
+         id="com.fnf.gtm.meditor.projectMLogin"
+         name="FIS M Login"
+         point="org.eclipse.ui.propertyPages">
+      <page
+            category="com.fnf.profile.ide.page1"
+            class="com.fnf.gtm.meditor.properties.MLonginPropertyPage"
+            id="com.fnf.gtm.meditor.properties.MLoginPropertyPage"
+            name="M Login"
+            nameFilter="*"
+            objectClass="org.eclipse.core.resources.IProject">
+      </page>
+      <page
+            category="com.fnf.profile.ide.page1"
+            class="com.fnf.gtm.meditor.properties.MPropertiesPage"
+            id="com.fnf.gtm.meditor.properties.MPropertiesPage"
+            name="M Preference Page"
+            nameFilter="*"
+            objectClass="org.eclipse.core.resources.IProject"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.m"
+            id="com.fnf.gtm.meditor.objectContribution1">
+         <action
+               label="FTP Send to Host"
+               icon="icons/gtmTag.gif"
+               class="com.fnf.gtm.meditor.actions.PopupMenuSendToHost"
+               menubarPath="additions"
+               id="com.fnf.gtm.meditor.actions.PopupMenuSendToHost">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            name="M Editor"
+            category="com.fnf.studio.preferences.StudioPreferencePage"
+            class="com.fnf.gtm.meditor.preferences.MEditorPreferencePage"
+            id="com.fnf.gtm.meditor.preferences.MEditorPreferencePage">
+      </page>
+   </extension>
+
+</plugin>

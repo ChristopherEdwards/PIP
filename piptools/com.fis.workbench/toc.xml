@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc label="FIS Workbench">
+	<topic label="Getting Started with FIS Workbench"
+		href="doc/gettingStarted.html">
+
+		<topic label="Getting Started With TouchPoint Workbench"
+			href="doc/GettingStarted.html">
+		</topic>
+		<topic label="What's New" href="doc/whatsNew.html"></topic>
+            <topic label="TP Project Property Page" href="doc/TP Project Property.html"></topic>
+		<topic label="Service Binding Wizard" href="doc/ServiceBindingWizardHelp.html"></topic>
+		<topic label="Data Bean Generator Wizard" href="doc/DataBeanGeneratorWizard.mht"></topic>
+   		<topic label="Xpress Tester" >
+    <topic label="Getting Started Videos - Xpress Tester" href="doc\XES_Workbench_Test_Perspective.htm" />
+    <topic label="Selecting the Xpress Workbench Test Perspective" href="doc\Selecting_the_XES_Test_Perspective.htm" />
+    <topic label="Creating a New Xpress Test Project" href="doc\Creating_a_New_XES_Test_Project.htm" />
+    <topic label="Signing on to Xpress" href="doc\Signing_on_to_XES.htm" />
+    <topic label="Running an Xpress Test Message" href="doc\Running_an_XES_Test_Message.htm" />
+    <topic label="Monitoring Messages" href="doc\Monitoring_Messages.htm" />
+    <topic label="Zipping Request and Response Messages to Send Via E-mail" href="doc\Zipping_Archives_of_Request_and_Response_Messages_to_Send_Via_E-mail.htm" />
+    <topic label="Changing Endpoint URLs for Projects" href="doc\Changing_Endpoint_URLs_for_Projects.htm" />
+  </topic>
+
+
+
+
+		</topic>
+</toc>

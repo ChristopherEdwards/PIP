@@ -1,0 +1,90 @@
+body {
+	background-image : url(../graphics/contentpage/TP_wtr.jpg);
+}
+
+.page { min-height : 700px; }
+
+/* show the "selected" image for this page */
+#navigation-links a#fnfoverview img, #navigation-links a#fnfoverview:hover img { background-image : url(../graphics/icons/ctool/TP_frame_fill_48.gif); }
+
+/* 
+ * Set up the Overview links to be displayed in two columns
+ * that are centered in the middle of the page.
+ */
+
+#fnfoverview-links {
+	text-align : left;
+	width : 760px;
+	/* To center in Moz (have to use text-align for IE) */
+	margin : 0px auto;
+}
+
+#fnfoverview-links a { 
+	width : 370px;
+	text-align : left; 
+	margin-left : 5px;
+	margin-right : 5px;
+	margin-top : 5px;
+	margin-bottom : -20px;
+	vertical-align : top;
+}
+
+#fnfoverview-links > a { vertical-align : middle; }
+
+#fnfoverview-links a img {
+	height : 57px;
+	width : 57px;
+	vertical-align : middle;
+}	
+
+#fnfoverview-links a .link-label {
+	display : block;
+	width : 300px;
+	position : relative;
+	top : -50px;
+	left : 60px;
+}
+
+#fnfoverview-links a p .text {
+	display : block;
+	width : 300px;
+	position : relative;
+	top : -45px;
+	left : 53px;
+}
+
+/* Special case for Mozilla, because the links are displayed
+   in 1 vertical column instead of 2 centered columns */
+#fnfoverview-links > a { 	width : 700px; }
+#fnfoverview-links a > .link-label { width : 700px; }
+#fnfoverview-links a p > .text { width : 700px; }
+
+#fnfoverview-links a:hover { border-right : 5px; }
+
+a#basics img { background-image : url(../graphics/icons/obj48/wbbasics_obj.gif); }
+a#basics:hover img { background-image : url(../graphics/icons/obj48/wbbasicshov_obj.gif); }
+
+a#team img { background-image : url(../graphics/icons/obj48/teamsup_obj.gif); }
+a#team:hover img { background-image : url(../graphics/icons/obj48/teamsuphov_obj.gif); }
+
+/* analyst perspective */
+a#whatnew img { background-image : url(../graphics/icons/obj48/TP_48_w.gif); }
+a#whatnew:hover img { background-image : url(../graphics/icons/obj48/TP_frame_48_w.gif); }
+
+
+/* analyst perspective */
+a#analyst img { background-image : url(../graphics/icons/obj48/XES_wb_analyst_48.gif); }
+a#analyst:hover img { background-image : url(../graphics/icons/obj48/XES_wb_analyst_48sel.gif); }
+
+/* designer perspective */
+a#designer img { background-image : url(../graphics/icons/obj48/XES_wb_designer_48.gif); }
+a#designer:hover img { background-image : url(../graphics/icons/obj48/XES_wb_designer_48sel.gif); }
+
+/* tester perspective */
+a#tester img { background-image : url(../graphics/icons/obj48/XES_wb_tester_48.gif); }
+a#tester:hover img { background-image : url(../graphics/icons/obj48/XES_wb_tester_48sel.gif); }
+
+/* video menu */
+a#video img { background-image : url(../graphics/icons/obj48/XES_wb_welcome_video_48.gif); }
+a#video:hover img { background-image : url(../graphics/icons/obj48/XES_wb_welcome_video_48sel.gif); }
+

@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<psl>
+<class name='Array'>
+<method><name>isDefined</name><desc>Reference is defined</desc><type>String</type></method>
+<method><name>next</name><desc>Next Index</desc><type>String</type></method>
+</class>
+<class name='Boolean'>
+</class>
+<class name='Cache'>
+<method><name>getRecord</name><desc>Get Record&lt;Class&gt; object from Cache</desc><type>Object</type></method>
+</class>
+<class name='Class'>
+<method><name>isValid</name><desc>Return boolean valid object</desc><type>String</type></method>
+<method><name>new</name><desc>Create a new instance of class</desc><type>Object</type></method>
+</class>
+<class name='Column'>
+<property><name>des</name><desc>Description</desc><type>String</type></property>
+<property><name>journal</name><desc>Journal Flag</desc><type>String</type></property>
+<property><name>key</name><desc>Key Number</desc><type>Number</type></property>
+<property><name>len</name><desc>Length</desc><type>Number</type></property>
+<property><name>oldVal</name><desc>Old Value</desc><type>String</type></property>
+<property><name>req</name><desc>Required</desc><type>Boolean</type></property>
+<property><name>typ</name><desc>Data Type</desc><type>String</type></property>
+</class>
+<class name='Date'>
+<method><name>day</name><desc>Day of month</desc><type>Number</type></method>
+<method><name>dayOfMonth</name><desc>Day ofthe month</desc><type>Number</type></method>
+<method><name>dayOfYear</name><desc>Day of the year</desc><type>Number</type></method>
+<method><name>daysInMonth</name><desc># Days in Month</desc><type>Number</type></method>
+<method><name>daysToEOY</name><desc>Days to the end of the year</desc><type>Number</type></method>
+<method><name>isBusDate</name><desc>Date is a business date in calendar</desc><type>Boolean</type></method>
+<method><name>isLeapYear</name><desc>Leap Year</desc><type>Boolean</type></method>
+<method><name>month</name><desc>Month of year</desc><type>Number</type></method>
+<method><name>nextBusDate</name><desc>Next business date for calendar</desc><type>Date</type></method>
+<method><name>nextFreqDate</name><desc>Next frequency date</desc><type>Date</type></method>
+<method><name>nextTermDate</name><desc>Next date based on term</desc><type>Date</type></method>
+<method><name>prevBusDate</name><desc>Previous business date for calendar</desc><type>Date</type></method>
+<method><name>toString</name><desc>Convert Date to String</desc><type>String</type></method>
+<method><name>year</name><desc>Year (4 digit)</desc><type>Number</type></method>
+</class>
+<class name='Db'>
+<method><name>currVal</name><desc>Return highest key value</desc><type>String</type></method>
+<method><name>delete</name><desc>Delete records (SQL format)</desc><type></type></method>
+<method><name>fastDelete</name><desc>Delete multiple records</desc><type></type></method>
+<method><name>getList</name><desc>Returns List of Columns from table</desc><type>String</type></method>
+<method><name>getOneRow</name><desc>Select one row of data from a table</desc><type>String</type></method>
+<method><name>getRecord</name><desc>Retrieve a record&lt;table&gt; from Database</desc><type>Object</type></method>
+<method><name>insert</name><desc>Insert a new record (SQL format)</desc><type></type></method>
+<method><name>isDefined</name><desc>Returns whether reference is defined</desc><type>String</type></method>
+<method><name>nextKey</name><desc>Return next key value</desc><type>String</type></method>
+<method><name>nextVal</name><desc>Return highest key value + 1</desc><type>String</type></method>
+<method><name>prevKey</name><desc>Return next key value</desc><type>String</type></method>
+<method><name>prevVal</name><desc>Return prior key value</desc><type>String</type></method>
+<method><name>select</name><desc>Create a Result set</desc><type>ResultSet</type></method>
+<method><name>selectDbSet</name><desc>Create a set of Records</desc><type>DbSet</type></method>
+<method><name>update</name><desc>Update records (SQL format)</desc><type></type></method>
+</class>
+<class name='DbSet'>
+<method><name>getRecord</name><desc>Return current record</desc><type>Object</type></method>
+<method><name>isEmpty</name><desc>Return boolean state of results set</desc><type>String</type></method>
+<method><name>next</name><desc>Position cursor to the next row</desc><type>String</type></method>
+</class>
+<class name='Error'>
+<property><name>context</name><desc>Context</desc><type>String</type></property>
+<property><name>description</name><desc>Description</desc><type>String</type></property>
+<property><name>thrownAt</name><desc>Runtime M Location</desc><type>String</type></property>
+<property><name>type</name><desc>Error type (ET)</desc><type>String</type></property>
+<method><name>throw</name><desc>Throw an error object</desc><type></type></method>
+</class>
+<class name='HTML'>
+<method><name>addAttrib</name><desc>add column attributes</desc><type>String</type></method>
+<method><name>addCol</name><desc>Add Column form resultset to XML documen</desc><type>String</type></method>
+<method><name>addElement</name><desc>add Element line to XML DTD</desc><type>String</type></method>
+<method><name>addList</name><desc>Add a matching list (columns+values) XML</desc><type>String</type></method>
+<method><name>addProp</name><desc>add individual column and value to XML</desc><type>String</type></method>
+<method><name>addRow</name><desc>Add results row with tags</desc><type>String</type></method>
+<method><name>addString</name><desc>add string to XML format (clsoe or open)</desc><type>String</type></method>
+<method><name>addTitle</name><desc>Add XML title to header</desc><type>String</type></method>
+</class>
+<class name='IO'>
+<property><name>device</name><desc>Device</desc><type>String</type></property>
+<property><name>directory</name><desc>Directory</desc><type>String</type></property>
+<property><name>fileName</name><desc>File Name</desc><type>String</type></property>
+<property><name>openParams</name><desc>Open Paramters</desc><type>String</type></property>
+<property><name>recordSize</name><desc>Record Size</desc><type>Number</type></property>
+<property><name>timeout</name><desc>Timeout</desc><type>Number</type></property>
+<method><name>close</name><desc>Close Device</desc><type></type></method>
+<method><name>open</name><desc>Open IO</desc><type></type></method>
+<method><name>read</name><desc>Reads a record from device</desc><type>String</type></method>
+<method><name>write</name><desc>Write record</desc><type></type></method>
+</class>
+<class name='List'>
+<method><name>add</name><desc>Add a value to a list</desc><type>List</type></method>
+<method><name>contains</name><desc>List contains expression</desc><type>Boolean</type></method>
+<method><name>count</name><desc>Number of elements in list</desc><type>Number</type></method>
+<method><name>maxValue</name><desc>Maximum value in the list</desc><type>String</type></method>
+<method><name>minValue</name><desc>Minimum value in the list</desc><type>String</type></method>
+<method><name>position</name><desc>Ordinal position in the list</desc><type>Number</type></method>
+<method><name>remove</name><desc>Remove a value from a list</desc><type>List</type></method>
+<method><name>sort</name><desc>Sort the elements in a list</desc><type>List</type></method>
+</class>
+<class name='Number'>
+<method><name>extract</name><desc>Extract a string</desc><type>String</type></method>
+<method><name>roundCur</name><desc>Round an amount to currency</desc><type>Number</type></method>
+<method><name>roundDec</name><desc>Round an amount to decimal</desc><type>Number</type></method>
+<method><name>toString</name><desc>Format a number</desc><type>String</type></method>
+</class>
+<class name='Object'>
+<method><name>copy</name><desc>Copy object</desc><type>Object</type></method>
+<method><name>equals</name><desc>Compare two objects</desc><type>String</type></method>
+<method><name>exists</name><desc>Return object exists</desc><type>Boolean</type></method>
+<method><name>getClass</name><desc>Return object class</desc><type>String</type></method>
+<method><name>getPointer</name><desc>Return object pointer</desc><type>String</type></method>
+<method><name>getStoredValue</name><desc>Return a process scope value from object</desc><type>String</type></method>
+<method><name>isDefined</name><desc>Returns obect is defined logical</desc><type>Boolean</type></method>
+<method><name>isNull</name><desc>Value is NULL</desc><type>Boolean</type></method>
+<method><name>isPrimitive</name><desc>Class is a primitive class</desc><type>Boolean</type></method>
+<method><name>storeValue</name><desc>Add a process scope value to an object</desc><type></type></method>
+<method><name>toString</name><desc>Return a string representation of an object</desc><type>String</type></method>
+</class>
+<class name='PSL'>
+<method><name>addSubrou</name><desc>Add a subroutine to the module</desc><type>Subrou</type></method>
+<method><name>error</name><desc>Output a PSL compile-time error</desc><type></type></method>
+<method><name>getDbLoad</name><desc>Return Record map header</desc><type>PSLRecordMap</type></method>
+<method><name>getLabelRecord</name><desc>Return a PSL subroutine label record</desc><type>PSLLabelRecord</type></method>
+<method><name>insertLine</name><desc>Insert a line of code</desc><type></type></method>
+<method><name>isRecord</name><desc>Record class is ancestor of class</desc><type>Boolean</type></method>
+<method><name>mExpr</name><desc>Convert a PSL string to an M string</desc><type>String</type></method>
+<method><name>newVariable</name><desc>Generate a new variable name</desc><type>String</type></method>
+<method><name>openBuffer</name><desc>Open a new PSL buffer</desc><type>PSLBuffer</type></method>
+<method><name>patch</name><desc>Replace expression with backpatch token</desc><type>String</type></method>
+<method><name>subrouExists</name><desc>Subroutine exists in current module</desc><type>Boolean</type></method>
+<method><name>warn</name><desc>Output a PSL compile-time warning</desc><type></type></method>
+</class>
+<class name='PSLExpression'>
+<method><name>fold</name><desc>Reduce expression to constant</desc><type>PSLExpression</type></method>
+<method><name>isConstant</name><desc>Expression is literal</desc><type>Boolean</type></method>
+<method><name>isLiteral</name><desc>Expression is literal</desc><type>Boolean</type></method>
+<method><name>isVariable</name><desc>Expression is a variable</desc><type>Boolean</type></method>
+<method><name>toConstant</name><desc>Reduce expression to constant</desc><type>PSLExpression</type></method>
+</class>
+<class name='PSLIdentifier'>
+<property><name>class</name><desc>Class of identifier</desc><type>String</type></property>
+<property><name>expr</name><desc>Current assignment expression</desc><type>PSLExpression</type></property>
+<property><name>instBlockSig</name><desc>Block Signature at instantiation</desc><type>String</type></property>
+<property><name>instExpr</name><desc>Current assignment/Instantiation</desc><type>PSLExpression</type></property>
+<property><name>instIfFrame</name><desc>IF frame at instantiation on line</desc><type></type></property>
+<property><name>instIfSig</name><desc>IF Signature at instantiation</desc><type></type></property>
+<property><name>instLevel</name><desc>Block level of current assignment</desc><type>Number</type></property>
+<property><name>instLine</name><desc>Output code line where instantiated</desc><type>Number</type></property>
+<property><name>noPatch</name><desc>Reference object can be post optimized</desc><type>Boolean</type></property>
+<property><name>scope</name><desc>Scope of identifier (NEW/FORMAL/PUBLIC)</desc><type>String</type></property>
+<property><name>scopeLevel</name><desc>Block level of scope</desc><type>Number</type></property>
+<property><name>scopeLine</name><desc>Output code line where scoped</desc><type>Number</type></property>
+<method><name>optimize</name><desc>Reference object can be post optimized</desc><type>Boolean</type></method>
+</class>
+<class name='PSLLabelRecord'>
+<property><name>formalList</name><desc>Formal parameters (Class variable[,...])</desc><type>String</type></property>
+<property><name>isExternal</name><desc>Is PUBLIC or PRIVATE</desc><type>Boolean</type></property>
+<property><name>sourceLine</name><desc>Generated code source line of label</desc><type>Number</type></property>
+</class>
+<class name='PSLRecordMap'>
+<property><name>checkStateMode</name><desc>Record state at instantiation</desc><type>Number</type></property>
+<property><name>class</name><desc>Identifier class</desc><type>String</type></property>
+<property><name>doStack</name><desc>Reference at block level</desc><type>String</type></property>
+<property><name>ifLevel</name><desc>Reference at IF level</desc><type>Number</type></property>
+<property><name>ifStack</name><desc>Reference at IF stack</desc><type>Number</type></property>
+<property><name>instanceExpression</name><desc>Instantiation expression</desc><type>String</type></property>
+<property><name>instanceLevel</name><desc>Instantiated at block level</desc><type>Number</type></property>
+<property><name>instanceLine</name><desc>Instantiated at pointer</desc><type>Number</type></property>
+<property><name>isAudit</name><desc>Save original properties value flag</desc><type>Boolean</type></property>
+<property><name>noOptimize</name><desc>No object folding optimization</desc><type>Boolean</type></property>
+<property><name>referenceLine</name><desc>Reference at pointer</desc><type>Number</type></property>
+<property><name>scope</name><desc>Indentifier scope</desc><type>String</type></property>
+<property><name>scopeLine</name><desc>Identifier scoped at pointer</desc><type>Number</type></property>
+</class>
+<class name='Primitive'>
+<method><name>isNull</name><desc>Expression is NULL</desc><type>Boolean</type></method>
+<method><name>length</name><desc>Character length of value</desc><type>Number</type></method>
+</class>
+<class name='Record'>
+<method><name>bypassSave</name><desc>Database save, bypass triggers</desc><type></type></method>
+<method><name>compare</name><desc>Compare and report differences</desc><type>ResultSet</type></method>
+<method><name>copy</name><desc>Copy object</desc><type>Object</type></method>
+<method><name>fromArray</name><desc>Copy M array into object properties</desc><type></type></method>
+<method><name>getMode</name><desc>Return Record Mode</desc><type>Number</type></method>
+<method><name>isChanged</name><desc>Check if the Column has Changed</desc><type>String</type></method>
+<method><name>overlay</name><desc>New record overlay fields </desc><type></type></method>
+<method><name>save</name><desc>Save a record to the database</desc><type></type></method>
+<method><name>setAuditFlag</name><desc>Set update history flag</desc><type></type></method>
+<method><name>setCreateOnly</name><desc>Allow create mode only</desc><type></type></method>
+<method><name>setMode</name><desc>Set Record Mode</desc><type></type></method>
+<method><name>setUpdateOnly</name><desc>Allow update mode only</desc><type></type></method>
+<method><name>toArray</name><desc>Copy object properties into M array</desc><type></type></method>
+<method><name>toString</name><desc>Copy object</desc><type>String</type></method>
+</class>
+<class name='RecordACN'>
+<method><name>renew</name><desc>Loan/Deposit renewal</desc><type></type></method>
+</class>
+<class name='RecordCIF'>
+<method><name>default</name><desc>New Cif account defaults form product</desc><type></type></method>
+</class>
+<class name='RecordDEP'>
+<method><name>default</name><desc>Deposit new account default method</desc><type></type></method>
+</class>
+<class name='RecordLN'>
+<method><name>default</name><desc>Loan new account product defaults</desc><type></type></method>
+</class>
+<class name='RecordTTX'>
+<property><name>ovr</name><desc>Restriction/Authorization within contain</desc><type>String</type></property>
+</class>
+<class name='ResultSet'>
+<method><name>getCol</name><desc>Return column value from results row</desc><type>String</type></method>
+<method><name>getColProt</name><desc>Return column protection</desc><type>String</type></method>
+<method><name>getRow</name><desc>Return current results row</desc><type>Row</type></method>
+<method><name>getRowProt</name><desc>Return row protection</desc><type>String</type></method>
+<method><name>isEmpty</name><desc>Return boolean state of results set</desc><type>String</type></method>
+<method><name>next</name><desc>Position cursor to the next row</desc><type>String</type></method>
+</class>
+<class name='Row'>
+<method><name>getColumns</name><desc>Get the properties of a Row object</desc><type>String</type></method>
+<method><name>getDelimiter</name><desc>Get the row delimiter</desc><type>String</type></method>
+<method><name>setColumns</name><desc>Set the properties of a Row object</desc><type></type></method>
+<method><name>setDelimiter</name><desc>Set the row delimiter</desc><type></type></method>
+<method><name>toRecord</name><desc>Copy a Row object to a Record object</desc><type></type></method>
+<method><name>toString</name><desc>Convert a Row object to a String</desc><type>String</type></method>
+</class>
+<class name='Runtime'>
+<method><name>charset</name><desc>Character set</desc><type>String</type></method>
+<method><name>commit</name><desc>Commit TP fence</desc><type></type></method>
+<method><name>delErrXBAD</name><desc>XBAD error</desc><type></type></method>
+<method><name>rollback</name><desc>Tp Rollback to the start of a fence</desc><type></type></method>
+<method><name>setErrMSG</name><desc>Message Table Error</desc><type></type></method>
+<method><name>setErrSTBLER</name><desc>Application Error</desc><type></type></method>
+<method><name>setErrXBAD</name><desc>XBAD error</desc><type></type></method>
+<method><name>start</name><desc>Start TP fence</desc><type></type></method>
+</class>
+<class name='Schema'>
+<method><name>createTable</name><desc>Create temporary table schema</desc><type></type></method>
+<method><name>deleteTable</name><desc>Delete table schema</desc><type></type></method>
+<method><name>getTableName</name><desc>Return a table name for a RecordClass</desc><type>String</type></method>
+<method><name>getTableRecord</name><desc>Return a Data-Qwik table record</desc><type>SchemaTable</type></method>
+</class>
+<class name='SchemaTable'>
+<property><name>columnDelimiter</name><desc>Column delimiter</desc><type>Number</type></property>
+<property><name>dataTypes</name><desc>List of data types used</desc><type>String</type></property>
+<property><name>dateCreated</name><desc>Date record created property</desc><type>Date</type></property>
+<property><name>dateUpdated</name><desc>Date record last updated property</desc><type>Date</type></property>
+<property><name>existsNode</name><desc>Record exists node reference</desc><type>Number</type></property>
+<property><name>filerPGM</name><desc>Filer routine name</desc><type>String</type></property>
+<property><name>global</name><desc>M Global reference</desc><type>String</type></property>
+<property><name>hasBLOB</name><desc>Table has BLOB data types</desc><type>Boolean</type></property>
+<property><name>hasIndex</name><desc>Table has indexes</desc><type>Boolean</type></property>
+<property><name>hasMemo</name><desc>Table has Memo data types</desc><type>Boolean</type></property>
+<property><name>hasSubfield</name><desc>Table has subfield properties</desc><type>Boolean</type></property>
+<property><name>isAutoLog</name><desc>Automatic change logging enabled</desc><type>Boolean</type></property>
+<property><name>primaryKeys</name><desc>Table primary keys</desc><type>String</type></property>
+<property><name>publishPGM</name><desc>Update publish routine</desc><type>String</type></property>
+<property><name>recordType</name><desc>Internal record type (1,10,11)</desc><type>Number</type></property>
+<property><name>systemName</name><desc>Table member of system</desc><type>String</type></property>
+<property><name>table</name><desc>TableName</desc><type>String</type></property>
+<property><name>timeCreated</name><desc>Time record created property</desc><type>Time</type></property>
+<property><name>timeUpdated</name><desc>Time record last updated property</desc><type>Time</type></property>
+<property><name>userCreated</name><desc>User created record column</desc><type>String</type></property>
+<property><name>userUpdated</name><desc>User record last updated property</desc><type></type></property>
+<property><name>verifyPGM</name><desc>Verification routine name</desc><type>String</type></property>
+</class>
+<class name='String'>
+<method><name>addQuotes</name><desc>Add one layer of quotes</desc><type>String</type></method>
+<method><name>beginsWith</name><desc>Begins with string</desc><type>Boolean</type></method>
+<method><name>blank</name><desc>Pad a string with blanks</desc><type>String</type></method>
+<method><name>complexUnpack</name><desc>Complex unpack of data string</desc><type>String</type></method>
+<method><name>endsWith</name><desc>Ends with string</desc><type>Boolean</type></method>
+<method><name>extract</name><desc>Extract a string</desc><type>String</type></method>
+<method><name>find</name><desc>Find the next position of a string</desc><type>Number</type></method>
+<method><name>getSub</name><desc>Return a sub-delimited or labeled string</desc><type>String</type></method>
+<method><name>insert</name><desc>Insert a string into a string</desc><type>String</type></method>
+<method><name>isInteger</name><desc>Is an integer</desc><type>Boolean</type></method>
+<method><name>isLike</name><desc>Is like (SQL like)</desc><type>Boolean</type></method>
+<method><name>isLiteral</name><desc>Is a literal value - quoted or number</desc><type>Boolean</type></method>
+<method><name>isNumber</name><desc>Is a number</desc><type>Boolean</type></method>
+<method><name>justify</name><desc>Justify and pad a string</desc><type>String</type></method>
+<method><name>length</name><desc>String length</desc><type>Number</type></method>
+<method><name>lowerCase</name><desc>Convert to lower case</desc><type>String</type></method>
+<method><name>piece</name><desc>Return string at delimited position</desc><type>String</type></method>
+<method><name>putSub</name><desc>Insert a sub-delimited or tagged string</desc><type>String</type></method>
+<method><name>replace</name><desc>Replace occurrances of expr1 with expr2</desc><type>String</type></method>
+<method><name>reverse</name><desc>Reverse the character order</desc><type>String</type></method>
+<method><name>stripQuotes</name><desc>Strip one layer of quotes</desc><type>String</type></method>
+<method><name>toDate</name><desc>Convert formatted date to julien date</desc><type>Date</type></method>
+<method><name>toNumber</name><desc>Convert String to Number</desc><type>Number</type></method>
+<method><name>toRow</name><desc>Convert a String type to a Row type</desc><type>Row</type></method>
+<method><name>toTime</name><desc>Convert formatted to internal time</desc><type>Time</type></method>
+<method><name>trim</name><desc>Trim characters from a String</desc><type>String</type></method>
+<method><name>unpack</name><desc>Unpacks data string</desc><type>String</type></method>
+<method><name>upperCase</name><desc>Convert to upper case</desc><type>String</type></method>
+<method><name>zero</name><desc>Zero fill a string</desc><type>String</type></method>
+</class>
+<class name='Time'>
+</class>
+<class name='TranSet'>
+<property><name>status</name><desc>Error status</desc><type>String</type></property>
+<method><name>copyTran</name><desc>Copy transaction to TranSet</desc><type>String</type></method>
+<method><name>getTran</name><desc>Get transaction from TranSet</desc><type>Object</type></method>
+<method><name>postTSet</name><desc>Post TranSet</desc><type></type></method>
+</class>
+<class name='fold'>
+</class>
+<class name='isConstant'>
+</class>
+</psl>

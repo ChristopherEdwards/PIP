@@ -1,0 +1,759 @@
+<?eclipse version="3.0"?>
+<plugin
+   id="com.fnf.profile.ide"
+   name="%pluginName"
+   version="3.3.2"
+   provider-name="%providerName"
+   class="com.fnf.profile.ide.IdePlugin">
+
+   <runtime>
+      <library name="ide.jar">
+         <export name="*"/>
+      </library>
+      <library name="gnu-regexp-1.1.4.jar"/>
+      <library name="xercesImpl.jar"/>
+      <library name="ScJDBC.jar">
+         <export
+               name="*">
+         </export>
+      </library>
+   </runtime>
+   <requires>
+   <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.ui.views"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="com.fnf.studio"/>
+      <import plugin="org.eclipse.debug.ui"/>
+      <import plugin="org.eclipse.jdt.ui"/>
+      
+   </requires>
+
+
+<!-- =============================================== -->
+<!-- Perspectives for all profile extensions         -->
+<!-- =============================================== -->
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="%perspectiveName"
+            icon="icons/basic/fid_prof_perspective.gif"
+            class="com.fnf.FidelityProfilePerspective"
+            id="com.fnf.profile.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="com.fnf.profile.perspective">
+         <newWizardShortcut
+               id="org.eclipse.ui.wizards.new.folder">
+         </newWizardShortcut>
+         <newWizardShortcut
+               id="org.eclipse.ui.wizards.new.file">
+         </newWizardShortcut>
+         <newWizardShortcut
+               id="com.fnf.profile.ide.wizards.NewProfileProjectWizard">
+         </newWizardShortcut>
+         <newWizardShortcut
+               id="com.fnf.profile.ide.wizards.GetFromProfileWizard">
+         </newWizardShortcut>
+         <newWizardShortcut
+               id="com.fnf.profile.ide.wizards.NewFileWizard">
+         </newWizardShortcut>
+         <viewShortcut
+               id="org.eclipse.ui.externaltools.AntView">
+         </viewShortcut>
+         <viewShortcut
+               id="org.eclipse.ui.views.BookmarkNavigator">
+         </viewShortcut>
+         <viewShortcut
+               id="org.eclipse.pde.runtime.LogView">
+         </viewShortcut>
+         <viewShortcut
+               id="org.eclipse.ui.views.ResourceNavigator">
+         </viewShortcut>
+         <viewShortcut
+               id="org.eclipse.ui.views.ContentOutline">
+         </viewShortcut>
+         <viewShortcut
+               id="org.eclipse.ui.views.PropertySheet">
+         </viewShortcut>
+         <viewShortcut
+               id="org.eclipse.ui.views.TaskList">
+         </viewShortcut>
+         <viewShortcut
+               id="org.eclipse.ui.views.ProblemView">
+         </viewShortcut>
+         <viewShortcut
+               id="com.fnf.studio.views.FidelityConsoleView">
+         </viewShortcut>
+         <view
+               id="org.eclipse.ui.views.ProblemView"
+               relationship="stack"
+               relative="com.fnf.studio.views.FidelityConsoleView" />
+         <perspectiveShortcut
+               id="com.fnf.profile.dba.perspective">
+         </perspectiveShortcut> 
+  
+      </perspectiveExtension>
+
+   </extension>
+<!-- =============================================== -->
+<!-- Editors for all profile extensions         -->
+<!-- =============================================== -->
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            name="%editorName"
+            icon="icons/basic/editor.gif"
+            extensions="proc, batch, trig, psl"
+            contributorClass="com.fnf.profile.ide.editors.psleditor.PSLActionContributor"
+            class="com.fnf.profile.ide.editors.psleditor.PSLEditor"
+            id="com.fnf.profile.ide.editors.PSLEditor">
+      </editor>
+   </extension>
+<!-- =============================================== -->
+<!-- properties menus for all profile extensions     -->
+<!-- =============================================== -->
+   <extension
+         id="com.fnf.profile.ide.ScProfileConnection"
+         name="%connectionName"
+         point="org.eclipse.ui.propertyPages">
+      <page
+            category="com.fnf.profile.ide.page1"
+            class="com.fnf.profile.ide.properties.ProfileConnPropertyPage"
+            id="com.fnf.profile.ide.properties.ProfileConnPropertyPage"
+            name="%connectionPageName"
+            nameFilter="*"
+            objectClass="org.eclipse.core.resources.IProject">
+      </page>
+      <page
+            category="com.fnf.profile.ide.page1"
+            class="com.fnf.profile.ide.properties.PSLPropertiesPage"
+            id="com.fnf.profile.ide.properties.PSLPropertiesPage"
+            name="%referencesPageName"
+            nameFilter="*"
+            objectClass="org.eclipse.core.resources.IProject">
+      </page>
+      <page
+            class="com.fnf.profile.ide.preferences.WorkbenchPropertyPage1"
+            id="com.fnf.profile.ide.page1"
+            name="FIS Profile">
+      </page>
+   </extension>
+
+<!-- =============================================== -->
+<!-- popup menus for all profile extensions          -->
+<!-- =============================================== -->
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.PROC"
+            id="com.fnf.profile.ide.actions.contribution1">
+         <menu
+               label="FIS Profile"
+               path="fisothers"
+               id="com.fnf.profile.ide.actions.Fidelityprofilemenu">
+            <separator
+                  name="FidelityprofileGroup">
+            </separator>
+         </menu>
+         <action
+               label="Test Compile"
+               class="com.fnf.profile.ide.actions.PopupMenuTestCompile"
+               menubarPath="com.fnf.profile.ide.actions.Fidelityprofilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.PopupMenuTestCompile">
+         </action>
+         <action
+               label="Send to Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuSendToProfile"
+               menubarPath="com.fnf.profile.ide.actions.Fidelityprofilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.PopupMenuSendToProfile">
+         </action>
+         <action
+               label="Refresh from Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuRefreshFromProfile"
+               menubarPath="com.fnf.profile.ide.actions.Fidelityprofilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.RefreshFromProfile">
+         </action>
+      </objectContribution>
+ 
+       <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.SQL"
+            id="com.fnf.profile.ide.actions.contribution1">
+         <menu
+               label="FIS Profile"
+               path="fisothers"
+               id="com.fnf.profile.ide.actions.Fidelityprofilemenu">
+            <separator
+                  name="FidelityprofileGroup">
+            </separator>
+         </menu>
+         <action
+               class="com.fnf.profile.ide.actions.PopupMenuSQL"
+               id="com.fnf.profile.ide.actions.PopupMenuSQL"
+               label="Run SQL"
+               menubarPath="com.fnf.profile.ide.actions.Fidelityprofilemenu/FidelityProfileGroup"
+               tooltip="Runs query and displays resulys in report viewer">
+         </action>
+
+      </objectContribution>
+ 
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.AGR"
+            id="com.fnf.profile.ide.actions.contribution1">
+         <menu
+               label="FIS Profile"
+               path="fisothers"
+               id="com.fnf.profile.ide.actions.Fidelityprofilemenu">
+            <separator
+                  name="FidelityProfileGroup">
+            </separator>
+         </menu>
+         <action
+               label="Send to Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuSendToProfile"
+               menubarPath="com.fnf.profile.ide.actions.Fidelityprofilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.PopupMenuSendToProfile">
+         </action>
+         <action
+               label="Refresh from Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuRefreshFromProfile"
+               menubarPath="com.fnf.profile.ide.actions.Fidelityprofilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.RefreshFromProfile">
+         </action>
+      </objectContribution>
+
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.BATCH"
+            id="com.fnf.profile.ide.actions.contribution1">
+         <menu
+               label="FIS Profile"
+               path="fisothers"
+               id="com.fnf.profile.ide.actions.Fidelityprofilemenu">
+            <separator
+                  name="FidelityProfileGroup">
+            </separator>
+         </menu>
+         <action
+               label="Send to Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuSendToProfile"
+               menubarPath="com.fnf.profile.ide.actions.Fidelityprofilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.PopupMenuSendToProfile">
+         </action>
+         <action
+               label="Refresh from Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuRefreshFromProfile"
+               menubarPath="com.fnf.profile.ide.actions.Fidelityprofilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.RefreshFromProfile">
+         </action>
+      </objectContribution>
+
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.COL"
+            id="com.fnf.profile.ide.actions.contribution1">
+         <menu
+               label="FIS Profile"
+               path="fisothers"
+               id="com.fnf.profile.ide.actions.Fidelityprofilemenu">
+            <separator
+                  name="FidelityProfileGroup">
+            </separator>
+         </menu>
+         <action
+               label="Send to Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuSendToProfile"
+               menubarPath="com.fnf.profile.ide.actions.Fidelityprofilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.PopupMenuSendToProfile">
+         </action>
+         <action
+               label="Refresh from Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuRefreshFromProfile"
+               menubarPath="com.fnf.profile.ide.actions.Fidelityprofilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.RefreshFromProfile">
+         </action>
+      </objectContribution>
+
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.DAT"
+            id="com.fnf.profile.ide.actions.contribution1">
+         <menu
+               label="FIS Profile"
+               path="fisothers"
+               id="com.fnf.profile.ide.actions.Fidelityprofilemenu">
+            <separator
+                  name="FidelityProfileGroup">
+            </separator>
+         </menu>
+         <action
+               label="Send to Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuSendToProfile"
+               menubarPath="com.fnf.profile.ide.actions.Fidelityprofilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.PopupMenuSendToProfile">
+         </action>
+         <action
+               label="Refresh from Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuRefreshFromProfile"
+               menubarPath="com.fnf.profile.ide.actions.Fidelityprofilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.RefreshFromProfile">
+         </action>
+      </objectContribution>
+      
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.TBL"
+            id="com.fnf.profile.ide.actions.contribution1">
+         <menu
+               label="FIS Profile"
+               path="fisothers"
+               id="com.fnf.profile.ide.actions.Fidelityprofilemenu">
+            <separator
+                  name="FidelityprofileGroup">
+            </separator>
+         </menu>
+         <action
+               label="Send to Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuSendToProfile"
+               menubarPath="com.fnf.profile.ide.actions.Fidelityprofilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.PopupMenuSendToProfile">
+         </action>
+         <action
+               label="Refresh from Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuRefreshFromProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.RefreshFromProfile">
+         </action>
+      </objectContribution>
+ 
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.G"
+            id="com.fnf.profile.ide.actions.contribution1">
+         <menu
+               label="FIS Profile"
+               path="fisothers"
+               id="com.fnf.profile.ide.actions.FidelityProfilemenu">
+            <separator
+                  name="FidelityProfileGroup">
+            </separator>
+         </menu>
+         <action
+               label="Send to Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuSendToProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.PopupMenuSendToProfile">
+         </action>
+         <action
+               label="Refresh from Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuRefreshFromProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.RefreshFromProfile">
+         </action>
+      </objectContribution>
+ 
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.EXC"
+            id="com.fnf.profile.ide.actions.contribution1">
+         <menu
+               label="FIS Profile"
+               path="fisothers"
+               id="com.fnf.profile.ide.actions.FidelityProfilemenu">
+            <separator
+                  name="FidelityProfileGroup">
+            </separator>
+         </menu>
+         <action
+               label="Send to Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuSendToProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.PopupMenuSendToProfile">
+         </action>
+         <action
+               label="Refresh from Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuRefreshFromProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.RefreshFromProfile">
+         </action>
+      </objectContribution>
+
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.FKY"
+            id="com.fnf.profile.ide.actions.contribution1">
+         <menu
+               label="FIS Profile"
+               path="fisothers"
+               id="com.fnf.profile.ide.actions.FidelityProfilemenu">
+            <separator
+                  name="FidelityProfileGroup">
+            </separator>
+         </menu>
+         <action
+               label="Send to Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuSendToProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.PopupMenuSendToProfile">
+         </action>
+         <action
+               label="Refresh from Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuRefreshFromProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.RefreshFromProfile">
+         </action>
+      </objectContribution>
+
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.IDX"
+            id="com.fnf.profile.ide.actions.contribution1">
+         <menu
+               label="FIS Profile"
+               path="fisothers"
+               id="com.fnf.profile.ide.actions.FidelityProfilemenu">
+            <separator
+                  name="FidelityProfileGroup">
+            </separator>
+         </menu>
+         <action
+               label="Send to Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuSendToProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.PopupMenuSendToProfile">
+         </action>
+         <action
+               label="Refresh from Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuRefreshFromProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.RefreshFromProfile">
+         </action>
+      </objectContribution>
+
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.JFD"
+            id="com.fnf.profile.ide.actions.contribution1">
+         <menu
+               label="FIS Profile"
+               path="fisothers"
+               id="com.fnf.profile.ide.actions.FidelityProfilemenu">
+            <separator
+                  name="FidelityProfileGroup">
+            </separator>
+         </menu>
+         <action
+               label="Send to Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuSendToProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.PopupMenuSendToProfile">
+         </action>
+         <action
+               label="Refresh from Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuRefreshFromProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.RefreshFromProfile">
+         </action>
+      </objectContribution>
+
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.LUD"
+            id="com.fnf.profile.ide.actions.contribution1">
+         <menu
+               label="FIS Profile"
+               path="fisothers"
+               id="com.fnf.profile.ide.actions.FidelityProfilemenu">
+            <separator
+                  name="FidelityProfileGroup">
+            </separator>
+         </menu>
+         <action
+               label="Send to Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuSendToProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.PopupMenuSendToProfile">
+         </action>
+         <action
+               label="Refresh from Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuRefreshFromProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.RefreshFromProfile">
+         </action>
+      </objectContribution>
+
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.PPL"
+            id="com.fnf.profile.ide.actions.contribution1">
+         <menu
+               label="FIS Profile"
+               path="fisothers"
+               id="com.fnf.profile.ide.actions.FidelityProfilemenu">
+            <separator
+                  name="FidelityProfileGroup">
+            </separator>
+         </menu>
+         <action
+               label="Send to Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuSendToProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.PopupMenuSendToProfile">
+         </action>
+         <action
+               label="Refresh from Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuRefreshFromProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.RefreshFromProfile">
+         </action>
+      </objectContribution>
+
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.QRY"
+            id="com.fnf.profile.ide.actions.contribution1">
+         <menu
+               label="FIS Profile"
+               path="fisothers"
+               id="com.fnf.profile.ide.actions.FidelityProfilemenu">
+            <separator
+                  name="FidelityProfileGroup">
+            </separator>
+         </menu>
+         <action
+               label="Send to Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuSendToProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.PopupMenuSendToProfile">
+         </action>
+         <action
+               label="Refresh from Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuRefreshFromProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.RefreshFromProfile">
+         </action>
+      </objectContribution>
+
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.RMP"
+            id="com.fnf.profile.ide.actions.contribution1">
+         <menu
+               label="FIS Profile"
+               path="fisothers"
+               id="com.fnf.profile.ide.actions.FidelityProfilemenu">
+            <separator
+                  name="FidelityProfileGroup">
+            </separator>
+         </menu>
+         <action
+               label="Send to Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuSendToProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.PopupMenuSendToProfile">
+         </action>
+         <action
+               label="Refresh from Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuRefreshFromProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.RefreshFromProfile">
+         </action>
+      </objectContribution>
+
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.RPT"
+            id="com.fnf.profile.ide.actions.contribution1">
+         <menu
+               label="FIS Profile"
+               path="fisothers"
+               id="com.fnf.profile.ide.actions.FidelityProfilemenu">
+            <separator
+                  name="FidelityProfileGroup">
+            </separator>
+         </menu>
+         <action
+               label="Send to Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuSendToProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.PopupMenuSendToProfile">
+         </action>
+         <action
+               label="Refresh from Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuRefreshFromProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.RefreshFromProfile">
+         </action>
+      </objectContribution>
+
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.SCR"
+            id="com.fnf.profile.ide.actions.contribution1">
+         <menu
+               label="FIS Profile"
+               path="fisothers"
+               id="com.fnf.profile.ide.actions.FidelityProfilemenu">
+            <separator
+                  name="FidelityProfileGroup">
+            </separator>
+         </menu>
+         <action
+               label="Send to Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuSendToProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.PopupMenuSendToProfile">
+         </action>
+         <action
+               label="Refresh from Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuRefreshFromProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.RefreshFromProfile">
+         </action>
+      </objectContribution>
+
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.TRIG"
+            id="com.fnf.profile.ide.actions.contribution1">
+         <menu
+               label="FIS Profile"
+               path="fisothers"
+               id="com.fnf.profile.ide.actions.FidelityProfilemenu">
+            <separator
+                  name="FidelityProfileGroup">
+            </separator>
+         </menu>
+         <action
+               label="Send to Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuSendToProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.PopupMenuSendToProfile">
+         </action>
+         <action
+               label="Refresh from Profile"
+               class="com.fnf.profile.ide.actions.PopupMenuRefreshFromProfile"
+               menubarPath="com.fnf.profile.ide.actions.FidelityProfilemenu/FidelityProfileGroup"
+               id="com.fnf.profile.ide.actions.RefreshFromProfile">
+         </action>
+      </objectContribution>
+   </extension>
+<!-- =============================================== -->
+<!--   				New wizards  			         -->
+<!-- =============================================== -->
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            name="%resourcesCategory"
+            id="com.fnf.profile.ide.category">
+      </category>
+      <wizard
+            name="%getResourceWizardName"
+            icon="icons/basic/fid_prof_get_small.gif"
+            category="com.fnf.profile.ide.category"
+            class="com.fnf.profile.ide.wizards.GetFromProfileWizard"
+            id="com.fnf.profile.ide.wizards.GetFromProfileWizard">
+      </wizard>
+      <wizard
+            name="%newResourceWizardName"
+            icon="icons/basic/fid_prof_new_small.gif"
+            category="com.fnf.profile.ide.category"
+            class="com.fnf.profile.ide.wizards.NewFileWizard"
+            id="com.fnf.profile.ide.wizards.NewFileWizard">
+      </wizard>
+      <wizard
+            name="%newProjectWizardName"
+            icon="icons/basic/fid_new_prof_proj.gif"
+            category="com.fnf.profile.ide.category"
+            class="com.fnf.profile.ide.wizards.NewProfileProjectWizard"
+            project="true"
+            id="com.fnf.profile.ide.wizards.NewProfileProjectWizard">
+         <description>
+            Create a new Profile project.
+         </description>
+         <selection
+               class="org.eclipse.core.resources.IResource">
+         </selection>
+      </wizard>
+   </extension>
+  
+<!-- =============================================== -->
+<!-- Help for all profile extensions                  -->
+<!-- =============================================== -->
+   <extension
+         point="org.eclipse.help.toc">
+      <toc
+            file="doc/userGuide.xml"
+            primary="true">
+      </toc>
+   </extension>
+<!-- =============================================== -->
+<!-- Preferences for all profile extensions          -->
+<!-- =============================================== -->
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            name="%pslPreferencePageName"
+            category="com.fnf.studio.preferences.StudioPreferencePage"
+            class="com.fnf.profile.ide.preferences.ProfilePslEditorPreferencePage"
+            id="com.fnf.profile.ide.preferences.ProfilePslEditorPreferencePage">
+      </page>
+      <page
+            name="%envPreferencePageName"
+            category="com.fnf.studio.preferences.StudioPreferencePage"
+            class="com.fnf.profile.ide.preferences.ProfileEnvPreferencePage"
+            id="com.fnf.profile.ide.preferences.ProfileEnvironment">
+      </page>
+      <page
+            name="%snippetsPreferencePageName"
+            category="com.fnf.studio.preferences.StudioPreferencePage"
+            class="com.fnf.profile.ide.preferences.ProfileSnippetPreferencePage"
+            id="com.fnf.profile.ide.preferences.ProfileSnippet">
+      </page>
+   </extension>
+<extension point="org.eclipse.core.resources.markers"
+ id="xxxproblem"
+ name="%xxxProblemName">
+ <super type="org.eclipse.core.resources.problemmarker"/>
+ <super type="org.eclipse.core.resources.textmarker"/>
+ <persistent value="true"/>
+</extension>
+<extension
+      point="org.eclipse.ui.views">
+   <view
+         allowMultiple="false"
+         category="FIS Profile"
+         class="com.fnf.profile.ide.views.SQLReportView"
+         id="com.fnf.profile.ide.views.SQLReportView"
+         name="SQLReportView">
+   </view>
+</extension>
+<extension
+      id="com.fnf.profile.menu.runsql"
+      point="org.eclipse.ui.menus">
+	<menuContribution
+         locationURI="menu:com.fnf.profile.ide?after=additions">
+         <command
+               commandId="someorg.someid.someCommand"
+               icon="icons/anything.gif"
+               id="someorg.someid.BasicCmdItem"
+               label="Simple Item"
+               mnemonic="S">
+         </command>
+      </menuContribution>
+
+
+</extension>
+
+
+</plugin>

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cheatsheet title="Dayend Processing">
+   <intro>
+      <description>
+         This cheatsheet provides detailed steps for running the DAYEND event in a FIS Profile runtime environment. <br/>
+<b>Reminder:</b> UNIX is very case sensitive and it is important that you type exactly what is shown without deviation or you will not get the desired result.
+      </description>
+   </intro>
+   <item title="Notify Users" dialog="true" skip="false">
+      <description>
+         Send e-mail to QA and everyone using the directory at least one hour prior to the start of  the Dayend. Send a warning message about 5 minutes before starting the backup.
+      </description>
+   </item>
+   <item title="Login as qa_mtm" dialog="true" skip="false">
+      <description>
+         Login to the proper UNIX environment. Use <b>qa_mtm</b> for the user and <b>dayend_qa</b> for the Password
+      </description>
+   </item>
+   <item title="Check active users" dialog="true" skip="false">
+      <description>
+         Type <b>ps  -ef  |grep  &lt;name of directory&gt;</b> to see who is still in the directory. (In a LINUX Environment, type <b>ps -Aefw |grep &lt;name of directory&gt;</b>. <br/>
+		You should see 3 processes running; 1 for the MTM server and 2 for the IBS servers. You will also see <b>qa_mtm</b> logged in as <b>&lt;name of directory&gt; grep; that is you</b>. 
+		(The MTM servers are always logged in as BIN. You can run the Dayend with the MTM server and root running.)
+      </description>
+   </item>
+   <item title="Stop IBS Servers" dialog="true" skip="false">
+      <description>
+         Go into the driver and run <b>@SVSTOP</b>. After stopping the servers, check to make sure that the servers have been stopped. (If they still appear, type <b>mupip stop (process ID #)</b>. <br/><br/>
+Do this for both servers. Verify that the servers are now gone. You can use this kill function if it for the servers you have running under qa_mtm. If it is someone else&apos;s process, contact him or her or IS to kill it.) <b>Close the qa_mtm operator session</b>.
+      </description>
+   </item>
+   <item title="Go to the root directory" dialog="true" skip="false">
+      <description>
+         Type <b>cd /&lt;name of directory&gt;</b>  (Whatever directory you are planning on doing the Dayend.)
+      </description>
+   </item>
+   <item title="Initialize variables" dialog="true" skip="false">
+      <description>
+         Type <b>. gtmenv</b>
+      </description>
+   </item>
+   <item title="Run database integrity utility" dialog="true" skip="false">
+      <description>
+         Type <b>mupip integ  -r &quot;*&quot;</b>
+      </description>
+   </item>
+   <item title="Verify database integrity" dialog="true" skip="false">
+      <description>
+         Verify that no database integrities are showing. <b>If any database integrities appear, DO NOT PROCEED</b> until you have clearance from a Profile Environments representative.
+      </description>
+   </item>
+   <item title="Backup the directory" dialog="true" skip="false">
+      <description>
+         A backup directory must exist in order for the backup to be complete.  To confirm the backup directory exists run the following: ls -l /&lt;name of directory&gt;/gbls/backup.  
+		If the directory does not exist, the following error is returned &quot;ls: 0653-341 The file /&lt;name of directory&gt;/gbls/backup/backup does not exist&quot;. <br/><br/>
+
+If the backup directory does not exist, the directory owner should be notified so one can be created.<br/><br/>
+		<b>NOTE:</b> Where <b>&quot;name of directory&quot;</b> is present, enter the appropriate directory (e.g. v61qaix)
+      </description>
+   </item>
+   <item title="Backup data" dialog="true" skip="false">
+      <description>
+         Backup the directory as follows:<br/>
+		<b>cd  /</b> name of directory<br/>
+		<b>TMPDIR=/</b> name of directory<b>/gbls/backup</b><br/>	
+		<b>export TMPDIR </b><br/>			
+		<b>echo $TMPDIR </b><br/>
+		<b>. gtmenv </b><br/>
+		<b>mupip rundown  -r  &quot;*&quot;</b>  (This is done to ensure no one entered the directory.)<br/>
+		<b>mupip backup  &quot;*&quot;  /</b>name of directory<b>/gbls/backup</b>  (This tells you where the backups are saved.)<br/>
+      </description>
+   </item>
+   <item title="Run DAYEND function" dialog="true" skip="false">
+      <description>
+         After the backups are completed, go back into the driver by typing <b>cd /&lt;name of directory&gt;, dm, </b> and then <b>D ^DRV</b> at the GT.M prompt. Once you have entered the driver, 
+		start the Dayend process by running function <b>@QUERUN</b>. The event name is DAYEND. Enter the number of days you want to run <b>DAYEND</b>. Do not proceed if you receive any type of 
+		error on the EVENT INTEGRITY CHECK. These errors must be resolved before continuing the Dayend.  The batches should begin to submit. When &quot;Event DAYEND Submitted&quot; appears, 
+		press the ENTER key. You will then receive the message &quot;Userclass access is restricted during the DAYEND process&quot; press the ENTER key again to return to the GT.M prompt.
+      </description>
+   </item>
+   <item title="Monitor DAYEND" dialog="true" skip="false">
+      <description>
+         To monitor the process by global access, type D ^%G and press the Return key. At the Global prompt type any of the following: <br/><br/>
+		<b>QUETBL</b>- Shows what batches have completed (those marked &quot;1&quot;) <br/>
+		<b>QUEUEHD</b>(T,LAST5-Shows last five jobs completed <br/>
+		<b>TTR</b>-Shows number of days that the DAYEND has yet to run. If this global shows up, the DAYEND is completed. <br/>
+		<b>QUECTRL</b>- This can be used to monitor the Dayend Queues. This will show the process ID&apos;s for each Queue. <br/>
+		(A UNIX Dayend cannot be monitored by SH QUE/ALL SCA$BATCH.) <br/>
+      </description>
+   </item>
+   <item title="Verify DAYEND" dialog="true" skip="false">
+      <description>
+         When the Dayend is finished, at the GTM Prompt run D ^%GFIND for Globals:<br/>
+		a) QUEUEHD(T   <br/>
+		b) QUEUEHD(T-1  <br/>
+		Verify that no batches aborted during dayend processing. (Search for <b>abort</b>)
+      </description>
+   </item>
+   <item title="Check for errors" dialog="true" skip="false">
+      <description>
+         Type <b>D^ SCAER</b> at the GT.M prompt to view the host error log. Be sure to enter all the calendar days applicable since the last Dayend. Print each new or unknown 
+		error and resolve them by contacting the person responsible or researching through the other Dayend reports (for BATCH tellers.) <br/><br/>
+		<b>NOTE</b>: Where &quot;<b>&lt;name of directory&gt;</b> &quot; is present, enter the appropriate directory (e.g. v61qaix)
+      </description>
+   </item>
+   <item title="Run exception reports" dialog="true" skip="false">
+      <description>
+         At the GT.M prompt, go back into the driver and run and print the reports listed below: <br/><br/>
+		<b>@UBAL03</b>-Balance Exception Report. Use T-1 for the date or the appropriate date if several dayends are run at once. <br/>
+		<b>@UBAL02</b>---Screen Transaction Balancing Report. Use T-1 for the date or the appropriate date is several dayends were run at once. <br/>
+		<b>@REP006</b>-Standard Exception Report. Use T-1 for the date. <br/>
+		<b>@LNI003 and DEPVER001</b> should have all entries set to &quot;Y&quot;.<br/>
+		<b>@REP290</b>---Account Verification Report. Use T for the date. Any errors must be investigated and resolved by the account owner. Refer to Procedure Integrity Report Processing. <br/>
+      </description>
+   </item>
+   <item title="Verify mje files are not empty" dialog="true" skip="false">
+      <description>
+         In the UNIX environment where the Dayend(s) were run, at the GTM Prompt run the D ^ZQADIRCL command to verify there are no files greater than &apos;0&apos; zero. <br/><br/>
+		Verify the file size. Any file size greater than zero must be reviewed. Any file with a size=0 will be deleted using the <b>D ^ZQADIRCL</b> command. <br/><br/>
+		All files can be deleted. <br/>
+		GTM&gt;D ^ZQADIRCL <br/>
+		<br/>
+		
+		<b>When this command is executed the following information will appear on the screen.</b> <br/>
+		<br/>
+		GTM&gt;D ^ZQADIRCL <br/>
+		Checking and removing files .mje with zero data <br/>
+		-rw-rw-r--   1 qa_mtm   qa             0 Jul  7 08:49 MRPC031787.mje <br/>
+		-rw-rw-r--   1 qa_mtm   qa             0 Jul  7 08:50 MRPC031800.mje <br/>
+		Process complete <br/>
+		<br/>
+		<b>Please note that the first message &quot;Checking and removing files .mje with zero data&quot; is to inform the user that only files with zero data are being deleted. 
+		The process cannot be stopped once started. </b><br/>
+		<b>The second message, &quot;Process complete&quot;, indicates that the program is complete and that all files displayed have been deleted.</b><br/>
+		<br/>
+		After this process, list the .mje files by typing <br/>
+		<b>$ls -al *.mje.</b><br/>
+		<br/> 
+		Example: rw-rw-r--   1 qa_mtm  qa               30 Sep 28 09:03 MRPC032629.mje<br/>
+		<br/>
+		<b>To view the file:</b><br/>
+		<b>$cat</b> MRPC032629.mje<br/>
+		<br/>
+		<b>If information is benign, the mje file can be deleted using the command - $rm *.mje</b><br/>
+		<br/>
+		<b>NOTE</b>: Where &quot;&lt;name of directory&gt;&quot; is present, enter the appropriate directory (e.g. v61qaix)
+      </description>
+   </item>
+   <item title="Start IBS Servers" dialog="true" skip="false">
+      <description>
+         Open a session under qa_mtm to start the servers by running function <b>@SVSTART</b>. The system will respond that the servers have been started. 
+		Confirm this by exiting back to the $ sign prompt and typing <b>ps  -ef  |grep  &lt;name of directory&gt;</b>. There should be three processes there in addition to your own.
+      </description>
+   </item>
+   <item title="Notify users" dialog="true" skip="false">
+      <description>
+         When all of the above has been completed successfully, send out e-mail that DAYEND has completed.
+      </description>
+   </item>
+   <item title="TROUBLESHOOTING" dialog="true" skip="false">
+      <description>
+         Occasionally a Wintermute error occurs during the Dayend. This has to do with Heavy Thread Manager. The batch will look like it completed but has not. To correct this, 
+		run the following functions: (These must be run under 842/Gormley. SCA users do not have the necessary access.) <br/>
+		<br/>
+		<b>QUESTP</b> - This will stop the Dayend Event.<br/>
+		<b>QUEMRK</b> - This will mark the job complete.<br/>
+		<b>QUERST</b> - This will restart the Dayend.<br/>
+		<b>QUETRCL</b> - This shows the operating system&apos;s process ID. This is only created when a Dayend is running.<br/>
+		<br/>
+		<b>Dayend Restore</b><br/>
+		<br/>
+		1. Run the following command to verify the files have been gzipped. <br/>
+		   cd /<b>&lt;name of directory&gt;</b>/gbls/backup<br/>
+		   ls -l <br/>
+		   gzip -d mumps.ubg.gz<br/>
+		   gzip -d mumps.tbls.gz<br/>
+		   gzip -d mumps.tmp.gz<br/>
+		2. If the files end in a .gz, it means the files have been gzipped.   <br/>
+		3. To unzip the file the syntax is: $/usr/local/bin/gzip -d filename. (For a LINUX Environment, the syntax is: $/usr/bin/gzip -d filename.) Run for each file. <br/>
+		4. After the files have been unzipped, proceed with the Restore Procedure <br/>
+		<br/>
+		cd   /<b>&lt;name of directory&gt;</b> <br/>
+		TMPDIR=/<b>&lt;name of directory&gt;</b>/gbls/backup <br/>
+		export TMPDIR <br/>
+		echo $TMPDIR <br/>
+		. gtmenv <br/>
+		mupip  rundown  -r  &quot;*&quot; <br/>
+		cp /<b>&lt;name of directory&gt;</b>/gbls/backup/mumps.ubg /<b>&lt;name of directory&gt;</b>/gbls/mumps.ubg <br/>
+		cp /<b>&lt;name of directory&gt;</b>/gbls/backup/mumps.tbls /<b>&lt;name of directory&gt;</b>/gbls/mumps.tbls <br/>
+		cp /<b>&lt;name of directory&gt;</b>/glbls/backup/mumps.tmp /<b>&lt;name of directory&gt;</b>/gbls/mumps.tmp <br/>
+		<br/>
+		<b>It is important that whatever files have been saved as part of the backup process must also be copied back in this same manner.</b><br/>
+		<br/>
+		After the restore, run the following commands:<br/> 
+		<br/>
+		1. mupip rundown -r &quot;*&quot; <br/>
+		2. mupip integ -r &quot;*&quot; <br/>
+		<br/>
+		This will determine if there is a problem with the restore.<br/>
+		Verify the database date is correct after the restore to ensure we are back on the correct system date<br/>
+		<br/>
+		<b>Note:</b><br/>
+		<br/>
+		If a restore is not done the same day, the files are gzipped. If you have to do a restore from a prior day other than the current day, you must process as follows:<br/>
+		<br/>
+		<b>Restore:</b><br/>
+		<br/>
+		At the successful completion of a directory restore, but PRIOR to initiating a Dayend verify that the ^TMPTTL global does not exist.  
+		Especially in the case where a restore is done after a problematic Dayend (e.g. aborted or interrupted).<br/>
+		<br/>
+		1. At the GTM prompt, input d ^%G <br/>
+		2. At the GLOBAL^ prompt, input TMPTTL <br/>
+		   System should return &quot;Global not defined&quot; <br/>
+		<br/>
+		or<br/>
+		<br/>
+		1. At the GLOBAL^ prompt, input? <br/>
+		2.At the GLOBAL: prompt, input TMP*<br/>
+		System will return list of globals beginning with TMPxxx<br/>
+		Verify TMPTTL does not exist.<br/>
+		<br/>
+		<b>Note: Before executing the kill command, verify that it is the correct global to be killed. There is not an undo command.</b><br/>
+		<br/>
+		If ^TMPTTL exist, at the GTM prompt, input command K^ TMPTTL <br/>
+		<br/>	
+		<b>Dayend Restore for a Replication Directory</b><br/>
+		<br/>
+		Replication consists of two directories (databases), one serves as the primary (v61yeix) and the other is the secondary (v61yeix2).<br/>
+		The purpose is to keep the system running 24 x 7.  Should something happen to the primary database there is an instant switch over to the secondary database.  
+		When the primary comes back up, processing switches back and all transactions posted to the secondary are retrieved and posted to the primary database.  
+		Replication ensures that there is always a backup database to fall back on and thus processing continues around the clock.<br/>
+		<br/>
+		<b>Note:</b>  Both Primary and Secondary must be run<br/>
+		<br/>
+		Primary:<br/>
+		cd /<b>&lt;name of directory&gt;</b><br/>
+		. ./gtmenv (*some machines use only one &quot;.&quot;)<br/>
+		controlled.sh<br/>
+		cp /<b>&lt;name of directory&gt;</b>/gbls/backup/mumps.tbls /<b>&lt;name of directory&gt;</b>/gbls<br/>
+		cp /<b>&lt;name of directory&gt;</b>/gbls/backup/mumps.tmp /<b>&lt;name of directory&gt;</b>/gbls<br/>
+		cp /<b>&lt;name of directory&gt;</b>/gbls/backup/mumps.ubg /<b>&lt;name of directory&gt;</b>/gbls<br/>
+		mupip rundown -reg &quot;*&quot;<br/>
+		cd /<b>&lt;name of directory&gt;</b>/scripts<br/>
+		replication_on<br/>
+		cd /<b>&lt;name of directory&gt;</b><br/>
+		startpri.sh <br/>
+		<br/>
+		Secondary:
+		cd /<b>&lt;name of directory&gt;</b>2<br/>
+		. ./gtmenv (*some machines use only one &quot;.&quot;)<br/>
+		controlled.sh<br/>
+		cp /<b>&lt;name of directory&gt;</b>/gbls/backup mumps.tbls /<b>&lt;name of directory&gt;</b>&gt;2/gbls<br/>
+		cp /<b>&lt;name of directory&gt;</b>/gbls/backup mumps.tmp /<b>&lt;name of directory&gt;</b>2/gbls<br/>
+		cp /<b>&lt;name of directory&gt;</b>/gbls/backup mumps.ubg /<b>&lt;name of directory&gt;</b>2/gbls<br/>
+		mupip rundown -reg &quot;*&quot;<br/>
+		cd /<b>&lt;name of directory&gt;</b>2/scripts<br/>
+		replication_on<br/>
+		cd /<b>&lt;name of directory&gt;</b>2<br/>
+		startsec_updresync.sh<br/>
+		<br/>
+		Please note that you will be copying backups from the primary backup area to be the gbls for the secondary. <br/>
+		<br/>
+		<b>If the queues were not submitted on the operating system, certain files were updated prior to the attempted creation of the queues that need to be reset.  
+		Caution should be exercised in resetting these files.</b><br/>
+		<br/>
+		&quot;<b>TTR</b>&quot; = Times To Run - The number of times (or days) the event is scheduled to run.<br/>
+		<br/>
+		&quot;<b>TTL</b>&quot; = Account Balance Totals - All end of day balances associated with deposit and loan accounts and totals of the daily activity performed for all customer accounts. <br/>
+		<br/>
+		<b>Proceed to:</b><br/>
+		<br/>
+		<b>^TTR</b> - This should be set to the number of days still left to run.  If dayend did not run, kill the global:<br/>
+		GTM&gt;K ^TTR<br/>
+		<br/>
+		<b>^TTL</b> - This should be equal to the last dayend that accruals were calculated for, meaning the current Profile processing date - 1.  To view the top level, inquire as follows:<br/>
+		GTM&gt;W ^TTL<br/>
+		<br/>
+		If the event did not start, the date could have been incremented.  To correct, set the top  level of ^TTL to the current processing date - 1 day as follows: <br/>
+		GTM&gt;S ^TTL=^CUVAR(2)-1 <br/>
+		<br/>
+      </description>
+   </item>
+</cheatsheet>

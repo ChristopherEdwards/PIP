@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin
+   id="com.fis.profile.tablelist"
+   name="Profile Table ListPlug-in"
+   version="3.3.2"
+   provider-name="FIS"
+   class="com.fis.profile.tablelist.TableList">
+   <runtime>
+         <library name="tablelist.jar">
+         <export
+               name="*">
+         </export>
+      </library>
+   </runtime>
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="com.fnf.studio"/>
+      <import plugin="com.fnf.profile.ide"/>
+      <import plugin="com.fnf.profile.monitor"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="com.sanchez.profile.schema.schemaeditor"/>
+      <import plugin="org.eclipse.draw2d"/>
+   </requires>
+
+
+<!-- =============================================== -->
+<!-- Perspective for Profile DBA 					 -->
+<!-- =============================================== -->
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Profile DBA"
+            icon="icons/table_list.gif"
+            class="com.fis.profile.tablelist.ProfileDBA"
+            id="com.fnf.profile.dba.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="FIS Profile"
+            id="com.fnf.studio">
+      </category>
+      <view
+            name="Profile Table List"
+            icon="icons/table_list.gif"
+            category="com.fnf.studio"
+            class="com.fis.profile.tablelist.views.TableListView"
+            id="com.fis.profile.tablelist.views.TableListView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="com.fnf.profile.dba.perspective">
+         <view
+               id="com.fis.profile.tablelist.views.TableListView"
+               ratio="1"
+               relationship="top"
+               relative="org.eclipse.ui.views.TaskList">
+         </view>
+         <view
+               id="com.fnf.profile.monitor.views.FidelityProfileEnvView"
+               moveable="true"
+               relationship="stack"
+               relative="com.fis.profile.tablelist.views.TableListView"
+               visible="true">
+         </view>
+         
+         <view
+               id="com.fis.profile.tablelist.details.TableDetailsView"
+               ratio="0.5"
+               relationship="bottom"
+               relative="com.fis.profile.tablelist.views.TableListView">
+         </view>
+         <view
+               ratio="0.5"
+               relative="com.fis.profile.tablelist.details.TableDetailsView"
+               relationship="right"
+               id="com.fis.profile.tablelist.details.columnDetailsView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="com.fnf.studio"
+            name="FIS Profile"/>
+      <view
+            category="com.fnf.studio"
+            class="com.fis.profile.tablelist.details.ColumnDetailsView"
+            icon="icons/column_details.gif"
+            id="com.fis.profile.tablelist.details.columnDetailsView"
+            name="Profile Column Details"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="com.fnf.studio"
+            class="com.fis.profile.tablelist.details.TableDetailsView"
+            icon="icons/table_details.gif"
+            id="com.fis.profile.tablelist.details.TableDetailsView"
+            name="Profile Table Details"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="com.fnf.studio"
+            name="FIS Profile"/>
+      <view
+            category="com.fnf.studio"
+            class="com.fis.profile.tablelist.details.PSLView"
+            id="com.fis.profile.tablelist.views.PSLListView"
+            name="PSL View"/>
+   </extension>
+
+</plugin>

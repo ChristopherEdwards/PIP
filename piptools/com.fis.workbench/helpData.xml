@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extensions>
+	<tocOrder>
+	    <toc id="/com.fis.workbench/toc.xml"/>
+	    <toc id="/com.fnf.profile.ide/doc/userGuide.xml"/>
+	    <toc id="/com.fnf.profile.prgstdhelp/toc.xml"/>
+	    <toc id="/com.fnf.profile.pslhelp/toc.xml"/>	    
+	    <toc id="/com.fnf.xes.workbench/toc.xml"/>
+	    <toc id="/com.fnf.ifx.150help/toc.xml"/>
+	    <toc id="/com.fnf.ifx.170help/toc.xml"/>
+	    <toc id="/com.fis.tp.workbench/toc.xml"/>	    
+	    <toc id="/com.fnfis.xsil.editor/toc.xml"/>
+		<toc id="/org.eclipse.platform.doc.user/toc.xml"/>
+		<toc id="/org.eclipse.jdt.doc.user/toc.xml"/>
+		<toc id="/org.eclipse.platform.doc.isv/toc.xml"/>
+		<toc id="/org.eclipse.jdt.doc.isv/toc.xml"/>
+		<toc id="/org.eclipse.pde.doc.user/toc.xml"/>
+	</tocOrder>
+</extensions>

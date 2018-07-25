@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<welcomePage title="FIS Application Studio">
+	<intro>This page will help familiarize you with the FIS Application Studio.
+To get started, read the sections below and click on the related links. </intro>
+	<item>
+		<b>What is FIS Application Studio </b>
+FIS Application Studio is a fully integrated development environment for developing 
+functionality in FIS Profile. To find out more about the features installed in your 
+workbench, choose <action pluginId="org.eclipse.ui" class="org.eclipse.ui.internal.QuickStartAction">Help > Welcome...</action> and select the feature you are interested in.</item>
+	<item>
+		<b>What's New in 3.0</b>
+Learn about the new feature in version 3.0 in the <topic id="/com.fnf.profile.ide/doc/userGuide.xml">Profile Development User Guide</topic>
+	</item>
+	<item>
+		<b>FIS Profile Perspective</b> 
+The default perspective contains views geared toward FIS Profile Development. To learn more about 
+these features you can browse the <topic id="/com.fnf.profile.ide/doc/userGuide.xml">Profile Development User Guide</topic>.</item>
+	<item>
+		<b>PSL Development</b> 
+Developing in Profile Scripting Language (PSL) has never been easier. On-line help is embedded 
+in the FIS Application Studio. You can access this through the Help menu, or directly at 
+<topic id="/com.fnf.profile.ide.help/pslhelp_xml/toc.xml">PSL Help</topic>.</item>
+	<item>
+		<b>FIS Programming Standards</b> 
+You can browse <topic id="/com.fnf.profile.ide.help/standards_xml/toc.xml">FIS Programming Standards </topic> to learn about standards and guidelines 
+for programming Profile applications.</item>
+	<item>
+		<b>Eclipse Platform</b>
+The FIS Application Studio is built on Eclipse Technology. This means you have all the power 
+of Eclipse in addition to features specifically tailored for FIS Application development.
+
+To learn more you can browse the <topic id="/org.eclipse.platform.doc.user/toc.xml">Workbench User Guide</topic>.</item>
+</welcomePage>

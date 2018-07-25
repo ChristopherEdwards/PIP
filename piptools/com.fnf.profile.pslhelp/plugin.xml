@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="com.fnf.profile.pslhelp"
+   name="Fidelity PSL Help Plug-in"
+   version="3.3.2"
+   provider-name="FIS">
+   
+   <extension
+         point="org.eclipse.help.toc">
+      <toc
+            file="toc.xml"
+            primary="true">
+      </toc>
+   </extension>
+   
+</plugin>

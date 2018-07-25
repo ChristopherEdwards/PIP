@@ -1,0 +1,72 @@
+body {
+	background-image : url(../graphics/contentpage/watermark.jpg);
+}
+
+.page { min-height : 700px; }
+
+/* show the "selected" image for this page */
+#navigation-links a#fnfoverview img, #navigation-links a#fnfoverview:hover img { background-image : url(../graphics/icons/ctool/Profile_Overview_48sel.gif); }
+
+/* 
+ * Set up the Overview links to be displayed in two columns
+ * that are centered in the middle of the page.
+ */
+
+#fnfoverview-links {
+	text-align : left;
+	width : 760px;
+	/* To center in Moz (have to use text-align for IE) */
+	margin : 0px auto;
+}
+
+#fnfoverview-links a { 
+	width : 370px;
+	text-align : left; 
+	margin-left : 5px;
+	margin-right : 5px;
+	margin-top : 5px;
+	margin-bottom : -20px;
+	vertical-align : top;
+}
+
+#fnfoverview-links > a { vertical-align : middle; }
+
+#fnfoverview-links a img {
+	height : 57px;
+	width : 57px;
+	vertical-align : middle;
+}	
+
+#fnfoverview-links a .link-label {
+	display : block;
+	width : 300px;
+	position : relative;
+	top : -50px;
+	left : 60px;
+}
+
+#fnfoverview-links a p .text {
+	display : block;
+	width : 300px;
+	position : relative;
+	top : -45px;
+	left : 53px;
+}
+
+/* Special case for Mozilla, because the links are displayed
+   in 1 vertical column instead of 2 centered columns */
+#fnfoverview-links > a { 	width : 700px; }
+#fnfoverview-links a > .link-label { width : 700px; }
+#fnfoverview-links a p > .text { width : 700px; }
+
+#fnfoverview-links a:hover { border-right : 5px; }
+
+a#whatsnew img { background-image : url(../graphics/icons/obj48/profile_wb_over.gif); }
+a#whatsnew:hover img { background-image : url(../graphics/icons/obj48/profile_wb_over_h.gif); }
+
+a#basics img { background-image : url(../graphics/icons/obj48/wbbasics_obj.gif); }
+a#basics:hover img { background-image : url(../graphics/icons/obj48/wbbasicshov_obj.gif); }
+
+a#team img { background-image : url(../graphics/icons/obj48/teamsup_obj.gif); }
+a#team:hover img { background-image : url(../graphics/icons/obj48/teamsuphov_obj.gif); }
+

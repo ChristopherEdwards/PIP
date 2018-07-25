@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+		<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+		<LINK REL="STYLESHEET" HREF="book.css" CHARSET="ISO-8859-1" TYPE="text/css">		
+		<TITLE>Fidelity Profile Project</TITLE>
+		
+	</HEAD>
+	<BODY BGCOLOR="#ffffff">
+		<H1>Fidelity Profile Project</H1>
+		<P>
+		The Profile IDE provides a connection to a Profile RTE for uploading M 
+		routines and sending, receiving and test compiling Profile resources. 
+		The first step for a Fidelity Profile developer is to create a Fidelity 
+		Profile project. Right click navigator view or select &nbsp; <b>File &gt; New &gt; New Profile Project</b>.</p>
+ 
+		Project from the menu bar. In the New Project Wizard select Fidelity 
+		Profile and Profile Project and click next.</p>
+		<p align="center"><img border="0" src="images/sas_pr13.jpg"></p>
+		<P>The second page of the New Project Wizard prompts for a project name 
+		and a location for the project contents. You can choose any project name 
+		you like. A suggested naming convention for Fidelity Profile Projects is 
+		to use the same name as the Profile RTE to which you will connect. 
+		Likewise, the location of the projects is entirely up to you. If you are 
+		using a Software Configuration Management (SCM) tool, you may want to 
+		use the working folders defined by the SCM server. The <b>Create default 
+		folders</b> check will create the most commonly used folders in the 
+		Profile project.</P>
+		<p align="center"><img border="0" src="images/sas_pr14.jpg"></P>
+		<P>
+		As the note in the wizard indicates, the connection properties must be 
+		set before you can interact with a Profile RTE. Select the project 
+		folder in the Navigator view and select File &gt; Properties from the menu 
+		bar. You can also get to the properties window by right clicking on the 
+		project folder and selecting Properties.
+		<p align="center"><IMG border="0" src="images/new_project2.jpg"></P>
+		<H2><A name="m_login_props">M Login Properties</A></H2>
+		<P>
+			Select M Login in the properties window. This page contains 
+			information used to FTP M routines to a predetermined location. 
+			Enter the username and password needed to login to the server. 
+			(Note: This is your operating system user account, not your Profile 
+			user ID.)</P>
+		<p align="center"><IMG border="0" src="images/m_login_properties.jpg" width="606" height="532"></SPAN></P>
+		<H2><A name="psl_login_props">Fidelity Profile Login Properties</A></H2>
+		<P>Select Profile Login in the properties window. This page contains 
+		information used to connect to the Fidelity Profile Runtime Environment.
+		</P>
+		<p align="center"><IMG border="0" src="images/profile_login_properties.jpg" width="606" height="532"></P>
+		<H2>Select Profile RTE</H2>
+		<P>The Select button opens a look-up window for Fidelity Profile Runtime 
+		Environments.</P>
+		<blockquote>
+			<p align="center"><IMG border="0" src="images/profile_RTE_popup.jpg" width="250" height="300"></P>
+		</blockquote>
+		<H2>Add/Update/Remove</H2>
+		<P>You can add, update and remove Fidelity Profile runtime enviroments 
+		by clicking on the respective buttons.</P>
+		<blockquote>
+			<p align="center"><IMG border="0" src="images/RTE_add_update.jpg" width="181" height="150"></P>
+		</blockquote>
+		<h2>PSL References</h2>
+		<P>The PSL References tab gives you the opportunity to load the Profile 
+		database Schema and PSL Class library from the Profile runtime 
+		environment. These libraries are used in the <a href="as_PSL_editor.html#Method and Property Assist">
+		Content Assist and Hover features</a> of the PSL Editor. To download the 
+		library files, check the &quot;Generate library from Fidelity Profile&quot; box 
+		and click Continue. Note, you must set up a valid Profile Login to 
+		download library files.</P>
+		<p align="center"><IMG border="0" src="images/sas_pr15.jpg"></P>
+		<P>You can cancel the operation without corrupting the current library 
+		file.</P>
+		<p align="center"><IMG border="0" src="images/sas_pr16.jpg"></p>
+		<p></p>
+	</BODY>
+</HTML>

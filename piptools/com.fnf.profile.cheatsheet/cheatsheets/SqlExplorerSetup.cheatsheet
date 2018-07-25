@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cheatsheet title="Setup SQL Explorer for Profile Database">
+    <intro>
+		<description>Welcome to the SQL Explorer Set up instruction.
+			It will help you to setup the SQL Explorer to work with Profile Database.</description>
+    </intro>
+
+    <item title="Open the SQL Explorer Perspective">
+        <action class="org.eclipse.ui.internal.cheatsheets.actions.OpenPerspective" param1="net.sourceforge.sqlexplorer.plugin.perspectives.SQLExplorerPluginPerspective" pluginId="org.eclipse.ui.cheatsheets"/>
+        <description>Select <b>Window</b>, <b>Open Perspective</b>, <b>Other</b>, <b>SQLExplorer</b> in the menu bar at the top of the workbench.
+			This step changes the perspective to set up the Eclipse workbench for SQL development.
+			You can click the "Click to Perform" button to have the <b>"SQLExplorer"</b> perspective opened automatically.</description>
+    </item>
+    
+        <item title="Set up Profile JDBC Driver">
+        <description>In <b>Drivers view</b> click <b>Create new Driver</b><br/><br/>
+		<b>Name:</b> Profile SQL Driver <br/>
+		<b>Example URL:</b> protocol=jdbc:sanchez:/database=server:mtm_port:SCA$IBS<br/>
+		Click <b>Extra Class Path</b> tab, <b>Add</b> button. &#13;
+		In the file browser window, navigate to ProfileAppliciationWorkbench/plugins/com.fnf.profile.ide_3.2.2 folder and select <b>connection.jar</b>. 
+		Click <b>List Driver</b> button. sanchez.jdbc.driver.ScDriver will appear in <b>Driver Class Name</b>.&#13;
+		 &#13;
+		Click OK to save it.</description>
+    </item>
+    <item title="Set up Profile alias">
+        <description>In <b>Aliases view</b>, Click <b>Create</b> new aliases, <br/><br/>
+			<b>Name:</b> Name of the Profile Host<br/>
+			<b>Driver:</b> Profile SQL Driver<br/>
+			<b>URL:</b> update the URL string with the correct server name and mtm port<br/>
+			<b>User Name:</b> user name to logon to Profile<br/>
+			<b>Password:</b> the password to logon,br/>
+			Click OK to save</description>
+    </item>
+    <item title="Connecting to the Profile Database">
+        <description>Double click on the alias just created and confirm the user name and password.   &#13;
+		You are now connected to the host.</description>
+    </item>
+</cheatsheet>

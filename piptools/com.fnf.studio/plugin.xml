@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="com.fnf.studio"
+   name="%pluginName"
+   version="3.3.2"
+   provider-name="%providerName"
+   class="com.fnf.studio.StudioPlugin">
+
+   <runtime>
+      <library name="studio.jar">
+         <export name="*"/>
+      </library>
+   </runtime>
+   <requires>
+   <import plugin="org.eclipse.core.runtime"/>
+   
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.ui.views"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.ui.intro"/>
+   </requires>
+   
+   <extension 
+   		id="product" 
+   		point="org.eclipse.core.runtime.products"> 
+      <product 
+      		name="%applicationName" 
+      		application="org.eclipse.ui.ide.workbench" 
+      		description="%productBlurb"> 
+          <property name="windowImages" value="icons/Profile_wb_16.gif,icons/Profile_wb_32.gif,icons/Profile_wb_48.gif"/> 
+          <property name="aboutImage" value="icons/Profile_wb_48.gif"/> 
+          <property name="aboutText" value="%productBlurb"/> 
+          <property name="appName" value="%applicationName"/> 
+          <property name="preferenceCustomization" value="plugin_customization.ini"/> 
+      </product> 
+   </extension>
+   
+    <extension 
+    	point="org.eclipse.ui.intro"> 
+	    <intro
+            class="org.eclipse.ui.intro.config.CustomizableIntroPart"
+            id="com.fnf.studio.intro"
+            icon="intro.gif" />
+      <introProductBinding
+            introId="com.fnf.studio.intro"
+            productId="com.fnf.studio.product"/>
+   </extension>
+
+
+     <extension
+         point="org.eclipse.ui.intro.config">
+      <config
+            content="$nl$/introContent.xml"
+            id="org.eclipse.platform.introConfig"
+            introId="com.fnf.studio.intro">
+         <presentation
+               home-page-id="root" standby-page-id="standby">
+            <implementation
+                  ws="win32"
+                  style="css/shared.css"
+                  kind="html"
+                  os="win32">
+            </implementation>
+            <implementation
+                  kind="swt">
+            </implementation>
+         </presentation>
+
+      </config>
+   </extension>
+   
+   
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="%viewsCategory"
+            id="com.fnf.studio">
+      </category>
+      <view
+            name="%consoleViewName"
+            icon="icons/fidelity_console.gif"
+            category="com.fnf.studio"
+            class="com.fnf.studio.views.FidelityConsoleView"
+            id="com.fnf.studio.views.FidelityConsoleView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.ui.resourcePerspective">
+         <view
+               relative="org.eclipse.ui.views.TaskList"
+               relationship="stack"
+               id="com.fnf.studio.views.FidelityConsoleView">
+         </view>
+         <viewShortcut id="com.fnf.studio.views.FidelityConsoleView"/>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            name="%preferencePageName"
+            class="com.fnf.studio.preferences.StudioPreferencePage"
+            id="com.fnf.studio.preferences.StudioPreferencePage">
+      </page>
+   </extension>
+
+</plugin>
